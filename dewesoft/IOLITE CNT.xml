@@ -1,0 +1,934 @@
+<EtherCATInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="EtherCATInfo.xsd" Version="1.6">
+  <Vendor>
+    <Id>#xDEBE50F7</Id>
+    <Name>Dewesoft</Name>
+    <ImageData16x14>424DE6000000000000007600000028000000100000000E000000010004000000000070000000C40E0000C40E000000000000000000000000000000008000008000000080800080000000800080008080000080808000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDDDDDDDDDDDDDDDD9999999999999DDDD99999999999DDDD9DD9999999DD9DDD999DD999DD999DDDD9999D9D9999DDDDD99999D99999DDDDDD9999D9999DDDDDDD9999D9999DDDDDDDD999D999DDDDDDDDD999D999DDDDDDDDDD99D99DDDDDDDDDDDD9D9DDDDDDDDDDDDDDDDDDDDDDD</ImageData16x14>
+  </Vendor>
+  <Descriptions>
+    <Groups>
+      <Group SortOrder="0">
+        <Type>IOLITE</Type>
+        <Name LcId="1031">IOLITE</Name>
+        <Name LcId="1033">IOLITE</Name>
+        <ImageData16x14>424DE6000000000000007600000028000000100000000E000000010004000000000070000000C40E0000C40E000000000000000000000000000000008000008000000080800080000000800080008080000080808000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDDDDDDDDDDDDDDDD9999999999999DDDD99999999999DDDD9DD9999999DD9DDD999DD999DD999DDDD9999D9D9999DDDDD99999D99999DDDDDD9999D9999DDDDDDD9999D9999DDDDDDDD999D999DDDDDDDDD999D999DDDDDDDDDD99D99DDDDDDDDDDDD9D9DDDDDDDDDDDDDDDDDDDDDDD</ImageData16x14>
+      </Group>
+    </Groups>
+    <Devices>
+      <Device Physics="KK">
+        <Type ProductCode="246" RevisionNo="#x00010000">IOLITEr 4xCNT</Type>
+        <Name LcId="1033">IOLITEr 4xCNT</Name>
+        <Name LcId="1031">IOLITEr 4xCNT</Name>
+        <Info>
+          <StateMachine>
+            <Timeout>
+              <PreopTimeout>2000</PreopTimeout>
+              <SafeopOpTimeout>9000</SafeopOpTimeout>
+              <BackToInitTimeout>5000</BackToInitTimeout>
+              <BackToSafeopTimeout>200</BackToSafeopTimeout>
+            </Timeout>
+          </StateMachine>
+          <Mailbox>
+            <Timeout>
+              <RequestTimeout>100</RequestTimeout>
+              <ResponseTimeout>2000</ResponseTimeout>
+            </Timeout>
+          </Mailbox>
+        </Info>
+        <GroupType>IOLITE</GroupType>
+        <Profile>
+          <ProfileNo>5001</ProfileNo>
+          <AddInfo>0</AddInfo>
+          <ChannelCount>4</ChannelCount>
+        </Profile>
+        <Fmmu>Outputs</Fmmu>
+        <Fmmu>Inputs</Fmmu>
+        <Fmmu>MBoxState</Fmmu>
+        <Sm MinSize="34" MaxSize="192" DefaultSize="128" StartAddress="#x1000" ControlByte="#x26" Enable="1">MBoxOut</Sm>
+        <Sm MinSize="34" MaxSize="192" DefaultSize="128" StartAddress="#x1400" ControlByte="#x22" Enable="1">MBoxIn</Sm>
+        <Sm DefaultSize="2" StartAddress="#x1800" ControlByte="#x64" Enable="1">Outputs</Sm>
+        <Sm DefaultSize="6" StartAddress="#x1c00" ControlByte="#x20" Enable="1">Inputs</Sm>
+        <Mailbox DataLinkLayer="true">
+          <CoE SdoInfo="true" PdoAssign="true" PdoConfig="true" SegmentedSdo="true" CompleteAccess="true" PdoUpload="true">
+            <InitCmd>
+              <Transition>IP</Transition>
+              <Index>32800</Index>
+              <SubIndex>9</SubIndex>
+              <Data>0100</Data>
+              <Comment>Bus1 mode: 0000 = DC, 0100 = buffered DC (DEWESoft)</Comment>
+            </InitCmd>
+            <InitCmd>
+              <Transition>IP</Transition>
+              <Index>32800</Index>
+              <SubIndex>10</SubIndex>
+              <Data>0000</Data>
+              <Comment>Bus2 mode: 0000 = DC, 0300 = SM</Comment>
+            </InitCmd>
+          </CoE>
+          <FoE/>
+        </Mailbox>
+        <Dc>
+          <OpMode>
+            <Name>unbuff-SM</Name>
+            <Desc>Bus2 SM Sync</Desc>
+            <AssignActivate>#x0</AssignActivate>
+            <CycleTimeSync0 Factor="1">0</CycleTimeSync0>
+            <ShiftTimeSync0>0</ShiftTimeSync0>
+            <CycleTimeSync1 Factor="1">0</CycleTimeSync1>
+          </OpMode>
+          <OpMode>
+            <Name>unbuff-DC-bus2</Name>
+            <Desc>Bus2 DC Sync</Desc>
+            <AssignActivate>#x700</AssignActivate>
+            <CycleTimeSync0>1000000000</CycleTimeSync0>
+            <ShiftTimeSync0>0</ShiftTimeSync0>
+            <CycleTimeSync1 Factor="1">0</CycleTimeSync1>
+          </OpMode>
+          <OpMode>
+            <Name>DC-bus1</Name>
+            <Desc>Bus1 DC Sync</Desc>
+            <AssignActivate>#x700</AssignActivate>
+            <CycleTimeSync0>1000000</CycleTimeSync0>
+            <ShiftTimeSync0>0</ShiftTimeSync0>
+            <CycleTimeSync1 Factor="-1000">0</CycleTimeSync1>
+          </OpMode>
+        </Dc>
+        <Eeprom>
+          <ByteSize>2048</ByteSize>
+          <ConfigData>050C0044C80000000000</ConfigData>
+          <BootStrap>0010800000148000</BootStrap>
+        </Eeprom>
+        <ImageData16x14>424DE6000000000000007600000028000000100000000E000000010004000000000070000000C40E0000C40E000000000000000000000000000000008000008000000080800080000000800080008080000080808000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDDDDDDDDDDDDDDDD9999999999999DDDD99999999999DDDD9DD9999999DD9DDD999DD999DD999DDDD9999D9D9999DDDDD99999D99999DDDDDD9999D9999DDDDDDD9999D9999DDDDDDDD999D999DDDDDDDDD999D999DDDDDDDDDD99D99DDDDDDDDDDDD9D9DDDDDDDDDDDDDDDDDDDDDDD</ImageData16x14>
+      </Device>
+      <Device Physics="KK">
+        <Type ProductCode="246" RevisionNo="#x00010001">IOLITEr 4xCNT Bus1</Type>
+        <Name LcId="1033">IOLITEr 4xCNT Bus1</Name>
+        <Name LcId="1031">IOLITEr 4xCNT Bus1</Name>
+        <Info>
+          <StateMachine>
+            <Timeout>
+              <PreopTimeout>2000</PreopTimeout>
+              <SafeopOpTimeout>9000</SafeopOpTimeout>
+              <BackToInitTimeout>5000</BackToInitTimeout>
+              <BackToSafeopTimeout>200</BackToSafeopTimeout>
+            </Timeout>
+          </StateMachine>
+          <Mailbox>
+            <Timeout>
+              <RequestTimeout>100</RequestTimeout>
+              <ResponseTimeout>2000</ResponseTimeout>
+            </Timeout>
+          </Mailbox>
+        </Info>
+        <GroupType>IOLITE</GroupType>
+        <Profile>
+          <ProfileNo>5001</ProfileNo>
+          <AddInfo>0</AddInfo>
+          <ChannelCount>4</ChannelCount>
+        </Profile>
+        <Fmmu>Outputs</Fmmu>
+        <Fmmu>Inputs</Fmmu>
+        <Fmmu>MBoxState</Fmmu>
+        <Sm MinSize="34" MaxSize="192" DefaultSize="128" StartAddress="#x1000" ControlByte="#x26" Enable="1">MBoxOut</Sm>
+        <Sm MinSize="34" MaxSize="192" DefaultSize="128" StartAddress="#x1400" ControlByte="#x22" Enable="1">MBoxIn</Sm>
+        <Sm DefaultSize="2" StartAddress="#x1800" ControlByte="#x64" Enable="1">Outputs</Sm>
+        <Sm DefaultSize="6" StartAddress="#x1c00" ControlByte="#x20" Enable="1">Inputs</Sm>
+        <RxPdo Sm="2">
+          <Index>#x1611</Index>
+          <Name>DO RxPDO-Unbuff-Map</Name>
+          <Entry>
+            <Index>#x7011</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>LED out</Name>
+            <DataType>UDINT</DataType>
+          </Entry>
+        </RxPdo>
+        <TxPdo Sm="3">
+          <Index>#x1a00</Index>
+          <Name>DI TxPDO-Map</Name>
+          <Entry>
+            <Index>#x6000</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>Switch 1</Name>
+            <DataType>BIT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6000</Index>
+            <SubIndex>2</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>Switch 2</Name>
+            <DataType>BIT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6000</Index>
+            <SubIndex>3</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>ReadToggle</Name>
+            <DataType>BIT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6000</Index>
+            <SubIndex>4</SubIndex>
+            <BitLen>5</BitLen>
+            <Name>SampleCount</Name>
+            <DataType>BIT5</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6000</Index>
+            <SubIndex>5</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>Counter</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6000</Index>
+            <SubIndex>6</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>BufCounter</Name>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6000</Index>
+            <SubIndex>7</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>ReadPacketNumber</Name>
+            <DataType>UDINT</DataType>
+          </Entry>
+        </TxPdo>
+        <TxPdo Sm="3">
+          <Index>#x1a70</Index>
+          <Name>CNT Values - TxPDO-Map</Name>
+          <Entry>
+            <Index>#x6070</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CNT1 Count</Name>
+            <DataType>DINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6070</Index>
+            <SubIndex>2</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CNT1 Edge</Name>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6070</Index>
+            <SubIndex>3</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CNT2 Count</Name>
+            <DataType>DINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6070</Index>
+            <SubIndex>4</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CNT2 Edge</Name>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6070</Index>
+            <SubIndex>5</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CNT3 Count</Name>
+            <DataType>DINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6070</Index>
+            <SubIndex>6</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CNT3 Edge</Name>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6070</Index>
+            <SubIndex>7</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CNT4 Count</Name>
+            <DataType>DINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6070</Index>
+            <SubIndex>8</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CNT4 Edge</Name>
+            <DataType>UDINT</DataType>
+          </Entry>
+        </TxPdo>
+        <TxPdo Sm="3">
+          <Index>#x1af0</Index>
+          <Name>DI Lines TxPDO-Map</Name>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>Z1</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>2</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>Z2</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>3</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>Z3</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>4</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>Z4</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>5</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>B1</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>6</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>B2</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>7</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>B3</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>8</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>B4</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>9</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>A1</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>10</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>A2</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>11</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>A3</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>12</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>A4</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+        </TxPdo>
+        <Mailbox DataLinkLayer="true">
+          <CoE SdoInfo="true" PdoAssign="true" PdoConfig="true" SegmentedSdo="true" CompleteAccess="true">
+            <InitCmd>
+              <Transition>IP</Transition>
+              <Index>32800</Index>
+              <SubIndex>9</SubIndex>
+              <Data>0000</Data>
+              <Comment>Bus1 mode: 0000 = DC, 0100 = buffered DC (DEWESoft)</Comment>
+            </InitCmd>
+          </CoE>
+          <FoE/>
+        </Mailbox>
+        <Dc>
+          <OpMode>
+            <Name>DC</Name>
+            <Desc>DC Sync</Desc>
+            <AssignActivate>#x700</AssignActivate>
+            <CycleTimeSync0>1000000</CycleTimeSync0>
+            <ShiftTimeSync0>0</ShiftTimeSync0>
+            <CycleTimeSync1 Factor="-1000">0</CycleTimeSync1>
+          </OpMode>
+        </Dc>
+        <Eeprom>
+          <ByteSize>2048</ByteSize>
+          <ConfigData>050C0044C80000000000</ConfigData>
+          <BootStrap>0010800000148000</BootStrap>
+        </Eeprom>
+        <ImageData16x14>424DE6000000000000007600000028000000100000000E000000010004000000000070000000C40E0000C40E000000000000000000000000000000008000008000000080800080000000800080008080000080808000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDDDDDDDDDDDDDDDD9999999999999DDDD99999999999DDDD9DD9999999DD9DDD999DD999DD999DDDD9999D9D9999DDDDD99999D99999DDDDDD9999D9999DDDDDDD9999D9999DDDDDDDD999D999DDDDDDDDD999D999DDDDDDDDDD99D99DDDDDDDDDDDD9D9DDDDDDDDDDDDDDDDDDDDDDD</ImageData16x14>
+      </Device>
+      <Device Physics="KK">
+        <Type ProductCode="246" RevisionNo="#x00011001">IOLITEr 4xCNT Bus2</Type>
+        <Name LcId="1033">IOLITEr 4xCNT Bus2</Name>
+        <Name LcId="1031">IOLITEr 4xCNT Bus2</Name>
+        <Info>
+          <StateMachine>
+            <Timeout>
+              <PreopTimeout>2000</PreopTimeout>
+              <SafeopOpTimeout>9000</SafeopOpTimeout>
+              <BackToInitTimeout>5000</BackToInitTimeout>
+              <BackToSafeopTimeout>200</BackToSafeopTimeout>
+            </Timeout>
+          </StateMachine>
+          <Mailbox>
+            <Timeout>
+              <RequestTimeout>100</RequestTimeout>
+              <ResponseTimeout>2000</ResponseTimeout>
+            </Timeout>
+          </Mailbox>
+        </Info>
+        <GroupType>IOLITE</GroupType>
+        <Profile>
+          <ProfileNo>5001</ProfileNo>
+          <AddInfo>0</AddInfo>
+          <ChannelCount>4</ChannelCount>
+        </Profile>
+        <Fmmu>Outputs</Fmmu>
+        <Fmmu>Inputs</Fmmu>
+        <Fmmu>MBoxState</Fmmu>
+        <Sm MinSize="34" MaxSize="192" DefaultSize="128" StartAddress="#x1000" ControlByte="#x26" Enable="1">MBoxOut</Sm>
+        <Sm MinSize="34" MaxSize="192" DefaultSize="128" StartAddress="#x1400" ControlByte="#x22" Enable="1">MBoxIn</Sm>
+        <Sm DefaultSize="2" StartAddress="#x1800" ControlByte="#x64" Enable="1">Outputs</Sm>
+        <Sm DefaultSize="6" StartAddress="#x1c00" ControlByte="#x20" Enable="1">Inputs</Sm>
+        <RxPdo Sm="2">
+          <Index>#x1611</Index>
+          <Name>DO RxPDO-Unbuff-Map</Name>
+          <Entry>
+            <Index>#x7011</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>LED out</Name>
+            <DataType>UDINT</DataType>
+          </Entry>
+        </RxPdo>
+        <TxPdo Sm="3">
+          <Index>#x1a00</Index>
+          <Name>TimeSync TxPDO-Map</Name>
+          <Entry>
+            <Index>#x6000</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>Switch 1</Name>
+            <DataType>BIT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6000</Index>
+            <SubIndex>2</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>Switch 2</Name>
+            <DataType>BIT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6000</Index>
+            <SubIndex>3</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>ReadToggle</Name>
+            <DataType>BIT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6000</Index>
+            <SubIndex>4</SubIndex>
+            <BitLen>5</BitLen>
+            <Name>SampleCount</Name>
+            <DataType>BIT5</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6000</Index>
+            <SubIndex>5</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>Counter</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6000</Index>
+            <SubIndex>6</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>BufCounter</Name>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6000</Index>
+            <SubIndex>7</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>ReadPacketNumber</Name>
+            <DataType>UDINT</DataType>
+          </Entry>
+        </TxPdo>
+        <TxPdo Sm="3">
+          <Index>#x1a70</Index>
+          <Name>CNT Values - TxPDO-Map</Name>
+          <Entry>
+            <Index>#x6070</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CNT1 Count</Name>
+            <DataType>DINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6070</Index>
+            <SubIndex>2</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CNT1 Edge</Name>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6070</Index>
+            <SubIndex>3</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CNT2 Count</Name>
+            <DataType>DINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6070</Index>
+            <SubIndex>4</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CNT2 Edge</Name>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6070</Index>
+            <SubIndex>5</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CNT3 Count</Name>
+            <DataType>DINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6070</Index>
+            <SubIndex>6</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CNT3 Edge</Name>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6070</Index>
+            <SubIndex>7</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CNT4 Count</Name>
+            <DataType>DINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6070</Index>
+            <SubIndex>8</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CNT4 Edge</Name>
+            <DataType>UDINT</DataType>
+          </Entry>
+        </TxPdo>
+        <TxPdo Sm="3">
+          <Index>#x1af0</Index>
+          <Name>DI Lines TxPDO-Map</Name>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>Z1</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>2</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>Z2</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>3</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>Z3</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>4</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>Z4</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>5</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>B1</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>6</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>B2</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>7</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>B3</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>8</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>B4</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>9</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>A1</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>10</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>A2</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>11</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>A3</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>12</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>A4</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+        </TxPdo>
+        <Mailbox DataLinkLayer="true">
+          <CoE SdoInfo="true" PdoAssign="true" PdoConfig="true" SegmentedSdo="true" CompleteAccess="true">
+            <InitCmd>
+              <Transition>IP</Transition>
+              <Index>32800</Index>
+              <SubIndex>10</SubIndex>
+              <Data>0300</Data>
+              <Comment>Bus2 mode: 0000 = DC, 0300 = SM</Comment>
+            </InitCmd>
+          </CoE>
+          <FoE/>
+        </Mailbox>
+        <Dc>
+          <OpMode>
+            <Name>SM</Name>
+            <Desc>SM Sync</Desc>
+            <AssignActivate>#x0</AssignActivate>
+            <CycleTimeSync0 Factor="1">0</CycleTimeSync0>
+            <ShiftTimeSync0>0</ShiftTimeSync0>
+            <CycleTimeSync1 Factor="1">0</CycleTimeSync1>
+          </OpMode>
+          <OpMode>
+            <Name>DC</Name>
+            <Desc>DC Sync</Desc>
+            <AssignActivate>#x700</AssignActivate>
+            <CycleTimeSync0>1000000000</CycleTimeSync0>
+            <ShiftTimeSync0>0</ShiftTimeSync0>
+            <CycleTimeSync1 Factor="1">0</CycleTimeSync1>
+          </OpMode>
+        </Dc>
+        <Eeprom>
+          <ByteSize>2048</ByteSize>
+          <ConfigData>050C0044C80000000000</ConfigData>
+          <BootStrap>0010800000148000</BootStrap>
+        </Eeprom>
+        <ImageData16x14>424DE6000000000000007600000028000000100000000E000000010004000000000070000000C40E0000C40E000000000000000000000000000000008000008000000080800080000000800080008080000080808000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDDDDDDDDDDDDDDDD9999999999999DDDD99999999999DDDD9DD9999999DD9DDD999DD999DD999DDDD9999D9D9999DDDDD99999D99999DDDDDD9999D9999DDDDDDD9999D9999DDDDDDDD999D999DDDDDDDDD999D999DDDDDDDDDD99D99DDDDDDDDDDDD9D9DDDDDDDDDDDDDDDDDDDDDDD</ImageData16x14>
+      </Device>
+      <Device Physics="YY">
+        <Type ProductCode="246" RevisionNo="#x00020000">IOLITE 4xCNT</Type>
+        <Name LcId="1033">IOLITE 4xCNT</Name>
+        <Name LcId="1031">IOLITE 4xCNT</Name>
+        <Info>
+          <StateMachine>
+            <Timeout>
+              <PreopTimeout>2000</PreopTimeout>
+              <SafeopOpTimeout>9000</SafeopOpTimeout>
+              <BackToInitTimeout>5000</BackToInitTimeout>
+              <BackToSafeopTimeout>200</BackToSafeopTimeout>
+            </Timeout>
+          </StateMachine>
+          <Mailbox>
+            <Timeout>
+              <RequestTimeout>100</RequestTimeout>
+              <ResponseTimeout>2000</ResponseTimeout>
+            </Timeout>
+          </Mailbox>
+        </Info>
+        <GroupType>IOLITE</GroupType>
+        <Profile>
+          <ProfileNo>5001</ProfileNo>
+          <AddInfo>0</AddInfo>
+          <ChannelCount>4</ChannelCount>
+        </Profile>
+        <Fmmu>Outputs</Fmmu>
+        <Fmmu>Inputs</Fmmu>
+        <Fmmu>MBoxState</Fmmu>
+        <Sm MinSize="34" MaxSize="192" DefaultSize="128" StartAddress="#x1000" ControlByte="#x26" Enable="1">MBoxOut</Sm>
+        <Sm MinSize="34" MaxSize="192" DefaultSize="128" StartAddress="#x1400" ControlByte="#x22" Enable="1">MBoxIn</Sm>
+        <Sm DefaultSize="2" StartAddress="#x1800" ControlByte="#x64" Enable="1">Outputs</Sm>
+        <Sm DefaultSize="6" StartAddress="#x1c00" ControlByte="#x20" Enable="1">Inputs</Sm>
+        <RxPdo Sm="2">
+          <Index>#x1611</Index>
+          <Name>DO RxPDO-Unbuff-Map</Name>
+          <Entry>
+            <Index>#x7011</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>LED out</Name>
+            <DataType>UDINT</DataType>
+          </Entry>
+        </RxPdo>
+        <TxPdo Sm="3">
+          <Index>#x1a00</Index>
+          <Name>DI TxPDO-Map</Name>
+          <Entry>
+            <Index>#x6000</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>Switch 1</Name>
+            <DataType>BIT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6000</Index>
+            <SubIndex>2</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>Switch 2</Name>
+            <DataType>BIT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6000</Index>
+            <SubIndex>3</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>ReadToggle</Name>
+            <DataType>BIT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6000</Index>
+            <SubIndex>4</SubIndex>
+            <BitLen>5</BitLen>
+            <Name>SampleCount</Name>
+            <DataType>BIT5</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6000</Index>
+            <SubIndex>5</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>Counter</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6000</Index>
+            <SubIndex>6</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>BufCounter</Name>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6000</Index>
+            <SubIndex>7</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>ReadPacketNumber</Name>
+            <DataType>UDINT</DataType>
+          </Entry>
+        </TxPdo>
+        <TxPdo Sm="3">
+          <Index>#x1a70</Index>
+          <Name>CNT Values - TxPDO-Map</Name>
+          <Entry>
+            <Index>#x6070</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CNT1 Count</Name>
+            <DataType>DINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6070</Index>
+            <SubIndex>2</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CNT1 Edge</Name>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6070</Index>
+            <SubIndex>3</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CNT2 Count</Name>
+            <DataType>DINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6070</Index>
+            <SubIndex>4</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CNT2 Edge</Name>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6070</Index>
+            <SubIndex>5</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CNT3 Count</Name>
+            <DataType>DINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6070</Index>
+            <SubIndex>6</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CNT3 Edge</Name>
+            <DataType>UDINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6070</Index>
+            <SubIndex>7</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CNT4 Count</Name>
+            <DataType>DINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6070</Index>
+            <SubIndex>8</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CNT4 Edge</Name>
+            <DataType>UDINT</DataType>
+          </Entry>
+        </TxPdo>
+        <TxPdo Sm="3">
+          <Index>#x1af0</Index>
+          <Name>DI Lines TxPDO-Map</Name>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>Z1</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>2</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>Z2</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>3</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>Z3</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>4</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>Z4</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>5</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>B1</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>6</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>B2</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>7</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>B3</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>8</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>B4</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>9</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>A1</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>10</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>A2</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>11</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>A3</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x60f0</Index>
+            <SubIndex>12</SubIndex>
+            <BitLen>8</BitLen>
+            <Name>A4</Name>
+            <DataType>USINT</DataType>
+          </Entry>
+        </TxPdo>
+        <Mailbox DataLinkLayer="true">
+          <CoE SdoInfo="true" PdoAssign="true" PdoConfig="true" SegmentedSdo="true" CompleteAccess="true">
+            <InitCmd>
+              <Transition>IP</Transition>
+              <Index>32800</Index>
+              <SubIndex>9</SubIndex>
+              <Data>0000</Data>
+              <Comment>Bus1 mode: 0000 = DC, 0100 = buffered DC (DEWESoft)</Comment>
+            </InitCmd>
+          </CoE>
+          <FoE/>
+        </Mailbox>
+        <Dc>
+          <OpMode>
+            <Name>DC</Name>
+            <Desc>DC Sync</Desc>
+            <AssignActivate>#x700</AssignActivate>
+            <CycleTimeSync0>1000000</CycleTimeSync0>
+            <ShiftTimeSync0>0</ShiftTimeSync0>
+            <CycleTimeSync1 Factor="-1000">0</CycleTimeSync1>
+          </OpMode>
+        </Dc>
+        <Eeprom>
+          <ByteSize>2048</ByteSize>
+          <ConfigData>050C0044C80000000000</ConfigData>
+          <BootStrap>0010800000148000</BootStrap>
+        </Eeprom>
+        <ImageData16x14>424DE6000000000000007600000028000000100000000E000000010004000000000070000000C40E0000C40E000000000000000000000000000000008000008000000080800080000000800080008080000080808000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDDDDDDDDDDDDDDDD9999999999999DDDD99999999999DDDD9DD9999999DD9DDD999DD999DD999DDDD9999D9D9999DDDDD99999D99999DDDDDD9999D9999DDDDDDD9999D9999DDDDDDDD999D999DDDDDDDDD999D999DDDDDDDDDD99D99DDDDDDDDDDDD9D9DDDDDDDDDDDDDDDDDDDDDDD</ImageData16x14>
+      </Device>
+    </Devices>
+  </Descriptions>
+</EtherCATInfo>

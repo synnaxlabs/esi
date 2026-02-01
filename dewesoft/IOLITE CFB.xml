@@ -1,0 +1,204 @@
+<EtherCATInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="EtherCATInfo.xsd" Version="1.6">
+  <Vendor>
+    <Id>#xDEBE50F7</Id>
+    <Name>Dewesoft</Name>
+    <ImageData16x14>424DE6000000000000007600000028000000100000000E000000010004000000000070000000C40E0000C40E000000000000000000000000000000008000008000000080800080000000800080008080000080808000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDDDDDDDDDDDDDDDD9999999999999DDDD99999999999DDDD9DD9999999DD9DDD999DD999DD999DDDD9999D9D9999DDDDD99999D99999DDDDDD9999D9999DDDDDDD9999D9999DDDDDDDD999D999DDDDDDDDD999D999DDDDDDDDDD99D99DDDDDDDDDDDD9D9DDDDDDDDDDDDDDDDDDDDDDD</ImageData16x14>
+  </Vendor>
+  <Descriptions>
+    <Groups>
+      <Group SortOrder="0">
+        <Type>IOLITE</Type>
+        <Name LcId="1031">IOLITE</Name>
+        <Name LcId="1033">IOLITE</Name>
+        <ImageData16x14>424DE6000000000000007600000028000000100000000E000000010004000000000070000000C40E0000C40E000000000000000000000000000000008000008000000080800080000000800080008080000080808000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDDDDDDDDDDDDDDDD9999999999999DDDD99999999999DDDD9DD9999999DD9DDD999DD999DD999DDDD9999D9D9999DDDDD99999D99999DDDDDD9999D9999DDDDDDD9999D9999DDDDDDDD999D999DDDDDDDDD999D999DDDDDDDDDD99D99DDDDDDDDDDDD9D9DDDDDDDDDDDDDDDDDDDDDDD</ImageData16x14>
+      </Group>
+    </Groups>
+    <Devices>
+      <Device Physics="KK">
+        <Type ProductCode="234" RevisionNo="#x00010000">IOLITEr 4xCFB Bus1</Type>
+        <Name LcId="1033">IOLITEr 4xCFB Bus1</Name>
+        <Name LcId="1031">IOLITEr 4xCFB Bus1</Name>
+        <Info>
+          <StateMachine>
+            <Timeout>
+              <PreopTimeout>2000</PreopTimeout>
+              <SafeopOpTimeout>9000</SafeopOpTimeout>
+              <BackToInitTimeout>5000</BackToInitTimeout>
+              <BackToSafeopTimeout>200</BackToSafeopTimeout>
+            </Timeout>
+          </StateMachine>
+          <Mailbox>
+            <Timeout>
+              <RequestTimeout>100</RequestTimeout>
+              <ResponseTimeout>2000</ResponseTimeout>
+            </Timeout>
+          </Mailbox>
+        </Info>
+        <GroupType>IOLITE</GroupType>
+        <Profile>
+          <ProfileNo>5001</ProfileNo>
+          <AddInfo>0</AddInfo>
+          <ChannelCount>4</ChannelCount>
+        </Profile>
+        <Fmmu Sm="2">Outputs</Fmmu>
+        <Fmmu Sm="3">Inputs</Fmmu>
+        <Fmmu Sm="4">Outputs</Fmmu>
+        <Fmmu Sm="5">Inputs</Fmmu>
+        <Fmmu>MBoxState</Fmmu>
+        <Sm MinSize="34" MaxSize="192" DefaultSize="128" StartAddress="#x1000" ControlByte="#x26" Enable="1">MBoxOut</Sm>
+        <Sm MinSize="34" MaxSize="192" DefaultSize="128" StartAddress="#x1200" ControlByte="#x22" Enable="1">MBoxIn</Sm>
+        <Sm DefaultSize="2" StartAddress="#x1400" ControlByte="#x64" Enable="1">Outputs</Sm>
+        <Sm DefaultSize="6" StartAddress="#x1800" ControlByte="#x20" Enable="1">Inputs</Sm>
+        <Sm DefaultSize="2" StartAddress="#x1f00" ControlByte="#x24" Enable="1">Outputs</Sm>
+        <Sm DefaultSize="6" StartAddress="#x1f80" ControlByte="#x20" Enable="1">Inputs</Sm>
+        <Mailbox DataLinkLayer="true">
+          <CoE SdoInfo="true" PdoAssign="true" PdoUpload="true" PdoConfig="true" SegmentedSdo="true" CompleteAccess="true">
+            </CoE>
+          <FoE />
+        </Mailbox>
+        <Dc>
+          <OpMode>
+            <Name>DC</Name>
+            <Desc>DC Sync</Desc>
+            <AssignActivate>#x700</AssignActivate>
+            <CycleTimeSync0>1000</CycleTimeSync0>
+            <ShiftTimeSync0>0</ShiftTimeSync0>
+            <CycleTimeSync1 Factor="-1000">0</CycleTimeSync1>
+          </OpMode>
+        </Dc>
+        <Eeprom>
+          <ByteSize>2048</ByteSize>
+          <ConfigData>050C0044320000000000</ConfigData>
+          <BootStrap>0010800000128000</BootStrap>
+        </Eeprom>
+        <ImageData16x14>424DE6000000000000007600000028000000100000000E000000010004000000000070000000C40E0000C40E000000000000000000000000000000008000008000000080800080000000800080008080000080808000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDDDDDDDDDDDDDDDD9999999999999DDDD99999999999DDDD9DD9999999DD9DDD999DD999DD999DDDD9999D9D9999DDDDD99999D99999DDDDDD9999D9999DDDDDDD9999D9999DDDDDDDD999D999DDDDDDDDD999D999DDDDDDDDDD99D99DDDDDDDDDDDD9D9DDDDDDDDDDDDDDDDDDDDDDD</ImageData16x14>
+      </Device>
+      <Device Physics="KK">
+        <Type ProductCode="234" RevisionNo="#x00011000">IOLITEr 4xCFB Bus2</Type>
+        <Name LcId="1033">IOLITEr 4xCFB Bus2</Name>
+        <Name LcId="1031">IOLITEr 4xCFB Bus2</Name>
+        <Info>
+          <StateMachine>
+            <Timeout>
+              <PreopTimeout>2000</PreopTimeout>
+              <SafeopOpTimeout>9000</SafeopOpTimeout>
+              <BackToInitTimeout>5000</BackToInitTimeout>
+              <BackToSafeopTimeout>200</BackToSafeopTimeout>
+            </Timeout>
+          </StateMachine>
+          <Mailbox>
+            <Timeout>
+              <RequestTimeout>100</RequestTimeout>
+              <ResponseTimeout>2000</ResponseTimeout>
+            </Timeout>
+          </Mailbox>
+        </Info>
+        <GroupType>IOLITE</GroupType>
+        <Profile>
+          <ProfileNo>5001</ProfileNo>
+          <AddInfo>0</AddInfo>
+          <ChannelCount>4</ChannelCount>
+        </Profile>
+        <Fmmu Sm="2">Outputs</Fmmu>
+        <Fmmu Sm="3">Inputs</Fmmu>
+        <Fmmu Sm="4">Outputs</Fmmu>
+        <Fmmu Sm="5">Inputs</Fmmu>
+        <Fmmu>MBoxState</Fmmu>
+        <Sm MinSize="34" MaxSize="192" DefaultSize="128" StartAddress="#x1000" ControlByte="#x26" Enable="1">MBoxOut</Sm>
+        <Sm MinSize="34" MaxSize="192" DefaultSize="128" StartAddress="#x1200" ControlByte="#x22" Enable="1">MBoxIn</Sm>
+        <Sm DefaultSize="2" StartAddress="#x1400" ControlByte="#x64" Enable="1">Outputs</Sm>
+        <Sm DefaultSize="6" StartAddress="#x1800" ControlByte="#x20" Enable="1">Inputs</Sm>
+        <Sm DefaultSize="2" StartAddress="#x1f00" ControlByte="#x24" Enable="1">Outputs</Sm>
+        <Sm DefaultSize="6" StartAddress="#x1f80" ControlByte="#x20" Enable="1">Inputs</Sm>
+        <Mailbox DataLinkLayer="true">
+          <CoE SdoInfo="true" PdoAssign="true" PdoUpload="true" PdoConfig="true" SegmentedSdo="true" CompleteAccess="true">
+            </CoE>
+          <FoE />
+        </Mailbox>
+        <Dc>
+          <OpMode>
+            <Name>SM</Name>
+            <Desc>SM Sync</Desc>
+            <AssignActivate>#x0</AssignActivate>
+            <CycleTimeSync0 Factor="1">0</CycleTimeSync0>
+            <ShiftTimeSync0>0</ShiftTimeSync0>
+            <CycleTimeSync1 Factor="1">0</CycleTimeSync1>
+          </OpMode>
+          <OpMode>
+            <Name>DC</Name>
+            <Desc>DC Sync</Desc>
+            <AssignActivate>#x700</AssignActivate>
+            <CycleTimeSync0>1000000000</CycleTimeSync0>
+            <ShiftTimeSync0>0</ShiftTimeSync0>
+            <CycleTimeSync1 Factor="1">0</CycleTimeSync1>
+          </OpMode>
+        </Dc>
+        <Eeprom>
+          <ByteSize>2048</ByteSize>
+          <ConfigData>050C0044320000000000</ConfigData>
+          <BootStrap>0010800000128000</BootStrap>
+        </Eeprom>
+        <ImageData16x14>424DE6000000000000007600000028000000100000000E000000010004000000000070000000C40E0000C40E000000000000000000000000000000008000008000000080800080000000800080008080000080808000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDDDDDDDDDDDDDDDD9999999999999DDDD99999999999DDDD9DD9999999DD9DDD999DD999DD999DDDD9999D9D9999DDDDD99999D99999DDDDDD9999D9999DDDDDDD9999D9999DDDDDDDD999D999DDDDDDDDD999D999DDDDDDDDDD99D99DDDDDDDDDDDD9D9DDDDDDDDDDDDDDDDDDDDDDD</ImageData16x14>
+      </Device>
+      <Device Physics="YY">
+        <Type ProductCode="234" RevisionNo="#x00020000">IOLITE 4xCFB</Type>
+        <Name LcId="1033">IOLITE 4xCFB</Name>
+        <Name LcId="1031">IOLITE 4xCFB</Name>
+        <Info>
+          <StateMachine>
+            <Timeout>
+              <PreopTimeout>2000</PreopTimeout>
+              <SafeopOpTimeout>9000</SafeopOpTimeout>
+              <BackToInitTimeout>5000</BackToInitTimeout>
+              <BackToSafeopTimeout>200</BackToSafeopTimeout>
+            </Timeout>
+          </StateMachine>
+          <Mailbox>
+            <Timeout>
+              <RequestTimeout>100</RequestTimeout>
+              <ResponseTimeout>2000</ResponseTimeout>
+            </Timeout>
+          </Mailbox>
+        </Info>
+        <GroupType>IOLITE</GroupType>
+        <Profile>
+          <ProfileNo>5001</ProfileNo>
+          <AddInfo>0</AddInfo>
+          <ChannelCount>4</ChannelCount>
+        </Profile>
+        <Fmmu Sm="2">Outputs</Fmmu>
+        <Fmmu Sm="3">Inputs</Fmmu>
+        <Fmmu Sm="4">Outputs</Fmmu>
+        <Fmmu Sm="5">Inputs</Fmmu>
+        <Fmmu>MBoxState</Fmmu>
+        <Sm MinSize="34" MaxSize="192" DefaultSize="128" StartAddress="#x1000" ControlByte="#x26" Enable="1">MBoxOut</Sm>
+        <Sm MinSize="34" MaxSize="192" DefaultSize="128" StartAddress="#x1200" ControlByte="#x22" Enable="1">MBoxIn</Sm>
+        <Sm DefaultSize="2" StartAddress="#x1400" ControlByte="#x64" Enable="1">Outputs</Sm>
+        <Sm DefaultSize="6" StartAddress="#x1800" ControlByte="#x20" Enable="1">Inputs</Sm>
+        <Sm DefaultSize="2" StartAddress="#x1f00" ControlByte="#x24" Enable="1">Outputs</Sm>
+        <Sm DefaultSize="6" StartAddress="#x1f80" ControlByte="#x20" Enable="1">Inputs</Sm>
+        <Mailbox DataLinkLayer="true">
+          <CoE SdoInfo="true" PdoAssign="true" PdoUpload="true" PdoConfig="true" SegmentedSdo="true" CompleteAccess="true">
+            </CoE>
+          <FoE />
+        </Mailbox>
+        <Dc>
+          <OpMode>
+            <Name>DC</Name>
+            <Desc>DC Sync</Desc>
+            <AssignActivate>#x700</AssignActivate>
+            <CycleTimeSync0>1000</CycleTimeSync0>
+            <ShiftTimeSync0>0</ShiftTimeSync0>
+            <CycleTimeSync1 Factor="-1000">0</CycleTimeSync1>
+          </OpMode>
+        </Dc>
+        <Eeprom>
+          <ByteSize>2048</ByteSize>
+          <ConfigData>050C0044320000000000</ConfigData>
+          <BootStrap>0010800000128000</BootStrap>
+        </Eeprom>
+        <ImageData16x14>424DE6000000000000007600000028000000100000000E000000010004000000000070000000C40E0000C40E000000000000000000000000000000008000008000000080800080000000800080008080000080808000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDDDDDDDDDDDDDDDD9999999999999DDDD99999999999DDDD9DD9999999DD9DDD999DD999DD999DDDD9999D9D9999DDDDD99999D99999DDDDDD9999D9999DDDDDDD9999D9999DDDDDDDD999D999DDDDDDDDD999D999DDDDDDDDDD99D99DDDDDDDDDDDD9D9DDDDDDDDDDDDDDDDDDDDDDD</ImageData16x14>
+      </Device>
+    </Devices>
+  </Descriptions>
+</EtherCATInfo>

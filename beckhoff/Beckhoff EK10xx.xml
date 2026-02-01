@@ -1,0 +1,4092 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<EtherCATInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="EtherCATInfo.xsd" Version="1.2">
+	<Vendor FileVersion="2">
+		<Id>2</Id>
+		<Name>Beckhoff Automation GmbH &amp; Co. KG</Name>
+		<ImageData16x14>424DE6000000000000007600000028000000100000000E000000010004000000000070000000120B0000120B0000100000001000000000000000000080000080000000808000800000008000800080800000C0C0C000808080000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF009D9DD99DD9DDD9DD9D9D9DD9D9DDD9DD999D9DD9D999D9999D9D9DD9D9DDD9DD9D9DD99DD999D999DDDDDDDDDDDDDDDD88888888888888888888888888888888DDDDDDDDDDDDDDDD999D999DD99DD9D99D9D9DDD9DD9D9D999DD999D9DDDD99D9D9D9DDD9DD9D99D999D999DD99DD9D9</ImageData16x14>
+	</Vendor>
+	<Descriptions>
+		<Groups>
+			<Group SortOrder="391">
+				<Type>SystemBk</Type>
+				<Name LcId="1033">System Couplers</Name>
+				<Name LcId="1031">System Koppler</Name>
+				<ImageData16x14>424DD6020000000000003600000028000000100000000E0000000100180000000000A0020000C40E0000C40E00000000000000000000FF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080808080808080808080808080808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080C0C0C0000000C0C0C0000000808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C000BFFF00BFFFC0C0C0808080C0C0C000FFFFC0C0C000FFFF808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C000BFFF00BFFFC0C0C0808080C0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C000BFFF00BFFFC0C0C0808080C0C0C0000000C0C0C0000000808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080C0C0C0FF0000C0C0C0FF0000808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080C0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080C0C0C0000000C0C0C0000000808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C000BFFF00BFFFC0C0C0808080C0C0C00000FFC0C0C00000FF808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C000BFFF00BFFFC0C0C0808080C0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C000BFFF00BFFFC0C0C0808080C0C0C0000000C0C0C0000000808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080C0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080C0C0C0008000C0C0C0008000808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080C0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FF</ImageData16x14>
+			</Group>
+		</Groups>
+		<Devices>
+			<Device Physics="YKY">
+				<Type ProductCode="#x03e82c52" RevisionNo="#x00100000" CheckRevisionNo="LW_EQ">EK1000</Type>
+				<Name LcId="1033"><![CDATA[EK1000 EtherCAT TSN Coupler (2A E-Bus)]]></Name>
+				<Name LcId="1031"><![CDATA[EK1000 EtherCAT-TSN-Koppler (2A E-Bus)]]></Name>
+				<Info>
+					<Electrical>
+						<EBusCurrent>-2000</EBusCurrent>
+					</Electrical>
+					<StateMachine>
+						<Behavior StartToSafeopNoSync="0"></Behavior>
+					</StateMachine>
+					<Mailbox>
+						<Timeout>
+							<RequestTimeout>100</RequestTimeout>
+							<ResponseTimeout>2000</ResponseTimeout>
+						</Timeout>
+					</Mailbox>
+					<Port>
+						<Type>MII</Type>
+						<Label>X1 IN</Label>
+					</Port>
+					<Port>
+						<Type>EBUS</Type>
+					</Port>
+					<Port>
+						<Type>MII</Type>
+						<Label>X2 OUT</Label>
+					</Port>
+					<IdentificationReg134>1</IdentificationReg134>
+				</Info>
+				<GroupType>SystemBk</GroupType>
+				<Profile>
+					<ProfileNo>5001</ProfileNo>
+					<ChannelCount>1</ChannelCount>
+					<Dictionary>
+						<DataTypes>
+							<DataType>
+								<Name>BOOL</Name>
+								<BitSize>1</BitSize>
+							</DataType>
+							<DataType>
+								<Name>BYTE</Name>
+								<BitSize>8</BitSize>
+							</DataType>
+							<DataType>
+								<Name>UDINT</Name>
+								<BitSize>32</BitSize>
+							</DataType>
+							<DataType>
+								<Name>UINT</Name>
+								<BitSize>16</BitSize>
+							</DataType>
+							<DataType>
+								<Name>ULINT</Name>
+								<BitSize>64</BitSize>
+							</DataType>
+							<DataType>
+								<Name>USINT</Name>
+								<BitSize>8</BitSize>
+							</DataType>
+							<DataType>
+								<Name>ARRAY [0..11] OF BYTE</Name>
+								<BaseType>BYTE</BaseType>
+								<BitSize>96</BitSize>
+								<ArrayInfo>
+									<LBound>0</LBound>
+									<Elements>12</Elements>
+								</ArrayInfo>
+							</DataType>
+							<DataType>
+								<Name>ARRAY [0..255] OF BYTE</Name>
+								<BaseType>BYTE</BaseType>
+								<BitSize>2048</BitSize>
+								<ArrayInfo>
+									<LBound>0</LBound>
+									<Elements>256</Elements>
+								</ArrayInfo>
+							</DataType>
+							<DataType>
+								<Name>ARRAY [0..3] OF BYTE</Name>
+								<BaseType>BYTE</BaseType>
+								<BitSize>32</BitSize>
+								<ArrayInfo>
+									<LBound>0</LBound>
+									<Elements>4</Elements>
+								</ArrayInfo>
+							</DataType>
+							<DataType>
+								<Name>ARRAY [0..5] OF BYTE</Name>
+								<BaseType>BYTE</BaseType>
+								<BitSize>48</BitSize>
+								<ArrayInfo>
+									<LBound>0</LBound>
+									<Elements>6</Elements>
+								</ArrayInfo>
+							</DataType>
+							<DataType>
+								<Name>STRING(10)</Name>
+								<BitSize>80</BitSize>
+							</DataType>
+							<DataType>
+								<Name>STRING(11)</Name>
+								<BitSize>88</BitSize>
+							</DataType>
+							<DataType>
+								<Name>STRING(16)</Name>
+								<BitSize>128</BitSize>
+							</DataType>
+							<DataType>
+								<Name>STRING(2)</Name>
+								<BitSize>16</BitSize>
+							</DataType>
+							<DataType>
+								<Name>STRING(240)</Name>
+								<BitSize>1920</BitSize>
+							</DataType>
+							<DataType>
+								<Name>STRING(5)</Name>
+								<BitSize>40</BitSize>
+							</DataType>
+							<DataType>
+								<Name>STRING(6)</Name>
+								<BitSize>48</BitSize>
+							</DataType>
+							<DataType>
+								<Name>DT1011ARR</Name>
+								<BaseType>UDINT</BaseType>
+								<BitSize>32</BitSize>
+								<ArrayInfo>
+									<LBound>1</LBound>
+									<Elements>1</Elements>
+								</ArrayInfo>
+							</DataType>
+							<DataType>
+								<Name>DT1011</Name>
+								<BitSize>48</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<Name>Elements</Name>
+									<Type>DT1011ARR</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT1018</Name>
+								<BitSize>144</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Vendor ID</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Product code</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>48</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>Revision</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>80</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>4</SubIdx>
+									<Name>Serial number</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>112</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT10F0</Name>
+								<BitSize>48</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Checksum</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT10F3</Name>
+								<BitSize>512064</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Maximum Messages</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Newest Message</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>24</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>Newest Acknowledged Message</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>32</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>4</SubIdx>
+									<Name>New Messages Available</Name>
+									<Type>BOOL</Type>
+									<BitSize>1</BitSize>
+									<BitOffs>40</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>5</SubIdx>
+									<Name>Flags</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>48</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>6</SubIdx>
+									<Name>Diagnosis Message 001</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>64</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>7</SubIdx>
+									<Name>Diagnosis Message 002</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>2112</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>8</SubIdx>
+									<Name>Diagnosis Message 003</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>4160</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>9</SubIdx>
+									<Name>Diagnosis Message 004</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>6208</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>10</SubIdx>
+									<Name>Diagnosis Message 005</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>8256</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>11</SubIdx>
+									<Name>Diagnosis Message 006</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>10304</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>12</SubIdx>
+									<Name>Diagnosis Message 007</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>12352</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>13</SubIdx>
+									<Name>Diagnosis Message 008</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>14400</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>14</SubIdx>
+									<Name>Diagnosis Message 009</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>16448</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>15</SubIdx>
+									<Name>Diagnosis Message 010</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>18496</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>16</SubIdx>
+									<Name>Diagnosis Message 011</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>20544</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>17</SubIdx>
+									<Name>Diagnosis Message 012</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>22592</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>18</SubIdx>
+									<Name>Diagnosis Message 013</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>24640</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>19</SubIdx>
+									<Name>Diagnosis Message 014</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>26688</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>20</SubIdx>
+									<Name>Diagnosis Message 015</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>28736</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>21</SubIdx>
+									<Name>Diagnosis Message 016</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>30784</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>22</SubIdx>
+									<Name>Diagnosis Message 017</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>32832</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>23</SubIdx>
+									<Name>Diagnosis Message 018</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>34880</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>24</SubIdx>
+									<Name>Diagnosis Message 019</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>36928</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>25</SubIdx>
+									<Name>Diagnosis Message 020</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>38976</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>26</SubIdx>
+									<Name>Diagnosis Message 021</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>41024</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>27</SubIdx>
+									<Name>Diagnosis Message 022</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>43072</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>28</SubIdx>
+									<Name>Diagnosis Message 023</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>45120</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>29</SubIdx>
+									<Name>Diagnosis Message 024</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>47168</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>30</SubIdx>
+									<Name>Diagnosis Message 025</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>49216</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>31</SubIdx>
+									<Name>Diagnosis Message 026</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>51264</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>32</SubIdx>
+									<Name>Diagnosis Message 027</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>53312</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>33</SubIdx>
+									<Name>Diagnosis Message 028</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>55360</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>34</SubIdx>
+									<Name>Diagnosis Message 029</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>57408</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>35</SubIdx>
+									<Name>Diagnosis Message 030</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>59456</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>36</SubIdx>
+									<Name>Diagnosis Message 031</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>61504</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>37</SubIdx>
+									<Name>Diagnosis Message 032</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>63552</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>38</SubIdx>
+									<Name>Diagnosis Message 033</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>65600</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>39</SubIdx>
+									<Name>Diagnosis Message 034</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>67648</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>40</SubIdx>
+									<Name>Diagnosis Message 035</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>69696</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>41</SubIdx>
+									<Name>Diagnosis Message 036</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>71744</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>42</SubIdx>
+									<Name>Diagnosis Message 037</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>73792</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>43</SubIdx>
+									<Name>Diagnosis Message 038</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>75840</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>44</SubIdx>
+									<Name>Diagnosis Message 039</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>77888</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>45</SubIdx>
+									<Name>Diagnosis Message 040</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>79936</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>46</SubIdx>
+									<Name>Diagnosis Message 041</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>81984</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>47</SubIdx>
+									<Name>Diagnosis Message 042</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>84032</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>48</SubIdx>
+									<Name>Diagnosis Message 043</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>86080</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>49</SubIdx>
+									<Name>Diagnosis Message 044</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>88128</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>50</SubIdx>
+									<Name>Diagnosis Message 045</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>90176</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>51</SubIdx>
+									<Name>Diagnosis Message 046</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>92224</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>52</SubIdx>
+									<Name>Diagnosis Message 047</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>94272</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>53</SubIdx>
+									<Name>Diagnosis Message 048</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>96320</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>54</SubIdx>
+									<Name>Diagnosis Message 049</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>98368</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>55</SubIdx>
+									<Name>Diagnosis Message 050</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>100416</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>56</SubIdx>
+									<Name>Diagnosis Message 051</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>102464</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>57</SubIdx>
+									<Name>Diagnosis Message 052</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>104512</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>58</SubIdx>
+									<Name>Diagnosis Message 053</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>106560</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>59</SubIdx>
+									<Name>Diagnosis Message 054</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>108608</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>60</SubIdx>
+									<Name>Diagnosis Message 055</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>110656</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>61</SubIdx>
+									<Name>Diagnosis Message 056</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>112704</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>62</SubIdx>
+									<Name>Diagnosis Message 057</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>114752</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>63</SubIdx>
+									<Name>Diagnosis Message 058</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>116800</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>64</SubIdx>
+									<Name>Diagnosis Message 059</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>118848</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>65</SubIdx>
+									<Name>Diagnosis Message 060</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>120896</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>66</SubIdx>
+									<Name>Diagnosis Message 061</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>122944</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>67</SubIdx>
+									<Name>Diagnosis Message 062</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>124992</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>68</SubIdx>
+									<Name>Diagnosis Message 063</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>127040</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>69</SubIdx>
+									<Name>Diagnosis Message 064</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>129088</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>70</SubIdx>
+									<Name>Diagnosis Message 065</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>131136</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>71</SubIdx>
+									<Name>Diagnosis Message 066</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>133184</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>72</SubIdx>
+									<Name>Diagnosis Message 067</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>135232</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>73</SubIdx>
+									<Name>Diagnosis Message 068</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>137280</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>74</SubIdx>
+									<Name>Diagnosis Message 069</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>139328</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>75</SubIdx>
+									<Name>Diagnosis Message 070</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>141376</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>76</SubIdx>
+									<Name>Diagnosis Message 071</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>143424</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>77</SubIdx>
+									<Name>Diagnosis Message 072</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>145472</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>78</SubIdx>
+									<Name>Diagnosis Message 073</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>147520</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>79</SubIdx>
+									<Name>Diagnosis Message 074</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>149568</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>80</SubIdx>
+									<Name>Diagnosis Message 075</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>151616</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>81</SubIdx>
+									<Name>Diagnosis Message 076</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>153664</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>82</SubIdx>
+									<Name>Diagnosis Message 077</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>155712</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>83</SubIdx>
+									<Name>Diagnosis Message 078</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>157760</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>84</SubIdx>
+									<Name>Diagnosis Message 079</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>159808</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>85</SubIdx>
+									<Name>Diagnosis Message 080</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>161856</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>86</SubIdx>
+									<Name>Diagnosis Message 081</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>163904</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>87</SubIdx>
+									<Name>Diagnosis Message 082</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>165952</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>88</SubIdx>
+									<Name>Diagnosis Message 083</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>168000</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>89</SubIdx>
+									<Name>Diagnosis Message 084</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>170048</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>90</SubIdx>
+									<Name>Diagnosis Message 085</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>172096</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>91</SubIdx>
+									<Name>Diagnosis Message 086</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>174144</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>92</SubIdx>
+									<Name>Diagnosis Message 087</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>176192</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>93</SubIdx>
+									<Name>Diagnosis Message 088</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>178240</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>94</SubIdx>
+									<Name>Diagnosis Message 089</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>180288</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>95</SubIdx>
+									<Name>Diagnosis Message 090</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>182336</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>96</SubIdx>
+									<Name>Diagnosis Message 091</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>184384</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>97</SubIdx>
+									<Name>Diagnosis Message 092</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>186432</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>98</SubIdx>
+									<Name>Diagnosis Message 093</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>188480</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>99</SubIdx>
+									<Name>Diagnosis Message 094</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>190528</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>100</SubIdx>
+									<Name>Diagnosis Message 095</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>192576</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>101</SubIdx>
+									<Name>Diagnosis Message 096</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>194624</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>102</SubIdx>
+									<Name>Diagnosis Message 097</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>196672</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>103</SubIdx>
+									<Name>Diagnosis Message 098</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>198720</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>104</SubIdx>
+									<Name>Diagnosis Message 099</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>200768</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>105</SubIdx>
+									<Name>Diagnosis Message 100</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>202816</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>106</SubIdx>
+									<Name>Diagnosis Message 101</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>204864</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>107</SubIdx>
+									<Name>Diagnosis Message 102</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>206912</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>108</SubIdx>
+									<Name>Diagnosis Message 103</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>208960</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>109</SubIdx>
+									<Name>Diagnosis Message 104</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>211008</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>110</SubIdx>
+									<Name>Diagnosis Message 105</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>213056</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>111</SubIdx>
+									<Name>Diagnosis Message 106</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>215104</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>112</SubIdx>
+									<Name>Diagnosis Message 107</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>217152</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>113</SubIdx>
+									<Name>Diagnosis Message 108</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>219200</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>114</SubIdx>
+									<Name>Diagnosis Message 109</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>221248</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>115</SubIdx>
+									<Name>Diagnosis Message 110</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>223296</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>116</SubIdx>
+									<Name>Diagnosis Message 111</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>225344</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>117</SubIdx>
+									<Name>Diagnosis Message 112</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>227392</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>118</SubIdx>
+									<Name>Diagnosis Message 113</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>229440</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>119</SubIdx>
+									<Name>Diagnosis Message 114</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>231488</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>120</SubIdx>
+									<Name>Diagnosis Message 115</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>233536</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>121</SubIdx>
+									<Name>Diagnosis Message 116</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>235584</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>122</SubIdx>
+									<Name>Diagnosis Message 117</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>237632</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>123</SubIdx>
+									<Name>Diagnosis Message 118</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>239680</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>124</SubIdx>
+									<Name>Diagnosis Message 119</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>241728</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>125</SubIdx>
+									<Name>Diagnosis Message 120</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>243776</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>126</SubIdx>
+									<Name>Diagnosis Message 121</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>245824</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>127</SubIdx>
+									<Name>Diagnosis Message 122</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>247872</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>128</SubIdx>
+									<Name>Diagnosis Message 123</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>249920</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>129</SubIdx>
+									<Name>Diagnosis Message 124</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>251968</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>130</SubIdx>
+									<Name>Diagnosis Message 125</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>254016</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>131</SubIdx>
+									<Name>Diagnosis Message 126</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>256064</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>132</SubIdx>
+									<Name>Diagnosis Message 127</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>258112</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>133</SubIdx>
+									<Name>Diagnosis Message 128</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>260160</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>134</SubIdx>
+									<Name>Diagnosis Message 129</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>262208</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>135</SubIdx>
+									<Name>Diagnosis Message 130</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>264256</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>136</SubIdx>
+									<Name>Diagnosis Message 131</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>266304</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>137</SubIdx>
+									<Name>Diagnosis Message 132</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>268352</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>138</SubIdx>
+									<Name>Diagnosis Message 133</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>270400</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>139</SubIdx>
+									<Name>Diagnosis Message 134</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>272448</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>140</SubIdx>
+									<Name>Diagnosis Message 135</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>274496</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>141</SubIdx>
+									<Name>Diagnosis Message 136</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>276544</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>142</SubIdx>
+									<Name>Diagnosis Message 137</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>278592</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>143</SubIdx>
+									<Name>Diagnosis Message 138</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>280640</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>144</SubIdx>
+									<Name>Diagnosis Message 139</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>282688</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>145</SubIdx>
+									<Name>Diagnosis Message 140</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>284736</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>146</SubIdx>
+									<Name>Diagnosis Message 141</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>286784</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>147</SubIdx>
+									<Name>Diagnosis Message 142</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>288832</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>148</SubIdx>
+									<Name>Diagnosis Message 143</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>290880</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>149</SubIdx>
+									<Name>Diagnosis Message 144</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>292928</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>150</SubIdx>
+									<Name>Diagnosis Message 145</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>294976</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>151</SubIdx>
+									<Name>Diagnosis Message 146</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>297024</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>152</SubIdx>
+									<Name>Diagnosis Message 147</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>299072</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>153</SubIdx>
+									<Name>Diagnosis Message 148</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>301120</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>154</SubIdx>
+									<Name>Diagnosis Message 149</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>303168</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>155</SubIdx>
+									<Name>Diagnosis Message 150</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>305216</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>156</SubIdx>
+									<Name>Diagnosis Message 151</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>307264</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>157</SubIdx>
+									<Name>Diagnosis Message 152</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>309312</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>158</SubIdx>
+									<Name>Diagnosis Message 153</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>311360</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>159</SubIdx>
+									<Name>Diagnosis Message 154</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>313408</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>160</SubIdx>
+									<Name>Diagnosis Message 155</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>315456</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>161</SubIdx>
+									<Name>Diagnosis Message 156</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>317504</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>162</SubIdx>
+									<Name>Diagnosis Message 157</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>319552</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>163</SubIdx>
+									<Name>Diagnosis Message 158</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>321600</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>164</SubIdx>
+									<Name>Diagnosis Message 159</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>323648</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>165</SubIdx>
+									<Name>Diagnosis Message 160</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>325696</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>166</SubIdx>
+									<Name>Diagnosis Message 161</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>327744</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>167</SubIdx>
+									<Name>Diagnosis Message 162</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>329792</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>168</SubIdx>
+									<Name>Diagnosis Message 163</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>331840</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>169</SubIdx>
+									<Name>Diagnosis Message 164</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>333888</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>170</SubIdx>
+									<Name>Diagnosis Message 165</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>335936</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>171</SubIdx>
+									<Name>Diagnosis Message 166</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>337984</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>172</SubIdx>
+									<Name>Diagnosis Message 167</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>340032</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>173</SubIdx>
+									<Name>Diagnosis Message 168</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>342080</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>174</SubIdx>
+									<Name>Diagnosis Message 169</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>344128</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>175</SubIdx>
+									<Name>Diagnosis Message 170</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>346176</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>176</SubIdx>
+									<Name>Diagnosis Message 171</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>348224</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>177</SubIdx>
+									<Name>Diagnosis Message 172</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>350272</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>178</SubIdx>
+									<Name>Diagnosis Message 173</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>352320</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>179</SubIdx>
+									<Name>Diagnosis Message 174</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>354368</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>180</SubIdx>
+									<Name>Diagnosis Message 175</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>356416</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>181</SubIdx>
+									<Name>Diagnosis Message 176</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>358464</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>182</SubIdx>
+									<Name>Diagnosis Message 177</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>360512</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>183</SubIdx>
+									<Name>Diagnosis Message 178</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>362560</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>184</SubIdx>
+									<Name>Diagnosis Message 179</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>364608</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>185</SubIdx>
+									<Name>Diagnosis Message 180</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>366656</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>186</SubIdx>
+									<Name>Diagnosis Message 181</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>368704</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>187</SubIdx>
+									<Name>Diagnosis Message 182</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>370752</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>188</SubIdx>
+									<Name>Diagnosis Message 183</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>372800</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>189</SubIdx>
+									<Name>Diagnosis Message 184</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>374848</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>190</SubIdx>
+									<Name>Diagnosis Message 185</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>376896</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>191</SubIdx>
+									<Name>Diagnosis Message 186</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>378944</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>192</SubIdx>
+									<Name>Diagnosis Message 187</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>380992</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>193</SubIdx>
+									<Name>Diagnosis Message 188</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>383040</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>194</SubIdx>
+									<Name>Diagnosis Message 189</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>385088</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>195</SubIdx>
+									<Name>Diagnosis Message 190</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>387136</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>196</SubIdx>
+									<Name>Diagnosis Message 191</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>389184</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>197</SubIdx>
+									<Name>Diagnosis Message 192</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>391232</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>198</SubIdx>
+									<Name>Diagnosis Message 193</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>393280</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>199</SubIdx>
+									<Name>Diagnosis Message 194</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>395328</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>200</SubIdx>
+									<Name>Diagnosis Message 195</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>397376</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>201</SubIdx>
+									<Name>Diagnosis Message 196</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>399424</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>202</SubIdx>
+									<Name>Diagnosis Message 197</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>401472</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>203</SubIdx>
+									<Name>Diagnosis Message 198</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>403520</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>204</SubIdx>
+									<Name>Diagnosis Message 199</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>405568</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>205</SubIdx>
+									<Name>Diagnosis Message 200</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>407616</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>206</SubIdx>
+									<Name>Diagnosis Message 201</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>409664</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>207</SubIdx>
+									<Name>Diagnosis Message 202</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>411712</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>208</SubIdx>
+									<Name>Diagnosis Message 203</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>413760</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>209</SubIdx>
+									<Name>Diagnosis Message 204</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>415808</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>210</SubIdx>
+									<Name>Diagnosis Message 205</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>417856</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>211</SubIdx>
+									<Name>Diagnosis Message 206</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>419904</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>212</SubIdx>
+									<Name>Diagnosis Message 207</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>421952</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>213</SubIdx>
+									<Name>Diagnosis Message 208</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>424000</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>214</SubIdx>
+									<Name>Diagnosis Message 209</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>426048</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>215</SubIdx>
+									<Name>Diagnosis Message 210</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>428096</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>216</SubIdx>
+									<Name>Diagnosis Message 211</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>430144</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>217</SubIdx>
+									<Name>Diagnosis Message 212</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>432192</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>218</SubIdx>
+									<Name>Diagnosis Message 213</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>434240</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>219</SubIdx>
+									<Name>Diagnosis Message 214</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>436288</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>220</SubIdx>
+									<Name>Diagnosis Message 215</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>438336</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>221</SubIdx>
+									<Name>Diagnosis Message 216</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>440384</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>222</SubIdx>
+									<Name>Diagnosis Message 217</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>442432</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>223</SubIdx>
+									<Name>Diagnosis Message 218</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>444480</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>224</SubIdx>
+									<Name>Diagnosis Message 219</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>446528</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>225</SubIdx>
+									<Name>Diagnosis Message 220</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>448576</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>226</SubIdx>
+									<Name>Diagnosis Message 221</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>450624</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>227</SubIdx>
+									<Name>Diagnosis Message 222</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>452672</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>228</SubIdx>
+									<Name>Diagnosis Message 223</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>454720</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>229</SubIdx>
+									<Name>Diagnosis Message 224</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>456768</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>230</SubIdx>
+									<Name>Diagnosis Message 225</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>458816</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>231</SubIdx>
+									<Name>Diagnosis Message 226</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>460864</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>232</SubIdx>
+									<Name>Diagnosis Message 227</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>462912</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>233</SubIdx>
+									<Name>Diagnosis Message 228</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>464960</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>234</SubIdx>
+									<Name>Diagnosis Message 229</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>467008</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>235</SubIdx>
+									<Name>Diagnosis Message 230</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>469056</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>236</SubIdx>
+									<Name>Diagnosis Message 231</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>471104</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>237</SubIdx>
+									<Name>Diagnosis Message 232</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>473152</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>238</SubIdx>
+									<Name>Diagnosis Message 233</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>475200</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>239</SubIdx>
+									<Name>Diagnosis Message 234</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>477248</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>240</SubIdx>
+									<Name>Diagnosis Message 235</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>479296</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>241</SubIdx>
+									<Name>Diagnosis Message 236</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>481344</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>242</SubIdx>
+									<Name>Diagnosis Message 237</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>483392</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>243</SubIdx>
+									<Name>Diagnosis Message 238</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>485440</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>244</SubIdx>
+									<Name>Diagnosis Message 239</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>487488</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>245</SubIdx>
+									<Name>Diagnosis Message 240</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>489536</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>246</SubIdx>
+									<Name>Diagnosis Message 241</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>491584</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>247</SubIdx>
+									<Name>Diagnosis Message 242</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>493632</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>248</SubIdx>
+									<Name>Diagnosis Message 243</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>495680</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>249</SubIdx>
+									<Name>Diagnosis Message 244</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>497728</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>250</SubIdx>
+									<Name>Diagnosis Message 245</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>499776</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>251</SubIdx>
+									<Name>Diagnosis Message 246</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>501824</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>252</SubIdx>
+									<Name>Diagnosis Message 247</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>503872</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>253</SubIdx>
+									<Name>Diagnosis Message 248</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>505920</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>254</SubIdx>
+									<Name>Diagnosis Message 249</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>507968</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>255</SubIdx>
+									<Name>Diagnosis Message 250</Name>
+									<Type>ARRAY [0..255] OF BYTE</Type>
+									<BitSize>2048</BitSize>
+									<BitOffs>510016</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT1600</Name>
+								<BitSize>48</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>SubIndex 001</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT1A00</Name>
+								<BitSize>144</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>SubIndex 001</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>SubIndex 002</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>48</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>SubIndex 003</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>80</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>4</SubIdx>
+									<Name>SubIndex 004</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>112</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT1C00ARR</Name>
+								<BaseType>USINT</BaseType>
+								<BitSize>32</BitSize>
+								<ArrayInfo>
+									<LBound>1</LBound>
+									<Elements>4</Elements>
+								</ArrayInfo>
+							</DataType>
+							<DataType>
+								<Name>DT1C00</Name>
+								<BitSize>48</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<Name>Elements</Name>
+									<Type>DT1C00ARR</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT1C12ARR</Name>
+								<BaseType>UINT</BaseType>
+								<BitSize>16</BitSize>
+								<ArrayInfo>
+									<LBound>1</LBound>
+									<Elements>1</Elements>
+								</ArrayInfo>
+							</DataType>
+							<DataType>
+								<Name>DT1C12</Name>
+								<BitSize>32</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<Name>Elements</Name>
+									<Type>DT1C12ARR</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT1C13ARR</Name>
+								<BaseType>UINT</BaseType>
+								<BitSize>16</BitSize>
+								<ArrayInfo>
+									<LBound>1</LBound>
+									<Elements>1</Elements>
+								</ArrayInfo>
+							</DataType>
+							<DataType>
+								<Name>DT1C13</Name>
+								<BitSize>32</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<Name>Elements</Name>
+									<Type>DT1C13ARR</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT1C32</Name>
+								<BitSize>360</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Sync mode</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Cycle time</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>32</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>Shift time</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>64</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>4</SubIdx>
+									<Name>Sync modes supported</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>96</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>5</SubIdx>
+									<Name>Minimum cycle time</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>112</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>6</SubIdx>
+									<Name>Calc and copy time</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>144</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>7</SubIdx>
+									<Name>Minimum delay time</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>176</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>8</SubIdx>
+									<Name>Command</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>208</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>9</SubIdx>
+									<Name>Maximum delay time</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>224</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>11</SubIdx>
+									<Name>SM event missed counter</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>288</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>12</SubIdx>
+									<Name>Cycle exceeded counter</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>304</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>13</SubIdx>
+									<Name>Shift too short counter</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>320</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>32</SubIdx>
+									<Name>Sync error</Name>
+									<Type>BOOL</Type>
+									<BitSize>1</BitSize>
+									<BitOffs>352</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DTF000</Name>
+								<BitSize>48</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Module index distance</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Maximum number of modules</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>32</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DTF100</Name>
+								<BitSize>32</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>EomRunning</Name>
+									<Type>BOOL</Type>
+									<BitSize>1</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>MasterLock</Name>
+									<Type>BOOL</Type>
+									<BitSize>1</BitSize>
+									<BitOffs>17</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DTF200</Name>
+								<BitSize>48</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Ctrl</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>R</PdoMapping>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DTF800</Name>
+								<BitSize>2064</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Stationname</Name>
+									<Type>STRING(240)</Type>
+									<BitSize>1920</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Backup>1</Backup>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>IP Data</Name>
+									<Type>ARRAY [0..11] OF BYTE</Type>
+									<BitSize>96</BitSize>
+									<BitOffs>1936</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Backup>1</Backup>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>DhcpEnable</Name>
+									<Type>BOOL</Type>
+									<BitSize>1</BitSize>
+									<BitOffs>2032</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Backup>1</Backup>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>5</SubIdx>
+									<Name>SegmentId</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>2048</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Backup>1</Backup>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DTF883</Name>
+								<BitSize>400</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Serial Number</Name>
+									<Type>STRING(16)</Type>
+									<BitSize>128</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Backup>1</Backup>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Model Number</Name>
+									<Type>STRING(16)</Type>
+									<BitSize>128</BitSize>
+									<BitOffs>144</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Backup>1</Backup>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>Production Date</Name>
+									<Type>STRING(10)</Type>
+									<BitSize>80</BitSize>
+									<BitOffs>272</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Backup>1</Backup>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>4</SubIdx>
+									<Name>Hardware Revision</Name>
+									<Type>STRING(5)</Type>
+									<BitSize>40</BitSize>
+									<BitOffs>352</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Backup>1</Backup>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DTF8F0</Name>
+								<BitSize>64</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>MAC</Name>
+									<Type>ARRAY [0..5] OF BYTE</Type>
+									<BitSize>48</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Backup>1</Backup>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DTFA00</Name>
+								<BitSize>112</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>EomMasterMac</Name>
+									<Type>ARRAY [0..5] OF BYTE</Type>
+									<BitSize>48</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>EomMasterIp</Name>
+									<Type>ARRAY [0..3] OF BYTE</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>64</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>EomMasterUdpPort</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>96</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+						</DataTypes>
+						<Objects>
+							<Object>
+								<Index>#x1000</Index>
+								<Name>Device type</Name>
+								<Type>UDINT</Type>
+								<BitSize>32</BitSize>
+								<Info>
+									<DefaultData>89130000</DefaultData>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1008</Index>
+								<Name>Device name</Name>
+								<Type>STRING(6)</Type>
+								<BitSize>48</BitSize>
+								<Info>
+									<DefaultData>454b31303030</DefaultData>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1009</Index>
+								<Name>Hardware version</Name>
+								<Type>STRING(2)</Type>
+								<BitSize>16</BitSize>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x100a</Index>
+								<Name>Software version</Name>
+								<Type>STRING(11)</Type>
+								<BitSize>88</BitSize>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1011</Index>
+								<Name>Restore default parameters</Name>
+								<Type>DT1011</Type>
+								<BitSize>48</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1018</Index>
+								<Name>Identity</Name>
+								<Type>DT1018</Type>
+								<BitSize>144</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>04</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Vendor ID</Name>
+										<Info>
+											<DefaultData>02000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Product code</Name>
+										<Info>
+											<DefaultData>522ce803</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x10f0</Index>
+								<Name>Backup parameter handling</Name>
+								<Type>DT10F0</Type>
+								<BitSize>48</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x10f2</Index>
+								<Name>Backup parameter storage</Name>
+								<Type>ARRAY [0..3] OF BYTE</Type>
+								<BitSize>32</BitSize>
+								<Flags>
+									<Access WriteRestrictions="PreOP">rw</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x10f3</Index>
+								<Name>Diagnosis History</Name>
+								<Type>DT10F3</Type>
+								<BitSize>512064</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>ff</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x10f8</Index>
+								<Name>Actual Time Stamp</Name>
+								<Type>ULINT</Type>
+								<BitSize>64</BitSize>
+								<Info>
+									<Unit>#xf7030000</Unit>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1600</Index>
+								<Name>RxPDO-Map Outputs</Name>
+								<Type>DT1600</Type>
+								<BitSize>48</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 001</Name>
+										<Info>
+											<DefaultData>200100f2</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1a00</Index>
+								<Name>TxPDO-Map Inputs</Name>
+								<Type>DT1A00</Type>
+								<BitSize>144</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>04</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 001</Name>
+										<Info>
+											<DefaultData>010100f1</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 002</Name>
+										<Info>
+											<DefaultData>010200f1</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 003</Name>
+										<Info>
+											<DefaultData>06000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 004</Name>
+										<Info>
+											<DefaultData>08000000</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1c00</Index>
+								<Name>Sync manager type</Name>
+								<Type>DT1C00</Type>
+								<BitSize>48</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>04</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 001</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 002</Name>
+										<Info>
+											<DefaultData>02</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 003</Name>
+										<Info>
+											<DefaultData>03</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 004</Name>
+										<Info>
+											<DefaultData>04</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1c12</Index>
+								<Name>RxPDO assign</Name>
+								<Type>DT1C12</Type>
+								<BitSize>32</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 001</Name>
+										<Info>
+											<DefaultData>0016</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1c13</Index>
+								<Name>TxPDO assign</Name>
+								<Type>DT1C13</Type>
+								<BitSize>32</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 001</Name>
+										<Info>
+											<DefaultData>001a</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1c32</Index>
+								<Name>SM output parameter</Name>
+								<Type>DT1C32</Type>
+								<BitSize>360</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>20</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Sync mode</Name>
+										<Info>
+											<DefaultData>0200</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Cycle time</Name>
+										<Info>
+											<DefaultData>40420f00</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Shift time</Name>
+										<Info>
+											<DefaultData>84030000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Sync modes supported</Name>
+										<Info>
+											<DefaultData>0408</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Minimum cycle time</Name>
+										<Info>
+											<DefaultData>10270000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Calc and copy time</Name>
+										<Info>
+											<DefaultData>84030000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Minimum delay time</Name>
+										<Info>
+											<DefaultData>84030000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Command</Name>
+										<Info>
+											<DefaultData>0000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Maximum delay time</Name>
+										<Info>
+											<DefaultData>84030000</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1c33</Index>
+								<Name>SM input parameter</Name>
+								<Type>DT1C32</Type>
+								<BitSize>360</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>20</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Sync mode</Name>
+										<Info>
+											<DefaultData>0200</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Cycle time</Name>
+										<Info>
+											<DefaultData>40420f00</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Shift time</Name>
+										<Info>
+											<DefaultData>84030000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Sync modes supported</Name>
+										<Info>
+											<DefaultData>0408</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Minimum cycle time</Name>
+										<Info>
+											<DefaultData>10270000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Calc and copy time</Name>
+										<Info>
+											<DefaultData>10270000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Minimum delay time</Name>
+										<Info>
+											<DefaultData>84030000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Command</Name>
+										<Info>
+											<DefaultData>0000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Maximum delay time</Name>
+										<Info>
+											<DefaultData>84030000</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#xf000</Index>
+								<Name>Modular device profile</Name>
+								<Type>DTF000</Type>
+								<BitSize>48</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>02</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Module index distance</Name>
+										<Info>
+											<DefaultData>0008</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Maximum number of modules</Name>
+										<Info>
+											<DefaultData>0000</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#xf008</Index>
+								<Name>Code word</Name>
+								<Type>UDINT</Type>
+								<BitSize>32</BitSize>
+								<Flags>
+									<Access>rw</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#xf100</Index>
+								<Name>Diagnosis State</Name>
+								<Type>DTF100</Type>
+								<BitSize>32</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>02</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#xf200</Index>
+								<Name>Diagnosis Control</Name>
+								<Type>DTF200</Type>
+								<BitSize>48</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#xf800</Index>
+								<Name>EK1000 settings</Name>
+								<Type>DTF800</Type>
+								<BitSize>2064</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>05</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>DhcpEnable</Name>
+										<Info>
+											<DefaultData>00</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SegmentId</Name>
+										<Info>
+											<MinValue>#x3</MinValue>
+											<MaxValue>#xfffe</MaxValue>
+											<DefaultValue>#x3</DefaultValue>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>rw</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#xf883</Index>
+								<Name>Vendor data</Name>
+								<Type>DTF883</Type>
+								<BitSize>400</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>04</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Production Date</Name>
+										<Info>
+											<DefaultData>30000000000000000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Hardware Revision</Name>
+										<Info>
+											<DefaultData>3000000000</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>rw</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#xf8f0</Index>
+								<Name>MAC address</Name>
+								<Type>DTF8F0</Type>
+								<BitSize>64</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>rw</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#xfa00</Index>
+								<Name>EK1000 diagnosis</Name>
+								<Type>DTFA00</Type>
+								<BitSize>112</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>03</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>EomMasterUdpPort</Name>
+										<Info>
+											<DefaultData>0000</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+						</Objects>
+					</Dictionary>
+				</Profile>
+				<Fmmu>Outputs</Fmmu>
+				<Fmmu>Inputs</Fmmu>
+				<Fmmu>MBoxState</Fmmu>
+				<Sm MinSize="48" MaxSize="512" DefaultSize="512" StartAddress="#x1000" ControlByte="#x26" Enable="1">MBoxOut</Sm>
+				<Sm MinSize="48" MaxSize="512" DefaultSize="512" StartAddress="#x1400" ControlByte="#x22" Enable="1">MBoxIn</Sm>
+				<Sm DefaultSize="4" StartAddress="#x1800" ControlByte="#x64" Enable="1">Outputs</Sm>
+				<Sm DefaultSize="2" StartAddress="#x1900" ControlByte="#x20" Enable="1">Inputs</Sm>
+				<RxPdo Fixed="1" Mandatory="1" Sm="2">
+					<Index>#x1600</Index>
+					<Name>Device Outputs</Name>
+					<Entry>
+						<Index>#xf200</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Ctrl</Name>
+						<DataType>UDINT</DataType>
+					</Entry>
+				</RxPdo>
+				<TxPdo Fixed="1" Mandatory="1" Sm="3">
+					<Index>#x1a00</Index>
+					<Name>Device Inputs</Name>
+					<Entry>
+						<Index>#xf100</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>EomRunning</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+					<Entry>
+						<Index>#xf100</Index>
+						<SubIndex>2</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>MasterLock</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+					<Entry>
+						<Index>#x0</Index>
+						<BitLen>6</BitLen>
+					</Entry>
+					<Entry>
+						<Index>#x0</Index>
+						<BitLen>8</BitLen>
+					</Entry>
+				</TxPdo>
+				<Mailbox DataLinkLayer="true">
+					<CoE CompleteAccess="1" SdoInfo="1" PdoUpload="1" DiagHistory="1"></CoE>
+				</Mailbox>
+				<Eeprom>
+					<ByteSize>2048</ByteSize>
+					<ConfigData>0804028800000000000000000000</ConfigData>
+					<BootStrap>0010140200181402</BootStrap>
+				</Eeprom>
+				<ImageData16x14>424DD6020000000000003600000028000000100000000E0000000100180000000000A0020000C40E0000C40E00000000000000000000FF00FFE1E1E1E1E1E1E1E1E1E1E1E1241CED808080808080808080808080808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFE1E1E1E1E1E1E1E1E1E1E1E1241CEDE1E1E1000000E1E1E1000000808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFE1E1E100BFFF00BFFFE1E1E1241CEDE1E1E1E1E1E1E1E1E1E1E1E1808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFE1E1E100BFFF00BFFFE1E1E1241CEDE1E1E1000000E1E1E1000000808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFE1E1E100BFFF00BFFFE1E1E1241CEDE1E1E1E1E1E1E1E1E1E1E1E1808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFE1E1E1E1E1E1E1E1E1E1E1E1241CEDE1E1E1000000E1E1E1000000808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFE1E1E1E1E1E1E1E1E1E1E1E1241CEDE1E1E1E1E1E1E1E1E1E1E1E1808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFE1E1E1000000000000E1E1E1241CEDE1E1E1000000E1E1E1000000808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFE1E1E1000000000000E1E1E1241CEDE1E1E1E1E1E1E1E1E1E1E1E1808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFE1E1E1000000000000E1E1E1241CEDE1E1E1000000E1E1E1000000808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFE1E1E1E1E1E1E1E1E1EFEFEF241CEDE1E1E1E1E1E1E1E1E1E1E1E1808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFE1E1E1E1E1E1E1E1E14CB122241CEDE1E1E1E1E1E1E1E1E1E1E1E1808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFE1E1E1E1E1E1E1E1E14CB122241CEDE1E1E1008000E1E1E1008000808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFE1E1E1E1E1E1E1E1E1E1E1E1241CEDE1E1E1E1E1E1E1E1E1E1E1E1808080FF00FFFF00FFFF00FFFF00FFFF00FF</ImageData16x14>
+			</Device>
+		</Devices>
+	</Descriptions>
+</EtherCATInfo>

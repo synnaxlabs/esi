@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EtherCATInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="EtherCATInfo.xsd" Version="1.6">
+  <Vendor>
+    <Id>#xDEBE50F7</Id>
+    <Name>Dewesoft</Name>
+    <ImageData16x14>424DE6000000000000007600000028000000100000000E000000010004000000000070000000C40E0000C40E000000000000000000000000000000008000008000000080800080000000800080008080000080808000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDDDDDDDDDDDDDDDD9999999999999DDDD99999999999DDDD9DD9999999DD9DDD999DD999DD999DDDD9999D9D9999DDDDD99999D99999DDDDDD9999D9999DDDDDDD9999D9999DDDDDDDD999D999DDDDDDDDD999D999DDDDDDDDDD99D99DDDDDDDDDDDD9D9DDDDDDDDDDDDDDDDDDDDDDD</ImageData16x14>
+  </Vendor>
+  <Descriptions>
+    <Groups>
+      <Group SortOrder="0">
+        <Type>Accessories</Type>
+        <Name LcId="1033">Accessories</Name>
+        <ImageData16x14>424DE6000000000000007600000028000000100000000E000000010004000000000070000000C40E0000C40E000000000000000000000000000000008000008000000080800080000000800080008080000080808000C0C0C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00DDDDDDDDDDDDDDDDD9999999999999DDDD99999999999DDDD9DD9999999DD9DDD999DD999DD999DDDD9999D9D9999DDDDD99999D99999DDDDDD9999D9999DDDDDDD9999D9999DDDDDDDD999D999DDDDDDDDD999D999DDDDDDDDDD99D99DDDDDDDDDDDD9D9DDDDDDDDDDDDDDDDDDDDDDD</ImageData16x14>
+      </Group>
+    </Groups>
+    <Devices>
+      <Device Physics="YY">
+        <Type ProductCode="#x6F" RevisionNo="#x00000001">ECAT-REPEATER</Type>
+        <Name LcId="1033">ECAT-REPEATER</Name>
+        <Info>
+          <EtherCATController>
+            <DpramSize>4096</DpramSize>
+            <SmCount>4</SmCount>
+            <FmmuCount>3</FmmuCount>
+          </EtherCATController>
+          <Port>
+            <Type>MII</Type>
+            <PhysicalPhyAddr>0</PhysicalPhyAddr>
+          </Port>
+          <Port>
+            <Type>MII</Type>
+            <PhysicalPhyAddr>1</PhysicalPhyAddr>
+          </Port>
+          <IdentificationAdo>#x0012</IdentificationAdo>
+        </Info>
+        <GroupType>Accessories</GroupType>
+        <Profile>
+          <ProfileNo>5001</ProfileNo>
+          <AddInfo>0</AddInfo>
+          <ChannelCount>1</ChannelCount>
+        </Profile>
+        <Dc>
+          <OpMode>
+            <Name>Synchron</Name>
+            <Desc>SM Sync</Desc>
+            <AssignActivate>#x0</AssignActivate>
+            <CycleTimeSync0 Factor="1">0</CycleTimeSync0>
+            <ShiftTimeSync0>0</ShiftTimeSync0>
+            <CycleTimeSync1 Factor="1">0</CycleTimeSync1>
+          </OpMode>
+          <OpMode>
+            <Name>DC</Name>
+            <Desc>DC Sync</Desc>
+            <AssignActivate>#x300</AssignActivate>
+            <CycleTimeSync0 Factor="1">0</CycleTimeSync0>
+            <ShiftTimeSync0>0</ShiftTimeSync0>
+            <CycleTimeSync1 Factor="1">0</CycleTimeSync1>
+          </OpMode>
+        </Dc>
+        <Eeprom>
+          <ByteSize>2048</ByteSize>
+          <ConfigData>040F00441027F0FF</ConfigData>
+        </Eeprom>
+      </Device>
+    </Devices>
+  </Descriptions>
+</EtherCATInfo>

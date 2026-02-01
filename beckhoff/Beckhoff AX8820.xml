@@ -1,0 +1,5140 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<EtherCATInfo xsi:noNamespaceSchemaLocation="EtherCATInfo.xsd" Version="1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Vendor FileVersion="1">
+		<Id>2</Id>
+		<Name>Beckhoff Automation GmbH &amp; Co. KG</Name>
+		<ImageData16x14>424DE6000000000000007600000028000000100000000E000000010004000000000070000000120B0000120B0000100000001000000000000000000080000080000000808000800000008000800080800000C0C0C000808080000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF009D9DD99DD9DDD9DD9D9D9DD9D9DDD9DD999D9DD9D999D9999D9D9DD9D9DDD9DD9D9DD99DD999D999DDDDDDDDDDDDDDDD88888888888888888888888888888888DDDDDDDDDDDDDDDD999D999DD99DD9D99D9D9DDD9DD9D9D999DD999D9DDDD99D9D9D9DDD9DD9D99D999D999DD99DD9D9</ImageData16x14>
+	</Vendor>
+	<Descriptions>
+		<Groups>
+			<Group SortOrder="0">
+				<Type>Drive</Type>
+				<Name LcId="1033">Drives</Name>
+				<Name LcId="1031">Antriebe</Name>
+				<ImageData16x14>424DD6020000000000003600000028000000100000000E0000000100180000000000A002000000000000000000000000000000000000FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF808080808080808080808080808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF000000FF00FFFF00FFFF00FFC0C0C0FF0000FF0000FF0000808080FF00FF000000000000000000000000000000000000000000FF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FF0000000000000000000000000000000000000000000000FF0000FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FF000000000000000000000000000000000000000000FF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FF000000FF00FFFF00FF000000FF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FF000000000000000000000000FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FF</ImageData16x14>
+			</Group>
+			<Group ParentGroup="Drive">
+				<Type>AX8000</Type>
+				<Name LcId="1033">AX8000</Name>
+				<Name LcId="1031">AX8000</Name>
+				<ImageData16x14>424DD6020000000000003600000028000000100000000E0000000100180000000000A002000000000000000000000000000000000000FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF808080808080808080808080808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF000000FF00FFFF00FFFF00FFC0C0C0FF0000FF0000FF0000808080FF00FF000000000000000000000000000000000000000000FF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FF0000000000000000000000000000000000000000000000FF0000FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FF000000000000000000000000000000000000000000FF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FF000000FF00FFFF00FF000000FF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FF000000000000000000000000FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FF</ImageData16x14>
+			</Group>
+			<Group ParentGroup="AX8000">
+				<Type>AX8000 Energy recovery</Type>
+				<Name LcId="1033">AX8000 Energy recovery modules</Name>
+				<Name LcId="1031">AX8000 Rueckspeisemodule</Name>
+				<ImageData16x14>424DD6020000000000003600000028000000100000000E0000000100180000000000A002000000000000000000000000000000000000FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF808080808080808080808080808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF000000FF00FFFF00FFFF00FFC0C0C0FF0000FF0000FF0000808080FF00FF000000000000000000000000000000000000000000FF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FF0000000000000000000000000000000000000000000000FF0000FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FF000000000000000000000000000000000000000000FF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FF000000FF00FFFF00FF000000FF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FF000000000000000000000000FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FF</ImageData16x14>
+			</Group>
+		</Groups>
+		<Devices>
+			<Device Physics="YY">
+				<Type ProductCode="#x22746012" RevisionNo="#x00640046" CheckRevisionNo="LW_EQ_HW_EQ_OR_G">AX8820-0070-0100</Type>
+				<Name LcId="1033">AX8820-0070-0100</Name>
+				<Name LcId="1031">AX8820-0070-0100</Name>
+				<Info>
+					<StateMachine>
+						<Timeout>
+							<PreopTimeout>60000</PreopTimeout>
+							<SafeopOpTimeout>30000</SafeopOpTimeout>
+							<BackToInitTimeout>30000</BackToInitTimeout>
+							<BackToSafeopTimeout>300</BackToSafeopTimeout>
+						</Timeout>
+						<Behavior StartToSafeopNoSync="1"></Behavior>
+					</StateMachine>
+					<Mailbox>
+						<Timeout>
+							<RequestTimeout>100</RequestTimeout>
+							<ResponseTimeout>2000</ResponseTimeout>
+						</Timeout>
+					</Mailbox>
+					<Port>
+						<Type>MII</Type>
+						<Label>X04 IN</Label>
+					</Port>
+					<Port>
+						<Type>MII</Type>
+						<Label>X05 OUT</Label>
+					</Port>
+					<VendorSpecific>
+						<TcSmExtension Guid="{243170CD-A63C-4949-A546-723782A6C256}"></TcSmExtension>
+					</VendorSpecific>
+				</Info>
+				<GroupType>AX8000 Energy recovery</GroupType>
+				<Profile>
+					<ChannelInfo>
+						<ProfileNo>5001</ProfileNo>
+						<DisplayName>AMP8000 Power supply module</DisplayName>
+					</ChannelInfo>
+					<Dictionary>
+						<UnitTypes>
+							<UnitType>
+								<NotationIndex>#xa0</NotationIndex>
+								<Index>#x4a0</Index>
+								<Name>Reactive Power</Name>
+								<Symbol>VAR</Symbol>
+							</UnitType>
+							<UnitType>
+								<NotationIndex>#xb7</NotationIndex>
+								<Index>#x4b7</Index>
+								<Name>Percent</Name>
+								<Symbol>%</Symbol>
+							</UnitType>
+						</UnitTypes>
+						<DataTypes>
+							<DataType>
+								<Name>BIT4</Name>
+								<BitSize>4</BitSize>
+							</DataType>
+							<DataType>
+								<Name>BIT6</Name>
+								<BitSize>6</BitSize>
+							</DataType>
+							<DataType>
+								<Name>BOOL</Name>
+								<BitSize>1</BitSize>
+							</DataType>
+							<DataType>
+								<Name>BYTE</Name>
+								<BitSize>8</BitSize>
+							</DataType>
+							<DataType>
+								<Name>DINT</Name>
+								<BitSize>32</BitSize>
+							</DataType>
+							<DataType>
+								<Name>INT</Name>
+								<BitSize>16</BitSize>
+							</DataType>
+							<DataType>
+								<Name>REAL</Name>
+								<BitSize>32</BitSize>
+							</DataType>
+							<DataType>
+								<Name>UDINT</Name>
+								<BitSize>32</BitSize>
+							</DataType>
+							<DataType>
+								<Name>UINT</Name>
+								<BitSize>16</BitSize>
+							</DataType>
+							<DataType>
+								<Name>ULINT</Name>
+								<BitSize>64</BitSize>
+							</DataType>
+							<DataType>
+								<Name>USINT</Name>
+								<BitSize>8</BitSize>
+							</DataType>
+							<DataType>
+								<Name>ARRAY [0..65] OF BYTE</Name>
+								<BaseType>BYTE</BaseType>
+								<BitSize>528</BitSize>
+								<ArrayInfo>
+									<LBound>0</LBound>
+									<Elements>66</Elements>
+								</ArrayInfo>
+							</DataType>
+							<DataType>
+								<Name>ARRAY [0..79] OF BYTE</Name>
+								<BaseType>BYTE</BaseType>
+								<BitSize>640</BitSize>
+								<ArrayInfo>
+									<LBound>0</LBound>
+									<Elements>80</Elements>
+								</ArrayInfo>
+							</DataType>
+							<DataType>
+								<Name>STRING(10)</Name>
+								<BitSize>80</BitSize>
+							</DataType>
+							<DataType>
+								<Name>STRING(128)</Name>
+								<BitSize>1024</BitSize>
+							</DataType>
+							<DataType>
+								<Name>STRING(141)</Name>
+								<BitSize>1128</BitSize>
+							</DataType>
+							<DataType>
+								<Name>STRING(16)</Name>
+								<BitSize>128</BitSize>
+							</DataType>
+							<DataType>
+								<Name>STRING(2)</Name>
+								<BitSize>16</BitSize>
+							</DataType>
+							<DataType>
+								<Name>STRING(32)</Name>
+								<BitSize>256</BitSize>
+							</DataType>
+							<DataType>
+								<Name>STRING(62)</Name>
+								<BitSize>496</BitSize>
+							</DataType>
+							<DataType>
+								<Name>DT0802EN16</Name>
+								<BaseType>UINT</BaseType>
+								<BitSize>16</BitSize>
+								<EnumInfo>
+									<Text>Integer 8 main CPU</Text>
+									<Enum>1</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 8 main CPU</Text>
+									<Enum>2</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 16 main CPU</Text>
+									<Enum>3</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 16 main CPU</Text>
+									<Enum>4</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 32 main CPU</Text>
+									<Enum>5</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 32 main CPU</Text>
+									<Enum>6</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 8 slave CPU</Text>
+									<Enum>7</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 8 slave CPU</Text>
+									<Enum>8</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 16 slave CPU</Text>
+									<Enum>9</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 16 slave CPU</Text>
+									<Enum>10</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 32 slave CPU</Text>
+									<Enum>11</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 32 slave CPU</Text>
+									<Enum>12</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT0803EN16</Name>
+								<BaseType>UINT</BaseType>
+								<BitSize>16</BitSize>
+								<EnumInfo>
+									<Text>Select</Text>
+									<Enum>0</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Write scalings</Text>
+									<Enum>1</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Write HW ids</Text>
+									<Enum>2</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Write HW revision</Text>
+									<Enum>3</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Write production date (dd.mm.yyyy)</Text>
+									<Enum>4</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Write Beckhoff identification code (BIC)</Text>
+									<Enum>5</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Reset error list memory</Text>
+									<Enum>32</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Reset operating time</Text>
+									<Enum>33</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Reset mains voltage offsets</Text>
+									<Enum>34</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Reset mains current offsets</Text>
+									<Enum>35</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Reset total recovery energy</Text>
+									<Enum>36</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Read calibration data from memory</Text>
+									<Enum>64</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Force command data integer</Text>
+									<Enum>96</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Write firmware parameters</Text>
+									<Enum>98</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Read firmware parameters structure version</Text>
+									<Enum>99</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Write components factory settings</Text>
+									<Enum>100</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Read components factory settings</Text>
+									<Enum>101</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT0804EN08</Name>
+								<BaseType>USINT</BaseType>
+								<BitSize>8</BitSize>
+								<EnumInfo>
+									<Text>AC 3 phases</Text>
+									<Enum>0</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT0807EN08</Name>
+								<BaseType>USINT</BaseType>
+								<BitSize>8</BitSize>
+								<EnumInfo>
+									<Text>WaitingForCharging</Text>
+									<Enum>0</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>BypassChargeResistor</Text>
+									<Enum>1</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>DcLinkOk</Text>
+									<Enum>3</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>ShortPowerLoss</Text>
+									<Enum>5</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>ErrorState</Text>
+									<Enum>12</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>PowerLoss</Text>
+									<Enum>14</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT0808EN08</Name>
+								<BaseType>USINT</BaseType>
+								<BitSize>8</BitSize>
+								<EnumInfo>
+									<Text>UmainsOff</Text>
+									<Enum>0</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>UmainsOk</Text>
+									<Enum>1</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>UmainsLoss</Text>
+									<Enum>2</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>UmainsTooLow</Text>
+									<Enum>3</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>UmainsTooHigh</Text>
+									<Enum>4</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>PowerSupplyTypeDetection</Text>
+									<Enum>5</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT0809EN16</Name>
+								<BaseType>UINT</BaseType>
+								<BitSize>16</BitSize>
+								<EnumInfo>
+									<Text>Float main CPU</Text>
+									<Enum>1</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Float slave CPU</Text>
+									<Enum>2</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT080AEN16</Name>
+								<BaseType>UINT</BaseType>
+								<BitSize>16</BitSize>
+								<EnumInfo>
+									<Text>Integer 8 main CPU</Text>
+									<Enum>1</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 8 main CPU</Text>
+									<Enum>2</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 16 main CPU</Text>
+									<Enum>3</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 16 main CPU</Text>
+									<Enum>4</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 32 main CPU</Text>
+									<Enum>5</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 32 main CPU</Text>
+									<Enum>6</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 8 slave CPU</Text>
+									<Enum>7</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 8 slave CPU</Text>
+									<Enum>8</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 16 slave CPU</Text>
+									<Enum>9</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 16 slave CPU</Text>
+									<Enum>10</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 32 slave CPU</Text>
+									<Enum>11</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 32 slave CPU</Text>
+									<Enum>12</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT080BEN16</Name>
+								<BaseType>UINT</BaseType>
+								<BitSize>16</BitSize>
+								<EnumInfo>
+									<Text>Float main CPU</Text>
+									<Enum>1</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Float slave CPU</Text>
+									<Enum>2</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT080CEN16</Name>
+								<BaseType>UINT</BaseType>
+								<BitSize>16</BitSize>
+								<EnumInfo>
+									<Text>Float main CPU</Text>
+									<Enum>1</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Float slave CPU</Text>
+									<Enum>2</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT080DEN16</Name>
+								<BaseType>UINT</BaseType>
+								<BitSize>16</BitSize>
+								<EnumInfo>
+									<Text>Float main CPU</Text>
+									<Enum>1</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Float slave CPU</Text>
+									<Enum>2</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT0810EN08</Name>
+								<BaseType>USINT</BaseType>
+								<BitSize>8</BitSize>
+								<EnumInfo>
+									<Text>eCoeCmdStatus_CmdCompletedNoErrorNoRespData</Text>
+									<Enum>0</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>eCoeCmdStatus_CmdCompletedNoErrorRespDataAvailable</Text>
+									<Enum>1</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>eCoeCmdStatus_CmdCompletedErrorNoRespData</Text>
+									<Enum>2</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>eCoeCmdStatus_CmdCompletedErrorRespDataAvailable</Text>
+									<Enum>3</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>eCoeCmdStatus_CmdIsExecuting</Text>
+									<Enum>4</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT0811EN08</Name>
+								<BaseType>USINT</BaseType>
+								<BitSize>8</BitSize>
+								<EnumInfo>
+									<Text>eDataState_Invalid</Text>
+									<Enum>0</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>eDataState_Valid</Text>
+									<Enum>1</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT0812EN08</Name>
+								<BaseType>USINT</BaseType>
+								<BitSize>8</BitSize>
+								<EnumInfo>
+									<Text>capacitive</Text>
+									<Enum>0</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>inductive</Text>
+									<Enum>1</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT1011ARR</Name>
+								<BaseType>UDINT</BaseType>
+								<BitSize>32</BitSize>
+								<ArrayInfo>
+									<LBound>1</LBound>
+									<Elements>1</Elements>
+								</ArrayInfo>
+							</DataType>
+							<DataType>
+								<Name>DT1011</Name>
+								<BitSize>48</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<Name>Elements</Name>
+									<Type>DT1011ARR</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT1018</Name>
+								<BitSize>144</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Vendor ID</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Product code</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>48</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>Revision</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>80</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>4</SubIdx>
+									<Name>Serial number</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>112</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT10E2ARR</Name>
+								<BaseType>STRING(141)</BaseType>
+								<BitSize>1128</BitSize>
+								<ArrayInfo>
+									<LBound>1</LBound>
+									<Elements>1</Elements>
+								</ArrayInfo>
+							</DataType>
+							<DataType>
+								<Name>DT10E2</Name>
+								<BitSize>1144</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<Name>Elements</Name>
+									<Type>DT10E2ARR</Type>
+									<BitSize>1128</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT10F0</Name>
+								<BitSize>48</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Checksum</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT10F3</Name>
+								<BitSize>19264</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Maximum Messages</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Newest Message</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>24</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>Newest Acknowledged Message</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>32</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>4</SubIdx>
+									<Name>New Messages Available</Name>
+									<Type>BOOL</Type>
+									<BitSize>1</BitSize>
+									<BitOffs>40</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>5</SubIdx>
+									<Name>Flags</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>48</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>6</SubIdx>
+									<Name>Diagnosis Message 001</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>64</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>7</SubIdx>
+									<Name>Diagnosis Message 002</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>704</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>8</SubIdx>
+									<Name>Diagnosis Message 003</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>1344</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>9</SubIdx>
+									<Name>Diagnosis Message 004</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>1984</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>10</SubIdx>
+									<Name>Diagnosis Message 005</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>2624</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>11</SubIdx>
+									<Name>Diagnosis Message 006</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>3264</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>12</SubIdx>
+									<Name>Diagnosis Message 007</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>3904</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>13</SubIdx>
+									<Name>Diagnosis Message 008</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>4544</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>14</SubIdx>
+									<Name>Diagnosis Message 009</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>5184</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>15</SubIdx>
+									<Name>Diagnosis Message 010</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>5824</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>16</SubIdx>
+									<Name>Diagnosis Message 011</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>6464</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>17</SubIdx>
+									<Name>Diagnosis Message 012</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>7104</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>18</SubIdx>
+									<Name>Diagnosis Message 013</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>7744</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>19</SubIdx>
+									<Name>Diagnosis Message 014</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>8384</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>20</SubIdx>
+									<Name>Diagnosis Message 015</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>9024</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>21</SubIdx>
+									<Name>Diagnosis Message 016</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>9664</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>22</SubIdx>
+									<Name>Diagnosis Message 017</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>10304</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>23</SubIdx>
+									<Name>Diagnosis Message 018</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>10944</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>24</SubIdx>
+									<Name>Diagnosis Message 019</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>11584</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>25</SubIdx>
+									<Name>Diagnosis Message 020</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>12224</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>26</SubIdx>
+									<Name>Diagnosis Message 021</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>12864</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>27</SubIdx>
+									<Name>Diagnosis Message 022</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>13504</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>28</SubIdx>
+									<Name>Diagnosis Message 023</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>14144</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>29</SubIdx>
+									<Name>Diagnosis Message 024</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>14784</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>30</SubIdx>
+									<Name>Diagnosis Message 025</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>15424</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>31</SubIdx>
+									<Name>Diagnosis Message 026</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>16064</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>32</SubIdx>
+									<Name>Diagnosis Message 027</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>16704</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>33</SubIdx>
+									<Name>Diagnosis Message 028</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>17344</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>34</SubIdx>
+									<Name>Diagnosis Message 029</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>17984</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>35</SubIdx>
+									<Name>Diagnosis Message 030</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>18624</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT1A01</Name>
+								<BitSize>48</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>SubIndex 001</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT1A03</Name>
+								<BitSize>336</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>SubIndex 001</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>SubIndex 002</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>48</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>SubIndex 003</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>80</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>4</SubIdx>
+									<Name>SubIndex 004</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>112</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>5</SubIdx>
+									<Name>SubIndex 005</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>144</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>6</SubIdx>
+									<Name>SubIndex 006</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>176</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>7</SubIdx>
+									<Name>SubIndex 007</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>208</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>8</SubIdx>
+									<Name>SubIndex 008</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>240</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>9</SubIdx>
+									<Name>SubIndex 009</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>272</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>10</SubIdx>
+									<Name>SubIndex 010</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>304</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT1C00ARR</Name>
+								<BaseType>USINT</BaseType>
+								<BitSize>32</BitSize>
+								<ArrayInfo>
+									<LBound>1</LBound>
+									<Elements>4</Elements>
+								</ArrayInfo>
+							</DataType>
+							<DataType>
+								<Name>DT1C00</Name>
+								<BitSize>48</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<Name>Elements</Name>
+									<Type>DT1C00ARR</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT1C12ARR</Name>
+								<BaseType>UINT</BaseType>
+								<BitSize>0</BitSize>
+								<ArrayInfo>
+									<LBound>1</LBound>
+									<Elements>0</Elements>
+								</ArrayInfo>
+							</DataType>
+							<DataType>
+								<Name>DT1C12</Name>
+								<BitSize>16</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<Name>Elements</Name>
+									<Type>DT1C12ARR</Type>
+									<BitSize>0</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT1C13ARR</Name>
+								<BaseType>UINT</BaseType>
+								<BitSize>64</BitSize>
+								<ArrayInfo>
+									<LBound>1</LBound>
+									<Elements>4</Elements>
+								</ArrayInfo>
+							</DataType>
+							<DataType>
+								<Name>DT1C13</Name>
+								<BitSize>80</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<Name>Elements</Name>
+									<Type>DT1C13ARR</Type>
+									<BitSize>64</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT1C33</Name>
+								<BitSize>360</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Sync mode</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Cycle time</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>32</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>Shift time</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>64</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>4</SubIdx>
+									<Name>Sync modes supported</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>96</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>5</SubIdx>
+									<Name>Minimum cycle time</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>112</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>6</SubIdx>
+									<Name>Calc and copy time</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>144</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>7</SubIdx>
+									<Name>Minimum delay time</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>176</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>9</SubIdx>
+									<Name>Maximum delay time</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>224</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>11</SubIdx>
+									<Name>SM event missed counter</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>288</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>12</SubIdx>
+									<Name>Cycle exceeded counter</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>304</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>13</SubIdx>
+									<Name>Shift too short counter</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>320</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>32</SubIdx>
+									<Name>Sync error</Name>
+									<Type>BOOL</Type>
+									<BitSize>1</BitSize>
+									<BitOffs>352</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C20</Name>
+								<BitSize>32</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<Comment LcId="1033">This object cointains the status of the module</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Statusword</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Status bits:
+- Bit 0: Ready to operate dc output 1
+- Bit 1: Error active
+- Bit 2: Warning active
+- Bit 3: Reserved
+- Bit 4: Brake chopper active
+- Bit 5: Fan active
+- Bit 6: Charging activeReserved
+- Bit 7: Dc out 1 active
+- Bit 8 - 9: Reserved
+- Bit 10: Dc out 2 active
+- Bit 11: Ready to operate dc output 2
+- Bit 12: Energy recovery active
+- Bit 13 - 15: Reserved</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C22</Name>
+								<BitSize>1072</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<Comment LcId="1033">This object contains the actual voltages</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Actual mains voltage</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Actual RMS-value of mains voltage</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Actual mains L1-L2 voltage</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Actual value of mains voltage L1 to L2.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>48</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>Actual mains L2-L3 voltage</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Actual value of mains voltage L2 to L3.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>80</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>4</SubIdx>
+									<Name>Actual mains L3-L1 voltage</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Actual value of mains voltage L3 to L1.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>112</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>32</SubIdx>
+									<Name>Actual DC link voltage</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Actual voltage value at the DC link.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>1008</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C23</Name>
+								<BitSize>2160</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<Comment LcId="1033">This object contains the actual current</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Actual mains L1 current</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Actual value of mains current L1.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Actual mains L2 current</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Actual value of mains current L2.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>48</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>Actual mains L3 current</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Actual value of mains current L3.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>80</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>4</SubIdx>
+									<Name>Actual mains rms current</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Actual value of mains rms current.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>112</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>5</SubIdx>
+									<Name>Actual active current</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Actual d-component current.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>144</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>6</SubIdx>
+									<Name>Actual reactive current</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Actual d-component current.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>176</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C24</Name>
+								<BitSize>2608</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<Comment LcId="1033">This object contains the actual data</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Actual mains supply frequency</Name>
+									<Type>USINT</Type>
+									<Comment LcId="1033">Estimated frequency of power supply.</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Actual mains supply type</Name>
+									<Type>USINT</Type>
+									<Comment LcId="1033">Estimated power supply type.		AC_3phases = 0
+AC_1phases = 1</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>24</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>Actual active power</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>32</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>4</SubIdx>
+									<Name>Actual reactive power</Name>
+									<Type>INT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>48</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>35</SubIdx>
+									<Name>Actual device load utilization</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Actual load utilization of the device.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>544</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>36</SubIdx>
+									<Name>Actual device overload utilization</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Actual overload utilization of the device.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>560</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>160</SubIdx>
+									<Name>Actual device temperature</Name>
+									<Type>INT</Type>
+									<Comment LcId="1033">Actual device temperature.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>2544</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>161</SubIdx>
+									<Name>Actual commutation angle</Name>
+									<Type>INT</Type>
+									<Comment LcId="1033">Actual commutation angle.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>2560</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>162</SubIdx>
+									<Name>Actual recovery energy</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Actual recovery energy.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>2576</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C25</Name>
+								<BitSize>1536</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<Comment LcId="1033">This object contains the diagnostic values</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>DC link state machine</Name>
+									<Type>DT0807EN08</Type>
+									<Comment LcId="1033">Actual value of Dc link state machine</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Umains state machine</Name>
+									<Type>DT0808EN08</Type>
+									<Comment LcId="1033">Actual value of Umains state machine</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>24</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>Actual error code</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Actual active error code.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>32</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>16</SubIdx>
+									<Name>Debug pointer data 1</Name>
+									<Type>DINT</Type>
+									<Comment LcId="1033">Actual value at debug pointer data 1.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>240</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>17</SubIdx>
+									<Name>Debug pointer data 2</Name>
+									<Type>DINT</Type>
+									<Comment LcId="1033">Actual value at debug pointer data 2.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>272</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>18</SubIdx>
+									<Name>Debug pointer data 3</Name>
+									<Type>DINT</Type>
+									<Comment LcId="1033">Actual value at debug pointer data 3.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>304</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>19</SubIdx>
+									<Name>Debug pointer data 4</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Actual value at debug pointer data 4.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>336</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>20</SubIdx>
+									<Name>Debug pointer data 5</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Actual value at debug pointer data 5.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>368</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>21</SubIdx>
+									<Name>Debug pointer data 6</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Actual value at debug pointer data 6.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>400</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>22</SubIdx>
+									<Name>Debug pointer data 7</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Actual value at debug pointer data 7.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>432</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>32</SubIdx>
+									<Name>Warning register</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Actual warning status.
+- Bit 0: Reserved
+- Bit 1: BrakeResistorLoadUtilisationReached
+- Bit 2: DeviceOvertemperature
+- Bit 3: DClinkContinuousOvercurrent
+- Bit 4: FanMalfunction
+- Bit 5: MainsOvervoltage
+- Bit 6: MainsUndervoltage
+- Bit 7 - 15: Reserved</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>752</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C27</Name>
+								<BitSize>1984</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>112</SubIdx>
+									<Name>Power factor</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">This parameter describes the ratio of effective and reactive power.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>1936</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>113</SubIdx>
+									<Name>Compensation mode</Name>
+									<Type>DT0812EN08</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>1968</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C28</Name>
+								<BitSize>1936</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<Comment LcId="1033">Advanced parameter is an extension of actual diagnostic. A connection to firmware internal variables can be configured here</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Debug index</Name>
+									<Type>UDINT</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Debug value float</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>48</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>Debug value string</Name>
+									<Type>STRING(128)</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>1024</BitSize>
+									<BitOffs>80</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>16</SubIdx>
+									<Name>Type debug pointer 1</Name>
+									<Type>DT0802EN16</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1488</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>18</SubIdx>
+									<Name>Address debug pointer 1</Name>
+									<Type>UDINT</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>1520</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>19</SubIdx>
+									<Name>Type debug pointer 2</Name>
+									<Type>DT0802EN16</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1552</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>21</SubIdx>
+									<Name>Address debug pointer 2</Name>
+									<Type>UDINT</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>1584</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>22</SubIdx>
+									<Name>Type debug pointer 3</Name>
+									<Type>DT080AEN16</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1616</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>24</SubIdx>
+									<Name>Address debug pointer 3</Name>
+									<Type>UDINT</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>1648</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>25</SubIdx>
+									<Name>Type debug pointer 4</Name>
+									<Type>DT080BEN16</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1680</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>27</SubIdx>
+									<Name>Address debug pointer 4</Name>
+									<Type>UDINT</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>1712</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>28</SubIdx>
+									<Name>Type debug pointer 5</Name>
+									<Type>DT080CEN16</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1744</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>30</SubIdx>
+									<Name>Address debug pointer 5</Name>
+									<Type>UDINT</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>1776</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>31</SubIdx>
+									<Name>Type debug pointer 6</Name>
+									<Type>DT080DEN16</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1808</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>33</SubIdx>
+									<Name>Address debug pointer 6</Name>
+									<Type>UDINT</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>1840</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>34</SubIdx>
+									<Name>Type debug pointer 7</Name>
+									<Type>DT0809EN16</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1872</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>36</SubIdx>
+									<Name>Address debug pointer 7</Name>
+									<Type>UDINT</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>1904</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C29</Name>
+								<BitSize>800</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<Comment LcId="1033">This object is an extension of the standard parameter</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Mains voltage max threshold</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Maximal RMS-value of mains voltage.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Mains voltage min threshold</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Minimal RMS-value of mains voltage.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>32</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>33</SubIdx>
+									<Name>Voltage control proportional gain</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">This object contains the proportional gain of the voltage controller.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>528</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>34</SubIdx>
+									<Name>Current control proportional gain</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">This object contains the proportional gain of the current controller.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>560</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>35</SubIdx>
+									<Name>Current control integral action time</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">This object contains the integral action time of the current controller.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>592</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C2A</Name>
+								<BitSize>2112</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<Comment LcId="1033">Information about operation of the module</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Rated output power</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Device rated output power</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Peak output power</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Device peak output power</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>32</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>34</SubIdx>
+									<Name>DC link max voltage</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Maximal DC link voltage threshold supported by the device.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>544</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>80</SubIdx>
+									<Name>Device max temperature</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Maximal heatsink temperature supported by the device, above which the error "Excess temperature device" is set.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1488</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>96</SubIdx>
+									<Name>Operating time</Name>
+									<Type>UDINT</Type>
+									<Comment LcId="1033">Operation time in seconds.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>1744</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>97</SubIdx>
+									<Name>Total recovery energy</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>1776</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>112</SubIdx>
+									<Name>Stopwatch task max</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>2016</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>113</SubIdx>
+									<Name>Stopwatch task</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>2048</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>114</SubIdx>
+									<Name>Stopwatch cycle</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>2080</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C2B</Name>
+								<BitSize>48</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<Comment LcId="1033">This object contains error handling.</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Reset errors</Name>
+									<Type>BOOL</Type>
+									<Comment LcId="1033">All resetable errors will be reset.</Comment>
+									<BitSize>1</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C2C</Name>
+								<BitSize>1424</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<Comment LcId="1033">This object contains the device factory settings, which are read from EEPROM. Internal use only.</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Command</Name>
+									<Type>DT0803EN16</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Command data string</Name>
+									<Type>STRING(128)</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>1024</BitSize>
+									<BitOffs>32</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>Command data integer</Name>
+									<Type>ULINT</Type>
+									<Comment LcId="1033">By rising edge, slave in PREOP and right password the factory settings (2000) are written in the EEPROM. Internal use only.</Comment>
+									<BitSize>64</BitSize>
+									<BitOffs>1056</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>48</SubIdx>
+									<Name>Device Factory settings Structure version</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>1120</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>49</SubIdx>
+									<Name>DC link voltage scaling gain</Name>
+									<Type>INT</Type>
+									<Comment LcId="1033">Scaling gain of dc link voltage.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1136</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>50</SubIdx>
+									<Name>DC link voltage offset</Name>
+									<Type>INT</Type>
+									<Comment LcId="1033">Offset of dc link voltage.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1152</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>51</SubIdx>
+									<Name>DC link voltage sys scaling gain</Name>
+									<Type>INT</Type>
+									<Comment LcId="1033">Scaling gain of dc link voltage sys.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1168</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>52</SubIdx>
+									<Name>DC link voltage sys offset</Name>
+									<Type>INT</Type>
+									<Comment LcId="1033">Offset of dc link voltage sys.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1184</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>53</SubIdx>
+									<Name>Mains voltage scaling gain 1</Name>
+									<Type>INT</Type>
+									<Comment LcId="1033">Scaling gain of Umains voltage 1.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1200</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>54</SubIdx>
+									<Name>Mains voltage offset1</Name>
+									<Type>INT</Type>
+									<Comment LcId="1033">Offset of Umains voltage 1.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1216</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>55</SubIdx>
+									<Name>Mains voltage scaling gain 2</Name>
+									<Type>INT</Type>
+									<Comment LcId="1033">Scaling gain of Umains voltage 2.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1232</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>56</SubIdx>
+									<Name>Mains voltage offset 2</Name>
+									<Type>INT</Type>
+									<Comment LcId="1033">Offset of Umains voltage 2.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1248</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>57</SubIdx>
+									<Name>Mains voltage scaling gain 3</Name>
+									<Type>INT</Type>
+									<Comment LcId="1033">Scaling gain of Umains voltage 3.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1264</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>58</SubIdx>
+									<Name>Mains voltage offset 3</Name>
+									<Type>INT</Type>
+									<Comment LcId="1033">Offset of Umains voltage 3.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1280</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>59</SubIdx>
+									<Name>Mains current scaling gain 1</Name>
+									<Type>INT</Type>
+									<Comment LcId="1033">Scaling gain of Umains current 1.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1296</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>60</SubIdx>
+									<Name>Mains current offset 1</Name>
+									<Type>INT</Type>
+									<Comment LcId="1033">Offset of Umains current 1.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1312</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>61</SubIdx>
+									<Name>Mains current scaling gain 2</Name>
+									<Type>INT</Type>
+									<Comment LcId="1033">Scaling gain of Umains current 2.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1328</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>62</SubIdx>
+									<Name>Mains current offset 2</Name>
+									<Type>INT</Type>
+									<Comment LcId="1033">Offset of Umains current 2.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1344</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>63</SubIdx>
+									<Name>Mains current scaling gain 3</Name>
+									<Type>INT</Type>
+									<Comment LcId="1033">Scaling gain of Umains current 3.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1360</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>64</SubIdx>
+									<Name>Checksum page 0</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Checksum read from EEPROM.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1376</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>65</SubIdx>
+									<Name>Mains current offset 3</Name>
+									<Type>INT</Type>
+									<Comment LcId="1033">Offset of Umains current 3.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1392</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>80</SubIdx>
+									<Name>Checksum page 1</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>1408</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C2D</Name>
+								<BitSize>1296</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<Comment LcId="1033">The object shows the hardware identification of the module</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Device id Structure version</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Device manufacturer date week</Name>
+									<Type>USINT</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>32</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>Device manufacturer date year</Name>
+									<Type>USINT</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>40</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>31</SubIdx>
+									<Name>Device checksum</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>256</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>32</SubIdx>
+									<Name>Pcb id 0 Structure version</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>272</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>33</SubIdx>
+									<Name>Pcb id 0 Manufacturer date week</Name>
+									<Type>USINT</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>288</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>34</SubIdx>
+									<Name>Pcb id 0 Manufacturer date year</Name>
+									<Type>USINT</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>296</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>36</SubIdx>
+									<Name>Pcb id 0 Hw id Hardware type</Name>
+									<Type>BIT6</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>6</BitSize>
+									<BitOffs>306</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>37</SubIdx>
+									<Name>Pcb id 0 Hw id Feature flags</Name>
+									<Type>BIT4</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>4</BitSize>
+									<BitOffs>312</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>38</SubIdx>
+									<Name>Pcb id 0 Hw id Supplier</Name>
+									<Type>BIT4</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>4</BitSize>
+									<BitOffs>316</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>39</SubIdx>
+									<Name>Pcb id 0 Hw id Component type</Name>
+									<Type>BIT4</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>4</BitSize>
+									<BitOffs>320</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>41</SubIdx>
+									<Name>Pcb id 0 Hw id Hardware index</Name>
+									<Type>USINT</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>328</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>42</SubIdx>
+									<Name>Pcb id 0 Hw id Pcb revision</Name>
+									<Type>USINT</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>336</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>43</SubIdx>
+									<Name>Pcb id 0 Hw id Pcb type</Name>
+									<Type>BIT4</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>4</BitSize>
+									<BitOffs>344</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>44</SubIdx>
+									<Name>Pcb id 0 Hw id Supported no of channels</Name>
+									<Type>BIT4</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>4</BitSize>
+									<BitOffs>348</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>45</SubIdx>
+									<Name>Pcb id 0 Hw id Firmware index</Name>
+									<Type>USINT</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>352</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>47</SubIdx>
+									<Name>Pcb id 0 Serial no</Name>
+									<Type>STRING(10)</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>80</BitSize>
+									<BitOffs>368</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>63</SubIdx>
+									<Name>Pcb id 0 Checksum</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Internal use only.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>512</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C2E</Name>
+								<BitSize>160</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<Comment LcId="1033">This object shows the standard parameter of this module</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Mains type</Name>
+									<Type>DT0804EN08</Type>
+									<Comment LcId="1033">This parameter configures the mains type.</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+										<Backup>1</Backup>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>Mains voltage</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Connected mains RMS-voltage.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>32</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+										<Backup>1</Backup>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>4</SubIdx>
+									<Name>Mains voltage max tolerance</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Positive tolerance of parametrized mains voltage.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>48</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+										<Backup>1</Backup>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>5</SubIdx>
+									<Name>Mains voltage min tolerance</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Negative tolerance of parametrized mains voltage.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>64</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+										<Backup>1</Backup>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>6</SubIdx>
+									<Name>DC link max voltage</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Threshold for dc link overvoltage error.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>80</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+										<Backup>1</Backup>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>7</SubIdx>
+									<Name>Device temperature warning threshold</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Percentage value of the maximum temperature above which an overtemperature warning is generated.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>96</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+										<Backup>1</Backup>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>8</SubIdx>
+									<Name>Voltage threshold switch on</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">At this dc link voltage energy recovery is started.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>112</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+										<Backup>1</Backup>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>9</SubIdx>
+									<Name>Voltage threshold max power</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">At this dc link voltage device will achieve its maximum regenerative current. Above this value the brake chopper becomes active.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>128</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+										<Backup>1</Backup>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>10</SubIdx>
+									<Name>Power derating</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Power derating for operation at higher ambient temperatures or at higher installation heights.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>144</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+										<Backup>1</Backup>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C30</Name>
+								<BitSize>1088</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<Comment LcId="1033">With this command object different commands can be performed.</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Command</Name>
+									<Type>ARRAY [0..65] OF BYTE</Type>
+									<Comment LcId="1033">Byte 0-1: Command ID
+Byte 2-3: Reserved
+Byte 4-n: Service request data
+A write access to this object will execute the command.</Comment>
+									<BitSize>528</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Status</Name>
+									<Type>DT0810EN08</Type>
+									<Comment LcId="1033">0: last command completed, no errors, no response data 
+1: last command completed, no errors, response data available 
+2: last command completed, error, no response data 
+3: last command completed, error, response data available 
+255: command is executing</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>544</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>Response</Name>
+									<Type>ARRAY [0..65] OF BYTE</Type>
+									<Comment LcId="1033">Byte 0: see SubIndex 2 
+Byte 1: unused 
+Byte 2-n: Service Response Data</Comment>
+									<BitSize>528</BitSize>
+									<BitOffs>552</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C31</Name>
+								<BitSize>528</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<Comment LcId="1033">This object contains different command parameter.</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Data state</Name>
+									<Type>DT0811EN08</Type>
+									<Comment LcId="1033">Data state of the displayed "User Data".</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>User data</Name>
+									<Type>STRING(62)</Type>
+									<Comment LcId="1033">The user data string stored in the device memory.</Comment>
+									<BitSize>496</BitSize>
+									<BitOffs>24</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DTF000</Name>
+								<BitSize>48</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Index distance</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Maximum number of modules</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>32</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+						</DataTypes>
+						<Objects>
+							<Object>
+								<Index>#x1000</Index>
+								<Name>Device type</Name>
+								<Type>UDINT</Type>
+								<BitSize>32</BitSize>
+								<Info>
+									<DefaultData>89130000</DefaultData>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1008</Index>
+								<Name>Device name</Name>
+								<Type>STRING(16)</Type>
+								<BitSize>128</BitSize>
+								<Info>
+									<DefaultData>4158383832302d303037300000000000</DefaultData>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1009</Index>
+								<Name>Hardware version</Name>
+								<Type>STRING(2)</Type>
+								<BitSize>16</BitSize>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x100a</Index>
+								<Name>Software version</Name>
+								<Type>STRING(2)</Type>
+								<BitSize>16</BitSize>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x100b</Index>
+								<Name>Bootloader version</Name>
+								<Type>STRING(32)</Type>
+								<BitSize>256</BitSize>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1011</Index>
+								<Name>Restore default parameters</Name>
+								<Type>DT1011</Type>
+								<BitSize>48</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1018</Index>
+								<Name>Identity</Name>
+								<Type>DT1018</Type>
+								<BitSize>144</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>04</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Vendor ID</Name>
+										<Info>
+											<DefaultData>02000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Product code</Name>
+										<Info>
+											<DefaultData>12607422</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x10e2</Index>
+								<Name>Manufacturer-specific Identification Code</Name>
+								<Type>DT10E2</Type>
+								<BitSize>1144</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x10f0</Index>
+								<Name>Backup parameter handling</Name>
+								<Type>DT10F0</Type>
+								<BitSize>48</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x10f3</Index>
+								<Name>Diagnosis History</Name>
+								<Type>DT10F3</Type>
+								<BitSize>19264</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>23</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x10f8</Index>
+								<Name>Timestamp Object</Name>
+								<Type>ULINT</Type>
+								<BitSize>64</BitSize>
+								<Info>
+									<Unit>#xf7030000</Unit>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1a01</Index>
+								<Name>PSM TxPDO-Map Warning register</Name>
+								<Type>DT1A01</Type>
+								<BitSize>48</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 001</Name>
+										<Info>
+											<DefaultData>1020252c</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1a02</Index>
+								<Name>PSM TxPDO-Map Statusword</Name>
+								<Type>DT1A01</Type>
+								<BitSize>48</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 001</Name>
+										<Info>
+											<DefaultData>1001202c</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1a03</Index>
+								<Name>PSM TxPDO-Map Process values</Name>
+								<Type>DT1A03</Type>
+								<BitSize>336</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 001</Name>
+										<Info>
+											<DefaultData>2020222c</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access WriteRestrictions="PreOP">rw</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1c00</Index>
+								<Name>Sync manager type</Name>
+								<Type>DT1C00</Type>
+								<BitSize>48</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>04</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 001</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 002</Name>
+										<Info>
+											<DefaultData>02</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 003</Name>
+										<Info>
+											<DefaultData>03</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 004</Name>
+										<Info>
+											<DefaultData>04</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1c12</Index>
+								<Name>RxPDO assign</Name>
+								<Type>DT1C12</Type>
+								<BitSize>16</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>00</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1c13</Index>
+								<Name>TxPDO assign</Name>
+								<Type>DT1C13</Type>
+								<BitSize>80</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 001</Name>
+										<Info>
+											<DefaultData>021a</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 002</Name>
+										<Info>
+											<DefaultData>0000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 003</Name>
+										<Info>
+											<DefaultData>0000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 004</Name>
+										<Info>
+											<DefaultData>0000</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access WriteRestrictions="PreOP">rw</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1c33</Index>
+								<Name>SM input parameter</Name>
+								<Type>DT1C33</Type>
+								<BitSize>360</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>20</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Sync mode</Name>
+										<Info>
+											<DefaultData>0300</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Cycle time</Name>
+										<Info>
+											<DefaultData>48e80100</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Shift time</Name>
+										<Info>
+											<DefaultData>00000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Sync modes supported</Name>
+										<Info>
+											<DefaultData>1004</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Minimum cycle time</Name>
+										<Info>
+											<DefaultData>093d0000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Calc and copy time</Name>
+										<Info>
+											<DefaultData>00000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Minimum delay time</Name>
+										<Info>
+											<DefaultData>00000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Maximum delay time</Name>
+										<Info>
+											<DefaultData>00000000</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c20</Index>
+								<Name>PSM Statusword</Name>
+								<Comment LcId="1033">This object cointains the status of the module</Comment>
+								<Type>DT2C20</Type>
+								<BitSize>32</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c22</Index>
+								<Name>PSM Actual voltages</Name>
+								<Comment LcId="1033">This object contains the actual voltages</Comment>
+								<Type>DT2C22</Type>
+								<BitSize>1072</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>20</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual mains voltage</Name>
+										<Info>
+											<Unit>#x00260000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual mains L1-L2 voltage</Name>
+										<Info>
+											<Unit>#x00260000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual mains L2-L3 voltage</Name>
+										<Info>
+											<Unit>#x00260000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual mains L3-L1 voltage</Name>
+										<Info>
+											<Unit>#x00260000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual DC link voltage</Name>
+										<Info>
+											<Unit>#x00260000</Unit>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c23</Index>
+								<Name>PSM Actual currents</Name>
+								<Comment LcId="1033">This object contains the actual current</Comment>
+								<Type>DT2C23</Type>
+								<BitSize>2160</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>06</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual mains L1 current</Name>
+										<Info>
+											<Unit>#x00040000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual mains L2 current</Name>
+										<Info>
+											<Unit>#x00040000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual mains L3 current</Name>
+										<Info>
+											<Unit>#x00040000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual mains rms current</Name>
+										<Info>
+											<Unit>#x00040000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual active current</Name>
+										<Info>
+											<Unit>#x00040000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual reactive current</Name>
+										<Info>
+											<Unit>#x00040000</Unit>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c24</Index>
+								<Name>PSM Actual data</Name>
+								<Comment LcId="1033">This object contains the actual data</Comment>
+								<Type>DT2C24</Type>
+								<BitSize>2608</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>a2</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual mains supply frequency</Name>
+										<Info>
+											<Unit>#x00200000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual active power</Name>
+										<Info>
+											<Unit>#x00240000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual reactive power</Name>
+										<Info>
+											<Unit>#x00a00000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual device load utilization</Name>
+										<Info>
+											<Unit>#x00b70000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual device overload utilization</Name>
+										<Info>
+											<Unit>#x00b70000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual device temperature</Name>
+										<Info>
+											<Unit>#xff2d0000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual commutation angle</Name>
+										<Info>
+											<Unit>#xff410000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual recovery energy</Name>
+										<Info>
+											<Unit>#x03230000</Unit>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c25</Index>
+								<Name>PSM Actual diagnostics</Name>
+								<Comment LcId="1033">This object contains the diagnostic values</Comment>
+								<Type>DT2C25</Type>
+								<BitSize>1536</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>20</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c27</Index>
+								<Name>PSM Standard parameters</Name>
+								<Type>DT2C27</Type>
+								<BitSize>1984</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>71</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Power factor</Name>
+										<Info>
+											<MinData>cdcc4c3f</MinData>
+											<MaxData>0000803f</MaxData>
+											<DefaultData>0000803f</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Compensation mode</Name>
+										<Info>
+											<DefaultData>00</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c28</Index>
+								<Name>PSM Advanced parameters</Name>
+								<Comment LcId="1033">Advanced parameter is an extension of actual diagnostic. A connection to firmware internal variables can be configured here</Comment>
+								<Type>DT2C28</Type>
+								<BitSize>1936</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>24</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Debug index</Name>
+										<Info>
+											<DefaultData>00000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Debug value float</Name>
+										<Info>
+											<MinData>fdff7fff</MinData>
+											<MaxData>fdff7f7f</MaxData>
+											<DefaultData>00000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Debug value string</Name>
+										<Info>
+											<DefaultData>0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Type debug pointer 1</Name>
+										<Info>
+											<DefaultData>0500</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Address debug pointer 1</Name>
+										<Info>
+											<MinValue>#x0</MinValue>
+											<MaxValue>#xffffffff</MaxValue>
+											<DefaultValue>#x0</DefaultValue>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Type debug pointer 2</Name>
+										<Info>
+											<DefaultData>0500</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Address debug pointer 2</Name>
+										<Info>
+											<DefaultData>00000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Type debug pointer 3</Name>
+										<Info>
+											<DefaultData>0500</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Address debug pointer 3</Name>
+										<Info>
+											<DefaultData>00000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Type debug pointer 4</Name>
+										<Info>
+											<DefaultData>0100</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Address debug pointer 4</Name>
+										<Info>
+											<DefaultData>00000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Type debug pointer 5</Name>
+										<Info>
+											<DefaultData>0100</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Address debug pointer 5</Name>
+										<Info>
+											<DefaultData>00000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Type debug pointer 6</Name>
+										<Info>
+											<DefaultData>0100</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Address debug pointer 6</Name>
+										<Info>
+											<DefaultData>00000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Type debug pointer 7</Name>
+										<Info>
+											<DefaultData>0100</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Address debug pointer 7</Name>
+										<Info>
+											<DefaultData>00000000</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+									<SdoAccess>SubIndexAccess</SdoAccess>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c29</Index>
+								<Name>PSM Calculated parameters</Name>
+								<Comment LcId="1033">This object is an extension of the standard parameter</Comment>
+								<Type>DT2C29</Type>
+								<BitSize>800</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>23</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Mains voltage max threshold</Name>
+										<Info>
+											<DefaultData>0000</DefaultData>
+											<Unit>#xff260000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Mains voltage min threshold</Name>
+										<Info>
+											<DefaultData>0000</DefaultData>
+											<Unit>#xff260000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Voltage control proportional gain</Name>
+										<Info>
+											<MinData>00000000</MinData>
+											<MaxData>fdff7f7f</MaxData>
+											<DefaultData>00000000</DefaultData>
+											<Unit>#x00042600</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Current control proportional gain</Name>
+										<Info>
+											<MinData>00000000</MinData>
+											<MaxData>fdff7f7f</MaxData>
+											<DefaultData>00000000</DefaultData>
+											<Unit>#x00260400</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Current control integral action time</Name>
+										<Info>
+											<MinData>00000000</MinData>
+											<MaxData>fdff7f7f</MaxData>
+											<DefaultData>00000000</DefaultData>
+											<Unit>#x00030000</Unit>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c2a</Index>
+								<Name>PSM Device info</Name>
+								<Comment LcId="1033">Information about operation of the module</Comment>
+								<Type>DT2C2A</Type>
+								<BitSize>2112</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>72</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Rated output power</Name>
+										<Info>
+											<DefaultData>581b</DefaultData>
+											<Unit>#x00240000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Peak output power</Name>
+										<Info>
+											<DefaultData>1027</DefaultData>
+											<Unit>#x00240000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>DC link max voltage</Name>
+										<Info>
+											<DefaultData>2021</DefaultData>
+											<Unit>#xff260000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Device max temperature</Name>
+										<Info>
+											<DefaultData>b603</DefaultData>
+											<Unit>#xff2d0000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Operating time</Name>
+										<Info>
+											<Unit>#x00030000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Total recovery energy</Name>
+										<Info>
+											<Unit>#x03230000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Stopwatch task max</Name>
+										<Info>
+											<Unit>#x00030000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Stopwatch task</Name>
+										<Info>
+											<Unit>#x00030000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Stopwatch cycle</Name>
+										<Info>
+											<Unit>#x00030000</Unit>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c2b</Index>
+								<Name>PSM Error handling</Name>
+								<Comment LcId="1033">This object contains error handling.</Comment>
+								<Type>DT2C2B</Type>
+								<BitSize>48</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Reset errors</Name>
+										<Info>
+											<DefaultData>00</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c2c</Index>
+								<Name>PSM Factory settings</Name>
+								<Comment LcId="1033">This object contains the device factory settings, which are read from EEPROM. Internal use only.</Comment>
+								<Type>DT2C2C</Type>
+								<BitSize>1424</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>50</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>DC link voltage scaling gain</Name>
+										<Info>
+											<Unit>#xffb70000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>DC link voltage offset</Name>
+										<Info>
+											<Unit>#xff260000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>DC link voltage sys scaling gain</Name>
+										<Info>
+											<Unit>#xffb70000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>DC link voltage sys offset</Name>
+										<Info>
+											<Unit>#xff260000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Mains voltage scaling gain 1</Name>
+										<Info>
+											<Unit>#xffb70000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Mains voltage offset1</Name>
+										<Info>
+											<Unit>#xff260000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Mains voltage scaling gain 2</Name>
+										<Info>
+											<Unit>#xffb70000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Mains voltage offset 2</Name>
+										<Info>
+											<Unit>#xff260000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Mains voltage scaling gain 3</Name>
+										<Info>
+											<Unit>#xffb70000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Mains voltage offset 3</Name>
+										<Info>
+											<Unit>#xff260000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Mains current scaling gain 1</Name>
+										<Info>
+											<Unit>#xffb70000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Mains current offset 1</Name>
+										<Info>
+											<Unit>#xfe040000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Mains current scaling gain 2</Name>
+										<Info>
+											<Unit>#xffb70000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Mains current offset 2</Name>
+										<Info>
+											<Unit>#xfe040000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Mains current scaling gain 3</Name>
+										<Info>
+											<Unit>#xffb70000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Mains current offset 3</Name>
+										<Info>
+											<Unit>#xfe040000</Unit>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c2d</Index>
+								<Name>PSM HW ids</Name>
+								<Comment LcId="1033">The object shows the hardware identification of the module</Comment>
+								<Type>DT2C2D</Type>
+								<BitSize>1296</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>3f</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+									<SdoAccess>SubIndexAccess</SdoAccess>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c2e</Index>
+								<Name>PSM Backup parameters</Name>
+								<Comment LcId="1033">This object shows the standard parameter of this module</Comment>
+								<Type>DT2C2E</Type>
+								<BitSize>160</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>0a</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Mains type</Name>
+										<Info>
+											<DefaultData>00</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Mains voltage</Name>
+										<Info>
+											<MinValue>#xfa0</MinValue>
+											<MaxValue>#x12c0</MaxValue>
+											<DefaultValue>#xfa0</DefaultValue>
+											<Unit>#xff260000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Mains voltage max tolerance</Name>
+										<Info>
+											<MinValue>#x0</MinValue>
+											<MaxValue>#x32</MaxValue>
+											<DefaultValue>#xa</DefaultValue>
+											<Unit>#x00b70000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Mains voltage min tolerance</Name>
+										<Info>
+											<MinValue>#x0</MinValue>
+											<MaxValue>#x32</MaxValue>
+											<DefaultValue>#xa</DefaultValue>
+											<Unit>#x00b70000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>DC link max voltage</Name>
+										<Info>
+											<MinValue>#x0</MinValue>
+											<MaxValue>#x2120</MaxValue>
+											<DefaultValue>#x2120</DefaultValue>
+											<Unit>#xff260000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Device temperature warning threshold</Name>
+										<Info>
+											<MinValue>#x0</MinValue>
+											<MaxValue>#x65</MaxValue>
+											<DefaultValue>#x5a</DefaultValue>
+											<Unit>#x00b70000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Voltage threshold switch on</Name>
+										<Info>
+											<MinValue>#x0</MinValue>
+											<MaxValue>#x1f40</MaxValue>
+											<DefaultValue>#x1d4c</DefaultValue>
+											<Unit>#xff260000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Voltage threshold max power</Name>
+										<Info>
+											<MinValue>#x0</MinValue>
+											<MaxValue>#x1f40</MaxValue>
+											<DefaultValue>#x1f40</DefaultValue>
+											<Unit>#xff260000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Power derating</Name>
+										<Info>
+											<MinValue>#x0</MinValue>
+											<MaxValue>#x64</MaxValue>
+											<DefaultValue>#x0</DefaultValue>
+											<Unit>#x00b70000</Unit>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c30</Index>
+								<Name>PSM Command</Name>
+								<Comment LcId="1033">With this command object different commands can be performed.</Comment>
+								<Type>DT2C30</Type>
+								<BitSize>1088</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>03</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Command</Name>
+										<Info>
+											<DefaultData>000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Status</Name>
+										<Info>
+											<DefaultData>00</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Response</Name>
+										<Info>
+											<DefaultData>000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c31</Index>
+								<Name>PSM Command parameters</Name>
+								<Comment LcId="1033">This object contains different command parameter.</Comment>
+								<Type>DT2C31</Type>
+								<BitSize>528</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>02</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Data state</Name>
+										<Info>
+											<DefaultData>00</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>User data</Name>
+										<Info>
+											<DefaultData>0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#xf000</Index>
+								<Name>Modular Device Profile</Name>
+								<Type>DTF000</Type>
+								<BitSize>48</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>02</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Index distance</Name>
+										<Info>
+											<DefaultData>1000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Maximum number of modules</Name>
+										<Info>
+											<DefaultData>0100</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#xf008</Index>
+								<Name>Code word</Name>
+								<Type>UDINT</Type>
+								<BitSize>32</BitSize>
+								<Flags>
+									<Access>rw</Access>
+								</Flags>
+							</Object>
+						</Objects>
+					</Dictionary>
+					<DiagMessages>
+						<DiagReset>
+							<Text LcId="1031">Ein Reset ist nicht möglich. Es ist ein fataler Hard- oder Softwarefehler aufgetreten.</Text>
+							<Text LcId="1033">A reset is not possible. The PSM detected a fatal hardware or software error.</Text>
+							<Enum>0</Enum>
+						</DiagReset>
+						<DiagReset>
+							<Text LcId="1031">Ein fataler Fehler ist aufgetreten, das Gerät muss neu gestartet werden.</Text>
+							<Text LcId="1033">A fatal error occured. A device reboot is required.</Text>
+							<Enum>1</Enum>
+						</DiagReset>
+						<DiagReset>
+							<Text LcId="1031">Das Reset-Kommando (Fault reset) muss ausgeführt werden.</Text>
+							<Text LcId="1033">Execute Reset-Command (Fault reset).</Text>
+							<Enum>2</Enum>
+						</DiagReset>
+						<DiagReset>
+							<Text LcId="1031">Warnung: Reset nicht erforderlich.</Text>
+							<Text LcId="1033">Warning: No reset required.</Text>
+							<Enum>100</Enum>
+						</DiagReset>
+						<DiagReset>
+							<Text LcId="1031">Information: Reset nicht erforderlich.</Text>
+							<Text LcId="1033">Information: No reset required.</Text>
+							<Enum>200</Enum>
+						</DiagReset>
+						<DiagReaction>
+							<Text LcId="1031">Keine</Text>
+							<Text LcId="1033">No</Text>
+							<Enum>0</Enum>
+							<Comment LcId="0"></Comment>
+						</DiagReaction>
+						<DiagReaction>
+							<Text LcId="1031">Das Modul ist nicht betriebsbereit</Text>
+							<Text LcId="1033">PSM is not ready to operate</Text>
+							<Enum>1</Enum>
+							<Comment LcId="0"></Comment>
+						</DiagReaction>
+						<DiagReaction>
+							<Text LcId="1031">NC-Handling Anforderung</Text>
+							<Text LcId="1033">NC-Handling order</Text>
+							<Enum>2</Enum>
+							<Comment LcId="0"></Comment>
+						</DiagReaction>
+						<DiagReaction>
+							<Text LcId="1031">Bremsrampe Anforderung an die Achsen</Text>
+							<Text LcId="1033">Generative brake ramp order to the axis</Text>
+							<Enum>3</Enum>
+							<Comment LcId="0"></Comment>
+						</DiagReaction>
+						<DiagReaction>
+							<Text LcId="1031">Nicht-generative bremsrampe Anforderung an die Achsen</Text>
+							<Text LcId="1033">Non-generative brake ramp order to the axis</Text>
+							<Enum>4</Enum>
+							<Comment LcId="0"></Comment>
+						</DiagReaction>
+						<DiagReaction>
+							<Text LcId="1031">Torque off Anforderung an die Achsen</Text>
+							<Text LcId="1033">Torque off order to the axis</Text>
+							<Enum>5</Enum>
+							<Comment LcId="0"></Comment>
+						</DiagReaction>
+						<DiagReaction>
+							<Text LcId="1031">Relais werden aufgemacht.</Text>
+							<Text LcId="1033">Relays are disabled</Text>
+							<Enum>6</Enum>
+							<Comment LcId="0"></Comment>
+						</DiagReaction>
+						<DiagReaction>
+							<Text LcId="1031">Bremschopper-Betrieb wird eingestellt.</Text>
+							<Text LcId="1033">Brake chopper is disabled</Text>
+							<Enum>7</Enum>
+							<Comment LcId="0"></Comment>
+						</DiagReaction>
+						<DiagReaction>
+							<Text LcId="1031">PSM ist nicht betriebsbereit und die Transition PREOP nach SAFEOP wird gesperrt.</Text>
+							<Text LcId="1033">PSM is not ready to operate and transition PREOP to SAFEOP disabled</Text>
+							<Enum>8</Enum>
+							<Comment LcId="0"></Comment>
+						</DiagReaction>
+						<DiagType>
+							<Text LcId="1031">Fehler</Text>
+							<Text LcId="1033">Error</Text>
+							<Enum>0</Enum>
+						</DiagType>
+						<DiagType>
+							<Text LcId="1031">Warnung</Text>
+							<Text LcId="1033">Warning</Text>
+							<Enum>100</Enum>
+						</DiagType>
+						<DiagType>
+							<Text LcId="1031">Information</Text>
+							<Text LcId="1033">Information</Text>
+							<Enum>200</Enum>
+						</DiagType>
+						<DiagType>
+							<Text LcId="1031">Information ohne Eintrag in die Fehlerhistorie</Text>
+							<Text LcId="1033">Information without history entry</Text>
+							<Enum>201</Enum>
+						</DiagType>
+						<DiagMessage>
+							<TextId>#x0000</TextId>
+							<MessageText LcId="1031">Keine Fehler</MessageText>
+							<MessageText LcId="1033">No errors</MessageText>
+							<Description LcId="1031"></Description>
+							<Description LcId="1033"></Description>
+							<Flags>
+								<DiagClass>information</DiagClass>
+								<DiagReset>200</DiagReset>
+								<DiagReaction>0</DiagReaction>
+								<DiagType>200</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x2389</TextId>
+							<MessageText LcId="1031">Kurzschluss netzseitig</MessageText>
+							<MessageText LcId="1033">Mains short circuit</MessageText>
+							<Description LcId="1031">Es wurde ein Kurzschluss netzseitig erkannt.</Description>
+							<Description LcId="1033">A short circuit was detected in the mains.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>0</DiagReset>
+								<DiagReaction>3</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Es gibt ein Problem an der Hardware oder am Netzanschluss.</Cause>
+								<Cause LcId="1033">There is a problem with the hardware or the mains connection.</Cause>
+								<Remedy LcId="1031">Überprüfen Sie den Netzanschluss auf Richtigkeit.</Remedy>
+								<Remedy LcId="1033">Check that the mains is connected properly.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x2390</TextId>
+							<MessageText LcId="1031">Überstrom in Phase %s.</MessageText>
+							<MessageText LcId="1033">Continuous overcurrent. Phase %s.</MessageText>
+							<Description LcId="1031">Der Stromfluss in einer Netzphase überschreitet den Nennstrom dauerhaft.</Description>
+							<Description LcId="1033">The requested current in a mains phase permanently exceeds the rated current.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>0</DiagReset>
+								<DiagReaction>3</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Es gibt ein Problem an der Hardware oder am Netzanschluss.</Cause>
+								<Cause LcId="1033">There is a problem with the hardware or the mains connection.</Cause>
+								<Remedy LcId="1031">Überprüfen Sie den Netzanschluss auf Richtigkeit.</Remedy>
+								<Remedy LcId="1033">Check that the mains conncection is correct.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x23A2</TextId>
+							<MessageText LcId="1031">Überstrom in Phase %s.</MessageText>
+							<MessageText LcId="1033">Continuous overcurrent. Phase %s.</MessageText>
+							<Description LcId="1031">Der Stromfluss in einer Netzphase hat die Warnschwelle überschritten.</Description>
+							<Description LcId="1033">The requested current in a mains phase exceeds the warning threshold.</Description>
+							<Flags>
+								<DiagClass>warning</DiagClass>
+								<DiagReset>100</DiagReset>
+								<DiagReaction>0</DiagReaction>
+								<DiagType>100</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Es gibt ein Problem an der Hardware oder am Netzanschluss.</Cause>
+								<Cause LcId="1033">There is a problem with the hardware or the mains connection.</Cause>
+								<Remedy LcId="1031">Überprüfen Sie den Netzanschluss auf Richtigkeit.</Remedy>
+								<Remedy LcId="1033">Check that the mains is connected properly.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x3110</TextId>
+							<MessageText LcId="1031">Netz-Überspannung</MessageText>
+							<MessageText LcId="1033">Mains overvoltage</MessageText>
+							<Description LcId="1031">Die anliegende Netzspannung überschreitet die parametrierte, maximal zulässige Spannung.</Description>
+							<Description LcId="1033">The actual mains voltage exceeds the parameterized mains voltage by more than 20% or by more than the parameterized positive tolerance if this higher than 20%.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>2</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Die aktuelle Netzspannung ist zu hoch.</Cause>
+								<Cause LcId="1033">The actual mains voltage is too high.</Cause>
+								<Remedy LcId="1031">Prüfen Sie die anliegende Netzspannung.</Remedy>
+								<Remedy LcId="1033">Check the connected mains voltage.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x3130</TextId>
+							<MessageText LcId="1031">Netzphasenfehler</MessageText>
+							<MessageText LcId="1033">Mains phase failure</MessageText>
+							<Description LcId="1031">Eine Phase im 3-Phasen-Netz ist ausgefallen.</Description>
+							<Description LcId="1033">One phase has failed in the 3-phase supply.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>2</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Die Spannungsversorgung ist fehlerhaft.</Cause>
+								<Cause LcId="1033">The mains voltage supply is faulty.</Cause>
+								<Remedy LcId="1031">Prüfen Sie die anliegende Netzspannung.</Remedy>
+								<Remedy LcId="1033">Analyze the mains voltage supply.</Remedy>
+							</CauseRemedy>
+							<CauseRemedy Idx="1">
+								<Cause LcId="1031">Die Netzspannung ist regelmäßig Störungen ausgesetzt.</Cause>
+								<Cause LcId="1033">The mains voltage supply is repeatedly exposed to interference.</Cause>
+								<Remedy LcId="1031">Versuchen Sie, einen Netzfilter zu verwenden.</Remedy>
+								<Remedy LcId="1033">Try to use a mains filter.</Remedy>
+							</CauseRemedy>
+							<CauseRemedy Idx="2">
+								<Cause LcId="1031">Sie haben ein einphasiges Netz angeschlossen, aber drei Phasen parametriert.</Cause>
+								<Cause LcId="1033">You have connected a singe-phase mains supply but parameterized three phases.</Cause>
+								<Remedy LcId="1031">Prüfen und korrigieren Sie die Netztyp-Parametrierung. Schalten Sie die Netzspannung aus und wieder ein.</Remedy>
+								<Remedy LcId="1033">Check and adjust the mains type parameterization. Switch the mains voltage off and on again.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x3182</TextId>
+							<MessageText LcId="1031">Falscher Netz-Typ</MessageText>
+							<MessageText LcId="1033">Wrong mains type</MessageText>
+							<Description LcId="1031">Das angeschlossene Netz (3Ph/AC, 1Ph/AC oder DC) stimmt nicht mit dem parametrierten Netz überein.</Description>
+							<Description LcId="1033">The connected mains type (3Ph/AC, 1Ph/AC or DC) does not match with the parameterized value of mains type.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>1</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Falscher Netz-Typ parametriert.</Cause>
+								<Cause LcId="1033">Wrong mains type parameterized.</Cause>
+								<Remedy LcId="1031">Prüfen Sie die Netz-Parametrierung.</Remedy>
+								<Remedy LcId="1033">Check the mains parameterization and adjust its value.</Remedy>
+							</CauseRemedy>
+							<CauseRemedy Idx="1">
+								<Cause LcId="1031">Die Einspeisung ist nicht richtig angeschlossen.</Cause>
+								<Cause LcId="1033">The power supply is not connected correctly.</Cause>
+								<Remedy LcId="1031">Prüfen und korrigieren Sie den Netzanschluss. Schalten Sie die Netzspannung aus und wieder ein.</Remedy>
+								<Remedy LcId="1033">Check and adjust the mains supply connection. Switch the mains voltage off and on again.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x31A0</TextId>
+							<MessageText LcId="1031">Netz-Überspannung</MessageText>
+							<MessageText LcId="1033">Mains overvoltage</MessageText>
+							<Description LcId="1031">Die Netzspannung überschreitet die paramerierte Warnschwelle.</Description>
+							<Description LcId="1033">The connected mains voltage exceeds the parameterized warning threshold.</Description>
+							<Flags>
+								<DiagClass>warning</DiagClass>
+								<DiagReset>100</DiagReset>
+								<DiagReaction>0</DiagReaction>
+								<DiagType>100</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Die aktuelle Netzspannung ist zu hoch.</Cause>
+								<Cause LcId="1033">The actual mains voltage is too high.</Cause>
+								<Remedy LcId="1031">Prüfen Sie die anliegende Netzspannung.</Remedy>
+								<Remedy LcId="1033">Check the connected mains voltage.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x31A1</TextId>
+							<MessageText LcId="1031">Netz-Unterspannung</MessageText>
+							<MessageText LcId="1033">Mains undervoltage</MessageText>
+							<Description LcId="1031">Die Netzspannung unterschreitet die paramerierte Warnschwelle.</Description>
+							<Description LcId="1033">The connected mains voltage fell below the parameterized warning threshold.</Description>
+							<Flags>
+								<DiagClass>warning</DiagClass>
+								<DiagReset>100</DiagReset>
+								<DiagReaction>0</DiagReaction>
+								<DiagType>100</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Die aktuelle Netzspannung ist zu gering.</Cause>
+								<Cause LcId="1033">The actual mains voltage is too low.</Cause>
+								<Remedy LcId="1031">Prüfen Sie die anliegende Netzspannung.</Remedy>
+								<Remedy LcId="1033">Check the connected mains voltage.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x31A2</TextId>
+							<MessageText LcId="1031">Netzphasenfehler</MessageText>
+							<MessageText LcId="1033">Mains phase failure</MessageText>
+							<Description LcId="1031">Eine Phase im 3-Phasen-Netz ist ausgefallen.</Description>
+							<Description LcId="1033">One phase has failed in the 3-phase supply.</Description>
+							<Flags>
+								<DiagClass>warning</DiagClass>
+								<DiagReset>100</DiagReset>
+								<DiagReaction>0</DiagReaction>
+								<DiagType>100</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Die Spannungsversorgung ist fehlerhaft.</Cause>
+								<Cause LcId="1033">The mains voltage supply is faulty.</Cause>
+								<Remedy LcId="1031">Prüfen Sie die anliegende Netzspannung.</Remedy>
+								<Remedy LcId="1033">Analyze the mains voltage supply.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x3210</TextId>
+							<MessageText LcId="1031">Zwischenkreis-Überspannung</MessageText>
+							<MessageText LcId="1033">DC link overvoltage</MessageText>
+							<Description LcId="1031">Die Zwischenkreisspannung ist über den zulässigen Bereich gestiegen.</Description>
+							<Description LcId="1033">The DC link voltage has risen above the permitted DC link voltage.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>4</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Die angeschlossenen Motoren induzieren zu viel Gegenspannung, wodurch die Zwischenkreisspannung steigt.</Cause>
+								<Cause LcId="1033">The connected motors generate too much electromotive force, causing the DC link voltage to rise.</Cause>
+								<Remedy LcId="1031">Sie müssen dafür sorgen, dass weniger Gegenspannung induziert wird. Sie können auch Bremschopper oder Rückspeisesysteme verwenden, um diesen Fehler zu vermeiden.</Remedy>
+								<Remedy LcId="1033">You need to reduce the electromotive force. You also can use brake chopper or energy recovery systems to prevent this error.</Remedy>
+							</CauseRemedy>
+							<CauseRemedy Idx="1">
+								<Cause LcId="1031">Die parametrierte Zwischenkreisspannung ist zu gering.</Cause>
+								<Cause LcId="1033">The configured DC link max voltage might be too low.</Cause>
+								<Remedy LcId="1031">Prüfen Sie die parametierte, maximale Zwischenkreisspannung.</Remedy>
+								<Remedy LcId="1033">Check the configured DC link max voltage.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x3220</TextId>
+							<MessageText LcId="1031">Zwischenkreis-Unterspannung</MessageText>
+							<MessageText LcId="1033">DC link undervoltage</MessageText>
+							<Description LcId="1031">Die Zwischenkreisspannung ist unter den zulässigen Bereich gefallen.</Description>
+							<Description LcId="1033">The DC link voltage has fallen below the permitted DC link voltage.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>3</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Ein unbekannter Fehler sorgt dafür, dass die Zwischenkreis-Erzeugung deaktiviert wird.</Cause>
+								<Cause LcId="1033">An unknown error has caused the DC link generation to be deactivated.</Cause>
+								<Remedy LcId="1031">Prüfen Sie die Fehlerhistorie auf anliegende Fehler.</Remedy>
+								<Remedy LcId="1033">Check the error history for pending errors.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x32A0</TextId>
+							<MessageText LcId="1031">Zwischenkreis-Unterspannung</MessageText>
+							<MessageText LcId="1033">DC link undervoltage</MessageText>
+							<Description LcId="1031">Die Zwischenkreisspannung ist unter den zulässigen Bereich gefallen.</Description>
+							<Description LcId="1033">The DC link voltage has fallen below the permitted DC link voltage.</Description>
+							<Flags>
+								<DiagClass>warning</DiagClass>
+								<DiagReset>100</DiagReset>
+								<DiagReaction>0</DiagReaction>
+								<DiagType>100</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Die Zwischenkreisspannung lag unter dem konfigurierten Minimum.</Cause>
+								<Cause LcId="1033">The DC link voltage level was under the configured minimum.</Cause>
+								<Remedy LcId="1031">Prüfen Sie die Parameter für die minimale Zwischenkreisspannung.</Remedy>
+								<Remedy LcId="1033">Check the minimum DC link voltage parameter.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x4210</TextId>
+							<MessageText LcId="1031">Übertemperatur (%s)</MessageText>
+							<MessageText LcId="1033">Excess temperature device: %s</MessageText>
+							<Description LcId="1031">Die Gerätetemperatur überschreitet den maximal zulässigen Wert.</Description>
+							<Description LcId="1033">The device temperature exceeds the permitted maximal value.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>2</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Es ist eine thermische Überlastung des Gerätes aufgetreten.</Cause>
+								<Cause LcId="1033">Your application has produced a thermic overload in the power supply module.</Cause>
+								<Remedy LcId="1031">Analysieren Sie Ihre Anlage und prüfen Sie z. B. die Umgebungstemperatur.</Remedy>
+								<Remedy LcId="1033">Analyze your system and check the ambient temperature, for example.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x42A0</TextId>
+							<MessageText LcId="1031">Übertemperatur (%s)</MessageText>
+							<MessageText LcId="1033">Excess temperature device: %s</MessageText>
+							<Description LcId="1031">Die Gerätetemperatur überschreitet die parametrierte Warnschwelle.</Description>
+							<Description LcId="1033">The actual device temperature exceeds the parameterized warning threshold.</Description>
+							<Flags>
+								<DiagClass>warning</DiagClass>
+								<DiagReset>100</DiagReset>
+								<DiagReaction>0</DiagReaction>
+								<DiagType>100</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Es ist eine thermische Überlastung des Gerätes aufgetreten.</Cause>
+								<Cause LcId="1033">Your application has produced a thermic overload in the power supply module.</Cause>
+								<Remedy LcId="1031">Analysieren Sie Ihre Anlage und prüfen Sie z. B. die Umgebungstemperatur.</Remedy>
+								<Remedy LcId="1033">Analyze your system and check the ambient temperature, for example.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x5560</TextId>
+							<MessageText LcId="1031">Lese EEPROM fehlgeschlagen: %s</MessageText>
+							<MessageText LcId="1033">Read data failed: %s</MessageText>
+							<Description LcId="1031">Es ist ein Fehler beim Lesen der EEPROM-Daten während der Initialisierung aufgetreten.</Description>
+							<Description LcId="1033">An error occurred while reading data from the EEPROM during initialization.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>0</DiagReset>
+								<DiagReaction>8</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Es ist ein internes Kommunikationsproblem aufgetreten.</Cause>
+								<Cause LcId="1033">An internal communication error occured.</Cause>
+								<Remedy LcId="1031">Starten Sie das Gerät neu. Sollte der Fehler weiterhin auftreten, melden Sie sich bei Ihrem Beckhoff Support.</Remedy>
+								<Remedy LcId="1033">Restart the device. If this error happens repeatedly, please contact your Beckhoff office.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x5561</TextId>
+							<MessageText LcId="1031">Fehlende EEPROM-Daten: %s</MessageText>
+							<MessageText LcId="1033">Missing data: %s</MessageText>
+							<Description LcId="1031">Es ist ein Fehler beim Lesen der EEPROM-Daten während der Initialisierung aufgetreten.</Description>
+							<Description LcId="1033">An error occurred while reading data from the EEPROM during initialization.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>0</DiagReset>
+								<DiagReaction>8</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Es ist ein internes Kommunikationsproblem aufgetreten.</Cause>
+								<Cause LcId="1033">An internal communication error occured.</Cause>
+								<Remedy LcId="1031">Starten Sie das Gerät neu. Sollte der Fehler weiterhin auftreten, melden Sie sich bei Ihrem Beckhoff Support.</Remedy>
+								<Remedy LcId="1033">Restart the device. If this error happens repeatedly, please contact your Beckhoff office.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x556C</TextId>
+							<MessageText LcId="1031">Schreibe EEPROM fehlgeschlagen: %s</MessageText>
+							<MessageText LcId="1033">Write data failed: %s</MessageText>
+							<Description LcId="1031">Es ist ein Fehler beim Schreiben der EEPROM-Daten aufgetreten.</Description>
+							<Description LcId="1033">An error occurred while writing data to the EEPROM.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>1</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Es ist ein internes Kommunikationsproblem aufgetreten.</Cause>
+								<Cause LcId="1033">An internal communication error occured.</Cause>
+								<Remedy LcId="1031">Starten Sie das Gerät neu. Sollte der Fehler weiterhin auftreten, melden Sie sich bei Ihrem Beckhoff Support.</Remedy>
+								<Remedy LcId="1033">Restart the device. If this error happens repeatedly, please contact your Beckhoff office.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x5570</TextId>
+							<MessageText LcId="1031">Rücksetzen EEPROM fehlgeschlagen: %s</MessageText>
+							<MessageText LcId="1033">Reset data failed: %s</MessageText>
+							<Description LcId="1031">Es ist ein Fehler beim Zurücksetzen der EEPROM-Daten aufgetreten.</Description>
+							<Description LcId="1033">An error occured while resetting the EEPROM data.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>1</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Es ist ein internes Kommunikationsproblem aufgetreten.</Cause>
+								<Cause LcId="1033">An internal communication error occured.</Cause>
+								<Remedy LcId="1031">Starten Sie das Gerät neu. Sollte der Fehler weiterhin auftreten, melden Sie sich bei Ihrem Beckhoff Support.</Remedy>
+								<Remedy LcId="1033">Restart the device. If this error happens repeatedly, please contact your Beckhoff office.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x5592</TextId>
+							<MessageText LcId="1031">%s Firmware-Index ist inkompatibel zu dieser Firmware</MessageText>
+							<MessageText LcId="1033">%s Firmware index is incompatible with this firmware</MessageText>
+							<Description LcId="1031">Es wurde eine inkompatible Baugruppe für diese Firmware erkannt.</Description>
+							<Description LcId="1033">Detected incompatible PCB for this firmware.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>1</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Es ist ein internes Kommunikationsproblem aufgetreten.</Cause>
+								<Cause LcId="1033">An internal communication error occured.</Cause>
+								<Remedy LcId="1031">Starten Sie das Gerät neu. Sollte der Fehler weiterhin auftreten, melden Sie sich bei Ihrem Beckhoff Support.</Remedy>
+								<Remedy LcId="1033">Restart the device. If this error happens repeatedly, please contact your Beckhoff office.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x5593</TextId>
+							<MessageText LcId="1031">%s Stukturversion ist inkompatibel zu dieser Firmware</MessageText>
+							<MessageText LcId="1033">%s Structure version is incompatible with this firmware</MessageText>
+							<Description LcId="1031">Es wurde eine inkompatible Strukturversion für diese Firmware erkannt.</Description>
+							<Description LcId="1033">Detected incompatible structure version for this firmware.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>1</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Es ist ein internes Kommunikationsproblem aufgetreten.</Cause>
+								<Cause LcId="1033">An internal communication error occured.</Cause>
+								<Remedy LcId="1031">Starten Sie das Gerät neu. Sollte der Fehler weiterhin auftreten, melden Sie sich bei Ihrem Beckhoff Support.</Remedy>
+								<Remedy LcId="1033">Restart the device. If this error happens repeatedly, please contact your Beckhoff office.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x5595</TextId>
+							<MessageText LcId="1031">%s Komponententyp ist inkompatibel zu dieser Firmware</MessageText>
+							<MessageText LcId="1033">%s Component type is incompatible with this firmware</MessageText>
+							<Description LcId="1031">Es wurde ein inkompatibler Komponentenyp zu dieser Firmware erkannt.</Description>
+							<Description LcId="1033">Detected incompatible component type for this firmware.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>1</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Es ist ein internes Kommunikationsproblem aufgetreten.</Cause>
+								<Cause LcId="1033">An internal communication error occured.</Cause>
+								<Remedy LcId="1031">Starten Sie das Gerät neu. Sollte der Fehler weiterhin auftreten, melden Sie sich bei Ihrem Beckhoff Support.</Remedy>
+								<Remedy LcId="1033">Restart the device. If this error happens repeatedly, please contact your Beckhoff office.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x5598</TextId>
+							<MessageText LcId="1031">BIC-Aktualisierung fehlgeschlgaen: %s</MessageText>
+							<MessageText LcId="1033">BIC update failed: %s</MessageText>
+							<Description LcId="1031">Das Aktualisieren der BIC ist fehlgeschlagen.</Description>
+							<Description LcId="1033">The update of the BIC has failed.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>1</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Es ist ein internes Kommunikationsproblem aufgetreten.</Cause>
+								<Cause LcId="1033">An internal communication error occured.</Cause>
+								<Remedy LcId="1031">Starten Sie das Gerät neu. Sollte der Fehler weiterhin auftreten, melden Sie sich bei Ihrem Beckhoff Support.</Remedy>
+								<Remedy LcId="1033">Restart the device. If this error happens repeatedly, please contact your Beckhoff office.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x55D0</TextId>
+							<MessageText LcId="1031">Fehlermeldungen aus dem Speicher geladen</MessageText>
+							<MessageText LcId="1033">Restored error messages from persistent memory</MessageText>
+							<Description LcId="1031">Der persistente Speicher enhält eine Fehlerhistorie. Diese wird beim Einschalten des Geräts geladen.</Description>
+							<Description LcId="1033">The persistent memory contains an error log. The messages are restored during power on phase.</Description>
+							<Flags>
+								<DiagClass>information</DiagClass>
+								<DiagReset>200</DiagReset>
+								<DiagReaction>0</DiagReaction>
+								<DiagType>200</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x6010</TextId>
+							<MessageText LcId="1031">Software-Reset (Watchdog)</MessageText>
+							<MessageText LcId="1033">Software reset (watchdog)</MessageText>
+							<Description LcId="1031">Ein Time-out ist aufgetreten.</Description>
+							<Description LcId="1033">A timeout has occurred.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>1</DiagReset>
+								<DiagReaction>8</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Es sind zu viele Objekte im Prozessdaten-Mapping.</Cause>
+								<Cause LcId="1033">Too many objects in the PDO mapping.</Cause>
+								<Remedy LcId="1031">Prüfen Sie die Anzahl der Objekte im Prozessdaten-Mapping.</Remedy>
+								<Remedy LcId="1033">Check the number of objects in the PDO mapping.</Remedy>
+							</CauseRemedy>
+							<CauseRemedy Idx="1">
+								<Cause LcId="1031">Ein unbekannter Hard- oder Software-Fehler ist aufgetreten.</Cause>
+								<Cause LcId="1033">An unknown hardware or software error has occurred.</Cause>
+								<Remedy LcId="1031">Schalten Sie alle Versorungsspannungen ab und starten das Gerät neu. Sollte der Fehler wiederholt auftreten, kontaktieren Sie Ihren Beckhoff Support.</Remedy>
+								<Remedy LcId="1033">Switch off the mains voltage and the 24 V supply. Switch them on again. If this error happens repeatedly, please contact your Beckhoff office.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x6320</TextId>
+							<MessageText LcId="1031">Parameterfehler</MessageText>
+							<MessageText LcId="1033">Parameter error</MessageText>
+							<Description LcId="1031">Ein Parameterfehler ist aufgetreten.</Description>
+							<Description LcId="1033">A parameterization error has occurred.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>8</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Es gibt ein Problem mit der Parametrierung.</Cause>
+								<Cause LcId="1033">There is a problem with the parameterization.</Cause>
+								<Remedy LcId="1031">Prüfen Sie Ihre Parametertrierung. Nutzen Sie im Zweifel Standard-Parameter und nehmen Ihre Parametrierung erneut vor.</Remedy>
+								<Remedy LcId="1033">Check your parameterization. Use the standard parameters and reset your parameters.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x6321</TextId>
+							<MessageText LcId="1031">Parameterfehler im Object 0x%x/%x</MessageText>
+							<MessageText LcId="1033">Parameter error in object 0x%x/%x</MessageText>
+							<Description LcId="1031">Der aufgeführte Parameter verursacht einen Fehler.</Description>
+							<Description LcId="1033">The mentioned parameter contains a not accepted value.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>8</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Der Parameter in dem genannten Object passt nicht.</Cause>
+								<Cause LcId="1033">Something is wrong with the parameter in this object.</Cause>
+								<Remedy LcId="1031">Bitte prüfen Sie den betroffenen Wert.</Remedy>
+								<Remedy LcId="1033">Please check the parameter of the mentioned object.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x6322</TextId>
+							<MessageText LcId="1031">Parameterfehler in Object 0x%x/%x, 0x%x/%x</MessageText>
+							<MessageText LcId="1033">Parameter error in object 0x%x/%x, 0x%x/%x</MessageText>
+							<Description LcId="1031">Die aufgeführten Parameter verursachen einen Fehler.</Description>
+							<Description LcId="1033">The mentioned parameter contain not accepted values.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>8</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Die Parameter in den genannten Objekten passen nicht.</Cause>
+								<Cause LcId="1033">Something is wrong with the parameter in these objects.</Cause>
+								<Remedy LcId="1031">Bitte prüfen Sie die betroffenen Werte.</Remedy>
+								<Remedy LcId="1033">Please check the parameter of the mentioned objects.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x87D0</TextId>
+							<MessageText LcId="1031">PLL sync verloren</MessageText>
+							<MessageText LcId="1033">PLL sync lost</MessageText>
+							<Description LcId="1031">Es ist ein Problem mit der Kommunikation zwischen EtherCAT-Master und -Slave aufgetreten.</Description>
+							<Description LcId="1033">A problem has occured in the communication between the EtherCAT master and slave.</Description>
+							<Flags>
+								<DiagClass>information</DiagClass>
+								<DiagReset>200</DiagReset>
+								<DiagReaction>0</DiagReaction>
+								<DiagType>200</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Der Slave hat für mehr als einen EtherCAT-Zyklus keine Prozessdaten empfangen.</Cause>
+								<Cause LcId="1033">The slave has received no process data for over one EtherCAT cycle.</Cause>
+								<Remedy LcId="1031">Prüfen Sie die Echtzeit-Tasks Ihres EtherCAT-Masters.</Remedy>
+								<Remedy LcId="1033">Check the realtime tasks of your EtherCAT master.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#xA025</TextId>
+							<MessageText LcId="1031">TxPdo Mapping Fehler: Index 0x%x überschreitet die zugelassene Größe</MessageText>
+							<MessageText LcId="1033">TxPdo Mapping Error: Too many inputs mapped to index 0x%x</MessageText>
+							<Description LcId="1031">Es ist ein Problem durch das Prozessdaten-Mapping aufgetreten.</Description>
+							<Description LcId="1033">A problem has occured with the mapping of TxPdo.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>0</DiagReset>
+								<DiagReaction>0</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1031">Der Index enthält mehr Signale als zugelassen.</Cause>
+								<Cause LcId="1033">Too many signals were mapped to this index.</Cause>
+								<Remedy LcId="1031">Prüfen Sie das TxPdo Mapping.</Remedy>
+								<Remedy LcId="1033">Check the TxPdo Mapping.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#xFFC0</TextId>
+							<MessageText LcId="1031">%s erfolgreich ausgeführt</MessageText>
+							<MessageText LcId="1033">%s executed successfully</MessageText>
+							<Description LcId="1031">Das angeforderte Kommando wurde erfolgreich ausgeführt.</Description>
+							<Description LcId="1033">The requested command was executed successfully.</Description>
+							<Flags>
+								<DiagClass>information</DiagClass>
+								<DiagReset>200</DiagReset>
+								<DiagReaction>0</DiagReaction>
+								<DiagType>200</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#xFFD0</TextId>
+							<MessageText LcId="1031">Debug-Firmware, ersetzen Sie diese schnellstmöglich!</MessageText>
+							<MessageText LcId="1033">Debug firmware, replace as soon as possiblea!</MessageText>
+							<Description LcId="1031">Debug-Firmware: Ersetzen Sie diese schnellstmöglich!</Description>
+							<Description LcId="1033">Debug firmware: Replace ASAP!</Description>
+							<Flags>
+								<DiagClass>information</DiagClass>
+								<DiagReset>200</DiagReset>
+								<DiagReaction>0</DiagReaction>
+								<DiagType>200</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#xFFD1</TextId>
+							<MessageText LcId="1031">Dbg: %s</MessageText>
+							<MessageText LcId="1033">Dbg: %s</MessageText>
+							<Description LcId="1031">Nur für interne Zwecke</Description>
+							<Description LcId="1033">Internal use only</Description>
+							<Flags>
+								<DiagClass>information</DiagClass>
+								<DiagReset>200</DiagReset>
+								<DiagReaction>0</DiagReaction>
+								<DiagType>200</DiagType>
+							</Flags>
+						</DiagMessage>
+					</DiagMessages>
+				</Profile>
+				<Fmmu>Inputs</Fmmu>
+				<Fmmu>MBoxState</Fmmu>
+				<Sm MinSize="128" MaxSize="256" DefaultSize="256" StartAddress="#x1000" ControlByte="#x26" Enable="1">MBoxOut</Sm>
+				<Sm MinSize="128" MaxSize="256" DefaultSize="256" StartAddress="#x1100" ControlByte="#x22" Enable="1">MBoxIn</Sm>
+				<Sm DefaultSize="0" StartAddress="#x1200" ControlByte="#x4" Enable="0">Outputs</Sm>
+				<Sm DefaultSize="2" StartAddress="#x1900" ControlByte="#x20" Enable="1">Inputs</Sm>
+				<TxPdo Fixed="1">
+					<Index>#x1a01</Index>
+					<Name>PSM Warning register</Name>
+					<Entry>
+						<Index>#x2c25</Index>
+						<SubIndex>32</SubIndex>
+						<BitLen>16</BitLen>
+						<Name>Warning register</Name>
+						<Comment>Actual warning status.
+- Bit 0: Reserved
+- Bit 1: BrakeResistorLoadUtilisationReached
+- Bit 2: DeviceOvertemperature
+- Bit 3: DClinkContinuousOvercurrent
+- Bit 4: FanMalfunction
+- Bit 5: MainsOvervoltage
+- Bit 6: MainsUndervoltage
+- Bit 7 - 15: Reserved</Comment>
+						<DataType>UINT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="1" Sm="3">
+					<Index>#x1a02</Index>
+					<Name>PSM Statusword</Name>
+					<Entry>
+						<Index>#x2c20</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>16</BitLen>
+						<Name>Statusword</Name>
+						<Comment>Status bits:
+- Bit 0: Ready to operate dc output 1
+- Bit 1: Error active
+- Bit 2: Warning active
+- Bit 3: Reserved
+- Bit 4: Brake chopper active
+- Bit 5: Fan active
+- Bit 6: Charging activeReserved
+- Bit 7: Dc out 1 active
+- Bit 8 - 9: Reserved
+- Bit 10: Dc out 2 active
+- Bit 11: Ready to operate dc output 2
+- Bit 12: Energy recovery active
+- Bit 13 - 15: Reserved</Comment>
+						<DataType>UINT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo>
+					<Index>#x1a03</Index>
+					<Name>PSM Process values</Name>
+					<Entry>
+						<Index>#x2c22</Index>
+						<SubIndex>32</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Actual DC link voltage</Name>
+						<Comment>Actual voltage value at the DC link.</Comment>
+						<DataType>REAL</DataType>
+					</Entry>
+				</TxPdo>
+				<Mailbox DataLinkLayer="true">
+					<CoE SdoInfo="1" PdoAssign="1" PdoConfig="1" CompleteAccess="1" SegmentedSdo="1" DiagHistory="1">
+						<InitCmd>
+							<Transition>IP</Transition>
+							<Index>4339</Index>
+							<SubIndex>5</SubIndex>
+							<Data AdaptAutomatically="1">0000</Data>
+							<Comment>Enable DiagMessage as emergency</Comment>
+						</InitCmd>
+					</CoE>
+					<FoE></FoE>
+				</Mailbox>
+				<Dc>
+					<OpMode>
+						<Name>DC</Name>
+						<Desc>DC-Synchron</Desc>
+						<AssignActivate>#x700</AssignActivate>
+						<CycleTimeSync0 Factor="0">15625</CycleTimeSync0>
+						<ShiftTimeSync0 Input="0">0</ShiftTimeSync0>
+						<CycleTimeSync1 Factor="-1">0</CycleTimeSync1>
+						<ShiftTimeSync1>500</ShiftTimeSync1>
+					</OpMode>
+				</Dc>
+				<Eeprom>
+					<ByteSize>2048</ByteSize>
+					<ConfigData>050603cc64000000000000000000</ConfigData>
+					<BootStrap>0010f400f410f400</BootStrap>
+				</Eeprom>
+				<ImageData16x14>424DD6020000000000003600000028000000100000000E0000000100180000000000A0020000C40E0000C40E00000000000000000000FF00FFFF00FFFF00FFFF00FF000000000000FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3C3C3C3C3C3C3C3C3C33219E8C3C3C3FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3C3C3C3C3C3C3C3C3C33219E8C3C3C3FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3C3C3C3C3C3C3C3C3C33219E8C3C3C3FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3000000C3C3C3C3C3C33219E8C3C3C3FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3000000C3C3C3C3C3C33219E8C3C3C3FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3000000C3C3C3C3C3C33219E8C3C3C3FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF</ImageData16x14>
+			</Device>
+		</Devices>
+	</Descriptions>
+</EtherCATInfo>

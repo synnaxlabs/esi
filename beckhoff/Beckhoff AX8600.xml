@@ -1,0 +1,4895 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<EtherCATInfo xsi:noNamespaceSchemaLocation="EtherCATInfo.xsd" Version="1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Vendor FileVersion="1">
+		<Id>2</Id>
+		<Name>Beckhoff Automation GmbH &amp; Co. KG</Name>
+		<ImageData16x14>424DE6000000000000007600000028000000100000000E000000010004000000000070000000120B0000120B0000100000001000000000000000000080000080000000808000800000008000800080800000C0C0C000808080000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF009D9DD99DD9DDD9DD9D9D9DD9D9DDD9DD999D9DD9D999D9999D9D9DD9D9DDD9DD9D9DD99DD999D999DDDDDDDDDDDDDDDD88888888888888888888888888888888DDDDDDDDDDDDDDDD999D999DD99DD9D99D9D9DDD9DD9D9D999DD999D9DDDD99D9D9D9DDD9DD9D99D999D999DD99DD9D9</ImageData16x14>
+	</Vendor>
+	<Descriptions>
+		<Groups>
+			<Group SortOrder="0">
+				<Type>Drive</Type>
+				<Name LcId="1033">Drives</Name>
+				<Name LcId="1031">Antriebe</Name>
+				<ImageData16x14>424DD6020000000000003600000028000000100000000E0000000100180000000000A002000000000000000000000000000000000000FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF808080808080808080808080808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF000000FF00FFFF00FFFF00FFC0C0C0FF0000FF0000FF0000808080FF00FF000000000000000000000000000000000000000000FF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FF0000000000000000000000000000000000000000000000FF0000FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FF000000000000000000000000000000000000000000FF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FF000000FF00FFFF00FF000000FF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FF000000000000000000000000FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FF</ImageData16x14>
+			</Group>
+			<Group ParentGroup="Drive">
+				<Type>AX8000</Type>
+				<Name LcId="1033">AX8000</Name>
+				<Name LcId="1031">AX8000</Name>
+				<ImageData16x14>424DD6020000000000003600000028000000100000000E0000000100180000000000A002000000000000000000000000000000000000FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF808080808080808080808080808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF000000FF00FFFF00FFFF00FFC0C0C0FF0000FF0000FF0000808080FF00FF000000000000000000000000000000000000000000FF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FF0000000000000000000000000000000000000000000000FF0000FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FF000000000000000000000000000000000000000000FF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FF000000FF00FFFF00FF000000FF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FF000000000000000000000000FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FF</ImageData16x14>
+			</Group>
+			<Group ParentGroup="AX8000">
+				<Type>AX8000 Coupling</Type>
+				<Name LcId="1033">AX8000 Coupling modules</Name>
+				<Name LcId="1031">AX8000 Koppelmodule</Name>
+				<ImageData16x14>424DD6020000000000003600000028000000100000000E0000000100180000000000A002000000000000000000000000000000000000FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF808080808080808080808080808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF000000FF00FFFF00FFFF00FFC0C0C0FF0000FF0000FF0000808080FF00FF000000000000000000000000000000000000000000FF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FF0000000000000000000000000000000000000000000000FF0000FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FF000000000000000000000000000000000000000000FF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FF000000FF00FFFF00FF000000FF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FF000000000000000000000000FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0FF0000C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FF</ImageData16x14>
+			</Group>
+		</Groups>
+		<Devices>
+			<Device Physics="YKY">
+				<Type ProductCode="#x21986012" RevisionNo="#x00650000" CheckRevisionNo="LW_EQ_HW_EQ_OR_G">AX8600-0000-0101</Type>
+				<Name LcId="1033">AX8600-0000-0101</Name>
+				<Name LcId="1031">AX8600-0000-0101</Name>
+				<Info>
+					<StateMachine>
+						<Timeout>
+							<PreopTimeout>60000</PreopTimeout>
+							<SafeopOpTimeout>30000</SafeopOpTimeout>
+							<BackToInitTimeout>30000</BackToInitTimeout>
+							<BackToSafeopTimeout>300</BackToSafeopTimeout>
+						</Timeout>
+						<Behavior StartToSafeopNoSync="1"></Behavior>
+					</StateMachine>
+					<Mailbox>
+						<Timeout>
+							<RequestTimeout>100</RequestTimeout>
+							<ResponseTimeout>2000</ResponseTimeout>
+						</Timeout>
+					</Mailbox>
+					<VendorSpecific>
+						<TcSmExtension Guid="{243170CD-A63C-4949-A546-723782A6C256}"></TcSmExtension>
+					</VendorSpecific>
+				</Info>
+				<GroupType>AX8000 Coupling</GroupType>
+				<Profile>
+					<ChannelInfo>
+						<ProfileNo>5001</ProfileNo>
+						<DisplayName>AX8000 Power supply module</DisplayName>
+					</ChannelInfo>
+					<Dictionary>
+						<UnitTypes>
+							<UnitType>
+								<NotationIndex>#xb7</NotationIndex>
+								<Index>#x4b7</Index>
+								<Name>Percent</Name>
+								<Symbol>%</Symbol>
+							</UnitType>
+						</UnitTypes>
+						<DataTypes>
+							<DataType>
+								<Name>BIT4</Name>
+								<BitSize>4</BitSize>
+							</DataType>
+							<DataType>
+								<Name>BIT6</Name>
+								<BitSize>6</BitSize>
+							</DataType>
+							<DataType>
+								<Name>BOOL</Name>
+								<BitSize>1</BitSize>
+							</DataType>
+							<DataType>
+								<Name>BYTE</Name>
+								<BitSize>8</BitSize>
+							</DataType>
+							<DataType>
+								<Name>DINT</Name>
+								<BitSize>32</BitSize>
+							</DataType>
+							<DataType>
+								<Name>INT</Name>
+								<BitSize>16</BitSize>
+							</DataType>
+							<DataType>
+								<Name>REAL</Name>
+								<BitSize>32</BitSize>
+							</DataType>
+							<DataType>
+								<Name>UDINT</Name>
+								<BitSize>32</BitSize>
+							</DataType>
+							<DataType>
+								<Name>UINT</Name>
+								<BitSize>16</BitSize>
+							</DataType>
+							<DataType>
+								<Name>ULINT</Name>
+								<BitSize>64</BitSize>
+							</DataType>
+							<DataType>
+								<Name>USINT</Name>
+								<BitSize>8</BitSize>
+							</DataType>
+							<DataType>
+								<Name>ARRAY [0..79] OF BYTE</Name>
+								<BaseType>BYTE</BaseType>
+								<BitSize>640</BitSize>
+								<ArrayInfo>
+									<LBound>0</LBound>
+									<Elements>80</Elements>
+								</ArrayInfo>
+							</DataType>
+							<DataType>
+								<Name>STRING(10)</Name>
+								<BitSize>80</BitSize>
+							</DataType>
+							<DataType>
+								<Name>STRING(11)</Name>
+								<BitSize>88</BitSize>
+							</DataType>
+							<DataType>
+								<Name>STRING(128)</Name>
+								<BitSize>1024</BitSize>
+							</DataType>
+							<DataType>
+								<Name>STRING(141)</Name>
+								<BitSize>1128</BitSize>
+							</DataType>
+							<DataType>
+								<Name>STRING(2)</Name>
+								<BitSize>16</BitSize>
+							</DataType>
+							<DataType>
+								<Name>STRING(32)</Name>
+								<BitSize>256</BitSize>
+							</DataType>
+							<DataType>
+								<Name>DT0800EN16</Name>
+								<BaseType>INT</BaseType>
+								<BitSize>16</BitSize>
+								<EnumInfo>
+									<Text>Brake chopper off</Text>
+									<Enum>-4</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Generative brake order</Text>
+									<Enum>-3</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Non generative brake order</Text>
+									<Enum>-2</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>NC handling order</Text>
+									<Enum>-1</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Torque off order</Text>
+									<Enum>0</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT0801EN16</Name>
+								<BaseType>UINT</BaseType>
+								<BitSize>16</BitSize>
+								<EnumInfo>
+									<Text>Integer 8 main CPU</Text>
+									<Enum>1</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 8 main CPU</Text>
+									<Enum>2</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 16 main CPU</Text>
+									<Enum>3</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 16 main CPU</Text>
+									<Enum>4</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 32 main CPU</Text>
+									<Enum>5</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 32 main CPU</Text>
+									<Enum>6</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 8 slave CPU</Text>
+									<Enum>7</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 8 slave CPU</Text>
+									<Enum>8</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 16 slave CPU</Text>
+									<Enum>9</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 16 slave CPU</Text>
+									<Enum>10</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 32 slave CPU</Text>
+									<Enum>11</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 32 slave CPU</Text>
+									<Enum>12</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT0802EN16</Name>
+								<BaseType>UINT</BaseType>
+								<BitSize>16</BitSize>
+								<EnumInfo>
+									<Text>Integer 8 main CPU</Text>
+									<Enum>1</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 8 main CPU</Text>
+									<Enum>2</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 16 main CPU</Text>
+									<Enum>3</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 16 main CPU</Text>
+									<Enum>4</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 32 main CPU</Text>
+									<Enum>5</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 32 main CPU</Text>
+									<Enum>6</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 8 slave CPU</Text>
+									<Enum>7</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 8 slave CPU</Text>
+									<Enum>8</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 16 slave CPU</Text>
+									<Enum>9</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 16 slave CPU</Text>
+									<Enum>10</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 32 slave CPU</Text>
+									<Enum>11</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 32 slave CPU</Text>
+									<Enum>12</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT0803EN16</Name>
+								<BaseType>UINT</BaseType>
+								<BitSize>16</BitSize>
+								<EnumInfo>
+									<Text>Select</Text>
+									<Enum>0</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Write scalings</Text>
+									<Enum>1</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Write HW ids</Text>
+									<Enum>2</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Write HW revision</Text>
+									<Enum>3</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Write production date (dd.mm.yyyy)</Text>
+									<Enum>4</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Write Beckhoff identification code (BIC)</Text>
+									<Enum>5</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Reset error list memory</Text>
+									<Enum>32</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Reset operating time</Text>
+									<Enum>33</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Reset DC link out current offsets</Text>
+									<Enum>34</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Reset 24V M8/B23 current offsets</Text>
+									<Enum>35</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Reset 24V total current offset</Text>
+									<Enum>36</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Read calibration data from memory</Text>
+									<Enum>64</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Force command data integer</Text>
+									<Enum>96</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Force brake resistor power</Text>
+									<Enum>97</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Write firmware parameters</Text>
+									<Enum>98</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Read firmware parameters structure version</Text>
+									<Enum>99</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Write components factory settings</Text>
+									<Enum>100</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Read components factory settings</Text>
+									<Enum>101</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT0806EN08</Name>
+								<BaseType>USINT</BaseType>
+								<BitSize>8</BitSize>
+								<EnumInfo>
+									<Text>Disable</Text>
+									<Enum>0</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>External brake resistor</Text>
+									<Enum>2</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT0807EN08</Name>
+								<BaseType>USINT</BaseType>
+								<BitSize>8</BitSize>
+								<EnumInfo>
+									<Text>WaitingForCharging</Text>
+									<Enum>0</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>BypassChargeResistor</Text>
+									<Enum>1</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>CheckChopperConnection</Text>
+									<Enum>2</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>DcLinkOk</Text>
+									<Enum>3</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>RtO_Run</Text>
+									<Enum>4</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>ActivateChargingIgbt</Text>
+									<Enum>11</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>ErrorState</Text>
+									<Enum>12</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT0809EN16</Name>
+								<BaseType>UINT</BaseType>
+								<BitSize>16</BitSize>
+								<EnumInfo>
+									<Text>Float main CPU</Text>
+									<Enum>1</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Float slave CPU</Text>
+									<Enum>2</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT080AEN16</Name>
+								<BaseType>UINT</BaseType>
+								<BitSize>16</BitSize>
+								<EnumInfo>
+									<Text>Integer 8 main CPU</Text>
+									<Enum>1</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 8 main CPU</Text>
+									<Enum>2</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 16 main CPU</Text>
+									<Enum>3</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 16 main CPU</Text>
+									<Enum>4</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 32 main CPU</Text>
+									<Enum>5</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 32 main CPU</Text>
+									<Enum>6</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 8 slave CPU</Text>
+									<Enum>7</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 8 slave CPU</Text>
+									<Enum>8</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 16 slave CPU</Text>
+									<Enum>9</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 16 slave CPU</Text>
+									<Enum>10</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Integer 32 slave CPU</Text>
+									<Enum>11</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Unsigned integer 32 slave CPU</Text>
+									<Enum>12</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT080BEN16</Name>
+								<BaseType>UINT</BaseType>
+								<BitSize>16</BitSize>
+								<EnumInfo>
+									<Text>Float main CPU</Text>
+									<Enum>1</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Float slave CPU</Text>
+									<Enum>2</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT080CEN16</Name>
+								<BaseType>UINT</BaseType>
+								<BitSize>16</BitSize>
+								<EnumInfo>
+									<Text>Float main CPU</Text>
+									<Enum>1</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Float slave CPU</Text>
+									<Enum>2</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT080DEN16</Name>
+								<BaseType>UINT</BaseType>
+								<BitSize>16</BitSize>
+								<EnumInfo>
+									<Text>Float main CPU</Text>
+									<Enum>1</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Float slave CPU</Text>
+									<Enum>2</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT080EEN16</Name>
+								<BaseType>UINT</BaseType>
+								<BitSize>16</BitSize>
+								<EnumInfo>
+									<Text>For multiple selection, set integer value</Text>
+									<Enum>0</Enum>
+								</EnumInfo>
+								<EnumInfo>
+									<Text>Multiple power supply modules</Text>
+									<Enum>2</Enum>
+								</EnumInfo>
+							</DataType>
+							<DataType>
+								<Name>DT1018</Name>
+								<BitSize>144</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Vendor ID</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Product code</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>48</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>Revision</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>80</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>4</SubIdx>
+									<Name>Serial number</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>112</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT10E2ARR</Name>
+								<BaseType>STRING(141)</BaseType>
+								<BitSize>1128</BitSize>
+								<ArrayInfo>
+									<LBound>1</LBound>
+									<Elements>1</Elements>
+								</ArrayInfo>
+							</DataType>
+							<DataType>
+								<Name>DT10E2</Name>
+								<BitSize>1144</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<Name>Elements</Name>
+									<Type>DT10E2ARR</Type>
+									<BitSize>1128</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT10F3</Name>
+								<BitSize>19264</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Maximum Messages</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Newest Message</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>24</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>Newest Acknowledged Message</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>32</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>4</SubIdx>
+									<Name>New Messages Available</Name>
+									<Type>BOOL</Type>
+									<BitSize>1</BitSize>
+									<BitOffs>40</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>5</SubIdx>
+									<Name>Flags</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>48</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>6</SubIdx>
+									<Name>Diagnosis Message 001</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>64</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>7</SubIdx>
+									<Name>Diagnosis Message 002</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>704</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>8</SubIdx>
+									<Name>Diagnosis Message 003</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>1344</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>9</SubIdx>
+									<Name>Diagnosis Message 004</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>1984</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>10</SubIdx>
+									<Name>Diagnosis Message 005</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>2624</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>11</SubIdx>
+									<Name>Diagnosis Message 006</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>3264</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>12</SubIdx>
+									<Name>Diagnosis Message 007</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>3904</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>13</SubIdx>
+									<Name>Diagnosis Message 008</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>4544</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>14</SubIdx>
+									<Name>Diagnosis Message 009</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>5184</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>15</SubIdx>
+									<Name>Diagnosis Message 010</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>5824</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>16</SubIdx>
+									<Name>Diagnosis Message 011</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>6464</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>17</SubIdx>
+									<Name>Diagnosis Message 012</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>7104</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>18</SubIdx>
+									<Name>Diagnosis Message 013</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>7744</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>19</SubIdx>
+									<Name>Diagnosis Message 014</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>8384</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>20</SubIdx>
+									<Name>Diagnosis Message 015</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>9024</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>21</SubIdx>
+									<Name>Diagnosis Message 016</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>9664</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>22</SubIdx>
+									<Name>Diagnosis Message 017</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>10304</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>23</SubIdx>
+									<Name>Diagnosis Message 018</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>10944</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>24</SubIdx>
+									<Name>Diagnosis Message 019</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>11584</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>25</SubIdx>
+									<Name>Diagnosis Message 020</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>12224</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>26</SubIdx>
+									<Name>Diagnosis Message 021</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>12864</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>27</SubIdx>
+									<Name>Diagnosis Message 022</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>13504</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>28</SubIdx>
+									<Name>Diagnosis Message 023</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>14144</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>29</SubIdx>
+									<Name>Diagnosis Message 024</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>14784</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>30</SubIdx>
+									<Name>Diagnosis Message 025</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>15424</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>31</SubIdx>
+									<Name>Diagnosis Message 026</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>16064</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>32</SubIdx>
+									<Name>Diagnosis Message 027</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>16704</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>33</SubIdx>
+									<Name>Diagnosis Message 028</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>17344</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>34</SubIdx>
+									<Name>Diagnosis Message 029</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>17984</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>35</SubIdx>
+									<Name>Diagnosis Message 030</Name>
+									<Type>ARRAY [0..79] OF BYTE</Type>
+									<BitSize>640</BitSize>
+									<BitOffs>18624</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT1600</Name>
+								<BitSize>48</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>SubIndex 001</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT1A03</Name>
+								<BitSize>336</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>SubIndex 001</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>SubIndex 002</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>48</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>SubIndex 003</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>80</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>4</SubIdx>
+									<Name>SubIndex 004</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>112</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>5</SubIdx>
+									<Name>SubIndex 005</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>144</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>6</SubIdx>
+									<Name>SubIndex 006</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>176</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>7</SubIdx>
+									<Name>SubIndex 007</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>208</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>8</SubIdx>
+									<Name>SubIndex 008</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>240</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>9</SubIdx>
+									<Name>SubIndex 009</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>272</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>10</SubIdx>
+									<Name>SubIndex 010</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>304</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT1C00ARR</Name>
+								<BaseType>USINT</BaseType>
+								<BitSize>32</BitSize>
+								<ArrayInfo>
+									<LBound>1</LBound>
+									<Elements>4</Elements>
+								</ArrayInfo>
+							</DataType>
+							<DataType>
+								<Name>DT1C00</Name>
+								<BitSize>48</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<Name>Elements</Name>
+									<Type>DT1C00ARR</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT1C12ARR</Name>
+								<BaseType>UINT</BaseType>
+								<BitSize>16</BitSize>
+								<ArrayInfo>
+									<LBound>1</LBound>
+									<Elements>1</Elements>
+								</ArrayInfo>
+							</DataType>
+							<DataType>
+								<Name>DT1C12</Name>
+								<BitSize>32</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<Name>Elements</Name>
+									<Type>DT1C12ARR</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT1C13ARR</Name>
+								<BaseType>UINT</BaseType>
+								<BitSize>64</BitSize>
+								<ArrayInfo>
+									<LBound>1</LBound>
+									<Elements>4</Elements>
+								</ArrayInfo>
+							</DataType>
+							<DataType>
+								<Name>DT1C13</Name>
+								<BitSize>80</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<Name>Elements</Name>
+									<Type>DT1C13ARR</Type>
+									<BitSize>64</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT1C32</Name>
+								<BitSize>360</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Sync mode</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Cycle time</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>32</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>Shift time</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>64</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>4</SubIdx>
+									<Name>Sync modes supported</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>96</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>5</SubIdx>
+									<Name>Minimum cycle time</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>112</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>6</SubIdx>
+									<Name>Calc and copy time</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>144</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>9</SubIdx>
+									<Name>Maximum delay time</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>224</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>11</SubIdx>
+									<Name>SM event missed counter</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>288</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>12</SubIdx>
+									<Name>Cycle exceeded counter</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>304</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>13</SubIdx>
+									<Name>Shift too short counter</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>320</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>32</SubIdx>
+									<Name>Sync error</Name>
+									<Type>BOOL</Type>
+									<BitSize>1</BitSize>
+									<BitOffs>352</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT1C33</Name>
+								<BitSize>360</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Sync mode</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Cycle time</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>32</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>Shift time</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>64</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>4</SubIdx>
+									<Name>Sync modes supported</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>96</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>5</SubIdx>
+									<Name>Minimum cycle time</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>112</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>6</SubIdx>
+									<Name>Calc and copy time</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>144</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>7</SubIdx>
+									<Name>Minimum delay time</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>176</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>9</SubIdx>
+									<Name>Maximum delay time</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>224</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>11</SubIdx>
+									<Name>SM event missed counter</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>288</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>12</SubIdx>
+									<Name>Cycle exceeded counter</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>304</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>13</SubIdx>
+									<Name>Shift too short counter</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>320</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>32</SubIdx>
+									<Name>Sync error</Name>
+									<Type>BOOL</Type>
+									<BitSize>1</BitSize>
+									<BitOffs>352</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C03</Name>
+								<BitSize>40</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<Comment LcId="1033">This object contains Parameters about the Connected Power supply Device.</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Power supply EtherCAT Address</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Please enter the EtherCAT Address of the connected Power supply device here.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Address valid</Name>
+									<Type>BOOL</Type>
+									<Comment LcId="1033">Shall be set to TRUE internally, if the given power supply EtherCAT Address is valid.</Comment>
+									<BitSize>1</BitSize>
+									<BitOffs>32</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>4</SubIdx>
+									<Name>Readdata valid</Name>
+									<Type>BOOL</Type>
+									<Comment LcId="1033">Shall be set to TRUE internally, if the given power supply read data is valid.</Comment>
+									<BitSize>1</BitSize>
+									<BitOffs>34</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>5</SubIdx>
+									<Name>Device compatible</Name>
+									<Type>BOOL</Type>
+									<Comment LcId="1033">Shall be set to TRUE internally, if the connected power supply is detected as compatible.</Comment>
+									<BitSize>1</BitSize>
+									<BitOffs>35</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C20</Name>
+								<BitSize>32</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Statusword</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C21</Name>
+								<BitSize>48</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Controlword 1 in</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C22</Name>
+								<BitSize>1072</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>32</SubIdx>
+									<Name>Actual DC link voltage</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Actual voltage value at the DC link.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>1008</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>64</SubIdx>
+									<Name>Actual Input voltage</Name>
+									<Type>REAL</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>1040</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C23</Name>
+								<BitSize>2160</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>33</SubIdx>
+									<Name>Actual DC link out 1 current</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Actual current at DC output 1.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>1040</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C24</Name>
+								<BitSize>2560</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>48</SubIdx>
+									<Name>Actual DC link out 1 load utilization</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>752</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>49</SubIdx>
+									<Name>Actual DC link out 1 overload utilization</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>768</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>128</SubIdx>
+									<Name>Actual brake resistor load utilization</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>2032</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>160</SubIdx>
+									<Name>Actual device temperature</Name>
+									<Type>INT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>2544</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C25</Name>
+								<BitSize>1536</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>DC link state machine</Name>
+									<Type>DT0807EN08</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>Actual error code</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>32</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>16</SubIdx>
+									<Name>Debug pointer data 1</Name>
+									<Type>DINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>240</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>17</SubIdx>
+									<Name>Debug pointer data 2</Name>
+									<Type>DINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>272</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>18</SubIdx>
+									<Name>Debug pointer data 3</Name>
+									<Type>DINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>304</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>19</SubIdx>
+									<Name>Debug pointer data 4</Name>
+									<Type>REAL</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>336</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>20</SubIdx>
+									<Name>Debug pointer data 5</Name>
+									<Type>REAL</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>368</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>21</SubIdx>
+									<Name>Debug pointer data 6</Name>
+									<Type>REAL</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>400</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>22</SubIdx>
+									<Name>Debug pointer data 7</Name>
+									<Type>REAL</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>432</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>32</SubIdx>
+									<Name>Warning register</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>752</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>T</PdoMapping>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C26</Name>
+								<BitSize>32</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Controlword out</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+										<PdoMapping>R</PdoMapping>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C27</Name>
+								<BitSize>1696</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>32</SubIdx>
+									<Name>DC link max voltage</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Threshold for dc link overvoltage error. The brake resistor switchOn threshold voltage 2C29:30 (calculated from this parameter) must be greater than mains overvoltage threshold xSqrt(2).</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>496</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>33</SubIdx>
+									<Name>DC link continuous overcurrent warning threshold</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">By actual motoric load (6001:04) above this value (percent of nominal dc link current)  the DC link continuous overcurrent warning (6002:04) is set.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>512</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>48</SubIdx>
+									<Name>Brake resistor select mode</Name>
+									<Type>DT0806EN08</Type>
+									<Comment LcId="1033">According to this value following modes can be set: disable(0) or external (2).</Comment>
+									<BitSize>8</BitSize>
+									<BitOffs>752</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>50</SubIdx>
+									<Name>Brake resistor power warning threshold</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Percent of brake resistor max power (8000:0c) and percent of brake resistor max short time energy (1 second on-time), above which the brake resistor power overload warning (6002:02) is set.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>768</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>51</SubIdx>
+									<Name>Brake resistor value</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Resistance value of brake resistor.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>784</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>52</SubIdx>
+									<Name>Brake resistor continuous power</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Brake resistor continuous power.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>800</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>53</SubIdx>
+									<Name>Brake resistor time constant 1</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Short time constant for thermal brake resistor model.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>816</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>54</SubIdx>
+									<Name>Brake resistor time constant 2</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Long time constant for thermal brake resistor model.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>848</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>55</SubIdx>
+									<Name>Brake resistor partial fraction factor</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Partial fraction factor for thermal brake resistor model in relation to short time constant.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>880</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>80</SubIdx>
+									<Name>Device temperature warning threshold</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Percent of heatsink max temperature, above which the device overtemperature warning (6002:03)  is set.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1424</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>96</SubIdx>
+									<Name>Controlword</Name>
+									<Type>DT080EEN16</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>1680</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C28</Name>
+								<BitSize>1936</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Debug index</Name>
+									<Type>UDINT</Type>
+									<Comment LcId="1033">Select internal values by id/symbol to be displayed or written at "Debug value.." (SubIdx 0x03).</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Debug value float</Name>
+									<Type>REAL</Type>
+									<Comment LcId="1033">Actual value or value to be written at selected "Debug index" (SubIdx 0x01).</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>48</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>Debug value string</Name>
+									<Type>STRING(128)</Type>
+									<Comment LcId="1033">Actual value or value to be written at selected "Debug index" (SubIdx 0x01).</Comment>
+									<BitSize>1024</BitSize>
+									<BitOffs>80</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>16</SubIdx>
+									<Name>Type debug pointer 1</Name>
+									<Type>DT0801EN16</Type>
+									<Comment LcId="1033">Lenght in bytes of internal variable to be debugged by debug pointer 1.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1488</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>18</SubIdx>
+									<Name>Address debug pointer 1</Name>
+									<Type>UDINT</Type>
+									<Comment LcId="1033">32-bit memory address of internal variable for debug pointer 1.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>1520</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>19</SubIdx>
+									<Name>Type debug pointer 2</Name>
+									<Type>DT0802EN16</Type>
+									<Comment LcId="1033">Lenght in bytes of internal variable to be debugged by debug pointer 2.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1552</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>21</SubIdx>
+									<Name>Address debug pointer 2</Name>
+									<Type>UDINT</Type>
+									<Comment LcId="1033">32-bit memory address of internal variable for debug pointer 2.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>1584</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>22</SubIdx>
+									<Name>Type debug pointer 3</Name>
+									<Type>DT080AEN16</Type>
+									<Comment LcId="1033">Lenght in bytes of internal variable to be debugged by debug pointer 3.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1616</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>24</SubIdx>
+									<Name>Address debug pointer 3</Name>
+									<Type>UDINT</Type>
+									<Comment LcId="1033">32-bit memory address of internal variable for debug pointer 3.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>1648</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>25</SubIdx>
+									<Name>Type debug pointer 4</Name>
+									<Type>DT080BEN16</Type>
+									<Comment LcId="1033">Lenght in bytes of internal variable to be debugged by debug pointer 4.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1680</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>27</SubIdx>
+									<Name>Address debug pointer 4</Name>
+									<Type>UDINT</Type>
+									<Comment LcId="1033">32-bit memory address of internal variable for debug pointer 4.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>1712</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>28</SubIdx>
+									<Name>Type debug pointer 5</Name>
+									<Type>DT080CEN16</Type>
+									<Comment LcId="1033">Lenght in bytes of internal variable to be debugged by debug pointer 5.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1744</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>30</SubIdx>
+									<Name>Address debug pointer 5</Name>
+									<Type>UDINT</Type>
+									<Comment LcId="1033">32-bit memory address of internal variable for debug pointer 5.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>1776</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>31</SubIdx>
+									<Name>Type debug pointer 6</Name>
+									<Type>DT080DEN16</Type>
+									<Comment LcId="1033">Lenght in bytes of internal variable to be debugged by debug pointer 6.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1808</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>33</SubIdx>
+									<Name>Address debug pointer 6</Name>
+									<Type>UDINT</Type>
+									<Comment LcId="1033">32-bit memory address of internal variable for debug pointer 6.</Comment>
+									<BitSize>32</BitSize>
+									<BitOffs>1840</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>34</SubIdx>
+									<Name>Type debug pointer 7</Name>
+									<Type>DT0809EN16</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>1872</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>36</SubIdx>
+									<Name>Address debug pointer 7</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>1904</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+										<Setting>1</Setting>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C29</Name>
+								<BitSize>800</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>32</SubIdx>
+									<Name>DC link min voltage</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Minimal DC link voltage for device to be ready to operate.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>512</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>48</SubIdx>
+									<Name>Brake chopper switch on threshold voltage</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Voltage threshold, above which the brake chopper is switched on.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>768</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>49</SubIdx>
+									<Name>Brake chopper switch off threshold voltage</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Voltage threshold, below which the brake chopper is switched off.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>784</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C2A</Name>
+								<BitSize>2112</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>32</SubIdx>
+									<Name>DC link nominal current</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Nominal current supported by device at DC link.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>512</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>33</SubIdx>
+									<Name>DC link peak overcurrent threshold</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Current threshold to set the error "Peak over current (device output side)".</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>528</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>34</SubIdx>
+									<Name>DC link max voltage</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Maximal DC link voltage threshold supported by device.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>544</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>80</SubIdx>
+									<Name>Device max temperature</Name>
+									<Type>UINT</Type>
+									<Comment LcId="1033">Maximal heatsink temperature supported by device, above which the error "Excess temperature device" is set.</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>1488</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>96</SubIdx>
+									<Name>Operating time</Name>
+									<Type>UDINT</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>1744</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>112</SubIdx>
+									<Name>Stopwatch task max</Name>
+									<Type>REAL</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>2016</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>113</SubIdx>
+									<Name>Stopwatch task</Name>
+									<Type>REAL</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>2048</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>114</SubIdx>
+									<Name>Stopwatch cycle</Name>
+									<Type>REAL</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>2080</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C2B</Name>
+								<BitSize>48</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Reset errors</Name>
+									<Type>BOOL</Type>
+									<BitSize>1</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Force reaction</Name>
+									<Type>BOOL</Type>
+									<BitSize>1</BitSize>
+									<BitOffs>17</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>17</SubIdx>
+									<Name>Choose forced reaction</Name>
+									<Type>DT0800EN16</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>32</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C2C</Name>
+								<BitSize>1392</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Command</Name>
+									<Type>DT0803EN16</Type>
+									<Comment LcId="1033">Data type to be written in EEPROM</Comment>
+									<BitSize>16</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Command data string</Name>
+									<Type>STRING(128)</Type>
+									<Comment LcId="1033">Value of Data type (8002:12)  to be written in EEPROM</Comment>
+									<BitSize>1024</BitSize>
+									<BitOffs>32</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>Command data integer</Name>
+									<Type>ULINT</Type>
+									<Comment LcId="1033">By rising edge, slave in PREOP and right password the factory settings (2000) are written in the EEPROM. Internal use only.</Comment>
+									<BitSize>64</BitSize>
+									<BitOffs>1056</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>48</SubIdx>
+									<Name>Device Factory settings Structure version</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>1120</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>49</SubIdx>
+									<Name>DC link current scaling gain</Name>
+									<Type>INT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>1136</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>50</SubIdx>
+									<Name>DC link current offset</Name>
+									<Type>INT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>1152</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>51</SubIdx>
+									<Name>DC link voltage scaling gain 1</Name>
+									<Type>INT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>1168</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>52</SubIdx>
+									<Name>DC link voltage offset 1</Name>
+									<Type>INT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>1184</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>53</SubIdx>
+									<Name>DC link voltage scaling gain 2</Name>
+									<Type>INT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>1200</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>54</SubIdx>
+									<Name>DC link voltage offset 2</Name>
+									<Type>INT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>1216</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>59</SubIdx>
+									<Name>Chopper current scaling gain</Name>
+									<Type>INT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>1296</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>60</SubIdx>
+									<Name>Chopper current offset</Name>
+									<Type>INT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>1312</BitOffs>
+									<Flags>
+										<Access>rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>64</SubIdx>
+									<Name>Checksum page 0</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>1376</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DT2C2D</Name>
+								<BitSize>1296</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Device id Structure version</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Device manufacturer date week</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>32</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>3</SubIdx>
+									<Name>Device manufacturer date year</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>40</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>31</SubIdx>
+									<Name>Device checksum</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>256</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>32</SubIdx>
+									<Name>Pcb id 0 Structure version</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>272</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>33</SubIdx>
+									<Name>Pcb id 0 Manufacturer date week</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>288</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>34</SubIdx>
+									<Name>Pcb id 0 Manufacturer date year</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>296</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>36</SubIdx>
+									<Name>Pcb id 0 Hw id Hardware type</Name>
+									<Type>BIT6</Type>
+									<BitSize>6</BitSize>
+									<BitOffs>306</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>37</SubIdx>
+									<Name>Pcb id 0 Hw id Feature flags</Name>
+									<Type>BIT4</Type>
+									<BitSize>4</BitSize>
+									<BitOffs>312</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>38</SubIdx>
+									<Name>Pcb id 0 Hw id Supplier</Name>
+									<Type>BIT4</Type>
+									<BitSize>4</BitSize>
+									<BitOffs>316</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>39</SubIdx>
+									<Name>Pcb id 0 Hw id Component type</Name>
+									<Type>BIT4</Type>
+									<BitSize>4</BitSize>
+									<BitOffs>320</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>41</SubIdx>
+									<Name>Pcb id 0 Hw id Hardware index</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>328</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>42</SubIdx>
+									<Name>Pcb id 0 Hw id Pcb revision</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>336</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>43</SubIdx>
+									<Name>Pcb id 0 Hw id Pcb type</Name>
+									<Type>BIT4</Type>
+									<BitSize>4</BitSize>
+									<BitOffs>344</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>44</SubIdx>
+									<Name>Pcb id 0 Hw id Supported no of channels</Name>
+									<Type>BIT4</Type>
+									<BitSize>4</BitSize>
+									<BitOffs>348</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>45</SubIdx>
+									<Name>Pcb id 0 Hw id Firmware index</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>352</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>47</SubIdx>
+									<Name>Pcb id 0 Serial no</Name>
+									<Type>STRING(10)</Type>
+									<BitSize>80</BitSize>
+									<BitOffs>368</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>63</SubIdx>
+									<Name>Pcb id 0 Checksum</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>512</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>64</SubIdx>
+									<Name>Pcb id 1 Structure version</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>528</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>65</SubIdx>
+									<Name>Pcb id 1 Manufacturer date week</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>544</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>66</SubIdx>
+									<Name>Pcb id 1 Manufacturer date year</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>552</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>68</SubIdx>
+									<Name>Pcb id 1 Hw id Hardware type</Name>
+									<Type>BIT6</Type>
+									<BitSize>6</BitSize>
+									<BitOffs>562</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>69</SubIdx>
+									<Name>Pcb id 1 Hw id Feature flags</Name>
+									<Type>BIT4</Type>
+									<BitSize>4</BitSize>
+									<BitOffs>568</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>70</SubIdx>
+									<Name>Pcb id 1 Hw id Supplier</Name>
+									<Type>BIT4</Type>
+									<BitSize>4</BitSize>
+									<BitOffs>572</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>71</SubIdx>
+									<Name>Pcb id 1 Hw id Component type</Name>
+									<Type>BIT4</Type>
+									<BitSize>4</BitSize>
+									<BitOffs>576</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>73</SubIdx>
+									<Name>Pcb id 1 Hw id Hardware index</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>584</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>74</SubIdx>
+									<Name>Pcb id 1 Hw id Pcb revision</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>592</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>75</SubIdx>
+									<Name>Pcb id 1 Hw id Pcb type</Name>
+									<Type>BIT4</Type>
+									<BitSize>4</BitSize>
+									<BitOffs>600</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>76</SubIdx>
+									<Name>Pcb id 1 Hw id Supported no of channels</Name>
+									<Type>BIT4</Type>
+									<BitSize>4</BitSize>
+									<BitOffs>604</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>77</SubIdx>
+									<Name>Pcb id 1 Hw id Firmware index</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>608</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>79</SubIdx>
+									<Name>Pcb id 1 Serial no</Name>
+									<Type>STRING(10)</Type>
+									<BitSize>80</BitSize>
+									<BitOffs>624</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>95</SubIdx>
+									<Name>Pcb id 1 Checksum</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>768</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>96</SubIdx>
+									<Name>Pcb id 2 Structure version</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>784</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>97</SubIdx>
+									<Name>Pcb id 2 Manufacturer date week</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>800</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>98</SubIdx>
+									<Name>Pcb id 2 Manufacturer date year</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>808</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>100</SubIdx>
+									<Name>Pcb id 2 Hw id Hardware type</Name>
+									<Type>BIT6</Type>
+									<BitSize>6</BitSize>
+									<BitOffs>818</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>101</SubIdx>
+									<Name>Pcb id 2 Hw id Feature flags</Name>
+									<Type>BIT4</Type>
+									<BitSize>4</BitSize>
+									<BitOffs>824</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>102</SubIdx>
+									<Name>Pcb id 2 Hw id Supplier</Name>
+									<Type>BIT4</Type>
+									<BitSize>4</BitSize>
+									<BitOffs>828</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>103</SubIdx>
+									<Name>Pcb id 2 Hw id Component type</Name>
+									<Type>BIT4</Type>
+									<BitSize>4</BitSize>
+									<BitOffs>832</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>105</SubIdx>
+									<Name>Pcb id 2 Hw id Hardware index</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>840</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>106</SubIdx>
+									<Name>Pcb id 2 Hw id Pcb revision</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>848</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>107</SubIdx>
+									<Name>Pcb id 2 Hw id Pcb type</Name>
+									<Type>BIT4</Type>
+									<BitSize>4</BitSize>
+									<BitOffs>856</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>108</SubIdx>
+									<Name>Pcb id 2 Hw id Supported no of channels</Name>
+									<Type>BIT4</Type>
+									<BitSize>4</BitSize>
+									<BitOffs>860</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>109</SubIdx>
+									<Name>Pcb id 2 Hw id Firmware index</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>864</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>111</SubIdx>
+									<Name>Pcb id 2 Serial no</Name>
+									<Type>STRING(10)</Type>
+									<BitSize>80</BitSize>
+									<BitOffs>880</BitOffs>
+									<Flags>
+										<Access WriteRestrictions="PreOP">rw</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>127</SubIdx>
+									<Name>Pcb id 2 Checksum</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>1024</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+							<DataType>
+								<Name>DTF000</Name>
+								<BitSize>48</BitSize>
+								<SubItem>
+									<SubIdx>0</SubIdx>
+									<Name>SubIndex 000</Name>
+									<Type>USINT</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>0</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>1</SubIdx>
+									<Name>Index distance</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>16</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+								<SubItem>
+									<SubIdx>2</SubIdx>
+									<Name>Maximum number of modules</Name>
+									<Type>UINT</Type>
+									<BitSize>16</BitSize>
+									<BitOffs>32</BitOffs>
+									<Flags>
+										<Access>ro</Access>
+									</Flags>
+								</SubItem>
+							</DataType>
+						</DataTypes>
+						<Objects>
+							<Object>
+								<Index>#x1000</Index>
+								<Name>Device type</Name>
+								<Type>UDINT</Type>
+								<BitSize>32</BitSize>
+								<Info>
+									<DefaultData>89130000</DefaultData>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1008</Index>
+								<Name>Device name</Name>
+								<Type>STRING(11)</Type>
+								<BitSize>88</BitSize>
+								<Info>
+									<DefaultData>4158383630302d30303030</DefaultData>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1009</Index>
+								<Name>Hardware version</Name>
+								<Type>STRING(2)</Type>
+								<BitSize>16</BitSize>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x100a</Index>
+								<Name>Software version</Name>
+								<Type>STRING(2)</Type>
+								<BitSize>16</BitSize>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x100b</Index>
+								<Name>Bootloader version</Name>
+								<Type>STRING(32)</Type>
+								<BitSize>256</BitSize>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1018</Index>
+								<Name>Identity</Name>
+								<Type>DT1018</Type>
+								<BitSize>144</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>04</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Vendor ID</Name>
+										<Info>
+											<DefaultData>02000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Product code</Name>
+										<Info>
+											<DefaultData>12609821</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x10e2</Index>
+								<Name>Manufacturer-specific Identification Code</Name>
+								<Type>DT10E2</Type>
+								<BitSize>1144</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x10f3</Index>
+								<Name>Diagnosis History</Name>
+								<Type>DT10F3</Type>
+								<BitSize>19264</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>23</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x10f8</Index>
+								<Name>Timestamp Object</Name>
+								<Type>ULINT</Type>
+								<BitSize>64</BitSize>
+								<Info>
+									<Unit>#xf7030000</Unit>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1600</Index>
+								<Name>PSM RxPDO-Map Controlword out</Name>
+								<Type>DT1600</Type>
+								<BitSize>48</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 001</Name>
+										<Info>
+											<DefaultData>1001262c</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1a00</Index>
+								<Name>PSM TxPDO-Map Controlword in</Name>
+								<Type>DT1600</Type>
+								<BitSize>48</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 001</Name>
+										<Info>
+											<DefaultData>1001212c</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1a01</Index>
+								<Name>PSM TxPDO-Map Warning register</Name>
+								<Type>DT1600</Type>
+								<BitSize>48</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 001</Name>
+										<Info>
+											<DefaultData>1020252c</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1a02</Index>
+								<Name>PSM TxPDO-Map Statusword</Name>
+								<Type>DT1600</Type>
+								<BitSize>48</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 001</Name>
+										<Info>
+											<DefaultData>1001202c</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1a03</Index>
+								<Name>PSM TxPDO-Map Process values</Name>
+								<Type>DT1A03</Type>
+								<BitSize>336</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 001</Name>
+										<Info>
+											<DefaultData>2020222c</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access WriteRestrictions="PreOP">rw</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1c00</Index>
+								<Name>Sync manager type</Name>
+								<Type>DT1C00</Type>
+								<BitSize>48</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>04</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 001</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 002</Name>
+										<Info>
+											<DefaultData>02</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 003</Name>
+										<Info>
+											<DefaultData>03</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 004</Name>
+										<Info>
+											<DefaultData>04</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1c12</Index>
+								<Name>RxPDO assign</Name>
+								<Type>DT1C12</Type>
+								<BitSize>32</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 001</Name>
+										<Info>
+											<DefaultData>0016</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access WriteRestrictions="PreOP">rw</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1c13</Index>
+								<Name>TxPDO assign</Name>
+								<Type>DT1C13</Type>
+								<BitSize>80</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 001</Name>
+										<Info>
+											<DefaultData>001a</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 002</Name>
+										<Info>
+											<DefaultData>0000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 003</Name>
+										<Info>
+											<DefaultData>0000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>SubIndex 004</Name>
+										<Info>
+											<DefaultData>0000</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access WriteRestrictions="PreOP">rw</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1c32</Index>
+								<Name>SM output parameter</Name>
+								<Type>DT1C32</Type>
+								<BitSize>360</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>20</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Sync mode</Name>
+										<Info>
+											<DefaultData>0100</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Cycle time</Name>
+										<Info>
+											<DefaultData>48e80100</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Shift time</Name>
+										<Info>
+											<DefaultData>84030000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Sync modes supported</Name>
+										<Info>
+											<DefaultData>080c</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Minimum cycle time</Name>
+										<Info>
+											<DefaultData>24f40000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Calc and copy time</Name>
+										<Info>
+											<DefaultData>00000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Maximum delay time</Name>
+										<Info>
+											<DefaultData>84030000</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x1c33</Index>
+								<Name>SM input parameter</Name>
+								<Type>DT1C33</Type>
+								<BitSize>360</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>20</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Sync mode</Name>
+										<Info>
+											<DefaultData>0300</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Cycle time</Name>
+										<Info>
+											<DefaultData>48e80100</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Shift time</Name>
+										<Info>
+											<DefaultData>24f40000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Sync modes supported</Name>
+										<Info>
+											<DefaultData>080c</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Minimum cycle time</Name>
+										<Info>
+											<DefaultData>24f40000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Calc and copy time</Name>
+										<Info>
+											<DefaultData>00000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Minimum delay time</Name>
+										<Info>
+											<DefaultData>84030000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Maximum delay time</Name>
+										<Info>
+											<DefaultData>84030000</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c03</Index>
+								<Name>Power supply Connection</Name>
+								<Comment LcId="1033">This object contains Parameters about the Connected Power supply Device.</Comment>
+								<Type>DT2C03</Type>
+								<BitSize>40</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>05</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Power supply EtherCAT Address</Name>
+										<Info>
+											<DefaultData>0000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Address valid</Name>
+										<Info>
+											<DefaultData>00</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Readdata valid</Name>
+										<Info>
+											<DefaultData>00</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Device compatible</Name>
+										<Info>
+											<DefaultData>00</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c20</Index>
+								<Name>PSM Statusword</Name>
+								<Type>DT2C20</Type>
+								<BitSize>32</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c21</Index>
+								<Name>PSM Controlword in</Name>
+								<Type>DT2C21</Type>
+								<BitSize>48</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c22</Index>
+								<Name>PSM Actual voltages</Name>
+								<Type>DT2C22</Type>
+								<BitSize>1072</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>40</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual DC link voltage</Name>
+										<Info>
+											<Unit>#x00260000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual Input voltage</Name>
+										<Info>
+											<Unit>#x00260000</Unit>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c23</Index>
+								<Name>PSM Actual currents</Name>
+								<Type>DT2C23</Type>
+								<BitSize>2160</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>21</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual DC link out 1 current</Name>
+										<Info>
+											<Unit>#x00040000</Unit>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c24</Index>
+								<Name>PSM Actual data</Name>
+								<Type>DT2C24</Type>
+								<BitSize>2560</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>a0</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual DC link out 1 load utilization</Name>
+										<Info>
+											<Unit>#x00b70000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual DC link out 1 overload utilization</Name>
+										<Info>
+											<Unit>#x00b70000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual brake resistor load utilization</Name>
+										<Info>
+											<Unit>#x00b70000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Actual device temperature</Name>
+										<Info>
+											<Unit>#xff2d0000</Unit>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c25</Index>
+								<Name>PSM Actual diagnostics</Name>
+								<Type>DT2C25</Type>
+								<BitSize>1536</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>20</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c26</Index>
+								<Name>PSM Controlword out</Name>
+								<Type>DT2C26</Type>
+								<BitSize>32</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>01</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c27</Index>
+								<Name>PSM Standard parameters</Name>
+								<Type>DT2C27</Type>
+								<BitSize>1696</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>60</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>DC link max voltage</Name>
+										<Info>
+											<MinValue>#x0</MinValue>
+											<MaxValue>#x222e</MaxValue>
+											<DefaultValue>#x222e</DefaultValue>
+											<Unit>#xff260000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>DC link continuous overcurrent warning threshold</Name>
+										<Info>
+											<MinValue>#x0</MinValue>
+											<MaxValue>#x65</MaxValue>
+											<DefaultValue>#x5a</DefaultValue>
+											<Unit>#x00b70000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Brake resistor select mode</Name>
+										<Info>
+											<DefaultData>00</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Brake resistor power warning threshold</Name>
+										<Info>
+											<MinValue>#x0</MinValue>
+											<MaxValue>#x65</MaxValue>
+											<DefaultValue>#x5a</DefaultValue>
+											<Unit>#x00b70000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Brake resistor value</Name>
+										<Info>
+											<MinValue>#x14a</MinValue>
+											<MaxValue>#x1388</MaxValue>
+											<DefaultValue>#x14a</DefaultValue>
+											<Unit>#xff280000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Brake resistor continuous power</Name>
+										<Info>
+											<MinValue>#x0</MinValue>
+											<MaxValue>#x640</MaxValue>
+											<DefaultValue>#x0</DefaultValue>
+											<Unit>#x00240000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Brake resistor time constant 1</Name>
+										<Info>
+											<MinData>fdff7fff</MinData>
+											<MaxData>fdff7f7f</MaxData>
+											<DefaultData>00000000</DefaultData>
+											<Unit>#x00030000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Brake resistor time constant 2</Name>
+										<Info>
+											<MinData>fdff7fff</MinData>
+											<MaxData>fdff7f7f</MaxData>
+											<DefaultData>00000000</DefaultData>
+											<Unit>#x00030000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Brake resistor partial fraction factor</Name>
+										<Info>
+											<MinData>fdff7fff</MinData>
+											<MaxData>fdff7f7f</MaxData>
+											<DefaultData>00000000</DefaultData>
+											<Unit>#x00b70000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Device temperature warning threshold</Name>
+										<Info>
+											<MinValue>#x0</MinValue>
+											<MaxValue>#x65</MaxValue>
+											<DefaultValue>#x5a</DefaultValue>
+											<Unit>#x00b70000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Controlword</Name>
+										<Info>
+											<DefaultData>0000</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c28</Index>
+								<Name>PSM Advanced parameters</Name>
+								<Type>DT2C28</Type>
+								<BitSize>1936</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>24</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Debug index</Name>
+										<Info>
+											<DefaultData>00000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Debug value float</Name>
+										<Info>
+											<MinData>fdff7fff</MinData>
+											<MaxData>fdff7f7f</MaxData>
+											<DefaultData>00000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Debug value string</Name>
+										<Info>
+											<DefaultData>00</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Type debug pointer 1</Name>
+										<Info>
+											<DefaultData>0500</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Address debug pointer 1</Name>
+										<Info>
+											<MinValue>#x0</MinValue>
+											<MaxValue>#xffffffff</MaxValue>
+											<DefaultValue>#x0</DefaultValue>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Type debug pointer 2</Name>
+										<Info>
+											<DefaultData>0500</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Address debug pointer 2</Name>
+										<Info>
+											<DefaultData>00000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Type debug pointer 3</Name>
+										<Info>
+											<DefaultData>0500</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Address debug pointer 3</Name>
+										<Info>
+											<DefaultData>00000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Type debug pointer 4</Name>
+										<Info>
+											<DefaultData>0100</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Address debug pointer 4</Name>
+										<Info>
+											<DefaultData>00000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Type debug pointer 5</Name>
+										<Info>
+											<DefaultData>0100</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Address debug pointer 5</Name>
+										<Info>
+											<DefaultData>00000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Type debug pointer 6</Name>
+										<Info>
+											<DefaultData>0100</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Address debug pointer 6</Name>
+										<Info>
+											<DefaultData>00000000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Type debug pointer 7</Name>
+										<Info>
+											<DefaultData>0100</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Address debug pointer 7</Name>
+										<Info>
+											<DefaultData>00000000</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+									<SdoAccess>SubIndexAccess</SdoAccess>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c29</Index>
+								<Name>PSM Calculated parameters</Name>
+								<Type>DT2C29</Type>
+								<BitSize>800</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>31</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>DC link min voltage</Name>
+										<Info>
+											<DefaultData>0000</DefaultData>
+											<Unit>#xff260000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Brake chopper switch on threshold voltage</Name>
+										<Info>
+											<DefaultData>0000</DefaultData>
+											<Unit>#xff260000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Brake chopper switch off threshold voltage</Name>
+										<Info>
+											<DefaultData>0000</DefaultData>
+											<Unit>#xff260000</Unit>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c2a</Index>
+								<Name>PSM Device info</Name>
+								<Type>DT2C2A</Type>
+								<BitSize>2112</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>72</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>DC link nominal current</Name>
+										<Info>
+											<DefaultData>8813</DefaultData>
+											<Unit>#xfe040000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>DC link peak overcurrent threshold</Name>
+										<Info>
+											<DefaultData>1027</DefaultData>
+											<Unit>#xfe040000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>DC link max voltage</Name>
+										<Info>
+											<DefaultData>f023</DefaultData>
+											<Unit>#xff260000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Device max temperature</Name>
+										<Info>
+											<DefaultData>8403</DefaultData>
+											<Unit>#xff2d0000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Operating time</Name>
+										<Info>
+											<Unit>#x00030000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Stopwatch task max</Name>
+										<Info>
+											<Unit>#x00030000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Stopwatch task</Name>
+										<Info>
+											<Unit>#x00030000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Stopwatch cycle</Name>
+										<Info>
+											<Unit>#x00030000</Unit>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c2b</Index>
+								<Name>PSM Error handling</Name>
+								<Type>DT2C2B</Type>
+								<BitSize>48</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>11</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Reset errors</Name>
+										<Info>
+											<DefaultData>00</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Force reaction</Name>
+										<Info>
+											<DefaultData>00</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Choose forced reaction</Name>
+										<Info>
+											<DefaultData>0000</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c2c</Index>
+								<Name>PSM Factory settings</Name>
+								<Type>DT2C2C</Type>
+								<BitSize>1392</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>40</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>DC link current scaling gain</Name>
+										<Info>
+											<Unit>#xffb70000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>DC link current offset</Name>
+										<Info>
+											<Unit>#xfe040000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>DC link voltage scaling gain 1</Name>
+										<Info>
+											<Unit>#xffb70000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>DC link voltage offset 1</Name>
+										<Info>
+											<Unit>#xff260000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>DC link voltage scaling gain 2</Name>
+										<Info>
+											<Unit>#xffb70000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>DC link voltage offset 2</Name>
+										<Info>
+											<Unit>#xff260000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Chopper current scaling gain</Name>
+										<Info>
+											<Unit>#xffb70000</Unit>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Chopper current offset</Name>
+										<Info>
+											<Unit>#xfe040000</Unit>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+									<SdoAccess>SubIndexAccess</SdoAccess>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#x2c2d</Index>
+								<Name>PSM HW ids</Name>
+								<Type>DT2C2D</Type>
+								<BitSize>1296</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>7f</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+									<SdoAccess>SubIndexAccess</SdoAccess>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#xf000</Index>
+								<Name>Modular Device Profile</Name>
+								<Type>DTF000</Type>
+								<BitSize>48</BitSize>
+								<Info>
+									<SubItem>
+										<Name>SubIndex 000</Name>
+										<Info>
+											<DefaultData>02</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Index distance</Name>
+										<Info>
+											<DefaultData>1000</DefaultData>
+										</Info>
+									</SubItem>
+									<SubItem>
+										<Name>Maximum number of modules</Name>
+										<Info>
+											<DefaultData>0100</DefaultData>
+										</Info>
+									</SubItem>
+								</Info>
+								<Flags>
+									<Access>ro</Access>
+								</Flags>
+							</Object>
+							<Object>
+								<Index>#xf008</Index>
+								<Name>Code word</Name>
+								<Type>UDINT</Type>
+								<BitSize>32</BitSize>
+								<Flags>
+									<Access>rw</Access>
+								</Flags>
+							</Object>
+						</Objects>
+					</Dictionary>
+					<DiagMessages>
+						<DiagReset>
+							<Text LcId="1033">A reset is not possible. The PSM detected a fatal hard- or software error.</Text>
+							<Enum>0</Enum>
+						</DiagReset>
+						<DiagReset>
+							<Text LcId="1033">A fatal error occured. A device reboot is required.</Text>
+							<Enum>1</Enum>
+						</DiagReset>
+						<DiagReset>
+							<Text LcId="1033">Execute Reset-Command (Fault reset).</Text>
+							<Enum>2</Enum>
+						</DiagReset>
+						<DiagReset>
+							<Text LcId="1033">Warning: No reset required.</Text>
+							<Enum>100</Enum>
+						</DiagReset>
+						<DiagReset>
+							<Text LcId="1033">Information: No reset required.</Text>
+							<Enum>200</Enum>
+						</DiagReset>
+						<DiagReaction>
+							<Text LcId="1033">No</Text>
+							<Enum>0</Enum>
+							<Comment LcId="0"></Comment>
+						</DiagReaction>
+						<DiagReaction>
+							<Text LcId="1033">PSM is not ready to operate</Text>
+							<Enum>1</Enum>
+							<Comment LcId="0"></Comment>
+						</DiagReaction>
+						<DiagReaction>
+							<Text LcId="1033">NC-Handling order</Text>
+							<Enum>2</Enum>
+							<Comment LcId="0"></Comment>
+						</DiagReaction>
+						<DiagReaction>
+							<Text LcId="1033">Generative brake ramp order to the axis</Text>
+							<Enum>3</Enum>
+							<Comment LcId="0"></Comment>
+						</DiagReaction>
+						<DiagReaction>
+							<Text LcId="1033">Non-generative brake ramp order to the axis</Text>
+							<Enum>4</Enum>
+							<Comment LcId="0"></Comment>
+						</DiagReaction>
+						<DiagReaction>
+							<Text LcId="1033">Torque off order to the axis</Text>
+							<Enum>5</Enum>
+							<Comment LcId="0"></Comment>
+						</DiagReaction>
+						<DiagReaction>
+							<Text LcId="1033">Relays are disabled</Text>
+							<Enum>6</Enum>
+							<Comment LcId="0"></Comment>
+						</DiagReaction>
+						<DiagReaction>
+							<Text LcId="1033">Brake chopper is disabled</Text>
+							<Enum>7</Enum>
+							<Comment LcId="0"></Comment>
+						</DiagReaction>
+						<DiagReaction>
+							<Text LcId="1033">PSM is not ready to operate and transition PREOP to SAFEOP disabled</Text>
+							<Enum>8</Enum>
+							<Comment LcId="0"></Comment>
+						</DiagReaction>
+						<DiagType>
+							<Text LcId="1033">Error</Text>
+							<Enum>0</Enum>
+						</DiagType>
+						<DiagType>
+							<Text LcId="1033">Warning</Text>
+							<Enum>100</Enum>
+						</DiagType>
+						<DiagType>
+							<Text LcId="1033">Information</Text>
+							<Enum>200</Enum>
+						</DiagType>
+						<DiagType>
+							<Text LcId="1033">Information without history entry</Text>
+							<Enum>201</Enum>
+						</DiagType>
+						<DiagMessage>
+							<TextId>#x0000</TextId>
+							<MessageText LcId="1033">No errors</MessageText>
+							<Description LcId="1033"></Description>
+							<Flags>
+								<DiagClass>information</DiagClass>
+								<DiagReset>200</DiagReset>
+								<DiagReaction>0</DiagReaction>
+								<DiagType>200</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x2310</TextId>
+							<MessageText LcId="1033">Continuous overcurrent. Output: %u.</MessageText>
+							<Description LcId="1033">The demanded current from axis system exceeds permanently the nominal current. The maximal current you can request until this error happens, is two times the nominal current is requested for 5s.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>2</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x2380</TextId>
+							<MessageText LcId="1033">Continuous overcurrent (total DC link out current)</MessageText>
+							<Description LcId="1033">The demanded current from axis system exceeds permanently the nominal current. The maximal current you can request until this error happens, is two times the nominal current is requested for 5s.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>2</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x2381</TextId>
+							<MessageText LcId="1033">Continuous overcurrent. Output: %u. Reaction: Generative brake order</MessageText>
+							<Description LcId="1033">The demanded current from axis system exceeds permanently the nominal current. The maximal current you can request until this error happens, is two times the nominal current is requested for 6s.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>3</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x2382</TextId>
+							<MessageText LcId="1033">Continuous overcurrent (total DC link out current). Reaction: Generative brake order</MessageText>
+							<Description LcId="1033">The demanded current from axis system exceeds permanently the nominal current. The maximal current you can request until this error happens, is two times the nominal current is requested for 6s.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>3</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x2385</TextId>
+							<MessageText LcId="1033">Peak overcurrent. Output: %u</MessageText>
+							<Description LcId="1033">The demanded current from axis system overloads the power supply module. This happens when a current higher than two times the nominal current is requested.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>0</DiagReset>
+								<DiagReaction>3</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x2386</TextId>
+							<MessageText LcId="1033">Peak overcurrent (total DC link out current)</MessageText>
+							<Description LcId="1033">The demanded current from axis system overloads the power supply module. This happens when a current higher than two times the nominal current is requested.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>0</DiagReset>
+								<DiagReaction>3</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x2387</TextId>
+							<MessageText LcId="1033">Short circuit. Output: %u</MessageText>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>0</DiagReset>
+								<DiagReaction>3</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x2388</TextId>
+							<MessageText LcId="1033">Short circuit (total DC link out current)</MessageText>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>0</DiagReset>
+								<DiagReaction>3</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x23A0</TextId>
+							<MessageText LcId="1033">Continuous overcurrent. Output: %u</MessageText>
+							<Description LcId="1033">The demanded current from axis system exceeds the parameterized warning threshold.</Description>
+							<Flags>
+								<DiagClass>warning</DiagClass>
+								<DiagReset>100</DiagReset>
+								<DiagReaction>0</DiagReaction>
+								<DiagType>100</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x23A1</TextId>
+							<MessageText LcId="1033">Continuous overcurrent (total DC link out current)</MessageText>
+							<Description LcId="1033">The demanded current from axis system exceeds the parameterized warning threshold.</Description>
+							<Flags>
+								<DiagClass>warning</DiagClass>
+								<DiagReset>100</DiagReset>
+								<DiagReaction>0</DiagReaction>
+								<DiagType>100</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x3210</TextId>
+							<MessageText LcId="1033">DC link overvoltage</MessageText>
+							<Description LcId="1033">The DC link voltage rises over the permitted DC link voltage because of power feedback (brake) from the motors.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>4</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x3220</TextId>
+							<MessageText LcId="1033">DC link undervoltage</MessageText>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x3280</TextId>
+							<MessageText LcId="1033">Device DC link overvoltage</MessageText>
+							<Description LcId="1033">The DC link voltage rises over the permitted maximal DC link voltage because of power feedback (brake) from the motors.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>5</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x3281</TextId>
+							<MessageText LcId="1033">DC link overvoltage with Torque off</MessageText>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x3282</TextId>
+							<MessageText LcId="1033">DC link undervoltage with Torque off</MessageText>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x32A0</TextId>
+							<MessageText LcId="1033">DC link undervoltage</MessageText>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x4210</TextId>
+							<MessageText LcId="1033">Excess temperature device: %s</MessageText>
+							<Description LcId="1033">The device temperature exceeds the permitted maximal value of 80,0°C.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>2</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1033">Your application has produced a thermic overload of the power supply module.</Cause>
+								<Remedy LcId="1033">Analize your application and make, that this thermic overload does not happen.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x4280</TextId>
+							<MessageText LcId="1033">Excess temperature device: %s. Reaction: Generative brake order</MessageText>
+							<Description LcId="1033">The device temperature exceeds the permitted maximal value of 80,0°C.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>3</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1033">Your application has produced a thermic overload of the power supply module.</Cause>
+								<Remedy LcId="1033">Analize your application and make, that this thermic overload does not happen.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x42A0</TextId>
+							<MessageText LcId="1033">Excess temperature device: %s</MessageText>
+							<Description LcId="1033">The actual device temperature exceeds the parameterized warning threshold.</Description>
+							<Flags>
+								<DiagClass>warning</DiagClass>
+								<DiagReset>100</DiagReset>
+								<DiagReaction>0</DiagReaction>
+								<DiagType>100</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x5560</TextId>
+							<MessageText LcId="1033">Read data failed: %s</MessageText>
+							<Description LcId="1033">An error occurred while reading data from the eeprom during initialization.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>0</DiagReset>
+								<DiagReaction>8</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1033">An internal hard- or software failure happened, while reading data from eeprom.</Cause>
+								<Remedy LcId="1033">Switch off the mains voltage and the 24V-supply. Switch on them again. If this error happens repeatedly, please contact your Beckhoff office.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x5561</TextId>
+							<MessageText LcId="1033">Missing data: %s</MessageText>
+							<Description LcId="1033">An error occurred while reading data from the eeprom during initialization.
+- ID 0: PowerPcb
+- ID 1: LinkPcb
+- ID 2: OptionPcb
+- ID 3: DisplayPcb</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>0</DiagReset>
+								<DiagReaction>8</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1033">A internal hard- or software failure happened, while reading data from eeprom.</Cause>
+								<Remedy LcId="1033">Switch off the mains voltage and the 24V-supply. Switch on them again. If this error happens repeatedly, please contact your Beckhoff office.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x556C</TextId>
+							<MessageText LcId="1033">Write data failed: %s</MessageText>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x5570</TextId>
+							<MessageText LcId="1033">Reset data failed: %s</MessageText>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x5590</TextId>
+							<MessageText LcId="1033">%s E2PROM device address is incompatible to this Firmware</MessageText>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x5592</TextId>
+							<MessageText LcId="1033">%s Firmware Index is incompatible to this Firmware</MessageText>
+							<Description LcId="1033">Detected incompatible Pcb for this Firmware. 
+- ID 0: PowerPcb
+- ID 1: LinkPcb
+- ID 2: OptionPcb
+- ID 3: DisplayPcb</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>0</DiagReset>
+								<DiagReaction>8</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1033">This Hardware needs a newer Firmware.</Cause>
+								<Remedy LcId="1033">Ask the Beckhoff branch office that is responsible for you for the right Firmwareversion.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x5593</TextId>
+							<MessageText LcId="1033">%s Structure Version is incompatible to this Firmware</MessageText>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x5595</TextId>
+							<MessageText LcId="1033">%s Component Type is incompatible to this Firmware</MessageText>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x5596</TextId>
+							<MessageText LcId="1033">Product is incompatible to this Firmware</MessageText>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x5598</TextId>
+							<MessageText LcId="1033">Update BIC to SII Eeprom failed: %s</MessageText>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x55D0</TextId>
+							<MessageText LcId="1033">Restored Errormessages from persistent memory</MessageText>
+							<Description LcId="1033">The persistent memory contains an errorlog. The messages are restored during power on phase.</Description>
+							<Flags>
+								<DiagClass>information</DiagClass>
+								<DiagReset>200</DiagReset>
+								<DiagReaction>0</DiagReaction>
+								<DiagType>200</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x6010</TextId>
+							<MessageText LcId="1033">Software reset (watchdog)</MessageText>
+							<Description LcId="1033">A timeout has occurred.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>1</DiagReset>
+								<DiagReaction>8</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1033">An unknown software failure happened.</Cause>
+								<Remedy LcId="1033">Switch off the mains voltage and the 24V-supply. Switch on them again. If this error happens repeatedly, please contact your Beckhoff office.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x6320</TextId>
+							<MessageText LcId="1033">Parameter error</MessageText>
+							<Description LcId="1033">A parameterization error has occurred.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>8</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x7111</TextId>
+							<MessageText LcId="1033">Failure brake chopper</MessageText>
+							<Description LcId="1033">Brake chopper failured.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>0</DiagReset>
+								<DiagReaction>5</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1033">Brake chopper is damaged.</Cause>
+								<Remedy LcId="1033">Switch off the mains voltage and the 24V-supply. Switch on them again. If this error happens repeatedly, please contact your Beckhoff office.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x7112</TextId>
+							<MessageText LcId="1033">Overcurrent brake chopper</MessageText>
+							<Description LcId="1033">Your connected brake resistor (internal or external) was overloaded.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>0</DiagReset>
+								<DiagReaction>7</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1033">Current at connected brake resistor is too high. The brake resistor may be damaged.</Cause>
+								<Remedy LcId="1033">Switch off the mains voltage and the 24V-supply. Check whether your brake resistor is damaged, if external one connected. Try to operate power supply module again. If this error happens repeatedly, please contact your Beckhoff office.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x7180</TextId>
+							<MessageText LcId="1033">Brake resistor not found</MessageText>
+							<Description LcId="1033">No connected brake resistor can be detected.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>1</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1033">Internal brake resistor is faulty and any external brake resistor has not been connected.</Cause>
+								<Remedy LcId="1033">Switch off the mains voltage and the 24V-supply. Switch on them again. If this error happens repeatedly, please contact your Beckhoff office.</Remedy>
+							</CauseRemedy>
+							<CauseRemedy Idx="1">
+								<Cause LcId="1033">The connection bridge for the internal brake resistor is missing and any external brake resistor has not been connected.</Cause>
+								<Remedy LcId="1033">Plug in the connection bridge or connect an external brake resistor.</Remedy>
+							</CauseRemedy>
+							<CauseRemedy Idx="2">
+								<Cause LcId="1033">The connection bridge for the internal brake resistor is not pugged in, an external brake resistor has been connected but this may be damaged.</Cause>
+								<Remedy LcId="1033">Check your external brake resistor. If this is not damaged, try to operate the power supply module again. If this error happens repeatedly, please contact your Beckhoff office.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x7183</TextId>
+							<MessageText LcId="1033">Brake resistor overloaded</MessageText>
+							<Description LcId="1033">The brake resisor load utilization exceeds the 100% threshold.</Description>
+							<Flags></Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x71A0</TextId>
+							<MessageText LcId="1033">Brake resistor overloaded</MessageText>
+							<Description LcId="1033">The brake resisor load utilization exceeds the parameterised warning threshold.</Description>
+							<Flags>
+								<DiagClass>warning</DiagClass>
+								<DiagReset>100</DiagReset>
+								<DiagReaction>0</DiagReaction>
+								<DiagType>100</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x7580</TextId>
+							<MessageText LcId="1033">I2C communication failure %s</MessageText>
+							<Description LcId="1033">Failure at I2C bus.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>1</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+							<CauseRemedy Idx="0">
+								<Cause LcId="1033">An I2C-member is hanging and a reset of the I2C-bus failed.</Cause>
+								<Remedy LcId="1033">Switch off the mains voltage and the 24V-supply. Switch them on again. If this error happens repeatedly, please contact your Beckhoff office.</Remedy>
+							</CauseRemedy>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#x87D0</TextId>
+							<MessageText LcId="1033">PLL sync lost</MessageText>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#xFF01</TextId>
+							<MessageText LcId="1033">Error reaction forced: Generative brake order</MessageText>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>3</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#xFF02</TextId>
+							<MessageText LcId="1033">Error reaction forced: Non-generative brake order</MessageText>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>4</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#xFF03</TextId>
+							<MessageText LcId="1033">Error reaction forced: Brake chopper off</MessageText>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>7</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#xFF07</TextId>
+							<MessageText LcId="1033">Error reaction forced: Torque Off order</MessageText>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>5</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#xFF0B</TextId>
+							<MessageText LcId="1033">Error reaction forced: NC handling order</MessageText>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>2</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#xFF1D</TextId>
+							<MessageText LcId="1033">Charge resistor overloaded with error reaction torque off</MessageText>
+							<Description LcId="1033">Dc link charge resistor exceeds the permitted range of 90%.</Description>
+							<Flags>
+								<DiagClass>error</DiagClass>
+								<DiagReset>2</DiagReset>
+								<DiagReaction>5</DiagReaction>
+								<DiagType>0</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#xFFA0</TextId>
+							<MessageText LcId="1033">Fan malfunction</MessageText>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#xFFC0</TextId>
+							<MessageText LcId="1033">%s successfully done</MessageText>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#xFFD0</TextId>
+							<MessageText LcId="1033">Debug firmware, replace "As soon as possible"!</MessageText>
+							<Description LcId="1033">Debug fimware: Replace ASAP!</Description>
+							<Flags>
+								<DiagClass>information</DiagClass>
+								<DiagReset>200</DiagReset>
+								<DiagReaction>0</DiagReaction>
+								<DiagType>200</DiagType>
+							</Flags>
+						</DiagMessage>
+						<DiagMessage>
+							<TextId>#xFFD1</TextId>
+							<MessageText LcId="1033">Dbg: %s</MessageText>
+							<Flags>
+								<DiagClass>information</DiagClass>
+								<DiagReset>200</DiagReset>
+								<DiagReaction>0</DiagReaction>
+								<DiagType>200</DiagType>
+							</Flags>
+						</DiagMessage>
+					</DiagMessages>
+				</Profile>
+				<Fmmu>Outputs</Fmmu>
+				<Fmmu>Inputs</Fmmu>
+				<Fmmu>MBoxState</Fmmu>
+				<Sm MinSize="128" MaxSize="256" DefaultSize="256" StartAddress="#x1000" ControlByte="#x26" Enable="1">MBoxOut</Sm>
+				<Sm MinSize="128" MaxSize="256" DefaultSize="256" StartAddress="#x1100" ControlByte="#x22" Enable="1">MBoxIn</Sm>
+				<Sm DefaultSize="2" StartAddress="#x1200" ControlByte="#x24" Enable="1">Outputs</Sm>
+				<Sm DefaultSize="2" StartAddress="#x1900" ControlByte="#x20" Enable="1">Inputs</Sm>
+				<RxPdo Fixed="1" Sm="2">
+					<Index>#x1600</Index>
+					<Name>PSM Controlword out</Name>
+					<Entry>
+						<Index>#x2c26</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>16</BitLen>
+						<Name>Controlword out</Name>
+						<DataType>UINT</DataType>
+					</Entry>
+				</RxPdo>
+				<TxPdo Fixed="1" Sm="3">
+					<Index>#x1a00</Index>
+					<Name>PSM Controlword in</Name>
+					<Entry>
+						<Index>#x2c21</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>16</BitLen>
+						<Name>Controlword 1 in</Name>
+						<DataType>UINT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="1">
+					<Index>#x1a01</Index>
+					<Name>PSM Warning register</Name>
+					<Entry>
+						<Index>#x2c25</Index>
+						<SubIndex>32</SubIndex>
+						<BitLen>16</BitLen>
+						<Name>Warning register</Name>
+						<DataType>UINT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="1">
+					<Index>#x1a02</Index>
+					<Name>PSM Statusword</Name>
+					<Entry>
+						<Index>#x2c20</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>16</BitLen>
+						<Name>Statusword</Name>
+						<DataType>UINT</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo>
+					<Index>#x1a03</Index>
+					<Name>PSM Process values</Name>
+					<Entry>
+						<Index>#x2c22</Index>
+						<SubIndex>32</SubIndex>
+						<BitLen>32</BitLen>
+						<Name>Actual DC link voltage</Name>
+						<Comment>Actual voltage value at the DC link.</Comment>
+						<DataType>REAL</DataType>
+					</Entry>
+				</TxPdo>
+				<Mailbox DataLinkLayer="true">
+					<CoE SdoInfo="1" PdoAssign="1" PdoConfig="1" CompleteAccess="1" SegmentedSdo="1" DiagHistory="1">
+						<InitCmd>
+							<Transition>IP</Transition>
+							<Index>4339</Index>
+							<SubIndex>5</SubIndex>
+							<Data AdaptAutomatically="1">0000</Data>
+							<Comment>Enable DiagMessage as emergency</Comment>
+						</InitCmd>
+					</CoE>
+					<FoE></FoE>
+				</Mailbox>
+				<Dc>
+					<OpMode>
+						<Name>DC</Name>
+						<Desc>DC-Synchron</Desc>
+						<AssignActivate>#x700</AssignActivate>
+						<CycleTimeSync0 Factor="0">62500</CycleTimeSync0>
+						<ShiftTimeSync0 Input="0">0</ShiftTimeSync0>
+						<CycleTimeSync1 Factor="-1">0</CycleTimeSync1>
+						<ShiftTimeSync1>1000</ShiftTimeSync1>
+					</OpMode>
+				</Dc>
+				<Eeprom>
+					<ByteSize>2048</ByteSize>
+					<ConfigData>050603cce8030000000000000000</ConfigData>
+					<BootStrap>0010f400f410f400</BootStrap>
+				</Eeprom>
+				<ImageData16x14>424DD6020000000000003600000028000000100000000E0000000100180000000000A002000074120000741200000000000000000000C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3C3C3C3C3C3C3000000000000000000FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3C3C3C3C3C3C3000000000000000000FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3C3C3C3C3C3C3000000000000000000FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3C3C3C3C3C3C3C3C3C3241CEDC3C3C3FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3C3C3C3C3C3C3C3C3C3241CEDC3C3C3FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3000000C3C3C3C3C3C3241CEDC3C3C3FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3C3C3C3C3C3C3C3C3C3241CEDC3C3C3FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3000000C3C3C3C3C3C3241CEDC3C3C3FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3C3C3C3C3C3C3C3C3C3241CEDC3C3C3FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF000000000000000000000000000000000000FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3C3FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF</ImageData16x14>
+			</Device>
+		</Devices>
+	</Descriptions>
+</EtherCATInfo>

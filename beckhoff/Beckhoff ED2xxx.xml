@@ -1,0 +1,1356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EtherCATInfo xsi:noNamespaceSchemaLocation="EtherCATInfo.xsd" Version="1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Vendor FileVersion="2">
+		<Id>2</Id>
+		<Name>Beckhoff Automation GmbH &amp; Co. KG</Name>
+		<ImageData16x14>424DE6000000000000007600000028000000100000000E000000010004000000000070000000120B0000120B0000100000001000000000000000000080000080000000808000800000008000800080800000C0C0C000808080000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF009D9DD99DD9DDD9DD9D9D9DD9D9DDD9DD999D9DD9D999D9999D9D9DD9D9DDD9DD9D9DD99DD999D999DDDDDDDDDDDDDDDD88888888888888888888888888888888DDDDDDDDDDDDDDDD999D999DD99DD9D99D9D9DDD9DD9D9D999DD999D9DDDD99D9D9D9DDD9DD9D99D999D999DD99DD9D9</ImageData16x14>
+	</Vendor>
+	<Descriptions>
+		<Groups>
+			<Group SortOrder="320">
+				<Type>DigOut</Type>
+				<Name LcId="1033">Digital Output Terminals (ED2xxx, EL2xxx)</Name>
+				<Name LcId="1031">Digitale Ausgangsklemmen (ED2xxx, EL2xxx)</Name>
+				<ImageData16x14>424DD6020000000000003600000028000000100000000E0000000100180000000000A0020000120B0000120B00000000000000000000FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF808080808080808080808080808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0000000C0C0C0000000808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C000FFFFC0C0C000FFFF808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0000000C0C0C0000000808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0FF0000C0C0C0FF0000808080FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FF0000FF0000FF0000FF0000FF0000FF0000FFC0C0C0000000C0C0C0000000808080FF00FFFF00FFFF00FFFF00FFFF00FF0000FF0000FF0000FF0000FF0000FF0000FFC0C0C00000FFC0C0C00000FF808080FF00FFFF00FFFF00FFFF00FFFF00FF0000FF0000FF0000FF0000FF0000FF0000FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FF0000FF0000FF0000FF0000FF0000FF0000FFC0C0C0000000C0C0C0000000808080FF00FFFF00FFFF00FFFF00FFFF00FF0000FF0000FF0000FF0000FF0000FF0000FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FF0000FF0000FF0000FF0000FF0000FF0000FFC0C0C0008000C0C0C0008000808080FF00FFFF00FFFF00FFFF00FFFF00FF0000FF0000FF0000FF0000FF0000FF0000FFC0C0C0C0C0C0C0C0C0C0C0C0808080FF00FFFF00FFFF00FFFF00FFFF00FF</ImageData16x14>
+			</Group>
+		</Groups>
+		<Devices>
+			<Device Physics="KK">
+				<Type ProductCode="#x0af71052" RevisionNo="#x00100000" CheckRevisionNo="LW_EQ">ED2807</Type>
+				<Name LcId="1033"><![CDATA[ED2807 | 32-ch. dig. output, 24 V DC, 0.5 A, push-in]]></Name>
+				<Name LcId="1031"><![CDATA[ED2807 | 32-K.-Dig.-Ausgang, 24 V DC, 0,5 A, Push-in]]></Name>
+				<URL LcId="1033"><![CDATA[http://www.beckhoff.com/ED2807]]></URL>
+				<URL LcId="1031"><![CDATA[http://www.beckhoff.de/ED2807]]></URL>
+				<Info>
+					<Electrical>
+						<EBusCurrent>65</EBusCurrent>
+					</Electrical>
+				</Info>
+				<GroupType>DigOut</GroupType>
+				<Fmmu>Outputs</Fmmu>
+				<Sm DefaultSize="4" StartAddress="#x1000" ControlByte="#x44" Enable="1" OpOnly="1">Outputs</Sm>
+				<Su FrameRepeatSupport="1"></Su>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1600</Index>
+					<Name>DO Channel 1</Name>
+					<Entry>
+						<Index>#x7000</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1601</Index>
+					<Name>DO Channel 2</Name>
+					<Entry>
+						<Index>#x7010</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1602</Index>
+					<Name>DO Channel 3</Name>
+					<Entry>
+						<Index>#x7020</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1603</Index>
+					<Name>DO Channel 4</Name>
+					<Entry>
+						<Index>#x7030</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1604</Index>
+					<Name>DO Channel 5</Name>
+					<Entry>
+						<Index>#x7040</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1605</Index>
+					<Name>DO Channel 6</Name>
+					<Entry>
+						<Index>#x7050</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1606</Index>
+					<Name>DO Channel 7</Name>
+					<Entry>
+						<Index>#x7060</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1607</Index>
+					<Name>DO Channel 8</Name>
+					<Entry>
+						<Index>#x7070</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1608</Index>
+					<Name>DO Channel 9</Name>
+					<Entry>
+						<Index>#x7080</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1609</Index>
+					<Name>DO Channel 10</Name>
+					<Entry>
+						<Index>#x7090</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x160a</Index>
+					<Name>DO Channel 11</Name>
+					<Entry>
+						<Index>#x70a0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x160b</Index>
+					<Name>DO Channel 12</Name>
+					<Entry>
+						<Index>#x70b0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x160c</Index>
+					<Name>DO Channel 13</Name>
+					<Entry>
+						<Index>#x70c0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x160d</Index>
+					<Name>DO Channel 14</Name>
+					<Entry>
+						<Index>#x70d0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x160e</Index>
+					<Name>DO Channel 15</Name>
+					<Entry>
+						<Index>#x70e0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x160f</Index>
+					<Name>DO Channel 16</Name>
+					<Entry>
+						<Index>#x70f0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1610</Index>
+					<Name>DO Channel 17</Name>
+					<Entry>
+						<Index>#x7100</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1611</Index>
+					<Name>DO Channel 18</Name>
+					<Entry>
+						<Index>#x7110</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1612</Index>
+					<Name>DO Channel 19</Name>
+					<Entry>
+						<Index>#x7120</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1613</Index>
+					<Name>DO Channel 20</Name>
+					<Entry>
+						<Index>#x7130</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1614</Index>
+					<Name>DO Channel 21</Name>
+					<Entry>
+						<Index>#x7140</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1615</Index>
+					<Name>DO Channel 22</Name>
+					<Entry>
+						<Index>#x7150</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1616</Index>
+					<Name>DO Channel 23</Name>
+					<Entry>
+						<Index>#x7160</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1617</Index>
+					<Name>DO Channel 24</Name>
+					<Entry>
+						<Index>#x7170</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1618</Index>
+					<Name>DO Channel 25</Name>
+					<Entry>
+						<Index>#x7180</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1619</Index>
+					<Name>DO Channel 26</Name>
+					<Entry>
+						<Index>#x7190</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x161a</Index>
+					<Name>DO Channel 27</Name>
+					<Entry>
+						<Index>#x71a0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x161b</Index>
+					<Name>DO Channel 28</Name>
+					<Entry>
+						<Index>#x71b0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x161c</Index>
+					<Name>DO Channel 29</Name>
+					<Entry>
+						<Index>#x71c0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x161d</Index>
+					<Name>DO Channel 30</Name>
+					<Entry>
+						<Index>#x71d0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x161e</Index>
+					<Name>DO Channel 31</Name>
+					<Entry>
+						<Index>#x71e0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x161f</Index>
+					<Name>DO Channel 32</Name>
+					<Entry>
+						<Index>#x71f0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<Eeprom>
+					<ByteSize>2048</ByteSize>
+					<ConfigData>0501030000000000</ConfigData>
+				</Eeprom>
+			</Device>
+			<Device Physics="KK">
+				<Type ProductCode="#x0AF91052" RevisionNo="#x00100000" CheckRevisionNo="LW_EQ">ED2809</Type>
+				<Name LcId="1033"><![CDATA[ED2809 | 16-ch. dig. output, 24 V DC, 0.5 A, push-in]]></Name>
+				<Name LcId="1031"><![CDATA[ED2809 | 16-K.-Dig.-Ausgang, 24 V DC, 0,5 A, Push-in]]></Name>
+				<URL LcId="1033"><![CDATA[http://www.beckhoff.com/ED2809]]></URL>
+				<URL LcId="1031"><![CDATA[http://www.beckhoff.de/ED2809]]></URL>
+				<Info>
+					<Electrical>
+						<EBusCurrent>100</EBusCurrent>
+					</Electrical>
+				</Info>
+				<GroupType>DigOut</GroupType>
+				<Fmmu>Outputs</Fmmu>
+				<Sm DefaultSize="1" StartAddress="#x0f00" ControlByte="#x44" Enable="1" OpOnly="1">Outputs</Sm>
+				<Sm DefaultSize="1" StartAddress="#x0f01" ControlByte="#x44" Enable="1" OpOnly="1">Outputs</Sm>
+				<Su FrameRepeatSupport="1"></Su>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1600</Index>
+					<Name>DO Channel 1</Name>
+					<Entry>
+						<Index>#x7000</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1601</Index>
+					<Name>DO Channel 2</Name>
+					<Entry>
+						<Index>#x7010</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1602</Index>
+					<Name>DO Channel 3</Name>
+					<Entry>
+						<Index>#x7020</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1603</Index>
+					<Name>DO Channel 4</Name>
+					<Entry>
+						<Index>#x7030</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1604</Index>
+					<Name>DO Channel 5</Name>
+					<Entry>
+						<Index>#x7040</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1605</Index>
+					<Name>DO Channel 6</Name>
+					<Entry>
+						<Index>#x7050</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1606</Index>
+					<Name>DO Channel 7</Name>
+					<Entry>
+						<Index>#x7060</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1607</Index>
+					<Name>DO Channel 8</Name>
+					<Entry>
+						<Index>#x7070</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="1">
+					<Index>#x1608</Index>
+					<Name>DO Channel 9</Name>
+					<Entry>
+						<Index>#x7080</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="1">
+					<Index>#x1609</Index>
+					<Name>DO Channel 10</Name>
+					<Entry>
+						<Index>#x7090</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="1">
+					<Index>#x160a</Index>
+					<Name>DO Channel 11</Name>
+					<Entry>
+						<Index>#x70a0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="1">
+					<Index>#x160b</Index>
+					<Name>DO Channel 12</Name>
+					<Entry>
+						<Index>#x70b0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="1">
+					<Index>#x160c</Index>
+					<Name>DO Channel 13</Name>
+					<Entry>
+						<Index>#x70c0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="1">
+					<Index>#x160d</Index>
+					<Name>DO Channel 14</Name>
+					<Entry>
+						<Index>#x70d0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="1">
+					<Index>#x160e</Index>
+					<Name>DO Channel 15</Name>
+					<Entry>
+						<Index>#x70e0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="1">
+					<Index>#x160f</Index>
+					<Name>DO Channel 16</Name>
+					<Entry>
+						<Index>#x70f0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<Eeprom>
+					<ByteSize>2048</ByteSize>
+					<ConfigData>040100000000ff00</ConfigData>
+				</Eeprom>
+			</Device>
+			<Device Physics="KK">
+				<Type ProductCode="#x0b161052" RevisionNo="#x00100000" CheckRevisionNo="LW_EQ">ED2838</Type>
+				<Name LcId="1033"><![CDATA[ED2838 | 8-ch. dig. output, 24 V DC, 2 A, push-in, with channel diagnostics]]></Name>
+				<Name LcId="1031"><![CDATA[ED2838 | 8-K.-Dig.-Ausgang, 24 V DC, 2 A, Push-in, mit Kanal-Diagnose]]></Name>
+				<URL LcId="1033"><![CDATA[http://www.beckhoff.com/ED2838]]></URL>
+				<URL LcId="1031"><![CDATA[http://www.beckhoff.de/ED2838]]></URL>
+				<Info>
+					<Electrical>
+						<EBusCurrent>85</EBusCurrent>
+					</Electrical>
+				</Info>
+				<GroupType>DigOut</GroupType>
+				<Fmmu>Outputs</Fmmu>
+				<Fmmu>Inputs</Fmmu>
+				<Sm MinSize="1" MaxSize="1" DefaultSize="1" StartAddress="#x0f00" ControlByte="#x44" OpOnly="1" Enable="1">Outputs</Sm>
+				<Sm MinSize="1" MaxSize="1" DefaultSize="1" StartAddress="#x1001" ControlByte="#x0" Enable="1">Inputs</Sm>
+				<Su FrameRepeatSupport="1"></Su>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1600</Index>
+					<Name>DO Channel 1</Name>
+					<Entry>
+						<Index>#x7000</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1601</Index>
+					<Name>DO Channel 2</Name>
+					<Entry>
+						<Index>#x7010</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1602</Index>
+					<Name>DO Channel 3</Name>
+					<Entry>
+						<Index>#x7020</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1603</Index>
+					<Name>DO Channel 4</Name>
+					<Entry>
+						<Index>#x7030</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1604</Index>
+					<Name>DO Channel 5</Name>
+					<Entry>
+						<Index>#x7040</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1605</Index>
+					<Name>DO Channel 6</Name>
+					<Entry>
+						<Index>#x7050</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1606</Index>
+					<Name>DO Channel 7</Name>
+					<Entry>
+						<Index>#x7060</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1607</Index>
+					<Name>DO Channel 8</Name>
+					<Entry>
+						<Index>#x7070</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<TxPdo Fixed="1" Mandatory="1" Sm="1">
+					<Index>#x1a00</Index>
+					<Name>DO Diag Channel 1</Name>
+					<Entry>
+						<Index>#x6000</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Status__Overload</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="1" Mandatory="1" Sm="1">
+					<Index>#x1a01</Index>
+					<Name>DO Diag Channel 2</Name>
+					<Entry>
+						<Index>#x6010</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Status__Overload</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="1" Mandatory="1" Sm="1">
+					<Index>#x1a02</Index>
+					<Name>DO Diag Channel 3</Name>
+					<Entry>
+						<Index>#x6020</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Status__Overload</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="1" Mandatory="1" Sm="1">
+					<Index>#x1a03</Index>
+					<Name>DO Diag Channel 4</Name>
+					<Entry>
+						<Index>#x6030</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Status__Overload</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="1" Mandatory="1" Sm="1">
+					<Index>#x1a04</Index>
+					<Name>DO Diag Channel 5</Name>
+					<Entry>
+						<Index>#x6040</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Status__Overload</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="1" Mandatory="1" Sm="1">
+					<Index>#x1a05</Index>
+					<Name>DO Diag Channel 6</Name>
+					<Entry>
+						<Index>#x6050</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Status__Overload</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="1" Mandatory="1" Sm="1">
+					<Index>#x1a06</Index>
+					<Name>DO Diag Channel 7</Name>
+					<Entry>
+						<Index>#x6060</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Status__Overload</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</TxPdo>
+				<TxPdo Fixed="1" Mandatory="1" Sm="1">
+					<Index>#x1a07</Index>
+					<Name>DO Diag Channel 8</Name>
+					<Entry>
+						<Index>#x6070</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Status__Overload</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</TxPdo>
+				<Eeprom>
+					<ByteSize>2048</ByteSize>
+					<ConfigData>0401000000000f00</ConfigData>
+				</Eeprom>
+			</Device>
+			<Device Physics="KK">
+				<Type ProductCode="#x0b471052" RevisionNo="#x00100000" CheckRevisionNo="LW_EQ">ED2887</Type>
+				<Name LcId="1033"><![CDATA[ED2887 | 32-ch. dig. output, 24 V DC, 0.5 A, ground switching, push-in]]></Name>
+				<Name LcId="1031"><![CDATA[ED2887 | 32-K.-Dig.-Ausgang, 24 V DC, 0,5 A, masseschaltend, Push-in]]></Name>
+				<URL LcId="1033"><![CDATA[http://www.beckhoff.com/ED2887]]></URL>
+				<URL LcId="1031"><![CDATA[http://www.beckhoff.de/ED2887]]></URL>
+				<Info>
+					<Electrical>
+						<EBusCurrent>65</EBusCurrent>
+					</Electrical>
+				</Info>
+				<GroupType>DigOut</GroupType>
+				<Fmmu>Outputs</Fmmu>
+				<Sm DefaultSize="4" StartAddress="#x1000" ControlByte="#x44" Enable="1" OpOnly="1">Outputs</Sm>
+				<Su FrameRepeatSupport="1"></Su>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1600</Index>
+					<Name>DO Channel 1</Name>
+					<Entry>
+						<Index>#x7000</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1601</Index>
+					<Name>DO Channel 2</Name>
+					<Entry>
+						<Index>#x7010</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1602</Index>
+					<Name>DO Channel 3</Name>
+					<Entry>
+						<Index>#x7020</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1603</Index>
+					<Name>DO Channel 4</Name>
+					<Entry>
+						<Index>#x7030</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1604</Index>
+					<Name>DO Channel 5</Name>
+					<Entry>
+						<Index>#x7040</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1605</Index>
+					<Name>DO Channel 6</Name>
+					<Entry>
+						<Index>#x7050</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1606</Index>
+					<Name>DO Channel 7</Name>
+					<Entry>
+						<Index>#x7060</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1607</Index>
+					<Name>DO Channel 8</Name>
+					<Entry>
+						<Index>#x7070</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1608</Index>
+					<Name>DO Channel 9</Name>
+					<Entry>
+						<Index>#x7080</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1609</Index>
+					<Name>DO Channel 10</Name>
+					<Entry>
+						<Index>#x7090</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x160a</Index>
+					<Name>DO Channel 11</Name>
+					<Entry>
+						<Index>#x70a0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x160b</Index>
+					<Name>DO Channel 12</Name>
+					<Entry>
+						<Index>#x70b0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x160c</Index>
+					<Name>DO Channel 13</Name>
+					<Entry>
+						<Index>#x70c0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x160d</Index>
+					<Name>DO Channel 14</Name>
+					<Entry>
+						<Index>#x70d0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x160e</Index>
+					<Name>DO Channel 15</Name>
+					<Entry>
+						<Index>#x70e0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x160f</Index>
+					<Name>DO Channel 16</Name>
+					<Entry>
+						<Index>#x70f0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1610</Index>
+					<Name>DO Channel 17</Name>
+					<Entry>
+						<Index>#x7100</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1611</Index>
+					<Name>DO Channel 18</Name>
+					<Entry>
+						<Index>#x7110</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1612</Index>
+					<Name>DO Channel 19</Name>
+					<Entry>
+						<Index>#x7120</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1613</Index>
+					<Name>DO Channel 20</Name>
+					<Entry>
+						<Index>#x7130</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1614</Index>
+					<Name>DO Channel 21</Name>
+					<Entry>
+						<Index>#x7140</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1615</Index>
+					<Name>DO Channel 22</Name>
+					<Entry>
+						<Index>#x7150</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1616</Index>
+					<Name>DO Channel 23</Name>
+					<Entry>
+						<Index>#x7160</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1617</Index>
+					<Name>DO Channel 24</Name>
+					<Entry>
+						<Index>#x7170</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1618</Index>
+					<Name>DO Channel 25</Name>
+					<Entry>
+						<Index>#x7180</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1619</Index>
+					<Name>DO Channel 26</Name>
+					<Entry>
+						<Index>#x7190</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x161a</Index>
+					<Name>DO Channel 27</Name>
+					<Entry>
+						<Index>#x71a0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x161b</Index>
+					<Name>DO Channel 28</Name>
+					<Entry>
+						<Index>#x71b0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x161c</Index>
+					<Name>DO Channel 29</Name>
+					<Entry>
+						<Index>#x71c0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x161d</Index>
+					<Name>DO Channel 30</Name>
+					<Entry>
+						<Index>#x71d0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x161e</Index>
+					<Name>DO Channel 31</Name>
+					<Entry>
+						<Index>#x71e0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x161f</Index>
+					<Name>DO Channel 32</Name>
+					<Entry>
+						<Index>#x71f0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<Eeprom>
+					<ByteSize>2048</ByteSize>
+					<ConfigData>0501030000000000</ConfigData>
+				</Eeprom>
+			</Device>
+			<Device Physics="KK">
+				<Type ProductCode="#x0B491052" RevisionNo="#x00100000" CheckRevisionNo="LW_EQ">ED2889</Type>
+				<Name LcId="1033"><![CDATA[ED2889 | 16-ch. dig. output, 24 V DC, 0.5 A, ground switching, push-in]]></Name>
+				<Name LcId="1031"><![CDATA[ED2889 | 16-K.-Dig.-Ausgang, 24 V DC, 0,5 A, masseschaltend, Push-in]]></Name>
+				<URL LcId="1033"><![CDATA[http://www.beckhoff.com/ED2889]]></URL>
+				<URL LcId="1031"><![CDATA[http://www.beckhoff.de/ED2889]]></URL>
+				<Info>
+					<Electrical>
+						<EBusCurrent>100</EBusCurrent>
+					</Electrical>
+				</Info>
+				<GroupType>DigOut</GroupType>
+				<Fmmu>Outputs</Fmmu>
+				<Sm DefaultSize="1" StartAddress="#x0f00" ControlByte="#x44" Enable="1" OpOnly="1">Outputs</Sm>
+				<Sm DefaultSize="1" StartAddress="#x0f01" ControlByte="#x44" Enable="1" OpOnly="1">Outputs</Sm>
+				<Su FrameRepeatSupport="1"></Su>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1600</Index>
+					<Name>DO Channel 1</Name>
+					<Entry>
+						<Index>#x7000</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1601</Index>
+					<Name>DO Channel 2</Name>
+					<Entry>
+						<Index>#x7010</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1602</Index>
+					<Name>DO Channel 3</Name>
+					<Entry>
+						<Index>#x7020</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1603</Index>
+					<Name>DO Channel 4</Name>
+					<Entry>
+						<Index>#x7030</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1604</Index>
+					<Name>DO Channel 5</Name>
+					<Entry>
+						<Index>#x7040</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1605</Index>
+					<Name>DO Channel 6</Name>
+					<Entry>
+						<Index>#x7050</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1606</Index>
+					<Name>DO Channel 7</Name>
+					<Entry>
+						<Index>#x7060</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="0">
+					<Index>#x1607</Index>
+					<Name>DO Channel 8</Name>
+					<Entry>
+						<Index>#x7070</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="1">
+					<Index>#x1608</Index>
+					<Name>DO Channel 9</Name>
+					<Entry>
+						<Index>#x7080</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="1">
+					<Index>#x1609</Index>
+					<Name>DO Channel 10</Name>
+					<Entry>
+						<Index>#x7090</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="1">
+					<Index>#x160a</Index>
+					<Name>DO Channel 11</Name>
+					<Entry>
+						<Index>#x70a0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="1">
+					<Index>#x160b</Index>
+					<Name>DO Channel 12</Name>
+					<Entry>
+						<Index>#x70b0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="1">
+					<Index>#x160c</Index>
+					<Name>DO Channel 13</Name>
+					<Entry>
+						<Index>#x70c0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="1">
+					<Index>#x160d</Index>
+					<Name>DO Channel 14</Name>
+					<Entry>
+						<Index>#x70d0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="1">
+					<Index>#x160e</Index>
+					<Name>DO Channel 15</Name>
+					<Entry>
+						<Index>#x70e0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<RxPdo Fixed="1" Mandatory="1" Sm="1">
+					<Index>#x160f</Index>
+					<Name>DO Channel 16</Name>
+					<Entry>
+						<Index>#x70f0</Index>
+						<SubIndex>1</SubIndex>
+						<BitLen>1</BitLen>
+						<Name>Output</Name>
+						<DataType>BOOL</DataType>
+					</Entry>
+				</RxPdo>
+				<Eeprom>
+					<ByteSize>2048</ByteSize>
+					<ConfigData>040100000000ff00</ConfigData>
+				</Eeprom>
+			</Device>
+		</Devices>
+	</Descriptions>
+</EtherCATInfo>

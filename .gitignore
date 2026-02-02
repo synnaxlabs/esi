@@ -5,3 +5,6 @@ __MACOSX/
 # Temporary files
 *.tmp
 *.bak
+
+# Generated files (now in GitHub releases only)
+generated/

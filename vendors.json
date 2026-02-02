@@ -1,0 +1,12 @@
+{
+  "vendors": [
+    {
+      "name": "Beckhoff",
+      "directory": "beckhoff"
+    },
+    {
+      "name": "Dewesoft",
+      "directory": "dewesoft"
+    }
+  ]
+}

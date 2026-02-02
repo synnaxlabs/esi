@@ -1,0 +1,73 @@
+name: Release ESI Blob
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "beckhoff/**"
+      - "dewesoft/**"
+      - "parser/**"
+  workflow_dispatch:
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.23"
+
+      - name: Generate Registry Blob
+        working-directory: parser
+        run: |
+          go run main.go -output ../generated/registry_blob.inc -stats ../generated/registry_stats.json
+
+      - name: Calculate SHA256
+        id: sha
+        run: |
+          SHA256=$(sha256sum generated/registry_blob.inc | awk '{print $1}')
+          echo "sha256=$SHA256" >> $GITHUB_OUTPUT
+          echo "SHA256: $SHA256"
+
+      - name: Get Blob Size
+        id: size
+        run: |
+          SIZE=$(ls -lh generated/registry_blob.inc | awk '{print $5}')
+          echo "size=$SIZE" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Latest ESI Registry Blob
+          body: |
+            ## ESI Registry Blob
+
+            Auto-generated from ESI XML files.
+
+            **SHA256:** `${{ steps.sha.outputs.sha256 }}`
+            **Size:** ${{ steps.size.outputs.size }}
+
+            ### Usage in Bazel
+
+            ```python
+            http_file(
+                name = "esi_registry_blob",
+                urls = ["https://github.com/synnaxlabs/esi/releases/download/latest/registry_blob.inc"],
+                sha256 = "${{ steps.sha.outputs.sha256 }}",
+                downloaded_file_path = "registry_blob.inc",
+            )
+            ```
+          files: |
+            generated/registry_blob.inc
+            generated/registry_stats.json
+          draft: false
+          prerelease: false
+          make_latest: true

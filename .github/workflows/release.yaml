@@ -36,6 +36,10 @@ jobs:
           echo "sha256=$SHA256" >> $GITHUB_OUTPUT
           echo "SHA256: $SHA256"
 
+      - name: Compute Release Tag
+        id: tag
+        run: echo "tag=registry-$(git rev-parse --short=12 HEAD)" >> $GITHUB_OUTPUT
+
       - name: Get Blob Size
         id: size
         run: |
@@ -45,8 +49,8 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: latest
-          name: Latest ESI Registry Blob
+          tag_name: ${{ steps.tag.outputs.tag }}
+          name: ESI Registry Blob ${{ steps.tag.outputs.tag }}
           body: |
             ## ESI Registry Blob
 
@@ -60,7 +64,7 @@ jobs:
             ```python
             http_file(
                 name = "esi_registry_blob",
-                urls = ["https://github.com/synnaxlabs/esi/releases/download/latest/registry_blob.inc"],
+                urls = ["https://github.com/synnaxlabs/esi/releases/download/${{ steps.tag.outputs.tag }}/registry_blob.inc"],
                 sha256 = "${{ steps.sha.outputs.sha256 }}",
                 downloaded_file_path = "registry_blob.inc",
             )
@@ -70,4 +74,4 @@ jobs:
             generated/registry_stats.json
           draft: false
           prerelease: false
-          make_latest: true
+          make_latest: false

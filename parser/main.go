@@ -76,7 +76,7 @@ type Name struct {
 type PDO struct {
 	Sm    string     `xml:"Sm,attr"`
 	Index string     `xml:"Index"`
-	Name  string     `xml:"Name"`
+	Name  []Name     `xml:"Name"`
 	Entry []PDOEntry `xml:"Entry"`
 }
 
@@ -84,7 +84,7 @@ type PDOEntry struct {
 	Index    string `xml:"Index"`
 	SubIndex string `xml:"SubIndex"`
 	BitLen   string `xml:"BitLen"`
-	Name     string `xml:"Name"`
+	Name     []Name `xml:"Name"`
 	DataType string `xml:"DataType"`
 }
 
@@ -118,8 +118,11 @@ type ParsedDevice struct {
 	SourceFile  string
 }
 
+// ParsedPDOEntry is one entry of a PDO. An entry with Index 0 is padding: it holds
+// BitLength bits of the process image and has no object.
 type ParsedPDOEntry struct {
 	PDOIndex  uint16
+	PDOName   string
 	Index     uint16
 	SubIndex  uint8
 	BitLength uint8
@@ -222,7 +225,7 @@ func mapDataTypeString(esiType string) string {
 	}
 }
 
-func getDeviceName(names []Name, fallback string) string {
+func englishName(names []Name, fallback string) string {
 	for _, n := range names {
 		if n.LcId == "1033" { // English
 			return strings.TrimSpace(n.Value)
@@ -297,95 +300,12 @@ func parseESIFile(path string, verbose bool) ([]ParsedDevice, error) {
 			VendorName:  esi.Vendor.Name,
 			ProductCode: uint32(productCode),
 			Revision:    uint32(revision),
-			Name:        getDeviceName(dev.Name, dev.Type.Value),
+			Name:        englishName(dev.Name, dev.Type.Value),
 			SourceFile:  filepath.Base(path),
 		}
 
-		// Parse TxPDO (inputs - slave to master)
-		for _, pdo := range dev.TxPdo {
-			pdoIndex, err := parseHexOrDecimal(pdo.Index)
-			if err != nil {
-				continue
-			}
-
-			if !validatePDOIndex(uint16(pdoIndex), true) && verbose {
-				fmt.Fprintf(os.Stderr, "Warning: TxPDO index 0x%04X outside valid range in %s\n",
-					pdoIndex, path)
-			}
-
-			for _, entry := range pdo.Entry {
-				if entry.Index == "" || entry.SubIndex == "" {
-					continue
-				}
-
-				index, err := parseHexOrDecimal(entry.Index)
-				if err != nil {
-					continue
-				}
-
-				subIndex, err := parseHexOrDecimal(entry.SubIndex)
-				if err != nil {
-					continue
-				}
-
-				bitLen, err := strconv.Atoi(entry.BitLen)
-				if err != nil {
-					continue
-				}
-
-				parsed.InputPDOs = append(parsed.InputPDOs, ParsedPDOEntry{
-					PDOIndex:  uint16(pdoIndex),
-					Index:     uint16(index),
-					SubIndex:  uint8(subIndex),
-					BitLength: uint8(bitLen),
-					Name:      entry.Name,
-					DataType:  mapDataTypeString(entry.DataType),
-				})
-			}
-		}
-
-		// Parse RxPDO (outputs - master to slave)
-		for _, pdo := range dev.RxPdo {
-			pdoIndex, err := parseHexOrDecimal(pdo.Index)
-			if err != nil {
-				continue
-			}
-
-			if !validatePDOIndex(uint16(pdoIndex), false) && verbose {
-				fmt.Fprintf(os.Stderr, "Warning: RxPDO index 0x%04X outside valid range in %s\n",
-					pdoIndex, path)
-			}
-
-			for _, entry := range pdo.Entry {
-				if entry.Index == "" || entry.SubIndex == "" {
-					continue
-				}
-
-				index, err := parseHexOrDecimal(entry.Index)
-				if err != nil {
-					continue
-				}
-
-				subIndex, err := parseHexOrDecimal(entry.SubIndex)
-				if err != nil {
-					continue
-				}
-
-				bitLen, err := strconv.Atoi(entry.BitLen)
-				if err != nil {
-					continue
-				}
-
-				parsed.OutputPDOs = append(parsed.OutputPDOs, ParsedPDOEntry{
-					PDOIndex:  uint16(pdoIndex),
-					Index:     uint16(index),
-					SubIndex:  uint8(subIndex),
-					BitLength: uint8(bitLen),
-					Name:      entry.Name,
-					DataType:  mapDataTypeString(entry.DataType),
-				})
-			}
-		}
+		parsed.InputPDOs = parsePDOs(dev.TxPdo, true, path, verbose)
+		parsed.OutputPDOs = parsePDOs(dev.RxPdo, false, path, verbose)
 
 		if len(parsed.InputPDOs) > 0 || len(parsed.OutputPDOs) > 0 {
 			devices = append(devices, parsed)
@@ -393,6 +313,60 @@ func parseESIFile(path string, verbose bool) ([]ParsedDevice, error) {
 	}
 
 	return devices, nil
+}
+
+// parsePDOs flattens the entries of the PDOs a device assigns to a sync manager by
+// default. PDOs without an Sm attribute are alternatives the master must opt into, and
+// they often map the same objects as the defaults.
+func parsePDOs(pdos []PDO, isInput bool, path string, verbose bool) []ParsedPDOEntry {
+	var entries []ParsedPDOEntry
+	for _, pdo := range pdos {
+		if pdo.Sm == "" {
+			continue
+		}
+		pdoIndex, err := parseHexOrDecimal(pdo.Index)
+		if err != nil {
+			continue
+		}
+		if !validatePDOIndex(uint16(pdoIndex), isInput) && verbose {
+			fmt.Fprintf(os.Stderr, "Warning: PDO index 0x%04X outside valid range in %s\n",
+				pdoIndex, path)
+		}
+		pdoName := englishName(pdo.Name, "")
+		for _, entry := range pdo.Entry {
+			index, err := parseHexOrDecimal(entry.Index)
+			if err != nil {
+				continue
+			}
+			bitLen, err := strconv.Atoi(entry.BitLen)
+			if err != nil {
+				continue
+			}
+			if index == 0 {
+				entries = append(entries, ParsedPDOEntry{
+					PDOIndex:  uint16(pdoIndex),
+					PDOName:   pdoName,
+					BitLength: uint8(bitLen),
+					DataType:  mapDataTypeString(""),
+				})
+				continue
+			}
+			subIndex, err := parseHexOrDecimal(entry.SubIndex)
+			if err != nil {
+				continue
+			}
+			entries = append(entries, ParsedPDOEntry{
+				PDOIndex:  uint16(pdoIndex),
+				PDOName:   pdoName,
+				Index:     uint16(index),
+				SubIndex:  uint8(subIndex),
+				BitLength: uint8(bitLen),
+				Name:      englishName(entry.Name, ""),
+				DataType:  mapDataTypeString(entry.DataType),
+			})
+		}
+	}
+	return entries
 }
 
 func escapeString(s string) string {
@@ -504,7 +478,7 @@ func (st *StringTable) Data() []byte {
 // Binary format constants
 const (
 	BinaryMagic   = 0x52495345 // "ESIR" in little endian
-	BinaryVersion = 1
+	BinaryVersion = 2
 )
 
 // dataTypeToID converts telem type string to numeric ID
@@ -535,7 +509,8 @@ func dataTypeToID(dt string) uint8 {
 	}
 }
 
-func generateCPP(devices []ParsedDevice, outputPath string) error {
+// buildBlob encodes devices in the registry binary format the Driver reads.
+func buildBlob(devices []ParsedDevice) []byte {
 	vendors := collectVendors(devices)
 	stringTable := NewStringTable()
 
@@ -575,11 +550,9 @@ func generateCPP(devices []ParsedDevice, outputPath string) error {
 	}
 	for _, dev := range devices {
 		stringTable.Add(dev.Name)
-		for _, pdo := range dev.InputPDOs {
+		for _, pdo := range append(dev.InputPDOs, dev.OutputPDOs...) {
 			stringTable.Add(pdo.Name)
-		}
-		for _, pdo := range dev.OutputPDOs {
-			stringTable.Add(pdo.Name)
+			stringTable.Add(pdo.PDOName)
 		}
 	}
 
@@ -643,10 +616,10 @@ func generateCPP(devices []ParsedDevice, outputPath string) error {
 		binary.Write(&blob, binary.LittleEndian, uint16(len(dev.OutputPDOs)))
 	}
 
-	// PDO table (12 bytes each)
+	// PDO table (16 bytes each)
 	for _, origIdx := range orderedDevices {
 		dev := devices[origIdx]
-		for _, pdo := range dev.InputPDOs {
+		for _, pdo := range append(dev.InputPDOs, dev.OutputPDOs...) {
 			binary.Write(&blob, binary.LittleEndian, pdo.PDOIndex)
 			binary.Write(&blob, binary.LittleEndian, pdo.Index)
 			binary.Write(&blob, binary.LittleEndian, pdo.SubIndex)
@@ -654,15 +627,7 @@ func generateCPP(devices []ParsedDevice, outputPath string) error {
 			binary.Write(&blob, binary.LittleEndian, dataTypeToID(pdo.DataType))
 			binary.Write(&blob, binary.LittleEndian, uint8(0)) // padding
 			binary.Write(&blob, binary.LittleEndian, stringTable.Add(pdo.Name))
-		}
-		for _, pdo := range dev.OutputPDOs {
-			binary.Write(&blob, binary.LittleEndian, pdo.PDOIndex)
-			binary.Write(&blob, binary.LittleEndian, pdo.Index)
-			binary.Write(&blob, binary.LittleEndian, pdo.SubIndex)
-			binary.Write(&blob, binary.LittleEndian, pdo.BitLength)
-			binary.Write(&blob, binary.LittleEndian, dataTypeToID(pdo.DataType))
-			binary.Write(&blob, binary.LittleEndian, uint8(0)) // padding
-			binary.Write(&blob, binary.LittleEndian, stringTable.Add(pdo.Name))
+			binary.Write(&blob, binary.LittleEndian, stringTable.Add(pdo.PDOName))
 		}
 	}
 
@@ -675,6 +640,16 @@ func generateCPP(devices []ParsedDevice, outputPath string) error {
 	blobData := blob.Bytes()
 	binary.LittleEndian.PutUint32(blobData[24:28], stringTableOffset)
 	binary.LittleEndian.PutUint32(blobData[28:32], uint32(len(stringData)))
+	return blobData
+}
+
+func generateCPP(devices []ParsedDevice, outputPath string) error {
+	blobData := buildBlob(devices)
+	vendors := collectVendors(devices)
+	totalPDOs := 0
+	for _, dev := range devices {
+		totalPDOs += len(dev.InputPDOs) + len(dev.OutputPDOs)
+	}
 
 	// Generate just the blob as an .inc file (no synnax dependencies)
 	var inc strings.Builder

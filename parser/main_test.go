@@ -13,6 +13,7 @@ import (
 	"encoding/binary"
 	"os"
 	"path/filepath"
+	"strings"
 	"testing"
 )
 
@@ -163,4 +164,19 @@ func TestGenerateCPP(t *testing.T) {
 			t.Fatalf("expected %s to exist: %v", path, err)
 		}
 	})
+
+	t.Run("should declare the blob constexpr so the Driver can check its version",
+		func(t *testing.T) {
+			path := filepath.Join(t.TempDir(), "registry_blob.inc")
+			if err := generateCPP([]ParsedDevice{parseFixture(t)}, path); err != nil {
+				t.Fatalf("generateCPP: %v", err)
+			}
+			inc, err := os.ReadFile(path)
+			if err != nil {
+				t.Fatal(err)
+			}
+			if !strings.Contains(string(inc), "constexpr uint8_t REGISTRY_BLOB[] = {") {
+				t.Fatalf("expected a constexpr blob declaration")
+			}
+		})
 }

@@ -666,7 +666,7 @@ func generateCPP(devices []ParsedDevice, outputPath string) error {
 	inc.WriteString(fmt.Sprintf("// Statistics: %d devices, %d vendors, %d PDO entries\n", len(devices), len(vendors), totalPDOs))
 	inc.WriteString(fmt.Sprintf("// Blob size: %d bytes\n\n", len(blobData)))
 
-	inc.WriteString("const uint8_t REGISTRY_BLOB[] = {\n")
+	inc.WriteString("constexpr uint8_t REGISTRY_BLOB[] = {\n")
 
 	// Write blob as hex bytes, 16 per line
 	for i, b := range blobData {

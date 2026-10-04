@@ -152,3 +152,15 @@ func TestBuildBlob(t *testing.T) {
 		}
 	})
 }
+
+func TestGenerateCPP(t *testing.T) {
+	t.Run("should create a missing output directory", func(t *testing.T) {
+		path := filepath.Join(t.TempDir(), "generated", "registry_blob.inc")
+		if err := generateCPP([]ParsedDevice{parseFixture(t)}, path); err != nil {
+			t.Fatalf("generateCPP: %v", err)
+		}
+		if _, err := os.Stat(path); err != nil {
+			t.Fatalf("expected %s to exist: %v", path, err)
+		}
+	})
+}

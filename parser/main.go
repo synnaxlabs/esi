@@ -644,6 +644,9 @@ func buildBlob(devices []ParsedDevice) []byte {
 }
 
 func generateCPP(devices []ParsedDevice, outputPath string) error {
+	if err := os.MkdirAll(filepath.Dir(outputPath), 0o755); err != nil {
+		return err
+	}
 	blobData := buildBlob(devices)
 	vendors := collectVendors(devices)
 	totalPDOs := 0

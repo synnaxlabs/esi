@@ -260,7 +260,7 @@ func parseSupplementFile(path string) ([]DeviceSettings, error) {
 
 func resolveSupplement(dev supplementDevice) (DeviceSettings, error) {
 	dict := dev.Dictionary
-	var out DeviceSettings
+	out := DeviceSettings{Device: []Setting{}}
 	for _, s := range dev.Synnax.DeviceSettings {
 		setting, err := resolveSetting(dict, s)
 		if err != nil {
@@ -275,7 +275,11 @@ func resolveSupplement(dev supplementDevice) (DeviceSettings, error) {
 	if ch == nil {
 		return out, nil
 	}
-	settings := &ChannelSettings{Count: ch.Count}
+	settings := &ChannelSettings{
+		Count:    ch.Count,
+		Settings: []Setting{},
+		Requires: []Require{},
+	}
 	var err error
 	if settings.IndexStep, err = parseUint16(ch.IndexStep); err != nil {
 		return out, fmt.Errorf("IndexStep: %w", err)

@@ -82,13 +82,19 @@ type synnaxInfo struct {
 }
 
 type synnaxChannels struct {
-	Count             int             `xml:"Count,attr"`
-	IndexStep         string          `xml:"IndexStep,attr"`
-	EntryIndex        string          `xml:"EntryIndex,attr"`
-	EntrySubIndex     string          `xml:"EntrySubIndex,attr"`
-	EntrySubIndexStep string          `xml:"EntrySubIndexStep,attr"`
-	Settings          []synnaxSetting `xml:"Setting"`
-	Requires          []synnaxRequire `xml:"Require"`
+	Count     int             `xml:"Count,attr"`
+	IndexStep string          `xml:"IndexStep,attr"`
+	Entries   []synnaxEntries `xml:"Entries"`
+	Settings  []synnaxSetting `xml:"Setting"`
+	Requires  []synnaxRequire `xml:"Require"`
+}
+
+type synnaxEntries struct {
+	Index        string `xml:"Index,attr"`
+	IndexStep    string `xml:"IndexStep,attr"`
+	SubIndex     string `xml:"SubIndex,attr"`
+	SubIndexStep string `xml:"SubIndexStep,attr"`
+	Count        string `xml:"Count,attr"`
 }
 
 type synnaxSetting struct {
@@ -141,17 +147,25 @@ type DeviceSettings struct {
 	Channels    *ChannelSettings `json:"channels,omitempty"`
 }
 
-// ChannelSettings describes the settings of Count channels. Channel n reads entry
-// EntryIndex:(EntrySubIndex + n * EntrySubIndexStep), and adds n * IndexStep to every
-// index in Settings and Requires.
+// ChannelSettings describes the settings of Count channels. Channel n reads the entries
+// of each item in Entries, and adds n * IndexStep to every index in Settings and
+// Requires.
 type ChannelSettings struct {
-	Count             int       `json:"count"`
-	IndexStep         uint16    `json:"index_step"`
-	EntryIndex        uint16    `json:"entry_index"`
-	EntrySubIndex     uint8     `json:"entry_sub_index"`
-	EntrySubIndexStep uint8     `json:"entry_sub_index_step"`
-	Settings          []Setting `json:"settings"`
-	Requires          []Require `json:"requires"`
+	Count     int       `json:"count"`
+	IndexStep uint16    `json:"index_step"`
+	Entries   []Entries `json:"entries"`
+	Settings  []Setting `json:"settings"`
+	Requires  []Require `json:"requires"`
+}
+
+// Entries are the PDO entries that channel n reads in one PDO layout: Count entries
+// from (Index + n * IndexStep):(SubIndex + n * SubIndexStep), one sub-index apart.
+type Entries struct {
+	Index        uint16 `json:"index"`
+	IndexStep    uint16 `json:"index_step"`
+	SubIndex     uint8  `json:"sub_index"`
+	SubIndexStep uint8  `json:"sub_index_step"`
+	Count        uint8  `json:"count"`
 }
 
 // Setting is one CoE object that Synnax shows as a field.
@@ -277,6 +291,7 @@ func resolveSupplement(dev supplementDevice) (DeviceSettings, error) {
 	}
 	settings := &ChannelSettings{
 		Count:    ch.Count,
+		Entries:  []Entries{},
 		Settings: []Setting{},
 		Requires: []Require{},
 	}
@@ -284,14 +299,15 @@ func resolveSupplement(dev supplementDevice) (DeviceSettings, error) {
 	if settings.IndexStep, err = parseUint16(ch.IndexStep); err != nil {
 		return out, fmt.Errorf("IndexStep: %w", err)
 	}
-	if settings.EntryIndex, err = parseUint16(ch.EntryIndex); err != nil {
-		return out, fmt.Errorf("EntryIndex: %w", err)
+	if len(ch.Entries) == 0 {
+		return out, fmt.Errorf("Channels: no Entries")
 	}
-	if settings.EntrySubIndex, err = parseUint8(ch.EntrySubIndex); err != nil {
-		return out, fmt.Errorf("EntrySubIndex: %w", err)
-	}
-	if settings.EntrySubIndexStep, err = parseUint8(ch.EntrySubIndexStep); err != nil {
-		return out, fmt.Errorf("EntrySubIndexStep: %w", err)
+	for _, e := range ch.Entries {
+		entries, err := parseEntries(e)
+		if err != nil {
+			return out, fmt.Errorf("Entries: %w", err)
+		}
+		settings.Entries = append(settings.Entries, entries)
 	}
 	for _, s := range ch.Settings {
 		setting, err := resolveSetting(dict, s)
@@ -318,6 +334,37 @@ func resolveSupplement(dev supplementDevice) (DeviceSettings, error) {
 		return out, err
 	}
 	out.Channels = settings
+	return out, nil
+}
+
+// parseEntries reads e. A missing step is 0, and a missing Count is 1.
+func parseEntries(e synnaxEntries) (Entries, error) {
+	out := Entries{Count: 1}
+	var err error
+	if out.Index, err = parseUint16(e.Index); err != nil {
+		return out, fmt.Errorf("Index: %w", err)
+	}
+	if out.SubIndex, err = parseUint8(e.SubIndex); err != nil {
+		return out, fmt.Errorf("SubIndex: %w", err)
+	}
+	if e.IndexStep != "" {
+		if out.IndexStep, err = parseUint16(e.IndexStep); err != nil {
+			return out, fmt.Errorf("IndexStep: %w", err)
+		}
+	}
+	if e.SubIndexStep != "" {
+		if out.SubIndexStep, err = parseUint8(e.SubIndexStep); err != nil {
+			return out, fmt.Errorf("SubIndexStep: %w", err)
+		}
+	}
+	if e.Count != "" {
+		if out.Count, err = parseUint8(e.Count); err != nil {
+			return out, fmt.Errorf("Count: %w", err)
+		}
+	}
+	if out.Count == 0 {
+		return out, fmt.Errorf("Count: must be at least 1")
+	}
 	return out, nil
 }
 

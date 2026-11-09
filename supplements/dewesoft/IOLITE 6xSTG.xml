@@ -5324,11 +5324,14 @@
         </Profile>
         <VendorSpecific>
           <!-- Indices in Channels are those of input 1. Input n adds (n - 1) times
-               IndexStep to each one, and reads entry 0x6030:n. Synnax writes the
-               settings of a channel in the order they appear. -->
+               IndexStep to each one. Synnax writes the settings of a channel in the
+               order they appear. -->
           <Synnax Version="1">
-            <Channels Count="6" IndexStep="1" EntryIndex="#x6030" EntrySubIndex="1"
-                      EntrySubIndexStep="1">
+            <Channels Count="6" IndexStep="1">
+              <!-- The unbuffered PDO 0x1A20 reads input n at 0x6030:n. The buffered
+                   PDO 0x1A3F + n reads it in 8 entries, 0x603F + n, :01 to :08. -->
+              <Entries Index="#x6030" SubIndex="1" SubIndexStep="1"/>
+              <Entries Index="#x6040" IndexStep="1" SubIndex="1" Count="8"/>
               <Setting Index="#x8040" SubIndex="1" Name="Measurement"/>
               <Setting Index="#x8040" SubIndex="2" Name="Bridge">
                 <ShowWhen Index="#x8040" SubIndex="1" Values="6"/>

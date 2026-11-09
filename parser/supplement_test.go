@@ -32,9 +32,15 @@ func TestSupplement6xSTG(t *testing.T) {
 		t.Fatal("no settings for the 6xSTG")
 	}
 	ch := stg.Channels
-	if ch.Count != 6 || ch.IndexStep != 1 || ch.EntryIndex != 0x6030 ||
-		ch.EntrySubIndex != 1 || ch.EntrySubIndexStep != 1 {
+	if ch.Count != 6 || ch.IndexStep != 1 {
 		t.Fatalf("channels = %+v", *ch)
+	}
+	wantEntries := []Entries{
+		{Index: 0x6030, SubIndex: 1, SubIndexStep: 1, Count: 1},
+		{Index: 0x6040, IndexStep: 1, SubIndex: 1, Count: 8},
+	}
+	if !reflect.DeepEqual(ch.Entries, wantEntries) {
+		t.Fatalf("entries = %+v", ch.Entries)
 	}
 	measure := ch.Settings[0]
 	want := Setting{
@@ -116,6 +122,29 @@ func TestSupplementRejectsConditionOnUnsetObject(t *testing.T) {
 	_, err := parseSupplements(dir)
 	want := "0x8000:02: a condition names an object that no setting sets"
 	if err == nil || !strings.Contains(err.Error(), want) {
+		t.Fatalf("err = %v", err)
+	}
+}
+
+func TestSupplementRejectsChannelsWithoutEntries(t *testing.T) {
+	dir := t.TempDir()
+	xml := `<EtherCATInfo><Vendor><Id>#x2</Id></Vendor><Descriptions><Devices><Device>
+<Type ProductCode="7">X</Type>
+<Profile><Dictionary>
+<DataTypes><DataType><Name>DT8000</Name>
+<SubItem><SubIdx>1</SubIdx><Name>Mode</Name><Type>UINT</Type></SubItem>
+</DataType></DataTypes>
+<Objects><Object><Index>#x8000</Index><Type>DT8000</Type></Object></Objects>
+</Dictionary></Profile>
+<VendorSpecific><Synnax><Channels Count="2" IndexStep="1">
+<Setting Index="#x8000" SubIndex="1"/>
+</Channels></Synnax></VendorSpecific>
+</Device></Devices></Descriptions></EtherCATInfo>`
+	if err := os.WriteFile(filepath.Join(dir, "x.xml"), []byte(xml), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	_, err := parseSupplements(dir)
+	if err == nil || !strings.Contains(err.Error(), "Channels: no Entries") {
 		t.Fatalf("err = %v", err)
 	}
 }

@@ -37,7 +37,7 @@ func TestSupplement6xSTG(t *testing.T) {
 	}
 	wantEntries := []Entries{
 		{Index: 0x6030, SubIndex: 1, SubIndexStep: 1, Count: 1},
-		{Index: 0x6040, IndexStep: 1, SubIndex: 1, Count: 8, Proprietary: true},
+		{Index: 0x6040, IndexStep: 1, SubIndex: 1, Count: 8, OnlyReadBy: "DewesoftX"},
 	}
 	if !reflect.DeepEqual(ch.Entries, wantEntries) {
 		t.Fatalf("entries = %+v", ch.Entries)

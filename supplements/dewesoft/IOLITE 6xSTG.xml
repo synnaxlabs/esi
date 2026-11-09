@@ -5334,7 +5334,7 @@
                    samples are in a format that only DewesoftX reads. -->
               <Entries Index="#x6030" SubIndex="1" SubIndexStep="1"/>
               <Entries Index="#x6040" IndexStep="1" SubIndex="1" Count="8"
-                       Proprietary="true"/>
+                       OnlyReadBy="DewesoftX"/>
               <Setting Index="#x8040" SubIndex="1" Name="Measurement"/>
               <Setting Index="#x8040" SubIndex="2" Name="Bridge">
                 <ShowWhen Index="#x8040" SubIndex="1" Values="6"/>

@@ -117,7 +117,7 @@ type synnaxEntries struct {
 	SubIndex     string `xml:"SubIndex,attr"`
 	SubIndexStep string `xml:"SubIndexStep,attr"`
 	Count        string `xml:"Count,attr"`
-	Proprietary  bool   `xml:"Proprietary,attr"`
+	OnlyReadBy   string `xml:"OnlyReadBy,attr"`
 }
 
 type synnaxSetting struct {
@@ -231,9 +231,9 @@ type Entries struct {
 	SubIndex     uint8  `json:"sub_index"`
 	SubIndexStep uint8  `json:"sub_index_step"`
 	Count        uint8  `json:"count"`
-	// Proprietary is true when the entries hold data in a format that only the
-	// vendor's software reads.
-	Proprietary bool `json:"proprietary,omitempty"`
+	// OnlyReadBy names the software that alone reads the format of the entries, or is
+	// empty when any master reads them.
+	OnlyReadBy string `json:"only_read_by,omitempty"`
 }
 
 // Setting is one CoE object that Synnax shows as a field.
@@ -503,7 +503,7 @@ func parseOpMode(v synnaxModeValue) (*OpModeChoice, error) {
 
 // parseEntries reads e. A missing step is 0, and a missing Count is 1.
 func parseEntries(e synnaxEntries) (Entries, error) {
-	out := Entries{Count: 1, Proprietary: e.Proprietary}
+	out := Entries{Count: 1, OnlyReadBy: e.OnlyReadBy}
 	var err error
 	if out.Index, err = parseUint16(e.Index); err != nil {
 		return out, fmt.Errorf("Index: %w", err)

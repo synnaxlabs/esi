@@ -5362,17 +5362,20 @@
                 <ShowWhen Index="#x8040" SubIndex="8" Values="0"/>
               </Setting>
               <!-- 0x8070 holds the excitation limits in units of 0.1 V and 1 mA. -->
-              <Setting Index="#x8040" SubIndex="28" Name="Excitation voltage" Unit="V">
+              <Setting Index="#x8040" SubIndex="28" Name="Excitation voltage" Unit="V"
+                       Min="0">
                 <ShowWhen Index="#x8040" SubIndex="8" Values="0"/>
                 <ShowWhen Index="#x8040" SubIndex="33" Values="0"/>
                 <MaxFromCard Index="#x8070" SubIndex="2" Divisor="10"/>
               </Setting>
-              <Setting Index="#x8040" SubIndex="28" Name="Excitation voltage" Unit="V">
+              <Setting Index="#x8040" SubIndex="28" Name="Excitation voltage" Unit="V"
+                       Min="0">
                 <ShowWhen Index="#x8040" SubIndex="8" Values="0"/>
                 <ShowWhen Index="#x8040" SubIndex="33" Values="1"/>
                 <MaxFromCard Index="#x8070" SubIndex="4" Divisor="10"/>
               </Setting>
-              <Setting Index="#x8040" SubIndex="34" Name="Excitation current" Unit="mA">
+              <Setting Index="#x8040" SubIndex="34" Name="Excitation current" Unit="mA"
+                       Min="0">
                 <ShowWhen Index="#x8040" SubIndex="8" Values="1"/>
                 <MaxFromCard Index="#x8070" SubIndex="3" Divisor="1"/>
               </Setting>

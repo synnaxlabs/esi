@@ -96,6 +96,7 @@ type synnaxSetting struct {
 	SubIndex        string            `xml:"SubIndex,attr"`
 	Name            string            `xml:"Name,attr"`
 	Unit            string            `xml:"Unit,attr"`
+	Min             string            `xml:"Min,attr"`
 	ShowWhen        []synnaxCondition `xml:"ShowWhen"`
 	Options         []synnaxOption    `xml:"Option"`
 	OptionsFromCard *struct {
@@ -161,6 +162,7 @@ type Setting struct {
 	DataType    string       `json:"data_type"`
 	Default     float64      `json:"default"`
 	Unit        string       `json:"unit,omitempty"`
+	Min         *float64     `json:"min,omitempty"`
 	Options     []Option     `json:"options,omitempty"`
 	OptionsFrom *OptionsFrom `json:"options_from,omitempty"`
 	MaxFrom     *MaxFrom     `json:"max_from,omitempty"`
@@ -372,6 +374,13 @@ func resolveSetting(dict dictionary, s synnaxSetting) (Setting, error) {
 	}
 	if s.Name != "" {
 		setting.Name = s.Name
+	}
+	if s.Min != "" {
+		min, err := strconv.ParseFloat(s.Min, 64)
+		if err != nil {
+			return Setting{}, fmt.Errorf("%s: Min: %w", addr, err)
+		}
+		setting.Min = &min
 	}
 	if len(s.Options) > 0 {
 		setting.Options = nil

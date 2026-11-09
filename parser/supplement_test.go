@@ -37,7 +37,7 @@ func TestSupplement6xSTG(t *testing.T) {
 	}
 	wantEntries := []Entries{
 		{Index: 0x6030, SubIndex: 1, SubIndexStep: 1, Count: 1},
-		{Index: 0x6040, IndexStep: 1, SubIndex: 1, Count: 8},
+		{Index: 0x6040, IndexStep: 1, SubIndex: 1, Count: 8, Proprietary: true},
 	}
 	if !reflect.DeepEqual(ch.Entries, wantEntries) {
 		t.Fatalf("entries = %+v", ch.Entries)
@@ -75,6 +75,73 @@ func TestSupplement6xSTG(t *testing.T) {
 	}
 	if len(stg.Device) != 2 || stg.Device[0].Default != 4 {
 		t.Fatalf("device = %+v", stg.Device)
+	}
+	wantMode := &Mode{
+		Index:      0x8020,
+		SubIndex:   9,
+		DataType:   "uint16",
+		Standalone: 0,
+		Values: []ModeValue{
+			{Value: 0, OpMode: &OpModeChoice{0x0300, 1000, 1000000000}},
+			{Value: 3, OpMode: &OpModeChoice{}},
+			{Value: 1, Shared: true},
+		},
+		Save: &Save{0x8020, 2, "uint16", 2, []float64{1}},
+	}
+	if !reflect.DeepEqual(stg.Mode, wantMode) {
+		t.Fatalf("mode = %+v", stg.Mode)
+	}
+}
+
+// modeSupplement returns a supplement whose device has the Mode block mode.
+func modeSupplement(mode string) string {
+	return `<EtherCATInfo><Vendor><Id>#x2</Id></Vendor><Descriptions><Devices><Device>
+<Type ProductCode="7">X</Type>
+<Profile><Dictionary>
+<DataTypes><DataType><Name>DT8000</Name>
+<SubItem><SubIdx>1</SubIdx><Name>Mode</Name><Type>UINT</Type></SubItem>
+</DataType></DataTypes>
+<Objects><Object><Index>#x8000</Index><Type>DT8000</Type></Object></Objects>
+</Dictionary></Profile>
+<VendorSpecific><Synnax>` + mode + `</Synnax></VendorSpecific>
+</Device></Devices></Descriptions></EtherCATInfo>`
+}
+
+func TestSupplementRejectsBadModes(t *testing.T) {
+	for _, c := range []struct{ mode, want string }{
+		{
+			`<Mode Index="#x8000" SubIndex="1" Standalone="2"><Value Value="0"/></Mode>`,
+			"Mode: Standalone 2: no such Value",
+		},
+		{
+			`<Mode Index="#x8000" SubIndex="1" Standalone="0">
+<Value Value="0" Shared="true"/></Mode>`,
+			"Mode: Standalone 0: the value is shared",
+		},
+		{
+			`<Mode Index="#x8000" SubIndex="1" Standalone="0">
+<Value Value="0"/><Value Value="0"/></Mode>`,
+			"Mode: Value 0: listed twice",
+		},
+		{
+			`<Mode Index="#x8000" SubIndex="1" Standalone="0"><Value Value="0"/>
+<Save Index="#x8000" SubIndex="1" Value="2"/></Mode>`,
+			"Mode: Save: no When",
+		},
+		{
+			`<Mode Index="#x8000" SubIndex="2" Standalone="0"><Value Value="0"/></Mode>`,
+			"Mode: 0x8000:02: no sub-index in DT8000",
+		},
+	} {
+		dir := t.TempDir()
+		path := filepath.Join(dir, "x.xml")
+		if err := os.WriteFile(path, []byte(modeSupplement(c.mode)), 0o644); err != nil {
+			t.Fatal(err)
+		}
+		_, err := parseSupplements(dir)
+		if err == nil || !strings.Contains(err.Error(), c.want) {
+			t.Fatalf("mode %s: err = %v", c.mode, err)
+		}
 	}
 }
 

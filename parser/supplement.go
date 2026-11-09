@@ -79,6 +79,28 @@ type dictObject struct {
 type synnaxInfo struct {
 	Channels       *synnaxChannels `xml:"Channels"`
 	DeviceSettings []synnaxSetting `xml:"DeviceSettings>Setting"`
+	Mode           *synnaxMode     `xml:"Mode"`
+}
+
+type synnaxMode struct {
+	Index      string            `xml:"Index,attr"`
+	SubIndex   string            `xml:"SubIndex,attr"`
+	Standalone string            `xml:"Standalone,attr"`
+	Values     []synnaxModeValue `xml:"Value"`
+	Save       *struct {
+		Index    string `xml:"Index,attr"`
+		SubIndex string `xml:"SubIndex,attr"`
+		Value    string `xml:"Value,attr"`
+		When     string `xml:"When,attr"`
+	} `xml:"Save"`
+}
+
+type synnaxModeValue struct {
+	Value          string `xml:"Value,attr"`
+	Shared         bool   `xml:"Shared,attr"`
+	AssignActivate string `xml:"AssignActivate,attr"`
+	Sync0Cycle     string `xml:"Sync0Cycle,attr"`
+	Sync1Cycle     string `xml:"Sync1Cycle,attr"`
 }
 
 type synnaxChannels struct {
@@ -95,6 +117,7 @@ type synnaxEntries struct {
 	SubIndex     string `xml:"SubIndex,attr"`
 	SubIndexStep string `xml:"SubIndexStep,attr"`
 	Count        string `xml:"Count,attr"`
+	Proprietary  bool   `xml:"Proprietary,attr"`
 }
 
 type synnaxSetting struct {
@@ -145,6 +168,48 @@ type DeviceSettings struct {
 	ProductCode uint32           `json:"product_code"`
 	Device      []Setting        `json:"device"`
 	Channels    *ChannelSettings `json:"channels,omitempty"`
+	Mode        *Mode            `json:"mode,omitempty"`
+}
+
+// Mode is the object that sets a slave up for Synnax alone or for other software too.
+// A change takes effect after a power restart.
+type Mode struct {
+	Index    uint16 `json:"index"`
+	SubIndex uint8  `json:"sub_index"`
+	DataType string `json:"data_type"`
+	// Standalone is the value that makes Synnax the only reader of the slave.
+	Standalone float64     `json:"standalone"`
+	Values     []ModeValue `json:"values"`
+	// Save is the write that keeps a change through a power restart, or nil when the
+	// slave keeps each change by itself.
+	Save *Save `json:"save,omitempty"`
+}
+
+// ModeValue is one value of a Mode.
+type ModeValue struct {
+	Value float64 `json:"value"`
+	// Shared is true when other software sets up the slave's inputs.
+	Shared bool `json:"shared,omitempty"`
+	// OpMode is the sync mode that the value needs, or nil when the catalog does not
+	// say.
+	OpMode *OpModeChoice `json:"op_mode,omitempty"`
+}
+
+// OpModeChoice is a sync mode: an AssignActivate and, for DC, its SYNC0 and SYNC1
+// cycles in nanoseconds. An AssignActivate of 0 is SM sync.
+type OpModeChoice struct {
+	AssignActivate uint16 `json:"assign_activate"`
+	Sync0Cycle     uint32 `json:"sync0_cycle,omitempty"`
+	Sync1Cycle     uint32 `json:"sync1_cycle,omitempty"`
+}
+
+// Save writes Value to Index:SubIndex when the object holds one of When.
+type Save struct {
+	Index    uint16    `json:"index"`
+	SubIndex uint8     `json:"sub_index"`
+	DataType string    `json:"data_type"`
+	Value    float64   `json:"value"`
+	When     []float64 `json:"when"`
 }
 
 // ChannelSettings describes the settings of Count channels. Channel n reads the entries
@@ -166,6 +231,9 @@ type Entries struct {
 	SubIndex     uint8  `json:"sub_index"`
 	SubIndexStep uint8  `json:"sub_index_step"`
 	Count        uint8  `json:"count"`
+	// Proprietary is true when the entries hold data in a format that only the
+	// vendor's software reads.
+	Proprietary bool `json:"proprietary,omitempty"`
 }
 
 // Setting is one CoE object that Synnax shows as a field.
@@ -285,6 +353,13 @@ func resolveSupplement(dev supplementDevice) (DeviceSettings, error) {
 	if err := checkConditions(out.Device, nil); err != nil {
 		return out, err
 	}
+	if m := dev.Synnax.Mode; m != nil {
+		mode, err := resolveMode(dict, *m)
+		if err != nil {
+			return out, fmt.Errorf("Mode: %w", err)
+		}
+		out.Mode = &mode
+	}
 	ch := dev.Synnax.Channels
 	if ch == nil {
 		return out, nil
@@ -337,9 +412,98 @@ func resolveSupplement(dev supplementDevice) (DeviceSettings, error) {
 	return out, nil
 }
 
+// resolveMode reads m and takes the data types of its objects from the Dictionary.
+func resolveMode(dict dictionary, m synnaxMode) (Mode, error) {
+	at := synnaxSetting{Index: m.Index, SubIndex: m.SubIndex}
+	obj, err := resolveSetting(dict, at)
+	if err != nil {
+		return Mode{}, err
+	}
+	mode := Mode{Index: obj.Index, SubIndex: obj.SubIndex, DataType: obj.DataType}
+	if mode.Standalone, err = strconv.ParseFloat(m.Standalone, 64); err != nil {
+		return mode, fmt.Errorf("Standalone: %w", err)
+	}
+	standalone := false
+	for _, v := range m.Values {
+		value := ModeValue{Shared: v.Shared}
+		if value.Value, err = strconv.ParseFloat(v.Value, 64); err != nil {
+			return mode, fmt.Errorf("Value: %w", err)
+		}
+		for _, other := range mode.Values {
+			if other.Value == value.Value {
+				return mode, fmt.Errorf("Value %v: listed twice", value.Value)
+			}
+		}
+		if v.AssignActivate != "" {
+			if value.OpMode, err = parseOpMode(v); err != nil {
+				return mode, fmt.Errorf("Value %v: %w", value.Value, err)
+			}
+		}
+		if value.Value == mode.Standalone {
+			if value.Shared {
+				return mode, fmt.Errorf("Standalone %v: the value is shared", value.Value)
+			}
+			standalone = true
+		}
+		mode.Values = append(mode.Values, value)
+	}
+	if !standalone {
+		return mode, fmt.Errorf("Standalone %v: no such Value", mode.Standalone)
+	}
+	if s := m.Save; s != nil {
+		at := synnaxSetting{Index: s.Index, SubIndex: s.SubIndex}
+		obj, err := resolveSetting(dict, at)
+		if err != nil {
+			return mode, fmt.Errorf("Save: %w", err)
+		}
+		save := Save{Index: obj.Index, SubIndex: obj.SubIndex, DataType: obj.DataType}
+		if save.Value, err = strconv.ParseFloat(s.Value, 64); err != nil {
+			return mode, fmt.Errorf("Save Value: %w", err)
+		}
+		for _, f := range strings.Fields(s.When) {
+			v, err := strconv.ParseFloat(f, 64)
+			if err != nil {
+				return mode, fmt.Errorf("Save When: %w", err)
+			}
+			save.When = append(save.When, v)
+		}
+		if len(save.When) == 0 {
+			return mode, fmt.Errorf("Save: no When")
+		}
+		mode.Save = &save
+	}
+	return mode, nil
+}
+
+// parseOpMode reads the sync mode of v. A missing cycle is 0.
+func parseOpMode(v synnaxModeValue) (*OpModeChoice, error) {
+	aa, err := parseUint16(v.AssignActivate)
+	if err != nil {
+		return nil, fmt.Errorf("AssignActivate: %w", err)
+	}
+	op := &OpModeChoice{AssignActivate: aa}
+	for name, c := range map[string]struct {
+		text string
+		dst  *uint32
+	}{
+		"Sync0Cycle": {v.Sync0Cycle, &op.Sync0Cycle},
+		"Sync1Cycle": {v.Sync1Cycle, &op.Sync1Cycle},
+	} {
+		if c.text == "" {
+			continue
+		}
+		n, err := strconv.ParseUint(c.text, 10, 32)
+		if err != nil {
+			return nil, fmt.Errorf("%s: %w", name, err)
+		}
+		*c.dst = uint32(n)
+	}
+	return op, nil
+}
+
 // parseEntries reads e. A missing step is 0, and a missing Count is 1.
 func parseEntries(e synnaxEntries) (Entries, error) {
-	out := Entries{Count: 1}
+	out := Entries{Count: 1, Proprietary: e.Proprietary}
 	var err error
 	if out.Index, err = parseUint16(e.Index); err != nil {
 		return out, fmt.Errorf("Index: %w", err)

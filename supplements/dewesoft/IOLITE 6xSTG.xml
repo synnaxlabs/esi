@@ -5329,9 +5329,12 @@
           <Synnax Version="1">
             <Channels Count="6" IndexStep="1">
               <!-- The unbuffered PDO 0x1A20 reads input n at 0x6030:n. The buffered
-                   PDO 0x1A3F + n reads it in 8 entries, 0x603F + n, :01 to :08. -->
+                   PDO 0x1A3F + n reads it in 8 entries, 0x603F + n, :01 to :08. The
+                   card maps the buffered PDOs on bus 1 in dual mode. Their 24-bit
+                   samples are in a format that only DewesoftX reads. -->
               <Entries Index="#x6030" SubIndex="1" SubIndexStep="1"/>
-              <Entries Index="#x6040" IndexStep="1" SubIndex="1" Count="8"/>
+              <Entries Index="#x6040" IndexStep="1" SubIndex="1" Count="8"
+                       Proprietary="true"/>
               <Setting Index="#x8040" SubIndex="1" Name="Measurement"/>
               <Setting Index="#x8040" SubIndex="2" Name="Bridge">
                 <ShowWhen Index="#x8040" SubIndex="1" Values="6"/>
@@ -5398,6 +5401,18 @@
               <Setting Index="#x8020" SubIndex="1" Name="Sample rate (DC sync)"/>
               <Setting Index="#x8020" SubIndex="13" Name="Digital filter"/>
             </DeviceSettings>
+            <!-- ECAT0 App sets the card up alone on bus 1 (0 DC, 3 SM), or in dual
+                 mode (1): bus 1 to DewesoftX, bus 2 to the master. A change takes
+                 effect after a power restart. With PowerONdefault (0x8020:02) at 0,
+                 the card saves each change. At 1, writing 2 saves the settings. The
+                 cycles follow the manual's table for standalone DC. -->
+            <Mode Index="#x8020" SubIndex="9" Standalone="0">
+              <Value Value="0" AssignActivate="#x0300" Sync0Cycle="1000"
+                     Sync1Cycle="1000000000"/>
+              <Value Value="3" AssignActivate="#x0000"/>
+              <Value Value="1" Shared="true"/>
+              <Save Index="#x8020" SubIndex="2" Value="2" When="1"/>
+            </Mode>
           </Synnax>
         </VendorSpecific>
       </Device>

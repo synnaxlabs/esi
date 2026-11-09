@@ -14,6 +14,7 @@ CoE SDO reads at runtime.
 esi/
 ├── beckhoff/       # Beckhoff Automation devices
 ├── dewesoft/       # DEWESoft devices
+├── supplements/    # Settings that Synnax shows for devices, by vendor
 └── README.md
 ```
 
@@ -56,3 +57,19 @@ PDO name to each entry.
 
 ESI files are property of their respective vendors and are provided here for
 interoperability purposes. Refer to individual vendor licenses for usage terms.
+
+## Supplements
+
+A vendor ESI often has no Dictionary, so Synnax cannot show the settings of the
+device. A supplement is an ESI file that Synnax writes for such a device. It holds a
+standard Dictionary that mirrors the object dictionary the device reports, and a
+`Synnax` block under `VendorSpecific`. Other tools skip the block. It lists the
+settings that Synnax shows, with three kinds of rules:
+
+- `ShowWhen` shows a setting only when other settings have given values.
+- `Require` rejects a channel whose settings break a rule, with a message.
+- `OptionsFromCard` and `MaxFromCard` read option lists and limits from the device
+  when the Driver scans it.
+
+A supplement applies to every revision of its product code. The parser writes all
+supplements to `registry_settings.inc`, a NUL-terminated JSON document.

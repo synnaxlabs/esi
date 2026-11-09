@@ -94,3 +94,28 @@ func TestSupplementRejectsMissingSubIndex(t *testing.T) {
 		t.Fatalf("err = %v", err)
 	}
 }
+
+func TestSupplementRejectsConditionOnUnsetObject(t *testing.T) {
+	dir := t.TempDir()
+	xml := `<EtherCATInfo><Vendor><Id>#x2</Id></Vendor><Descriptions><Devices><Device>
+<Type ProductCode="7">X</Type>
+<Profile><Dictionary>
+<DataTypes><DataType><Name>DT8000</Name>
+<SubItem><SubIdx>1</SubIdx><Name>Mode</Name><Type>UINT</Type></SubItem>
+<SubItem><SubIdx>2</SubIdx><Name>Gain</Name><Type>UINT</Type></SubItem>
+</DataType></DataTypes>
+<Objects><Object><Index>#x8000</Index><Type>DT8000</Type></Object></Objects>
+</Dictionary></Profile>
+<VendorSpecific><Synnax><DeviceSettings>
+<Setting Index="#x8000" SubIndex="1"><ShowWhen Index="#x8000" SubIndex="2" Values="1"/></Setting>
+</DeviceSettings></Synnax></VendorSpecific>
+</Device></Devices></Descriptions></EtherCATInfo>`
+	if err := os.WriteFile(filepath.Join(dir, "x.xml"), []byte(xml), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	_, err := parseSupplements(dir)
+	want := "0x8000:02: a condition names an object that no setting sets"
+	if err == nil || !strings.Contains(err.Error(), want) {
+		t.Fatalf("err = %v", err)
+	}
+}

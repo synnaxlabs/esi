@@ -268,6 +268,9 @@ func resolveSupplement(dev supplementDevice) (DeviceSettings, error) {
 		}
 		out.Device = append(out.Device, setting)
 	}
+	if err := checkConditions(out.Device, nil); err != nil {
+		return out, err
+	}
 	ch := dev.Synnax.Channels
 	if ch == nil {
 		return out, nil
@@ -307,8 +310,34 @@ func resolveSupplement(dev supplementDevice) (DeviceSettings, error) {
 		}
 		settings.Requires = append(settings.Requires, req)
 	}
+	if err := checkConditions(settings.Settings, settings.Requires); err != nil {
+		return out, err
+	}
 	out.Channels = settings
 	return out, nil
+}
+
+// checkConditions returns an error when a condition names an object that none of the
+// settings set.
+func checkConditions(settings []Setting, requires []Require) error {
+	set := make(map[[2]int]bool, len(settings))
+	var conds []Condition
+	for _, s := range settings {
+		set[[2]int{int(s.Index), int(s.SubIndex)}] = true
+		conds = append(conds, s.VisibleWhen...)
+	}
+	for _, r := range requires {
+		conds = append(append(conds, r.When...), r.Then)
+	}
+	for _, c := range conds {
+		if !set[[2]int{int(c.Index), int(c.SubIndex)}] {
+			return fmt.Errorf(
+				"0x%04X:%02X: a condition names an object that no setting sets",
+				c.Index, c.SubIndex,
+			)
+		}
+	}
+	return nil
 }
 
 // resolveSetting fills a setting from the Dictionary entry it names. An option list,

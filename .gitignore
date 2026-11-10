@@ -8,3 +8,6 @@ __MACOSX/
 
 # Generated files (now in GitHub releases only)
 generated/
+
+# The parser binary that `go build` writes
+parser/esi

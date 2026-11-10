@@ -712,6 +712,7 @@ func main() {
 	outputDir := flag.String("output-dir", ".", "Output directory for generated files")
 	failOnDuplicates := flag.Bool("fail-on-duplicates", false, "Exit with error if duplicates found")
 	verbose := flag.Bool("verbose", false, "Enable verbose output")
+	supplementsDir := flag.String("supplements", "", "Directory of supplement ESI files (default: supplements next to the catalog)")
 	flag.Parse()
 
 	var allDevices []ParsedDevice
@@ -726,6 +727,9 @@ func main() {
 		}
 
 		catalogDir := filepath.Dir(*catalogPath)
+		if *supplementsDir == "" {
+			*supplementsDir = filepath.Join(catalogDir, "supplements")
+		}
 
 		for _, vendor := range catalog.Vendors {
 			vendorDir := filepath.Join(catalogDir, vendor.Directory)
@@ -844,6 +848,21 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Warning: failed to write stats: %v\n", err)
 	}
 
+	var settings []DeviceSettings
+	if *supplementsDir != "" {
+		if _, err := os.Stat(*supplementsDir); err == nil {
+			if settings, err = parseSupplements(*supplementsDir); err != nil {
+				fmt.Fprintf(os.Stderr, "Error parsing supplements: %v\n", err)
+				os.Exit(1)
+			}
+		}
+	}
+	settingsPath := filepath.Join(*outputDir, "registry_settings.inc")
+	if err := writeSettings(settings, settingsPath); err != nil {
+		fmt.Fprintf(os.Stderr, "Error writing settings: %v\n", err)
+		os.Exit(1)
+	}
+	fmt.Printf("Generated %s with settings for %d devices\n", settingsPath, len(settings))
 	fmt.Printf("Generated %s\n", outputPath)
 	fmt.Printf("Binary blob size: %d bytes (%.2f MB)\n",
 		stats.PDOEntryCount*12+stats.DeviceCount*16+stats.VendorCount*8+32,

@@ -8,6 +8,7 @@ on:
       - "beckhoff/**"
       - "dewesoft/**"
       - "parser/**"
+      - "supplements/**"
   workflow_dispatch:
 
 jobs:
@@ -35,6 +36,8 @@ jobs:
           SHA256=$(sha256sum generated/registry_blob.inc | awk '{print $1}')
           echo "sha256=$SHA256" >> $GITHUB_OUTPUT
           echo "SHA256: $SHA256"
+          SETTINGS_SHA256=$(sha256sum generated/registry_settings.inc | awk '{print $1}')
+          echo "settings_sha256=$SETTINGS_SHA256" >> $GITHUB_OUTPUT
 
       - name: Compute Release Tag
         id: tag
@@ -68,9 +71,16 @@ jobs:
                 sha256 = "${{ steps.sha.outputs.sha256 }}",
                 downloaded_file_path = "registry_blob.inc",
             )
+            http_file(
+                name = "esi_registry_settings",
+                urls = ["https://github.com/synnaxlabs/esi/releases/download/${{ steps.tag.outputs.tag }}/registry_settings.inc"],
+                sha256 = "${{ steps.sha.outputs.settings_sha256 }}",
+                downloaded_file_path = "registry_settings.inc",
+            )
             ```
           files: |
             generated/registry_blob.inc
+            generated/registry_settings.inc
             generated/registry_stats.json
           draft: false
           prerelease: false

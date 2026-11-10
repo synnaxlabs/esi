@@ -28,7 +28,7 @@ jobs:
       - name: Generate Registry Blob
         working-directory: parser
         run: |
-          go run main.go -catalog ../vendors.json -output-dir ../generated
+          go run . -catalog ../vendors.json -output-dir ../generated
 
       - name: Calculate SHA256
         id: sha

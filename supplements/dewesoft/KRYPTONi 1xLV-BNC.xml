@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Supplements the Dewesoft ESI of the KRYPTONi 1xLV-BNC (KRYPTON LV.xml). Written
+     from the Dewesoft third-party EtherCAT masters manual, V26-3, section 9.1.9,
+     without a card. Data types that the manual does not give follow those of the IOLITE
+     6xSTG. Not tested on hardware. -->
+<EtherCATInfo Version="1.6">
+  <Vendor>
+    <Id>#xDEBE50F7</Id>
+    <Name>Dewesoft</Name>
+  </Vendor>
+  <Descriptions>
+    <Devices>
+      <Device>
+        <Type ProductCode="#xA1" RevisionNo="#x00000001">KRYPTONi 1xLV-BNC</Type>
+        <Name LcId="1033">KRYPTONi 1xLV-BNC</Name>
+        <Profile>
+          <Dictionary>
+            <DataTypes>
+              <DataType>
+                <Name>DT_AD_TIMING</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>40 kS/s</Text><Enum>1</Enum></EnumInfo>
+                <EnumInfo><Text>31.25 kS/s</Text><Enum>2</Enum></EnumInfo>
+                <EnumInfo><Text>25 kS/s</Text><Enum>3</Enum></EnumInfo>
+                <EnumInfo><Text>20 kS/s</Text><Enum>4</Enum></EnumInfo>
+                <EnumInfo><Text>12.5 kS/s</Text><Enum>5</Enum></EnumInfo>
+                <EnumInfo><Text>10 kS/s</Text><Enum>6</Enum></EnumInfo>
+                <EnumInfo><Text>8 kS/s</Text><Enum>7</Enum></EnumInfo>
+                <EnumInfo><Text>6.25 kS/s</Text><Enum>8</Enum></EnumInfo>
+                <EnumInfo><Text>5 kS/s</Text><Enum>9</Enum></EnumInfo>
+                <EnumInfo><Text>4 kS/s</Text><Enum>10</Enum></EnumInfo>
+                <EnumInfo><Text>2 kS/s</Text><Enum>11</Enum></EnumInfo>
+                <EnumInfo><Text>1 kS/s</Text><Enum>12</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT_RANGE</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>10 V</Text><Enum>0</Enum></EnumInfo>
+                <EnumInfo><Text>1 V</Text><Enum>1</Enum></EnumInfo>
+                <EnumInfo><Text>100 mV</Text><Enum>2</Enum></EnumInfo>
+                <EnumInfo><Text>10 mV</Text><Enum>3</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT8020</Name>
+                <SubItem>
+                  <SubIdx>1</SubIdx>
+                  <Name>ADTiming</Name>
+                  <Type>DT_AD_TIMING</Type>
+                  <BitSize>16</BitSize>
+                  <Flags><Access>rw</Access></Flags>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>2</SubIdx>
+                  <Name>PowerONdefault</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                  <Flags><Access>rw</Access></Flags>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>7</SubIdx>
+                  <Name>Buffered Input</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                  <Flags><Access>rw</Access></Flags>
+                </SubItem>
+              </DataType>
+              <DataType>
+                <Name>DT8040</Name>
+                <SubItem>
+                  <SubIdx>3</SubIdx>
+                  <Name>Range</Name>
+                  <Type>DT_RANGE</Type>
+                  <BitSize>16</BitSize>
+                  <Flags><Access>rw</Access></Flags>
+                </SubItem>
+              </DataType>
+            </DataTypes>
+            <Objects>
+              <Object>
+                <Index>#x8020</Index>
+                <Name>Module settings</Name>
+                <Type>DT8020</Type>
+              </Object>
+              <Object>
+                <Index>#x8040</Index>
+                <Name>Channel 1 settings</Name>
+                <Type>DT8040</Type>
+              </Object>
+            </Objects>
+          </Dictionary>
+        </Profile>
+        <VendorSpecific>
+          <Synnax Version="1">
+            <!-- The manual and the ESI give the input only as PDO 0x1A20, with no entry
+                 index, so there is no Channels block. The module has one input, so its
+                 range (0x8040:03) is a device setting. -->
+            <DeviceSettings>
+              <Setting Index="#x8020" SubIndex="1" Name="Sample rate (DC sync)"/>
+              <Setting Index="#x8040" SubIndex="3" Name="Range"/>
+            </DeviceSettings>
+            <!-- Buffered Input 0 is unbuffered, in SM or DC sync. 1 is the DC buffered
+                 mode of DewesoftX. With PowerONdefault (0x8020:02) at 0, the module
+                 saves each change. At 1, writing 2 saves the settings. -->
+            <Mode Index="#x8020" SubIndex="7" Standalone="0">
+              <Value Value="0"/>
+              <Value Value="1" Shared="true"/>
+              <Save Index="#x8020" SubIndex="2" Value="2" When="1"/>
+            </Mode>
+          </Synnax>
+        </VendorSpecific>
+      </Device>
+    </Devices>
+  </Descriptions>
+</EtherCATInfo>

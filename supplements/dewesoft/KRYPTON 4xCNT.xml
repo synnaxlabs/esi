@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Supplements the Dewesoft ESI of the KRYPTON 4xCNT (KRYPTON CNT.xml). Written from
+     the Dewesoft third-party EtherCAT masters manual, V26-3, section 9.1.14, without a
+     card. Data types that the manual does not give follow those of the IOLITE 6xSTG.
+     Not tested on hardware. -->
+<EtherCATInfo Version="1.6">
+  <Vendor>
+    <Id>#xDEBE50F7</Id>
+    <Name>Dewesoft</Name>
+  </Vendor>
+  <Descriptions>
+    <Devices>
+      <Device>
+        <Type ProductCode="#x6B" RevisionNo="#x00000002">KRYPTON 4xCNT</Type>
+        <Name LcId="1033">KRYPTON 4xCNT</Name>
+        <Profile>
+          <Dictionary>
+            <DataTypes>
+              <!-- ADTiming holds the sample rate in S/s. -->
+              <DataType>
+                <Name>DT_AD_TIMING</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>20 kS/s</Text><Enum>20000</Enum></EnumInfo>
+                <EnumInfo><Text>10 kS/s</Text><Enum>10000</Enum></EnumInfo>
+                <EnumInfo><Text>5 kS/s</Text><Enum>5000</Enum></EnumInfo>
+                <EnumInfo><Text>2 kS/s</Text><Enum>2000</Enum></EnumInfo>
+                <EnumInfo><Text>1 kS/s</Text><Enum>1000</Enum></EnumInfo>
+                <EnumInfo><Text>500 S/s</Text><Enum>500</Enum></EnumInfo>
+                <EnumInfo><Text>100 S/s</Text><Enum>100</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT8020</Name>
+                <SubItem>
+                  <SubIdx>1</SubIdx>
+                  <Name>ADTiming</Name>
+                  <Type>DT_AD_TIMING</Type>
+                  <BitSize>16</BitSize>
+                  <Flags><Access>rw</Access></Flags>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>7</SubIdx>
+                  <Name>Buffered Input</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                  <Flags><Access>rw</Access></Flags>
+                </SubItem>
+              </DataType>
+            </DataTypes>
+            <Objects>
+              <Object>
+                <Index>#x8020</Index>
+                <Name>Module settings</Name>
+                <Type>DT8020</Type>
+              </Object>
+            </Objects>
+          </Dictionary>
+        </Profile>
+        <VendorSpecific>
+          <Synnax Version="1">
+            <!-- The manual gives no SDO for the counter inputs, so there are no channel
+                 settings. -->
+            <DeviceSettings>
+              <!-- The manual applies this rate in SM and in DC sync. -->
+              <Setting Index="#x8020" SubIndex="1" Name="Sample rate"/>
+            </DeviceSettings>
+            <!-- Buffered Input 0 is unbuffered, in SM or DC sync. 1 is the DC buffered
+                 mode of DewesoftX. -->
+            <Mode Index="#x8020" SubIndex="7" Standalone="0">
+              <Value Value="0"/>
+              <Value Value="1" Shared="true"/>
+            </Mode>
+          </Synnax>
+        </VendorSpecific>
+      </Device>
+    </Devices>
+  </Descriptions>
+</EtherCATInfo>

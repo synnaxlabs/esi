@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Supplements the Dewesoft ESI of the KRYPTONi 8xDI-8xDO, 16xDI, and 16xDO (KRYPTON
+     DIO.xml). Written from the Dewesoft third-party EtherCAT masters manual, V26-3,
+     section 9.1.15, without a card. Data types that the manual does not give follow
+     those of the IOLITE 6xSTG. Not tested on hardware. -->
+<EtherCATInfo Version="1.6">
+  <Vendor>
+    <Id>#xDEBE50F7</Id>
+    <Name>Dewesoft</Name>
+  </Vendor>
+  <Descriptions>
+    <Devices>
+      <Device>
+        <Type ProductCode="#x69" RevisionNo="#x00000001">KRYPTONi 8xDI-8xDO</Type>
+        <Name LcId="1033">KRYPTONi 8xDI-8xDO</Name>
+        <Profile>
+          <Dictionary>
+            <DataTypes>
+              <!-- The manual gives the values as 0x00000000 and 0xFFFFFFFF, so the
+                   object holds 32 bits. -->
+              <DataType>
+                <Name>DT_OUTPUT_MODE</Name>
+                <BaseType>UDINT</BaseType>
+                <BitSize>32</BitSize>
+                <EnumInfo><Text>Set to 0</Text><Enum>0</Enum></EnumInfo>
+                <EnumInfo><Text>Keep last state</Text><Enum>4294967295</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT8020</Name>
+                <SubItem>
+                  <SubIdx>1</SubIdx>
+                  <Name>Output mode</Name>
+                  <Type>DT_OUTPUT_MODE</Type>
+                  <BitSize>32</BitSize>
+                  <Flags><Access>rw</Access></Flags>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>7</SubIdx>
+                  <Name>Buffered Input</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                  <Flags><Access>rw</Access></Flags>
+                </SubItem>
+              </DataType>
+            </DataTypes>
+            <Objects>
+              <Object>
+                <Index>#x8020</Index>
+                <Name>Module settings</Name>
+                <Type>DT8020</Type>
+              </Object>
+            </Objects>
+          </Dictionary>
+        </Profile>
+        <VendorSpecific>
+          <Synnax Version="1">
+            <!-- Product code 0x69 is also the 16xDI, 16xDO, and KRYPTON DIO_V1. -->
+            <Revisions Mask="#xFFFFFF00">#x00000000</Revisions>
+            <!-- The manual gives no SDO for the inputs, so there are no channel
+                 settings. -->
+            <DeviceSettings>
+              <!-- The outputs take this state when the module goes to SAFE-OP after a
+                   communication loss. -->
+              <Setting Index="#x8020" SubIndex="1"
+                       Name="Outputs on communication loss"/>
+            </DeviceSettings>
+            <!-- The manual gives Buffered Input 0 for DC sync and 3 for SM sync. In DC,
+                 SYNC0 is the bus cycle and SYNC1 is 32 times SYNC0. 1 is the DC
+                 buffered mode of DewesoftX. -->
+            <Mode Index="#x8020" SubIndex="7" Standalone="0">
+              <Value Value="0" AssignActivate="#x0700"/>
+              <Value Value="3" AssignActivate="#x0000"/>
+              <Value Value="1" Shared="true"/>
+            </Mode>
+          </Synnax>
+        </VendorSpecific>
+      </Device>
+      <Device>
+        <Type ProductCode="#x69" RevisionNo="#x00010001">KRYPTONi 16xDI</Type>
+        <Name LcId="1033">KRYPTONi 16xDI</Name>
+        <Profile>
+          <Dictionary>
+            <DataTypes>
+              <DataType>
+                <Name>DT8020</Name>
+                <SubItem>
+                  <SubIdx>7</SubIdx>
+                  <Name>Buffered Input</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                  <Flags><Access>rw</Access></Flags>
+                </SubItem>
+              </DataType>
+            </DataTypes>
+            <Objects>
+              <Object>
+                <Index>#x8020</Index>
+                <Name>Module settings</Name>
+                <Type>DT8020</Type>
+              </Object>
+            </Objects>
+          </Dictionary>
+        </Profile>
+        <VendorSpecific>
+          <Synnax Version="1">
+            <Revisions Mask="#xFFFFFF00">#x00010000</Revisions>
+            <Mode Index="#x8020" SubIndex="7" Standalone="0">
+              <Value Value="0" AssignActivate="#x0700"/>
+              <Value Value="3" AssignActivate="#x0000"/>
+              <Value Value="1" Shared="true"/>
+            </Mode>
+          </Synnax>
+        </VendorSpecific>
+      </Device>
+      <Device>
+        <Type ProductCode="#x69" RevisionNo="#x00020001">KRYPTONi 16xDO</Type>
+        <Name LcId="1033">KRYPTONi 16xDO</Name>
+        <Profile>
+          <Dictionary>
+            <DataTypes>
+              <DataType>
+                <Name>DT_OUTPUT_MODE</Name>
+                <BaseType>UDINT</BaseType>
+                <BitSize>32</BitSize>
+                <EnumInfo><Text>Set to 0</Text><Enum>0</Enum></EnumInfo>
+                <EnumInfo><Text>Keep last state</Text><Enum>4294967295</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT8020</Name>
+                <SubItem>
+                  <SubIdx>1</SubIdx>
+                  <Name>Output mode</Name>
+                  <Type>DT_OUTPUT_MODE</Type>
+                  <BitSize>32</BitSize>
+                  <Flags><Access>rw</Access></Flags>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>7</SubIdx>
+                  <Name>Buffered Input</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                  <Flags><Access>rw</Access></Flags>
+                </SubItem>
+              </DataType>
+            </DataTypes>
+            <Objects>
+              <Object>
+                <Index>#x8020</Index>
+                <Name>Module settings</Name>
+                <Type>DT8020</Type>
+              </Object>
+            </Objects>
+          </Dictionary>
+        </Profile>
+        <VendorSpecific>
+          <Synnax Version="1">
+            <Revisions Mask="#xFFFFFF00">#x00020000</Revisions>
+            <DeviceSettings>
+              <Setting Index="#x8020" SubIndex="1"
+                       Name="Outputs on communication loss"/>
+            </DeviceSettings>
+            <Mode Index="#x8020" SubIndex="7" Standalone="0">
+              <Value Value="0" AssignActivate="#x0700"/>
+              <Value Value="3" AssignActivate="#x0000"/>
+              <Value Value="1" Shared="true"/>
+            </Mode>
+          </Synnax>
+        </VendorSpecific>
+      </Device>
+    </Devices>
+  </Descriptions>
+</EtherCATInfo>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Supplements the Dewesoft ESI of the KRYPTON 1xCNT (KRYPTON CNT.xml). Written from
+     the Dewesoft third-party EtherCAT masters manual, V26-3, section 9.1.13, without a
+     card. Data types that the manual does not give follow those of the IOLITE 6xSTG.
+     Not tested on hardware. -->
+<EtherCATInfo Version="1.6">
+  <Vendor>
+    <Id>#xDEBE50F7</Id>
+    <Name>Dewesoft</Name>
+  </Vendor>
+  <Descriptions>
+    <Devices>
+      <Device>
+        <Type ProductCode="#x9F" RevisionNo="#x00000001">KRYPTON 1xCNT</Type>
+        <Name LcId="1033">KRYPTON 1xCNT</Name>
+        <Profile>
+          <Dictionary>
+            <DataTypes>
+              <DataType>
+                <Name>DT8020</Name>
+                <SubItem>
+                  <SubIdx>1</SubIdx>
+                  <Name>Sample rate</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                  <Flags><Access>rw</Access></Flags>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>7</SubIdx>
+                  <Name>Buffered Input</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                  <Flags><Access>rw</Access></Flags>
+                </SubItem>
+              </DataType>
+            </DataTypes>
+            <Objects>
+              <Object>
+                <Index>#x8020</Index>
+                <Name>Module settings</Name>
+                <Type>DT8020</Type>
+              </Object>
+            </Objects>
+          </Dictionary>
+        </Profile>
+        <VendorSpecific>
+          <Synnax Version="1">
+            <!-- The manual sets the counter inputs only through DewesoftX, so there are
+                 no channel settings. -->
+            <DeviceSettings>
+              <!-- The rate in Hz must match SYNC0: the manual sets SYNC0 to 1 s divided
+                   by the sample rate. -->
+              <Setting Index="#x8020" SubIndex="1" Name="Sample rate" Unit="Hz"/>
+            </DeviceSettings>
+            <!-- The manual gives the module only DC sync with Buffered Input 0, and
+                 SYNC1 at 1 s. SYNC0 follows the sample rate. 1 is the DC buffered mode
+                 of DewesoftX. -->
+            <Mode Index="#x8020" SubIndex="7" Standalone="0">
+              <Value Value="0" AssignActivate="#x0700" Sync1Cycle="1000000000"/>
+              <Value Value="1" Shared="true"/>
+            </Mode>
+          </Synnax>
+        </VendorSpecific>
+      </Device>
+    </Devices>
+  </Descriptions>
+</EtherCATInfo>

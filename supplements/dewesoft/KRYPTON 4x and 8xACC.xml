@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Supplements the Dewesoft ESI of the KRYPTON 4xACC and 8xACC (KRYPTON ACC.xml).
+     Written from the Dewesoft third-party EtherCAT masters manual, V26-3, section
+     9.1.4, without a card. Data types that the manual does not give follow those of the
+     IOLITE 6xSTG. Not tested on hardware. -->
+<EtherCATInfo Version="1.6">
+  <Vendor>
+    <Id>#xDEBE50F7</Id>
+    <Name>Dewesoft</Name>
+  </Vendor>
+  <Descriptions>
+    <Devices>
+      <Device>
+        <Type ProductCode="#x6C" RevisionNo="#x00000000">KRYPTON 4xACC</Type>
+        <Name LcId="1033">KRYPTON 4xACC</Name>
+        <Profile>
+          <Dictionary>
+            <DataTypes>
+              <DataType>
+                <Name>DT_ACC_AD_TIMING</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>20 kS/s</Text><Enum>4</Enum></EnumInfo>
+                <EnumInfo><Text>12.5 kS/s</Text><Enum>5</Enum></EnumInfo>
+                <EnumInfo><Text>10 kS/s</Text><Enum>6</Enum></EnumInfo>
+                <EnumInfo><Text>8 kS/s</Text><Enum>7</Enum></EnumInfo>
+                <EnumInfo><Text>6.25 kS/s</Text><Enum>8</Enum></EnumInfo>
+                <EnumInfo><Text>5 kS/s</Text><Enum>9</Enum></EnumInfo>
+                <EnumInfo><Text>4 kS/s</Text><Enum>10</Enum></EnumInfo>
+                <EnumInfo><Text>2 kS/s</Text><Enum>11</Enum></EnumInfo>
+                <EnumInfo><Text>1 kS/s</Text><Enum>12</Enum></EnumInfo>
+                <EnumInfo><Text>500 S/s</Text><Enum>13</Enum></EnumInfo>
+                <EnumInfo><Text>200 S/s</Text><Enum>14</Enum></EnumInfo>
+                <EnumInfo><Text>100 S/s</Text><Enum>15</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT_ACC_FILTER</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>Off</Text><Enum>0</Enum></EnumInfo>
+                <EnumInfo><Text>On</Text><Enum>1</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT8020</Name>
+                <SubItem>
+                  <SubIdx>1</SubIdx>
+                  <Name>ADTiming</Name>
+                  <Type>DT_ACC_AD_TIMING</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>2</SubIdx>
+                  <Name>PowerONdefault</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>7</SubIdx>
+                  <Name>Buffered Input</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>8</SubIdx>
+                  <Name>LowPassFilter</Name>
+                  <Type>DT_ACC_FILTER</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+              </DataType>
+            </DataTypes>
+            <Objects>
+              <Object>
+                <Index>#x8020</Index>
+                <Name>Device settings</Name>
+                <Type>DT8020</Type>
+              </Object>
+            </Objects>
+          </Dictionary>
+        </Profile>
+        <VendorSpecific>
+          <Synnax Version="1">
+            <Revisions Mask="#xFFFFFF00">#x00000000</Revisions>
+            <!-- No channel settings: neither the manual nor the ESI gives the
+                 object index of the input values. -->
+            <!-- In SM sync, the card does not go to SAFE-OP with the
+                 anti-aliasing filter on. -->
+            <DeviceSettings>
+              <Setting Index="#x8020" SubIndex="1" Name="Sample rate (DC sync)"/>
+              <Setting Index="#x8020" SubIndex="8" Name="Anti-aliasing filter"/>
+            </DeviceSettings>
+            <!-- Buffered Input sets the card up for any master (0, SM or DC sync)
+                 or for DewesoftX alone (1, DC buffered). With PowerONdefault
+                 (0x8020:02) at 0, the card saves each change. At 1, writing 2
+                 saves the settings. -->
+            <Mode Index="#x8020" SubIndex="7" Standalone="0">
+              <Value Value="0"/>
+              <Value Value="1" Shared="true"/>
+              <Save Index="#x8020" SubIndex="2" Value="2" When="1"/>
+            </Mode>
+          </Synnax>
+        </VendorSpecific>
+      </Device>
+      <Device>
+        <Type ProductCode="#x6C" RevisionNo="#x00010000">KRYPTON 8xACC</Type>
+        <Name LcId="1033">KRYPTON 8xACC</Name>
+        <Profile>
+          <Dictionary>
+            <DataTypes>
+              <DataType>
+                <Name>DT_ACC_AD_TIMING</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>20 kS/s</Text><Enum>4</Enum></EnumInfo>
+                <EnumInfo><Text>12.5 kS/s</Text><Enum>5</Enum></EnumInfo>
+                <EnumInfo><Text>10 kS/s</Text><Enum>6</Enum></EnumInfo>
+                <EnumInfo><Text>8 kS/s</Text><Enum>7</Enum></EnumInfo>
+                <EnumInfo><Text>6.25 kS/s</Text><Enum>8</Enum></EnumInfo>
+                <EnumInfo><Text>5 kS/s</Text><Enum>9</Enum></EnumInfo>
+                <EnumInfo><Text>4 kS/s</Text><Enum>10</Enum></EnumInfo>
+                <EnumInfo><Text>2 kS/s</Text><Enum>11</Enum></EnumInfo>
+                <EnumInfo><Text>1 kS/s</Text><Enum>12</Enum></EnumInfo>
+                <EnumInfo><Text>500 S/s</Text><Enum>13</Enum></EnumInfo>
+                <EnumInfo><Text>200 S/s</Text><Enum>14</Enum></EnumInfo>
+                <EnumInfo><Text>100 S/s</Text><Enum>15</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT_ACC_FILTER</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>Off</Text><Enum>0</Enum></EnumInfo>
+                <EnumInfo><Text>On</Text><Enum>1</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT8020</Name>
+                <SubItem>
+                  <SubIdx>1</SubIdx>
+                  <Name>ADTiming</Name>
+                  <Type>DT_ACC_AD_TIMING</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>2</SubIdx>
+                  <Name>PowerONdefault</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>7</SubIdx>
+                  <Name>Buffered Input</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>8</SubIdx>
+                  <Name>LowPassFilter</Name>
+                  <Type>DT_ACC_FILTER</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+              </DataType>
+            </DataTypes>
+            <Objects>
+              <Object>
+                <Index>#x8020</Index>
+                <Name>Device settings</Name>
+                <Type>DT8020</Type>
+              </Object>
+            </Objects>
+          </Dictionary>
+        </Profile>
+        <VendorSpecific>
+          <Synnax Version="1">
+            <Revisions Mask="#xFFFFFF00">#x00010000</Revisions>
+            <!-- No channel settings: neither the manual nor the ESI gives the
+                 object index of the input values. -->
+            <!-- In SM sync, the card does not go to SAFE-OP with the
+                 anti-aliasing filter on. -->
+            <DeviceSettings>
+              <Setting Index="#x8020" SubIndex="1" Name="Sample rate (DC sync)"/>
+              <Setting Index="#x8020" SubIndex="8" Name="Anti-aliasing filter"/>
+            </DeviceSettings>
+            <Mode Index="#x8020" SubIndex="7" Standalone="0">
+              <Value Value="0"/>
+              <Value Value="1" Shared="true"/>
+              <Save Index="#x8020" SubIndex="2" Value="2" When="1"/>
+            </Mode>
+          </Synnax>
+        </VendorSpecific>
+      </Device>
+    </Devices>
+  </Descriptions>
+</EtherCATInfo>

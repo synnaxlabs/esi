@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Supplements the Dewesoft ESI of the KRYPTONi 4xDO (KRYPTON DIO.xml). Written from
+     the Dewesoft third-party EtherCAT masters manual, V26-3, section 9.1.17, without a
+     card. Data types that the manual does not give follow those of the IOLITE 6xSTG.
+     Not tested on hardware. -->
+<EtherCATInfo Version="1.6">
+  <Vendor>
+    <Id>#xDEBE50F7</Id>
+    <Name>Dewesoft</Name>
+  </Vendor>
+  <Descriptions>
+    <Devices>
+      <Device>
+        <Type ProductCode="#x9C" RevisionNo="#x00000001">KRYPTONi 4xDO</Type>
+        <Name LcId="1033">KRYPTONi 4xDO</Name>
+        <Profile>
+          <Dictionary>
+            <DataTypes>
+              <!-- Bit n - 1 inverts DO n. -->
+              <DataType>
+                <Name>DT_OUTPUT_INVERTED</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>None</Text><Enum>0</Enum></EnumInfo>
+                <EnumInfo><Text>DO 1</Text><Enum>1</Enum></EnumInfo>
+                <EnumInfo><Text>DO 2</Text><Enum>2</Enum></EnumInfo>
+                <EnumInfo><Text>DO 1 and 2</Text><Enum>3</Enum></EnumInfo>
+                <EnumInfo><Text>DO 3</Text><Enum>4</Enum></EnumInfo>
+                <EnumInfo><Text>DO 1 and 3</Text><Enum>5</Enum></EnumInfo>
+                <EnumInfo><Text>DO 2 and 3</Text><Enum>6</Enum></EnumInfo>
+                <EnumInfo><Text>DO 1, 2, and 3</Text><Enum>7</Enum></EnumInfo>
+                <EnumInfo><Text>DO 4</Text><Enum>8</Enum></EnumInfo>
+                <EnumInfo><Text>DO 1 and 4</Text><Enum>9</Enum></EnumInfo>
+                <EnumInfo><Text>DO 2 and 4</Text><Enum>10</Enum></EnumInfo>
+                <EnumInfo><Text>DO 1, 2, and 4</Text><Enum>11</Enum></EnumInfo>
+                <EnumInfo><Text>DO 3 and 4</Text><Enum>12</Enum></EnumInfo>
+                <EnumInfo><Text>DO 1, 3, and 4</Text><Enum>13</Enum></EnumInfo>
+                <EnumInfo><Text>DO 2, 3, and 4</Text><Enum>14</Enum></EnumInfo>
+                <EnumInfo><Text>All</Text><Enum>15</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT8020</Name>
+                <SubItem>
+                  <SubIdx>2</SubIdx>
+                  <Name>Output Inverted</Name>
+                  <Type>DT_OUTPUT_INVERTED</Type>
+                  <BitSize>16</BitSize>
+                  <Flags><Access>rw</Access></Flags>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>7</SubIdx>
+                  <Name>Buffered Input</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                  <Flags><Access>rw</Access></Flags>
+                </SubItem>
+              </DataType>
+            </DataTypes>
+            <Objects>
+              <Object>
+                <Index>#x8020</Index>
+                <Name>Module settings</Name>
+                <Type>DT8020</Type>
+              </Object>
+            </Objects>
+          </Dictionary>
+        </Profile>
+        <VendorSpecific>
+          <Synnax Version="1">
+            <!-- Product code 0x9C is also the IOLITEi 4xDO (revision 0x0010). -->
+            <Revisions Mask="#xFFFF0000">#x00000000</Revisions>
+            <!-- The module is an output, so there are no channel settings. -->
+            <DeviceSettings>
+              <Setting Index="#x8020" SubIndex="2" Name="Inverted outputs"/>
+            </DeviceSettings>
+            <!-- Buffered Input 0 is unbuffered, in SM or DC sync. 1 is the DC buffered
+                 mode of DewesoftX. -->
+            <Mode Index="#x8020" SubIndex="7" Standalone="0">
+              <Value Value="0"/>
+              <Value Value="1" Shared="true"/>
+            </Mode>
+          </Synnax>
+        </VendorSpecific>
+      </Device>
+    </Devices>
+  </Descriptions>
+</EtherCATInfo>

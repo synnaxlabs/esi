@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Supplements the Dewesoft ESI of the IOLITE 8xDI-4xDO, 32xDI, and 32xDO (IOLITE
+     DIO.xml). Written from the Dewesoft third-party EtherCAT masters manual, V26-3,
+     section 6.1.13, without a card. Data types that the manual does not give follow
+     those of the IOLITE 6xSTG. Not tested on hardware. -->
+<EtherCATInfo Version="1.6">
+  <Vendor>
+    <Id>#xDEBE50F7</Id>
+    <Name>Dewesoft</Name>
+  </Vendor>
+  <Descriptions>
+    <Devices>
+      <Device>
+        <Type ProductCode="251" RevisionNo="#x00030000">IOLITE 32xDI</Type>
+        <Name LcId="1033">IOLITE 32xDI</Name>
+        <Profile>
+          <Dictionary>
+            <DataTypes>
+              <DataType>
+                <Name>DT8020</Name>
+                <SubItem>
+                  <SubIdx>9</SubIdx>
+                  <Name>ECAT0 App</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+              </DataType>
+            </DataTypes>
+            <Objects>
+              <Object>
+                <Index>#x8020</Index>
+                <Name>Device settings</Name>
+                <Type>DT8020</Type>
+              </Object>
+            </Objects>
+          </Dictionary>
+        </Profile>
+        <VendorSpecific>
+          <Synnax Version="1">
+            <Revisions Mask="#xFFFF0000">#x00030000 #x00040000</Revisions>
+            <!-- ECAT0 App sets the module up alone on bus 1 (0, DC only), or in dual
+                 mode (1): bus 1 to DewesoftX, bus 2 to the master. The manual does not
+                 say how the module keeps a change through a power restart. -->
+            <Mode Index="#x8020" SubIndex="9" Standalone="0">
+              <Value Value="0" AssignActivate="#x0700" Sync0Cycle="1000000"
+                     Sync1Cycle="1000000000"/>
+              <Value Value="1" Shared="true"/>
+            </Mode>
+          </Synnax>
+        </VendorSpecific>
+      </Device>
+      <Device>
+        <Type ProductCode="251" RevisionNo="#x00050000">IOLITE 32xDO</Type>
+        <Name LcId="1033">IOLITE 32xDO</Name>
+        <Profile>
+          <Dictionary>
+            <DataTypes>
+              <DataType>
+                <Name>DT_DIO_OUTPUT_MODE</Name>
+                <BaseType>UDINT</BaseType>
+                <BitSize>32</BitSize>
+                <EnumInfo><Text>Set to 0</Text><Enum>0</Enum></EnumInfo>
+                <EnumInfo><Text>Keep last state</Text><Enum>4294967295</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT8020</Name>
+                <SubItem>
+                  <SubIdx>1</SubIdx>
+                  <Name>Output mode</Name>
+                  <Type>DT_DIO_OUTPUT_MODE</Type>
+                  <BitSize>32</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>9</SubIdx>
+                  <Name>ECAT0 App</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+              </DataType>
+            </DataTypes>
+            <Objects>
+              <Object>
+                <Index>#x8020</Index>
+                <Name>Device settings</Name>
+                <Type>DT8020</Type>
+              </Object>
+            </Objects>
+          </Dictionary>
+        </Profile>
+        <VendorSpecific>
+          <Synnax Version="1">
+            <Revisions Mask="#xFFFF0000">#x00050000 #x00060000</Revisions>
+            <!-- Output mode sets the outputs when the module goes to SAFE-OP after a
+                 lost connection. The manual gives 32-bit values, so the type is UDINT.
+            -->
+            <DeviceSettings>
+              <Setting Index="#x8020" SubIndex="1" Name="Outputs on connection loss"/>
+            </DeviceSettings>
+            <!-- ECAT0 App sets the module up alone on bus 1 (0, DC only), or in dual
+                 mode (1): bus 1 to DewesoftX, bus 2 to the master. The manual does not
+                 say how the module keeps a change through a power restart. -->
+            <Mode Index="#x8020" SubIndex="9" Standalone="0">
+              <Value Value="0" AssignActivate="#x0700" Sync0Cycle="1000000"
+                     Sync1Cycle="1000000000"/>
+              <Value Value="1" Shared="true"/>
+            </Mode>
+          </Synnax>
+        </VendorSpecific>
+      </Device>
+      <Device>
+        <Type ProductCode="251" RevisionNo="#x00070000">IOLITE 8xDI-4xDO</Type>
+        <Name LcId="1033">IOLITE 8xDI-4xDO</Name>
+        <Profile>
+          <Dictionary>
+            <DataTypes>
+              <DataType>
+                <Name>DT_DIO_OUTPUT_MODE</Name>
+                <BaseType>UDINT</BaseType>
+                <BitSize>32</BitSize>
+                <EnumInfo><Text>Set to 0</Text><Enum>0</Enum></EnumInfo>
+                <EnumInfo><Text>Keep last state</Text><Enum>4294967295</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT_DIO_INVERTED</Name>
+                <BaseType>UDINT</BaseType>
+                <BitSize>32</BitSize>
+                <EnumInfo><Text>None</Text><Enum>0</Enum></EnumInfo>
+                <EnumInfo><Text>DO 1</Text><Enum>1</Enum></EnumInfo>
+                <EnumInfo><Text>DO 2</Text><Enum>2</Enum></EnumInfo>
+                <EnumInfo><Text>DO 1 and 2</Text><Enum>3</Enum></EnumInfo>
+                <EnumInfo><Text>DO 3</Text><Enum>4</Enum></EnumInfo>
+                <EnumInfo><Text>DO 1 and 3</Text><Enum>5</Enum></EnumInfo>
+                <EnumInfo><Text>DO 2 and 3</Text><Enum>6</Enum></EnumInfo>
+                <EnumInfo><Text>DO 1, 2, and 3</Text><Enum>7</Enum></EnumInfo>
+                <EnumInfo><Text>DO 4</Text><Enum>8</Enum></EnumInfo>
+                <EnumInfo><Text>DO 1 and 4</Text><Enum>9</Enum></EnumInfo>
+                <EnumInfo><Text>DO 2 and 4</Text><Enum>10</Enum></EnumInfo>
+                <EnumInfo><Text>DO 1, 2, and 4</Text><Enum>11</Enum></EnumInfo>
+                <EnumInfo><Text>DO 3 and 4</Text><Enum>12</Enum></EnumInfo>
+                <EnumInfo><Text>DO 1, 3, and 4</Text><Enum>13</Enum></EnumInfo>
+                <EnumInfo><Text>DO 2, 3, and 4</Text><Enum>14</Enum></EnumInfo>
+                <EnumInfo><Text>DO 1 to 4</Text><Enum>15</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT8020</Name>
+                <SubItem>
+                  <SubIdx>1</SubIdx>
+                  <Name>Output mode</Name>
+                  <Type>DT_DIO_OUTPUT_MODE</Type>
+                  <BitSize>32</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>2</SubIdx>
+                  <Name>Output Inverted</Name>
+                  <Type>DT_DIO_INVERTED</Type>
+                  <BitSize>32</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>9</SubIdx>
+                  <Name>ECAT0 App</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+              </DataType>
+            </DataTypes>
+            <Objects>
+              <Object>
+                <Index>#x8020</Index>
+                <Name>Device settings</Name>
+                <Type>DT8020</Type>
+              </Object>
+            </Objects>
+          </Dictionary>
+        </Profile>
+        <VendorSpecific>
+          <Synnax Version="1">
+            <Revisions Mask="#xFFFF0000">#x00070000 #x00080000</Revisions>
+            <!-- Output mode sets the outputs when the module goes to SAFE-OP after a
+                 lost connection. Output Inverted holds one bit for each output, DO 1 in
+                 bit 0. The manual gives 32-bit values, so both types are UDINT. -->
+            <DeviceSettings>
+              <Setting Index="#x8020" SubIndex="1" Name="Outputs on connection loss"/>
+              <Setting Index="#x8020" SubIndex="2" Name="Inverted outputs"/>
+            </DeviceSettings>
+            <!-- ECAT0 App sets the module up alone on bus 1 (0, DC only), or in dual
+                 mode (1): bus 1 to DewesoftX, bus 2 to the master. The manual does not
+                 say how the module keeps a change through a power restart. -->
+            <Mode Index="#x8020" SubIndex="9" Standalone="0">
+              <Value Value="0" AssignActivate="#x0700" Sync0Cycle="1000000"
+                     Sync1Cycle="1000000000"/>
+              <Value Value="1" Shared="true"/>
+            </Mode>
+          </Synnax>
+        </VendorSpecific>
+      </Device>
+    </Devices>
+  </Descriptions>
+</EtherCATInfo>

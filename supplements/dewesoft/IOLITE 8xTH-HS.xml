@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Supplements the Dewesoft ESI of the IOLITE 8xTH-HS (IOLITE TH.xml). Written from
+     the Dewesoft third-party EtherCAT masters manual, V26-3, section 6.1.3, without a
+     card. Data types that the manual does not give follow those of the IOLITE 6xSTG.
+     Not tested on hardware. -->
+<EtherCATInfo Version="1.6">
+  <Vendor>
+    <Id>#xDEBE50F7</Id>
+    <Name>Dewesoft</Name>
+  </Vendor>
+  <Descriptions>
+    <Devices>
+      <Device>
+        <Type ProductCode="#xF3" RevisionNo="#x00010000">IOLITEir 8xTH-HS</Type>
+        <Name LcId="1033">IOLITE 8xTH-HS</Name>
+        <Profile>
+          <Dictionary>
+            <DataTypes>
+              <DataType>
+                <Name>DT_SAMPLE_RATE</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>100 S/s</Text><Enum>100</Enum></EnumInfo>
+                <EnumInfo><Text>200 S/s</Text><Enum>200</Enum></EnumInfo>
+                <EnumInfo><Text>500 S/s</Text><Enum>500</Enum></EnumInfo>
+                <EnumInfo><Text>1 kS/s</Text><Enum>1000</Enum></EnumInfo>
+                <EnumInfo><Text>2 kS/s</Text><Enum>2000</Enum></EnumInfo>
+                <EnumInfo><Text>5 kS/s</Text><Enum>5000</Enum></EnumInfo>
+                <EnumInfo><Text>10 kS/s</Text><Enum>10000</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT_TC_TYPE</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>Type T</Text><Enum>0</Enum></EnumInfo>
+                <EnumInfo><Text>Type S</Text><Enum>1</Enum></EnumInfo>
+                <EnumInfo><Text>Type R</Text><Enum>2</Enum></EnumInfo>
+                <EnumInfo><Text>Type N</Text><Enum>3</Enum></EnumInfo>
+                <EnumInfo><Text>Type K</Text><Enum>4</Enum></EnumInfo>
+                <EnumInfo><Text>Type J</Text><Enum>5</Enum></EnumInfo>
+                <EnumInfo><Text>Type E</Text><Enum>6</Enum></EnumInfo>
+                <EnumInfo><Text>Type B</Text><Enum>7</Enum></EnumInfo>
+                <EnumInfo><Text>Type C</Text><Enum>8</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT_VM_RANGE</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>Temperature</Text><Enum>0</Enum></EnumInfo>
+                <EnumInfo><Text>Voltage, ±1 V</Text><Enum>3</Enum></EnumInfo>
+                <EnumInfo><Text>Voltage, ±100 mV</Text><Enum>6</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT8020</Name>
+                <SubItem>
+                  <SubIdx>1</SubIdx>
+                  <Name>Sample rate</Name>
+                  <Type>DT_SAMPLE_RATE</Type>
+                  <BitSize>16</BitSize>
+                  <Flags><Access>rw</Access></Flags>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>9</SubIdx>
+                  <Name>ECAT0 App</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                  <Flags><Access>rw</Access></Flags>
+                </SubItem>
+              </DataType>
+              <DataType>
+                <Name>DT8040</Name>
+                <SubItem>
+                  <SubIdx>1</SubIdx>
+                  <Name>TC type</Name>
+                  <Type>DT_TC_TYPE</Type>
+                  <BitSize>16</BitSize>
+                  <Flags><Access>rw</Access></Flags>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>5</SubIdx>
+                  <Name>VM_range</Name>
+                  <Type>DT_VM_RANGE</Type>
+                  <BitSize>16</BitSize>
+                  <Flags><Access>rw</Access></Flags>
+                </SubItem>
+              </DataType>
+            </DataTypes>
+            <Objects>
+              <Object>
+                <Index>#x8020</Index>
+                <Name>AI Settings</Name>
+                <Type>DT8020</Type>
+              </Object>
+              <Object>
+                <Index>#x8040</Index>
+                <Name>Channel 1 Settings</Name>
+                <Type>DT8040</Type>
+              </Object>
+            </Objects>
+          </Dictionary>
+        </Profile>
+        <VendorSpecific>
+          <!-- Indices in Channels are those of input 1. Input n adds (n - 1) times
+               IndexStep to each one. -->
+          <Synnax Version="1">
+            <Channels Count="8" IndexStep="1">
+              <!-- Input n is a float at 0x6020:n, in the unit of the measurement. -->
+              <Entries Index="#x6020" SubIndex="1" SubIndexStep="1"/>
+              <Setting Index="#x8040" SubIndex="5" Name="Measurement"/>
+              <Setting Index="#x8040" SubIndex="1" Name="Thermocouple type">
+                <ShowWhen Index="#x8040" SubIndex="5" Values="0"/>
+              </Setting>
+            </Channels>
+            <!-- The value of Sample rate is the rate in S/s. -->
+            <DeviceSettings>
+              <Setting Index="#x8020" SubIndex="1" Name="Sample rate (DC sync)"/>
+            </DeviceSettings>
+            <!-- ECAT0 App sets the card up alone on bus 1 (0 DC), or in dual mode (1):
+                 bus 1 to DewesoftX, bus 2 to the master. A change takes effect after a
+                 reboot. The manual's mode table also gives 3 (SM) on bus 1, but its
+                 ECAT0 App table and the ESI do not, so SM is not listed. The cycles
+                 follow the manual's table for standalone DC. -->
+            <Mode Index="#x8020" SubIndex="9" Standalone="0">
+              <Value Value="0" AssignActivate="#x0700" Sync0Cycle="1000"
+                     Sync1Cycle="1000000000"/>
+              <Value Value="1" Shared="true"/>
+            </Mode>
+          </Synnax>
+        </VendorSpecific>
+      </Device>
+    </Devices>
+  </Descriptions>
+</EtherCATInfo>

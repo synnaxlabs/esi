@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Supplements the Dewesoft ESI of the KRYPTONi 1xTH-HV (KRYPTON TH.xml). Written from
+     the Dewesoft third-party EtherCAT masters manual, V26-3, section 9.1.3, without a
+     card. Data types that the manual does not give follow those of the IOLITE 6xSTG.
+     Not tested on hardware. -->
+<EtherCATInfo Version="1.6">
+  <Vendor>
+    <Id>#xDEBE50F7</Id>
+    <Name>Dewesoft</Name>
+  </Vendor>
+  <Descriptions>
+    <Devices>
+      <Device>
+        <Type ProductCode="#xA0" RevisionNo="#x1">KRYPTONi 1xTH-HV</Type>
+        <Name LcId="1033">KRYPTONi 1xTH-HV</Name>
+        <Profile>
+          <Dictionary>
+            <DataTypes>
+              <DataType>
+                <Name>DT_TH_HV_AD_TIMING</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>100 S/s</Text><Enum>0</Enum></EnumInfo>
+                <EnumInfo><Text>80 S/s</Text><Enum>1</Enum></EnumInfo>
+                <EnumInfo><Text>50 S/s</Text><Enum>2</Enum></EnumInfo>
+                <EnumInfo><Text>40 S/s</Text><Enum>3</Enum></EnumInfo>
+                <EnumInfo><Text>20 S/s</Text><Enum>4</Enum></EnumInfo>
+                <EnumInfo><Text>10 S/s</Text><Enum>5</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT8020</Name>
+                <SubItem>
+                  <SubIdx>1</SubIdx>
+                  <Name>ADTiming</Name>
+                  <Type>DT_TH_HV_AD_TIMING</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>7</SubIdx>
+                  <Name>Buffered Input</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+              </DataType>
+            </DataTypes>
+            <Objects>
+              <Object>
+                <Index>#x8020</Index>
+                <Name>Device settings</Name>
+                <Type>DT8020</Type>
+              </Object>
+            </Objects>
+          </Dictionary>
+        </Profile>
+        <VendorSpecific>
+          <Synnax Version="1">
+            <!-- The manual gives no channel settings for this module. -->
+            <DeviceSettings>
+              <Setting Index="#x8020" SubIndex="1" Name="Sample rate (DC sync)"/>
+            </DeviceSettings>
+            <!-- Buffered Input sets the card up for any master (0, SM or DC sync)
+                 or for DewesoftX alone (1, DC buffered). -->
+            <Mode Index="#x8020" SubIndex="7" Standalone="0">
+              <Value Value="0"/>
+              <Value Value="1" Shared="true"/>
+            </Mode>
+          </Synnax>
+        </VendorSpecific>
+      </Device>
+    </Devices>
+  </Descriptions>
+</EtherCATInfo>

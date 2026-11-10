@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Supplements the Dewesoft ESI of the IOLITEi-3xMEMS-ACC (IOLITEi-3xMEMS-ACC.xml).
+     Written from the Dewesoft third-party EtherCAT masters manual, V26-3, section
+     7.1.5, without a card. Data types that the manual does not give follow those of the
+     IOLITE 6xSTG. Not tested on hardware. -->
+<EtherCATInfo Version="1.6">
+  <Vendor>
+    <Id>#xDEBE50F7</Id>
+    <Name>Dewesoft</Name>
+  </Vendor>
+  <Descriptions>
+    <Devices>
+      <Device>
+        <Type ProductCode="#xA2" RevisionNo="#x00110001">IOLITEi-3xMEMS-ACC</Type>
+        <Name LcId="1033">IOLITEi-3xMEMS-ACC</Name>
+        <Profile>
+          <Dictionary>
+            <DataTypes>
+              <DataType>
+                <Name>DT_MEMS_SAMPLE_RATE</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>3 S/s</Text><Enum>3</Enum></EnumInfo>
+                <EnumInfo><Text>6 S/s</Text><Enum>6</Enum></EnumInfo>
+                <EnumInfo><Text>12 S/s</Text><Enum>12</Enum></EnumInfo>
+                <EnumInfo><Text>25 S/s</Text><Enum>25</Enum></EnumInfo>
+                <EnumInfo><Text>50 S/s</Text><Enum>50</Enum></EnumInfo>
+                <EnumInfo><Text>100 S/s</Text><Enum>100</Enum></EnumInfo>
+                <EnumInfo><Text>125 S/s</Text><Enum>125</Enum></EnumInfo>
+                <EnumInfo><Text>200 S/s</Text><Enum>200</Enum></EnumInfo>
+                <EnumInfo><Text>250 S/s</Text><Enum>250</Enum></EnumInfo>
+                <EnumInfo><Text>500 S/s</Text><Enum>500</Enum></EnumInfo>
+                <EnumInfo><Text>1 kS/s</Text><Enum>1000</Enum></EnumInfo>
+                <EnumInfo><Text>2 kS/s</Text><Enum>2000</Enum></EnumInfo>
+                <EnumInfo><Text>4 kS/s</Text><Enum>4000</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT_MEMS_RANGE</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>2 g</Text><Enum>0</Enum></EnumInfo>
+                <EnumInfo><Text>4 g</Text><Enum>1</Enum></EnumInfo>
+                <EnumInfo><Text>8 g</Text><Enum>2</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT8020</Name>
+                <SubItem>
+                  <SubIdx>1</SubIdx>
+                  <Name>Sample Rate</Name>
+                  <Type>DT_MEMS_SAMPLE_RATE</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>2</SubIdx>
+                  <Name>Power On Default</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>7</SubIdx>
+                  <Name>Buffered Mode</Name>
+                  <!-- The ESI writes this object with 1 byte. -->
+                  <Type>USINT</Type>
+                  <BitSize>8</BitSize>
+                </SubItem>
+              </DataType>
+              <DataType>
+                <Name>DT8040</Name>
+                <SubItem>
+                  <SubIdx>1</SubIdx>
+                  <Name>Range</Name>
+                  <Type>DT_MEMS_RANGE</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+              </DataType>
+            </DataTypes>
+            <Objects>
+              <Object>
+                <Index>#x8020</Index>
+                <Type>DT8020</Type>
+              </Object>
+              <Object>
+                <Index>#x8040</Index>
+                <Type>DT8040</Type>
+              </Object>
+            </Objects>
+          </Dictionary>
+        </Profile>
+        <VendorSpecific>
+          <Synnax Version="1">
+            <!-- The card takes CoE writes only outside OP. The range of the X axis
+                 (0x8040:01) also sets the Y and Z axes, so it is a module setting. -->
+            <DeviceSettings>
+              <Setting Index="#x8020" SubIndex="1" Name="Sample rate"/>
+              <Setting Index="#x8040" SubIndex="1" Name="Range"/>
+            </DeviceSettings>
+            <!-- Buffered Mode sets the card up for any master (0, SM or DC) or for
+                 DewesoftX (1). Writing 2 to Power On Default (0x8020:02) saves the
+                 settings, and the object then goes back to 1. -->
+            <Mode Index="#x8020" SubIndex="7" Standalone="0">
+              <Value Value="0"/>
+              <Value Value="1" Shared="true"/>
+              <Save Index="#x8020" SubIndex="2" Value="2" When="1"/>
+            </Mode>
+          </Synnax>
+        </VendorSpecific>
+      </Device>
+    </Devices>
+  </Descriptions>
+</EtherCATInfo>

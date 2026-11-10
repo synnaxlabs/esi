@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Supplements the Dewesoft ESI of the IOLITEi-4xDO (IOLITE DIO.xml). Written from the
+     Dewesoft third-party EtherCAT masters manual, V26-3, section 7.1.4, without a card.
+     Data types that the manual does not give follow those of the IOLITE 6xSTG. Not
+     tested on hardware. -->
+<EtherCATInfo Version="1.6">
+  <Vendor>
+    <Id>#xDEBE50F7</Id>
+    <Name>Dewesoft</Name>
+  </Vendor>
+  <Descriptions>
+    <Devices>
+      <Device>
+        <Type ProductCode="#x9C">IOLITEi-4xDO</Type>
+        <Name LcId="1033">IOLITEi-4xDO</Name>
+        <Profile>
+          <Dictionary>
+            <DataTypes>
+              <DataType>
+                <Name>DT_DO_INVERTED</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>None</Text><Enum>0</Enum></EnumInfo>
+                <EnumInfo><Text>DO 1</Text><Enum>1</Enum></EnumInfo>
+                <EnumInfo><Text>DO 2</Text><Enum>2</Enum></EnumInfo>
+                <EnumInfo><Text>DO 1 and DO 2</Text><Enum>3</Enum></EnumInfo>
+                <EnumInfo><Text>DO 3</Text><Enum>4</Enum></EnumInfo>
+                <EnumInfo><Text>DO 1 and DO 3</Text><Enum>5</Enum></EnumInfo>
+                <EnumInfo><Text>DO 2 and DO 3</Text><Enum>6</Enum></EnumInfo>
+                <EnumInfo><Text>DO 1, DO 2, and DO 3</Text><Enum>7</Enum></EnumInfo>
+                <EnumInfo><Text>DO 4</Text><Enum>8</Enum></EnumInfo>
+                <EnumInfo><Text>DO 1 and DO 4</Text><Enum>9</Enum></EnumInfo>
+                <EnumInfo><Text>DO 2 and DO 4</Text><Enum>10</Enum></EnumInfo>
+                <EnumInfo><Text>DO 1, DO 2, and DO 4</Text><Enum>11</Enum></EnumInfo>
+                <EnumInfo><Text>DO 3 and DO 4</Text><Enum>12</Enum></EnumInfo>
+                <EnumInfo><Text>DO 1, DO 3, and DO 4</Text><Enum>13</Enum></EnumInfo>
+                <EnumInfo><Text>DO 2, DO 3, and DO 4</Text><Enum>14</Enum></EnumInfo>
+                <EnumInfo><Text>DO 1, DO 2, DO 3, and DO 4</Text><Enum>15</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT8020</Name>
+                <SubItem>
+                  <SubIdx>2</SubIdx>
+                  <Name>Output Inverted</Name>
+                  <Type>DT_DO_INVERTED</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>7</SubIdx>
+                  <Name>Buffered Input</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+              </DataType>
+            </DataTypes>
+            <Objects>
+              <Object>
+                <Index>#x8020</Index>
+                <Type>DT8020</Type>
+              </Object>
+            </Objects>
+          </Dictionary>
+        </Profile>
+        <VendorSpecific>
+          <Synnax Version="1">
+            <!-- IOLITEi revisions are 0x0010xxxx. The KRYPTONi 4xDO has the same
+                 product code with revisions 0x0000000x. -->
+            <Revisions Mask="#xFFFF0000">#x00100000</Revisions>
+            <!-- Bit n - 1 of Output Inverted sets DO n to inverted logic. On this
+                 module, 0x8020:02 is not PowerONdefault. -->
+            <DeviceSettings>
+              <Setting Index="#x8020" SubIndex="2" Name="Inverted outputs"/>
+            </DeviceSettings>
+            <!-- Buffered Input sets the card up for any master (0, SM or DC) or for
+                 DewesoftX (1, DC buffered). -->
+            <Mode Index="#x8020" SubIndex="7" Standalone="0">
+              <Value Value="0"/>
+              <Value Value="1" Shared="true"/>
+            </Mode>
+          </Synnax>
+        </VendorSpecific>
+      </Device>
+    </Devices>
+  </Descriptions>
+</EtherCATInfo>

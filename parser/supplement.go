@@ -20,6 +20,7 @@ import (
 	"math"
 	"os"
 	"path/filepath"
+	"slices"
 	"sort"
 	"strconv"
 	"strings"
@@ -77,9 +78,16 @@ type dictObject struct {
 }
 
 type synnaxInfo struct {
-	Channels       *synnaxChannels `xml:"Channels"`
-	DeviceSettings []synnaxSetting `xml:"DeviceSettings>Setting"`
-	Mode           *synnaxMode     `xml:"Mode"`
+	Revisions      *synnaxRevisions `xml:"Revisions"`
+	Channels       *synnaxChannels  `xml:"Channels"`
+	DeviceSettings []synnaxSetting  `xml:"DeviceSettings>Setting"`
+	Mode           *synnaxMode      `xml:"Mode"`
+}
+
+// synnaxRevisions lists the revisions that a device description covers, after Mask.
+type synnaxRevisions struct {
+	Mask   string `xml:"Mask,attr"`
+	Values string `xml:",chardata"`
 }
 
 type synnaxMode struct {
@@ -164,11 +172,16 @@ type synnaxRequire struct {
 // DeviceSettings is the settings description of one product, as the Driver reads it.
 // The Driver reads each OptionsFrom and MaxFrom from the slave at scan time.
 type DeviceSettings struct {
-	VendorID    uint32           `json:"vendor_id"`
-	ProductCode uint32           `json:"product_code"`
-	Device      []Setting        `json:"device"`
-	Channels    *ChannelSettings `json:"channels,omitempty"`
-	Mode        *Mode            `json:"mode,omitempty"`
+	VendorID    uint32 `json:"vendor_id"`
+	ProductCode uint32 `json:"product_code"`
+	// RevisionMask and Revisions select the revisions of the product that the
+	// description covers: those whose revision, after RevisionMask, is in Revisions.
+	// Without Revisions, the description covers every revision.
+	RevisionMask uint32           `json:"revision_mask,omitempty"`
+	Revisions    []uint32         `json:"revisions,omitempty"`
+	Device       []Setting        `json:"device"`
+	Channels     *ChannelSettings `json:"channels,omitempty"`
+	Mode         *Mode            `json:"mode,omitempty"`
 }
 
 // Mode is the object that sets a slave up for Synnax alone or for other software too.
@@ -343,6 +356,12 @@ func parseSupplementFile(path string) ([]DeviceSettings, error) {
 func resolveSupplement(dev supplementDevice) (DeviceSettings, error) {
 	dict := dev.Dictionary
 	out := DeviceSettings{Device: []Setting{}}
+	if r := dev.Synnax.Revisions; r != nil {
+		var err error
+		if out.RevisionMask, out.Revisions, err = parseRevisions(*r); err != nil {
+			return out, fmt.Errorf("Revisions: %w", err)
+		}
+	}
 	for _, s := range dev.Synnax.DeviceSettings {
 		setting, err := resolveSetting(dict, s)
 		if err != nil {
@@ -473,6 +492,36 @@ func resolveMode(dict dictionary, m synnaxMode) (Mode, error) {
 		mode.Save = &save
 	}
 	return mode, nil
+}
+
+// parseRevisions reads the mask and the revisions of r. Each revision must keep only
+// bits of the mask.
+func parseRevisions(r synnaxRevisions) (uint32, []uint32, error) {
+	mask, err := parseUint32(r.Mask)
+	if err != nil {
+		return 0, nil, fmt.Errorf("Mask: %w", err)
+	}
+	if mask == 0 {
+		return 0, nil, fmt.Errorf("Mask: must not be 0")
+	}
+	var revisions []uint32
+	for _, f := range strings.Fields(r.Values) {
+		rev, err := parseUint32(f)
+		if err != nil {
+			return 0, nil, err
+		}
+		if rev&mask != rev {
+			return 0, nil, fmt.Errorf("%s has bits outside the mask", f)
+		}
+		if slices.Contains(revisions, rev) {
+			return 0, nil, fmt.Errorf("%s: listed twice", f)
+		}
+		revisions = append(revisions, rev)
+	}
+	if len(revisions) == 0 {
+		return 0, nil, fmt.Errorf("no revisions")
+	}
+	return mask, revisions, nil
 }
 
 // parseOpMode reads the sync mode of v. A missing cycle is 0.
@@ -756,6 +805,17 @@ func decodeDefault(data string, dataType string) (float64, error) {
 	return 0, fmt.Errorf("unsupported data type %s", dataType)
 }
 
+func parseUint32(s string) (uint32, error) {
+	v, err := parseHexOrDecimal(strings.TrimSpace(s))
+	if err != nil {
+		return 0, err
+	}
+	if v > math.MaxUint32 {
+		return 0, fmt.Errorf("%s does not fit in 32 bits", s)
+	}
+	return uint32(v), nil
+}
+
 func parseUint16(s string) (uint16, error) {
 	v, err := parseHexOrDecimal(s)
 	if err != nil {
@@ -789,7 +849,8 @@ func parseDivisor(s string) (float64, error) {
 	return v, nil
 }
 
-// parseSupplements parses every supplement under dir, sorted by vendor and product.
+// parseSupplements parses every supplement under dir, sorted by vendor, product, and
+// first revision.
 func parseSupplements(dir string) ([]DeviceSettings, error) {
 	var all []DeviceSettings
 	err := filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {
@@ -813,19 +874,64 @@ func parseSupplements(dir string) ([]DeviceSettings, error) {
 		if all[i].VendorID != all[j].VendorID {
 			return all[i].VendorID < all[j].VendorID
 		}
-		return all[i].ProductCode < all[j].ProductCode
+		if all[i].ProductCode != all[j].ProductCode {
+			return all[i].ProductCode < all[j].ProductCode
+		}
+		return firstRevision(all[i]) < firstRevision(all[j])
 	})
-	for i := 1; i < len(all); i++ {
-		if all[i].VendorID == all[i-1].VendorID &&
-			all[i].ProductCode == all[i-1].ProductCode {
+	for start := 0; start < len(all); {
+		end := start + 1
+		for end < len(all) && all[end].VendorID == all[start].VendorID &&
+			all[end].ProductCode == all[start].ProductCode {
+			end++
+		}
+		if err := checkDisjoint(all[start:end]); err != nil {
 			return nil, fmt.Errorf(
-				"two supplements describe vendor 0x%08X product %d",
-				all[i].VendorID,
-				all[i].ProductCode,
+				"two supplements describe vendor 0x%08X product %d: %w",
+				all[start].VendorID,
+				all[start].ProductCode,
+				err,
 			)
 		}
+		start = end
 	}
 	return all, nil
+}
+
+// firstRevision returns the first revision that d lists, or 0 when it lists none.
+func firstRevision(d DeviceSettings) uint32 {
+	if len(d.Revisions) == 0 {
+		return 0
+	}
+	return d.Revisions[0]
+}
+
+// checkDisjoint returns an error unless the descriptions of one product select their
+// revisions with one mask and no two of them share a revision.
+func checkDisjoint(group []DeviceSettings) error {
+	if len(group) < 2 {
+		return nil
+	}
+	seen := map[uint32]bool{}
+	for _, d := range group {
+		if len(d.Revisions) == 0 {
+			return fmt.Errorf("each must list its revisions")
+		}
+		if d.RevisionMask != group[0].RevisionMask {
+			return fmt.Errorf(
+				"masks 0x%08X and 0x%08X differ",
+				group[0].RevisionMask,
+				d.RevisionMask,
+			)
+		}
+		for _, rev := range d.Revisions {
+			if seen[rev] {
+				return fmt.Errorf("two list revision 0x%08X", rev)
+			}
+			seen[rev] = true
+		}
+	}
+	return nil
 }
 
 // writeSettings writes the settings descriptions as a NUL-terminated JSON byte array.

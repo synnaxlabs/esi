@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Supplements the Dewesoft ESI of the IOLITEi-1xACC (IOLITE ACC.xml). Written from
+     the Dewesoft third-party EtherCAT masters manual, V26-3, section 7.1.1, without a
+     card. Data types that the manual does not give follow those of the IOLITE 6xSTG.
+     Not tested on hardware. -->
+<EtherCATInfo Version="1.6">
+  <Vendor>
+    <Id>#xDEBE50F7</Id>
+    <Name>Dewesoft</Name>
+  </Vendor>
+  <Descriptions>
+    <Devices>
+      <Device>
+        <Type ProductCode="#x9D">IOLITEi-1xACC</Type>
+        <Name LcId="1033">IOLITEi-1xACC</Name>
+        <Profile>
+          <Dictionary>
+            <DataTypes>
+              <DataType>
+                <Name>DT_ACC_AD_TIMING</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>50 kS/s</Text><Enum>0</Enum></EnumInfo>
+                <EnumInfo><Text>40 kS/s</Text><Enum>1</Enum></EnumInfo>
+                <EnumInfo><Text>31.25 kS/s</Text><Enum>2</Enum></EnumInfo>
+                <EnumInfo><Text>25 kS/s</Text><Enum>3</Enum></EnumInfo>
+                <EnumInfo><Text>20 kS/s</Text><Enum>4</Enum></EnumInfo>
+                <EnumInfo><Text>12.5 kS/s</Text><Enum>5</Enum></EnumInfo>
+                <EnumInfo><Text>10 kS/s</Text><Enum>6</Enum></EnumInfo>
+                <EnumInfo><Text>8 kS/s</Text><Enum>7</Enum></EnumInfo>
+                <EnumInfo><Text>6.25 kS/s</Text><Enum>8</Enum></EnumInfo>
+                <EnumInfo><Text>5 kS/s</Text><Enum>9</Enum></EnumInfo>
+                <EnumInfo><Text>4 kS/s</Text><Enum>10</Enum></EnumInfo>
+                <EnumInfo><Text>2 kS/s</Text><Enum>11</Enum></EnumInfo>
+                <EnumInfo><Text>1 kS/s</Text><Enum>12</Enum></EnumInfo>
+                <EnumInfo><Text>500 S/s</Text><Enum>13</Enum></EnumInfo>
+                <EnumInfo><Text>200 S/s</Text><Enum>14</Enum></EnumInfo>
+                <EnumInfo><Text>100 S/s</Text><Enum>15</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT_ACC_MEASURE</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>Voltage</Text><Enum>1</Enum></EnumInfo>
+                <EnumInfo><Text>IEPE</Text><Enum>2</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT_ACC_RANGE</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>10 V</Text><Enum>0</Enum></EnumInfo>
+                <EnumInfo><Text>5 V</Text><Enum>1</Enum></EnumInfo>
+                <EnumInfo><Text>1 V</Text><Enum>2</Enum></EnumInfo>
+                <EnumInfo><Text>200 mV</Text><Enum>3</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT_ACC_HP_FILTER</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>Off</Text><Enum>1</Enum></EnumInfo>
+                <EnumInfo><Text>0.1 Hz</Text><Enum>2</Enum></EnumInfo>
+                <EnumInfo><Text>1 Hz</Text><Enum>3</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT8020</Name>
+                <SubItem>
+                  <SubIdx>1</SubIdx>
+                  <Name>ADTiming</Name>
+                  <Type>DT_ACC_AD_TIMING</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>2</SubIdx>
+                  <Name>PowerONdefault</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>7</SubIdx>
+                  <Name>Buffered Input</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+              </DataType>
+              <DataType>
+                <Name>DT8040</Name>
+                <SubItem>
+                  <SubIdx>1</SubIdx>
+                  <Name>Measure type</Name>
+                  <Type>DT_ACC_MEASURE</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>2</SubIdx>
+                  <Name>Range</Name>
+                  <Type>DT_ACC_RANGE</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>4</SubIdx>
+                  <Name>Coupling-HP filter</Name>
+                  <Type>DT_ACC_HP_FILTER</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+              </DataType>
+            </DataTypes>
+            <Objects>
+              <Object>
+                <Index>#x8020</Index>
+                <Type>DT8020</Type>
+              </Object>
+              <Object>
+                <Index>#x8040</Index>
+                <Type>DT8040</Type>
+              </Object>
+            </Objects>
+          </Dictionary>
+        </Profile>
+        <VendorSpecific>
+          <Synnax Version="1">
+            <!-- IOLITEi revisions are 0x0010xxxx. The KRYPTONi 1xACC has the same
+                 product code with revisions 0x0000000x. -->
+            <Revisions Mask="#xFFFF0000">#x00100000</Revisions>
+            <Channels Count="1" IndexStep="1">
+              <!-- The PDO 0x1A20 reads the input at 0x6020:01. -->
+              <Entries Index="#x6020" SubIndex="1"/>
+              <Setting Index="#x8040" SubIndex="1" Name="Measurement"/>
+              <Setting Index="#x8040" SubIndex="2" Name="Range"/>
+              <Setting Index="#x8040" SubIndex="4" Name="High-pass filter"/>
+            </Channels>
+            <!-- In SM sync, the sample rate is fixed at 20.271 kS/s. -->
+            <DeviceSettings>
+              <Setting Index="#x8020" SubIndex="1" Name="Sample rate (DC sync)"/>
+            </DeviceSettings>
+            <!-- Buffered Input sets the card up for any master (0, SM or DC) or for
+                 DewesoftX (1, DC buffered). With PowerONdefault (0x8020:02) at 0, the
+                 card saves each change. At 1, writing 2 saves the settings. -->
+            <Mode Index="#x8020" SubIndex="7" Standalone="0">
+              <Value Value="0"/>
+              <Value Value="1" Shared="true"/>
+              <Save Index="#x8020" SubIndex="2" Value="2" When="1"/>
+            </Mode>
+          </Synnax>
+        </VendorSpecific>
+      </Device>
+    </Devices>
+  </Descriptions>
+</EtherCATInfo>

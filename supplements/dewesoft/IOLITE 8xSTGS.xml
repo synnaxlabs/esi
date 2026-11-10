@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Supplements the Dewesoft ESI of the IOLITE 8xSTGS (IOLITE STGS.xml). Written from
+     the Dewesoft third-party EtherCAT masters manual, V26-3, section 6.1.12, without a
+     card. Data types that the manual does not give follow those of the IOLITE 6xSTG.
+     Not tested on hardware. -->
+<EtherCATInfo Version="1.6">
+  <Vendor>
+    <Id>#xDEBE50F7</Id>
+    <Name>Dewesoft</Name>
+  </Vendor>
+  <Descriptions>
+    <Devices>
+      <Device>
+        <Type ProductCode="244">IOLITE 8xSTGS</Type>
+        <Name LcId="1033">IOLITE 8xSTGS</Name>
+        <Profile>
+          <Dictionary>
+            <DataTypes>
+              <DataType>
+                <Name>DT_STGS_AD_TIMING</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>20 kS/s</Text><Enum>4</Enum></EnumInfo>
+                <EnumInfo><Text>10 kS/s</Text><Enum>6</Enum></EnumInfo>
+                <EnumInfo><Text>5 kS/s</Text><Enum>9</Enum></EnumInfo>
+                <EnumInfo><Text>2 kS/s</Text><Enum>11</Enum></EnumInfo>
+                <EnumInfo><Text>1 kS/s</Text><Enum>12</Enum></EnumInfo>
+                <EnumInfo><Text>500 S/s</Text><Enum>13</Enum></EnumInfo>
+                <EnumInfo><Text>100 S/s</Text><Enum>15</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT_STGS_MEASURE</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>Bridge</Text><Enum>6</Enum></EnumInfo>
+                <EnumInfo><Text>Potentiometer</Text><Enum>7</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT_STGS_BRIDGE</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>Full bridge</Text><Enum>0</Enum></EnumInfo>
+                <EnumInfo><Text>Quarter bridge 120 Ω, 3-wire</Text><Enum>2</Enum></EnumInfo>
+                <EnumInfo><Text>Quarter bridge 120 Ω, 4-wire</Text><Enum>4</Enum></EnumInfo>
+                <EnumInfo><Text>Quarter bridge 350 Ω, 4-wire</Text><Enum>5</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT_STGS_RANGE</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>200 mV/V</Text><Enum>0</Enum></EnumInfo>
+                <EnumInfo><Text>20 mV/V</Text><Enum>1</Enum></EnumInfo>
+                <EnumInfo><Text>2 mV/V</Text><Enum>2</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT_STGS_FILTER</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>20 kHz</Text><Enum>1</Enum></EnumInfo>
+                <EnumInfo><Text>1 kHz</Text><Enum>2</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT_STGS_BRIDGE_LEG</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>Normal</Text><Enum>0</Enum></EnumInfo>
+                <EnumInfo><Text>Negative</Text><Enum>1</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT8020</Name>
+                <SubItem>
+                  <SubIdx>1</SubIdx>
+                  <Name>ADTiming</Name>
+                  <Type>DT_STGS_AD_TIMING</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>2</SubIdx>
+                  <Name>PowerONdefault</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>9</SubIdx>
+                  <Name>ECAT0 App</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+              </DataType>
+              <DataType>
+                <Name>DT8040</Name>
+                <SubItem>
+                  <SubIdx>1</SubIdx>
+                  <Name>Measure type</Name>
+                  <Type>DT_STGS_MEASURE</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>2</SubIdx>
+                  <Name>Bridge mode</Name>
+                  <Type>DT_STGS_BRIDGE</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>3</SubIdx>
+                  <Name>Range</Name>
+                  <Type>DT_STGS_RANGE</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>4</SubIdx>
+                  <Name>Filter</Name>
+                  <Type>DT_STGS_FILTER</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>28</SubIdx>
+                  <Name>CalcExcitation</Name>
+                  <Type>REAL</Type>
+                  <BitSize>32</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>31</SubIdx>
+                  <Name>Bridge leg</Name>
+                  <Type>DT_STGS_BRIDGE_LEG</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+              </DataType>
+            </DataTypes>
+            <Objects>
+              <Object>
+                <Index>#x8020</Index>
+                <Name>Device settings</Name>
+                <Type>DT8020</Type>
+              </Object>
+              <Object>
+                <Index>#x8040</Index>
+                <Name>Input 1 settings</Name>
+                <Type>DT8040</Type>
+              </Object>
+            </Objects>
+          </Dictionary>
+        </Profile>
+        <VendorSpecific>
+          <Synnax Version="1">
+            <Channels Count="8" IndexStep="1">
+              <!-- The ESI maps input n at 0x6020:n as REAL. The manual calls the value
+                   a raw INT32 that needs CalcOffset and CalcGain. -->
+              <Entries Index="#x6020" SubIndex="1" SubIndexStep="1"/>
+              <Setting Index="#x8040" SubIndex="1" Name="Measurement"/>
+              <Setting Index="#x8040" SubIndex="2" Name="Bridge">
+                <ShowWhen Index="#x8040" SubIndex="1" Values="6"/>
+              </Setting>
+              <Setting Index="#x8040" SubIndex="31" Name="Bridge leg"/>
+              <Setting Index="#x8040" SubIndex="3" Name="Range"/>
+              <Setting Index="#x8040" SubIndex="4" Name="Low-pass filter"/>
+              <!-- The manual allows 0 V to 15 V. -->
+              <Setting Index="#x8040" SubIndex="28" Name="Excitation voltage" Unit="V"
+                       Min="0"/>
+            </Channels>
+            <!-- In SM sync, the sample rate is fixed at 20 kS/s. -->
+            <DeviceSettings>
+              <Setting Index="#x8020" SubIndex="1" Name="Sample rate (DC sync)"/>
+            </DeviceSettings>
+            <!-- ECAT0 App sets the card up alone on bus 1 (0 DC, 3 SM), or in dual mode
+                 (1): bus 1 to DewesoftX, bus 2 to the master. A change takes effect
+                 after a power restart. With PowerONdefault (0x8020:02) at 0, the card
+                 saves each change. At 1, writing 2 saves the settings. The module's
+                 table allows SM on bus 1, but section 6.1 names only the 8xTH, 8xLV,
+                 and 6xSTG for it. -->
+            <Mode Index="#x8020" SubIndex="9" Standalone="0">
+              <Value Value="0" AssignActivate="#x0700" Sync0Cycle="1000"
+                     Sync1Cycle="1000000000"/>
+              <Value Value="3" AssignActivate="#x0000"/>
+              <Value Value="1" Shared="true"/>
+              <Save Index="#x8020" SubIndex="2" Value="2" When="1"/>
+            </Mode>
+          </Synnax>
+        </VendorSpecific>
+      </Device>
+    </Devices>
+  </Descriptions>
+</EtherCATInfo>

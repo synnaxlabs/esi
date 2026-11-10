@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Supplements the Dewesoft ESI of the IOLITE 8xRTD (IOLITE RTD.xml). Written from the
+     Dewesoft third-party EtherCAT masters manual, V26-3, section 6.1.4, without a card.
+     Data types that the manual does not give follow those of the IOLITE 6xSTG. Not
+     tested on hardware. -->
+<EtherCATInfo Version="1.6">
+  <Vendor>
+    <Id>#xDEBE50F7</Id>
+    <Name>Dewesoft</Name>
+  </Vendor>
+  <Descriptions>
+    <Devices>
+      <Device>
+        <Type ProductCode="#xFE">IOLITEir 8xRTD</Type>
+        <Name LcId="1033">IOLITE 8xRTD</Name>
+        <Profile>
+          <Dictionary>
+            <DataTypes>
+              <DataType>
+                <Name>DT8020</Name>
+                <SubItem>
+                  <SubIdx>10</SubIdx>
+                  <Name>ECAT0 App</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                  <Flags><Access>rw</Access></Flags>
+                </SubItem>
+              </DataType>
+            </DataTypes>
+            <Objects>
+              <Object>
+                <Index>#x8020</Index>
+                <Name>AI Settings</Name>
+                <Type>DT8020</Type>
+              </Object>
+            </Objects>
+          </Dictionary>
+        </Profile>
+        <VendorSpecific>
+          <!-- The manual's section gives no channel settings for this card. -->
+          <Synnax Version="1">
+            <!-- ECAT0 App sets the card up alone on bus 1 (0 DC), or in dual mode (1):
+                 bus 1 to DewesoftX, bus 2 to the master. A change takes effect after a
+                 reboot. On this card it is at 0x8020:0A, as the section's ECAT0 App
+                 table and the ESI init commands of each revision give. The section's
+                 mode table gives 0x8020:09, as for the 8xTH. The cycles follow the
+                 manual's table for standalone DC. -->
+            <Mode Index="#x8020" SubIndex="10" Standalone="0">
+              <Value Value="0" AssignActivate="#x0700" Sync0Cycle="1000"
+                     Sync1Cycle="10000000"/>
+              <Value Value="1" Shared="true"/>
+            </Mode>
+          </Synnax>
+        </VendorSpecific>
+      </Device>
+    </Devices>
+  </Descriptions>
+</EtherCATInfo>

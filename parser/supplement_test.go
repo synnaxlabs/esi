@@ -10,6 +10,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 	"path/filepath"
 	"reflect"
@@ -213,5 +214,94 @@ func TestSupplementRejectsChannelsWithoutEntries(t *testing.T) {
 	_, err := parseSupplements(dir)
 	if err == nil || !strings.Contains(err.Error(), "Channels: no Entries") {
 		t.Fatalf("err = %v", err)
+	}
+}
+
+// revisionSupplement returns a supplement of product 7 with the Revisions block
+// revisions.
+func revisionSupplement(revisions string) string {
+	return modeSupplement(revisions + `<DeviceSettings>
+<Setting Index="#x8000" SubIndex="1"/></DeviceSettings>`)
+}
+
+func writeSupplements(t *testing.T, files ...string) string {
+	t.Helper()
+	dir := t.TempDir()
+	for i, f := range files {
+		path := filepath.Join(dir, fmt.Sprintf("%d.xml", i))
+		if err := os.WriteFile(path, []byte(f), 0o644); err != nil {
+			t.Fatal(err)
+		}
+	}
+	return dir
+}
+
+func TestSupplementRevisions(t *testing.T) {
+	dir := writeSupplements(
+		t,
+		revisionSupplement(`<Revisions Mask="#xFFFF0000">#x00050000 #x00060000</Revisions>`),
+		revisionSupplement(`<Revisions Mask="#xFFFF0000">#x00030000</Revisions>`),
+	)
+	all, err := parseSupplements(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	var got [][]uint32
+	for _, d := range all {
+		if d.RevisionMask != 0xFFFF0000 {
+			t.Fatalf("mask = 0x%08X", d.RevisionMask)
+		}
+		got = append(got, d.Revisions)
+	}
+	want := [][]uint32{{0x00030000}, {0x00050000, 0x00060000}}
+	if !reflect.DeepEqual(got, want) {
+		t.Fatalf("revisions = %v", got)
+	}
+}
+
+func TestSupplementRejectsBadRevisions(t *testing.T) {
+	for _, c := range []struct {
+		files []string
+		want  string
+	}{
+		{
+			[]string{revisionSupplement(`<Revisions Mask="#xFFFF0000">#x00050001</Revisions>`)},
+			"Revisions: #x00050001 has bits outside the mask",
+		},
+		{
+			[]string{revisionSupplement(`<Revisions Mask="#xFFFF0000"></Revisions>`)},
+			"Revisions: no revisions",
+		},
+		{
+			[]string{revisionSupplement(`<Revisions Mask="0">#x0</Revisions>`)},
+			"Revisions: Mask: must not be 0",
+		},
+		{
+			[]string{
+				revisionSupplement(`<Revisions Mask="#xFFFF0000">#x00050000</Revisions>`),
+				revisionSupplement(""),
+			},
+			"each must list its revisions",
+		},
+		{
+			[]string{
+				revisionSupplement(`<Revisions Mask="#xFFFF0000">#x00050000</Revisions>`),
+				revisionSupplement(`<Revisions Mask="#xFFFFFF00">#x00060000</Revisions>`),
+			},
+			"masks 0xFFFF0000 and 0xFFFFFF00 differ",
+		},
+		{
+			[]string{
+				revisionSupplement(`<Revisions Mask="#xFFFF0000">#x00050000</Revisions>`),
+				revisionSupplement(`<Revisions Mask="#xFFFF0000">#x00060000</Revisions>`),
+				revisionSupplement(`<Revisions Mask="#xFFFF0000">#x00050000</Revisions>`),
+			},
+			"two list revision 0x00050000",
+		},
+	} {
+		_, err := parseSupplements(writeSupplements(t, c.files...))
+		if err == nil || !strings.Contains(err.Error(), c.want) {
+			t.Fatalf("want %q, err = %v", c.want, err)
+		}
 	}
 }

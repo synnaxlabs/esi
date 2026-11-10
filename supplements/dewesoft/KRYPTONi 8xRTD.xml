@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Supplements the Dewesoft ESI of the KRYPTONi 8xRTD (KRYPTON RTD.xml). Written from
+     the Dewesoft third-party EtherCAT masters manual, V26-3, section 9.1.2, without a
+     card. Data types that the manual does not give follow those of the IOLITE 6xSTG.
+     Not tested on hardware. -->
+<EtherCATInfo Version="1.6">
+  <Vendor>
+    <Id>#xDEBE50F7</Id>
+    <Name>Dewesoft</Name>
+  </Vendor>
+  <Descriptions>
+    <Devices>
+      <Device>
+        <Type ProductCode="#x6A">KRYPTONi 8xRTD</Type>
+        <Name LcId="1033">KRYPTONi 8xRTD</Name>
+        <Profile>
+          <Dictionary>
+            <DataTypes>
+              <DataType>
+                <Name>DT_RTD_MEASURE</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>Temperature</Text><Enum>0</Enum></EnumInfo>
+                <EnumInfo><Text>Resistance</Text><Enum>1</Enum></EnumInfo>
+                <EnumInfo><Text>Voltage</Text><Enum>2</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT_RTD_PT_TYPE</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>Pt100</Text><Enum>0</Enum></EnumInfo>
+                <EnumInfo><Text>Pt200</Text><Enum>1</Enum></EnumInfo>
+                <EnumInfo><Text>Pt500</Text><Enum>2</Enum></EnumInfo>
+                <EnumInfo><Text>Pt1000</Text><Enum>3</Enum></EnumInfo>
+                <EnumInfo><Text>Pt2000</Text><Enum>4</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT_RTD_R_RANGE</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>1000 Ω</Text><Enum>0</Enum></EnumInfo>
+                <EnumInfo><Text>10000 Ω</Text><Enum>1</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT_RTD_VM_RANGE</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>100 mV</Text><Enum>0</Enum></EnumInfo>
+                <EnumInfo><Text>1 V</Text><Enum>1</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT8020</Name>
+                <SubItem>
+                  <SubIdx>7</SubIdx>
+                  <Name>Buffered Input</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+              </DataType>
+              <DataType>
+                <Name>DT8040</Name>
+                <SubItem>
+                  <SubIdx>1</SubIdx>
+                  <Name>Pt type</Name>
+                  <Type>DT_RTD_PT_TYPE</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>5</SubIdx>
+                  <Name>VM_range</Name>
+                  <Type>DT_RTD_VM_RANGE</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>8</SubIdx>
+                  <Name>R_range</Name>
+                  <Type>DT_RTD_R_RANGE</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>9</SubIdx>
+                  <Name>MeasureType</Name>
+                  <Type>DT_RTD_MEASURE</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+              </DataType>
+            </DataTypes>
+            <Objects>
+              <Object>
+                <Index>#x8020</Index>
+                <Name>Device settings</Name>
+                <Type>DT8020</Type>
+              </Object>
+              <Object>
+                <Index>#x8040</Index>
+                <Name>Input 1 settings</Name>
+                <Type>DT8040</Type>
+              </Object>
+            </Objects>
+          </Dictionary>
+        </Profile>
+        <VendorSpecific>
+          <!-- Indices in Channels are those of input 1. Input n adds (n - 1) times
+               IndexStep to each one. -->
+          <Synnax Version="1">
+            <Revisions Mask="#xFFFFFF00">#x00010000</Revisions>
+            <Channels Count="8" IndexStep="1">
+              <!-- The ESI maps input n in PDO 0x1A3F + n to 0x603F + n, :01 and
+                   :02, as FLOAT values that need no scaling. -->
+              <Entries Index="#x6040" IndexStep="1" SubIndex="1" Count="2"/>
+              <Setting Index="#x8040" SubIndex="9" Name="Measurement"/>
+              <Setting Index="#x8040" SubIndex="1" Name="RTD type">
+                <ShowWhen Index="#x8040" SubIndex="9" Values="0"/>
+              </Setting>
+              <Setting Index="#x8040" SubIndex="8" Name="Range">
+                <ShowWhen Index="#x8040" SubIndex="9" Values="1"/>
+              </Setting>
+              <Setting Index="#x8040" SubIndex="5" Name="Range">
+                <ShowWhen Index="#x8040" SubIndex="9" Values="2"/>
+              </Setting>
+            </Channels>
+            <!-- Buffered Input sets the card up for any master (0, SM or DC sync)
+                 or for DewesoftX alone (1, DC buffered). -->
+            <Mode Index="#x8020" SubIndex="7" Standalone="0">
+              <Value Value="0"/>
+              <Value Value="1" Shared="true"/>
+            </Mode>
+          </Synnax>
+        </VendorSpecific>
+      </Device>
+    </Devices>
+  </Descriptions>
+</EtherCATInfo>

@@ -11,7 +11,7 @@
   <Descriptions>
     <Devices>
       <Device>
-        <Type ProductCode="#x9C" RevisionNo="#x00000001">KRYPTONi 4xDO</Type>
+        <Type ProductCode="#x9C">KRYPTONi 4xDO</Type>
         <Name LcId="1033">KRYPTONi 4xDO</Name>
         <Profile>
           <Dictionary>

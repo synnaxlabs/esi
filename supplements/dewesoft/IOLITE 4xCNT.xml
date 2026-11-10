@@ -11,7 +11,7 @@
   <Descriptions>
     <Devices>
       <Device>
-        <Type ProductCode="246" RevisionNo="#x00010001">IOLITE 4xCNT</Type>
+        <Type ProductCode="246">IOLITE 4xCNT</Type>
         <Name LcId="1033">IOLITE 4xCNT</Name>
         <Profile>
           <Dictionary>

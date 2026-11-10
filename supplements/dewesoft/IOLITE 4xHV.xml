@@ -12,7 +12,7 @@
   <Descriptions>
     <Devices>
       <Device>
-        <Type ProductCode="#xF0" RevisionNo="#x00020000">IOLITEi 4xHV</Type>
+        <Type ProductCode="#xF0">IOLITEi 4xHV</Type>
         <Name LcId="1033">IOLITE 4xHV</Name>
         <Profile>
           <Dictionary>

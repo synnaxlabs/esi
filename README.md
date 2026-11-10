@@ -71,5 +71,14 @@ settings that Synnax shows, with three kinds of rules:
 - `OptionsFromCard` and `MaxFromCard` read option lists and limits from the device
   when the Driver scans it.
 
-A supplement applies to every revision of its product code. The parser writes all
-supplements to `registry_settings.inc`, a NUL-terminated JSON document.
+A supplement applies to every revision of its product code, unless it lists revisions
+in `Revisions`. A device matches when its revision, after `Mask`, is in the list. When
+one product code names more than one module, each supplement of the code must list its
+revisions with the same mask, and no two can list the same revision.
+
+```xml
+<Revisions Mask="#xFFFF0000">#x00050000 #x00060000</Revisions>
+```
+
+The parser writes all supplements to `registry_settings.inc`, a NUL-terminated JSON
+document.

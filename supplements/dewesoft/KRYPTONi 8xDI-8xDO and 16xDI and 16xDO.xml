@@ -11,7 +11,7 @@
   <Descriptions>
     <Devices>
       <Device>
-        <Type ProductCode="#x69" RevisionNo="#x00000001">KRYPTONi 8xDI-8xDO</Type>
+        <Type ProductCode="#x69">KRYPTONi 8xDI-8xDO</Type>
         <Name LcId="1033">KRYPTONi 8xDI-8xDO</Name>
         <Profile>
           <Dictionary>
@@ -60,9 +60,8 @@
                  settings. -->
             <DeviceSettings>
               <!-- The outputs take this state when the module goes to SAFE-OP after a
-                   communication loss. -->
-              <Setting Index="#x8020" SubIndex="1"
-                       Name="Outputs on communication loss"/>
+                   lost connection. -->
+              <Setting Index="#x8020" SubIndex="1" Name="Outputs on connection loss"/>
             </DeviceSettings>
             <!-- The manual gives Buffered Input 0 for DC sync and 3 for SM sync. In DC,
                  SYNC0 is the bus cycle and SYNC1 is 32 times SYNC0. 1 is the DC
@@ -76,7 +75,7 @@
         </VendorSpecific>
       </Device>
       <Device>
-        <Type ProductCode="#x69" RevisionNo="#x00010001">KRYPTONi 16xDI</Type>
+        <Type ProductCode="#x69">KRYPTONi 16xDI</Type>
         <Name LcId="1033">KRYPTONi 16xDI</Name>
         <Profile>
           <Dictionary>
@@ -113,7 +112,7 @@
         </VendorSpecific>
       </Device>
       <Device>
-        <Type ProductCode="#x69" RevisionNo="#x00020001">KRYPTONi 16xDO</Type>
+        <Type ProductCode="#x69">KRYPTONi 16xDO</Type>
         <Name LcId="1033">KRYPTONi 16xDO</Name>
         <Profile>
           <Dictionary>
@@ -156,8 +155,7 @@
           <Synnax Version="1">
             <Revisions Mask="#xFFFFFF00">#x00020000</Revisions>
             <DeviceSettings>
-              <Setting Index="#x8020" SubIndex="1"
-                       Name="Outputs on communication loss"/>
+              <Setting Index="#x8020" SubIndex="1" Name="Outputs on connection loss"/>
             </DeviceSettings>
             <Mode Index="#x8020" SubIndex="7" Standalone="0">
               <Value Value="0" AssignActivate="#x0700"/>

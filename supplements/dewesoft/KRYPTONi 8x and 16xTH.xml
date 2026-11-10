@@ -11,7 +11,7 @@
   <Descriptions>
     <Devices>
       <Device>
-        <Type ProductCode="#x64" RevisionNo="#x00000000">KRYPTONi 8xTH</Type>
+        <Type ProductCode="#x64">KRYPTONi 8xTH</Type>
         <Name LcId="1033">KRYPTONi 8xTH</Name>
         <Profile>
           <Dictionary>
@@ -50,7 +50,7 @@
         </VendorSpecific>
       </Device>
       <Device>
-        <Type ProductCode="#x64" RevisionNo="#x00010000">KRYPTONi 16xTH</Type>
+        <Type ProductCode="#x64">KRYPTONi 16xTH</Type>
         <Name LcId="1033">KRYPTONi 16xTH</Name>
         <Profile>
           <Dictionary>

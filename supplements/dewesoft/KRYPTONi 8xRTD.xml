@@ -11,7 +11,7 @@
   <Descriptions>
     <Devices>
       <Device>
-        <Type ProductCode="#x6A" RevisionNo="#x00010000">KRYPTONi 8xRTD</Type>
+        <Type ProductCode="#x6A">KRYPTONi 8xRTD</Type>
         <Name LcId="1033">KRYPTONi 8xRTD</Name>
         <Profile>
           <Dictionary>

@@ -11,7 +11,7 @@
   <Descriptions>
     <Devices>
       <Device>
-        <Type ProductCode="#x9F" RevisionNo="#x00000001">KRYPTON 1xCNT</Type>
+        <Type ProductCode="#x9F">KRYPTON 1xCNT</Type>
         <Name LcId="1033">KRYPTON 1xCNT</Name>
         <Profile>
           <Dictionary>

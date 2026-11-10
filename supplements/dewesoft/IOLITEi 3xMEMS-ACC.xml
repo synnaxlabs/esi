@@ -11,7 +11,7 @@
   <Descriptions>
     <Devices>
       <Device>
-        <Type ProductCode="#xA2" RevisionNo="#x00110001">IOLITEi-3xMEMS-ACC</Type>
+        <Type ProductCode="#xA2">IOLITEi-3xMEMS-ACC</Type>
         <Name LcId="1033">IOLITEi-3xMEMS-ACC</Name>
         <Profile>
           <Dictionary>

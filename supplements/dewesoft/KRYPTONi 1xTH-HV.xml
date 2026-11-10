@@ -11,7 +11,7 @@
   <Descriptions>
     <Devices>
       <Device>
-        <Type ProductCode="#xA0" RevisionNo="#x1">KRYPTONi 1xTH-HV</Type>
+        <Type ProductCode="#xA0">KRYPTONi 1xTH-HV</Type>
         <Name LcId="1033">KRYPTONi 1xTH-HV</Name>
         <Profile>
           <Dictionary>

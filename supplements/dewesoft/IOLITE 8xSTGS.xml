@@ -11,7 +11,7 @@
   <Descriptions>
     <Devices>
       <Device>
-        <Type ProductCode="244" RevisionNo="#x00010001">IOLITE 8xSTGS</Type>
+        <Type ProductCode="244">IOLITE 8xSTGS</Type>
         <Name LcId="1033">IOLITE 8xSTGS</Name>
         <Profile>
           <Dictionary>

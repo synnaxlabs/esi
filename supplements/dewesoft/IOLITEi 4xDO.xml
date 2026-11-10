@@ -11,7 +11,7 @@
   <Descriptions>
     <Devices>
       <Device>
-        <Type ProductCode="#x9C" RevisionNo="#x00100001">IOLITEi-4xDO</Type>
+        <Type ProductCode="#x9C">IOLITEi-4xDO</Type>
         <Name LcId="1033">IOLITEi-4xDO</Name>
         <Profile>
           <Dictionary>

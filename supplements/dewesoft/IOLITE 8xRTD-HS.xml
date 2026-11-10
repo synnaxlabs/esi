@@ -11,7 +11,7 @@
   <Descriptions>
     <Devices>
       <Device>
-        <Type ProductCode="#xF2" RevisionNo="#x00010000">IOLITEir 8xRTD-HS</Type>
+        <Type ProductCode="#xF2">IOLITEir 8xRTD-HS</Type>
         <Name LcId="1033">IOLITE 8xRTD-HS</Name>
         <Profile>
           <Dictionary>
@@ -133,7 +133,7 @@
               <Setting Index="#x8040" SubIndex="2" Name="Measurement"/>
               <!-- The manual ties the Pt type to 804x:05 (VM_range), as on the 8xTH.
                    This section sets the measurement mode at 804x:02. -->
-              <Setting Index="#x8040" SubIndex="1" Name="Sensor type">
+              <Setting Index="#x8040" SubIndex="1" Name="RTD type">
                 <ShowWhen Index="#x8040" SubIndex="2" Values="0"/>
               </Setting>
               <Setting Index="#x8040" SubIndex="3" Name="Voltage range">

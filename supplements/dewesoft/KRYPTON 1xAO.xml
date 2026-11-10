@@ -11,7 +11,7 @@
   <Descriptions>
     <Devices>
       <Device>
-        <Type ProductCode="#x99" RevisionNo="#x00000002">KRYPTON 1xAO</Type>
+        <Type ProductCode="#x99">KRYPTON 1xAO</Type>
         <Name LcId="1033">KRYPTON 1xAO</Name>
         <Profile>
           <Dictionary>

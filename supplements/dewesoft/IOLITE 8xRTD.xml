@@ -11,7 +11,7 @@
   <Descriptions>
     <Devices>
       <Device>
-        <Type ProductCode="#xFE" RevisionNo="#x00010000">IOLITEir 8xRTD</Type>
+        <Type ProductCode="#xFE">IOLITEir 8xRTD</Type>
         <Name LcId="1033">IOLITE 8xRTD</Name>
         <Profile>
           <Dictionary>

@@ -11,7 +11,7 @@
   <Descriptions>
     <Devices>
       <Device>
-        <Type ProductCode="#xF9" RevisionNo="#x00030000">IOLITEir 8xLA Bus1</Type>
+        <Type ProductCode="#xF9">IOLITEir 8xLA Bus1</Type>
         <Name LcId="1033">IOLITE 8xLA</Name>
         <Profile>
           <Dictionary>

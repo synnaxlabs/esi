@@ -11,7 +11,7 @@
   <Descriptions>
     <Devices>
       <Device>
-        <Type ProductCode="#xA1" RevisionNo="#x00000001">KRYPTONi 1xLV-BNC</Type>
+        <Type ProductCode="#xA1">KRYPTONi 1xLV-BNC</Type>
         <Name LcId="1033">KRYPTONi 1xLV-BNC</Name>
         <Profile>
           <Dictionary>

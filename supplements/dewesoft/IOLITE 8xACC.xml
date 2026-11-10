@@ -12,7 +12,7 @@
   <Descriptions>
     <Devices>
       <Device>
-        <Type ProductCode="#xF1" RevisionNo="#x00020000">IOLITE 8xACC</Type>
+        <Type ProductCode="#xF1">IOLITE 8xACC</Type>
         <Name LcId="1033">IOLITE 8xACC</Name>
         <Profile>
           <Dictionary>

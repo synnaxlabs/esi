@@ -11,7 +11,7 @@
   <Descriptions>
     <Devices>
       <Device>
-        <Type ProductCode="#x68" RevisionNo="#x00000000">KRYPTON 3xSTG</Type>
+        <Type ProductCode="#x68">KRYPTON 3xSTG</Type>
         <Name LcId="1033">KRYPTON 3xSTG</Name>
         <Profile>
           <Dictionary>
@@ -210,7 +210,7 @@
         </VendorSpecific>
       </Device>
       <Device>
-        <Type ProductCode="#x68" RevisionNo="#x00010000">KRYPTON 6xSTG</Type>
+        <Type ProductCode="#x68">KRYPTON 6xSTG</Type>
         <Name LcId="1033">KRYPTON 6xSTG</Name>
         <Profile>
           <Dictionary>

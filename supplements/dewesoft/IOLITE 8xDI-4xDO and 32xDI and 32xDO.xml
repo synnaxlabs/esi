@@ -11,7 +11,7 @@
   <Descriptions>
     <Devices>
       <Device>
-        <Type ProductCode="251" RevisionNo="#x00030000">IOLITE 32xDI</Type>
+        <Type ProductCode="251">IOLITE 32xDI</Type>
         <Name LcId="1033">IOLITE 32xDI</Name>
         <Profile>
           <Dictionary>
@@ -50,7 +50,7 @@
         </VendorSpecific>
       </Device>
       <Device>
-        <Type ProductCode="251" RevisionNo="#x00050000">IOLITE 32xDO</Type>
+        <Type ProductCode="251">IOLITE 32xDO</Type>
         <Name LcId="1033">IOLITE 32xDO</Name>
         <Profile>
           <Dictionary>
@@ -108,7 +108,7 @@
         </VendorSpecific>
       </Device>
       <Device>
-        <Type ProductCode="251" RevisionNo="#x00070000">IOLITE 8xDI-4xDO</Type>
+        <Type ProductCode="251">IOLITE 8xDI-4xDO</Type>
         <Name LcId="1033">IOLITE 8xDI-4xDO</Name>
         <Profile>
           <Dictionary>

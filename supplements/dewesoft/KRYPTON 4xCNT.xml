@@ -62,7 +62,7 @@
                  settings. -->
             <DeviceSettings>
               <!-- The manual applies this rate in SM and in DC sync. -->
-              <Setting Index="#x8020" SubIndex="1" Name="Sample rate"/>
+              <Setting Index="#x8020" SubIndex="1" Name="Module sample rate"/>
             </DeviceSettings>
             <!-- Buffered Input 0 is unbuffered, in SM or DC sync. 1 is the DC buffered
                  mode of DewesoftX. -->

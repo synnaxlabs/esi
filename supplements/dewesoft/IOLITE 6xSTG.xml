@@ -5398,7 +5398,7 @@
             </Channels>
             <!-- The card takes these only in PRE-OP. -->
             <DeviceSettings>
-              <Setting Index="#x8020" SubIndex="1" Name="Sample rate (DC sync)"/>
+              <Setting Index="#x8020" SubIndex="1" Name="Module sample rate (DC sync)"/>
               <Setting Index="#x8020" SubIndex="13" Name="Digital filter"/>
             </DeviceSettings>
             <!-- ECAT0 App sets the card up alone on bus 1 (0 DC, 3 SM), or in dual

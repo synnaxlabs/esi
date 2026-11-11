@@ -176,7 +176,7 @@
             </Channels>
             <!-- In SM sync, the sample rate is fixed at 20 kS/s. -->
             <DeviceSettings>
-              <Setting Index="#x8020" SubIndex="1" Name="Sample rate (DC sync)"/>
+              <Setting Index="#x8020" SubIndex="1" Name="Module sample rate (DC sync)"/>
             </DeviceSettings>
             <!-- ECAT0 App sets the card up alone on bus 1 (0 DC, 3 SM), or in dual mode
                  (1): bus 1 to DewesoftX, bus 2 to the master. A change takes effect

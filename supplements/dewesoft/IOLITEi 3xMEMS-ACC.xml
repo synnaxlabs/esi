@@ -91,7 +91,7 @@
             <!-- The card takes CoE writes only outside OP. The range of the X axis
                  (0x8040:01) also sets the Y and Z axes, so it is a module setting. -->
             <DeviceSettings>
-              <Setting Index="#x8020" SubIndex="1" Name="Sample rate"/>
+              <Setting Index="#x8020" SubIndex="1" Name="Module sample rate"/>
               <Setting Index="#x8040" SubIndex="1" Name="Range"/>
             </DeviceSettings>
             <!-- Buffered Mode sets the card up for any master (0, SM or DC) or for

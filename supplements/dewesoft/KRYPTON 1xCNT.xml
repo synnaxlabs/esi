@@ -50,7 +50,7 @@
             <DeviceSettings>
               <!-- The rate in Hz must match SYNC0: the manual sets SYNC0 to 1 s divided
                    by the sample rate. -->
-              <Setting Index="#x8020" SubIndex="1" Name="Sample rate" Unit="Hz"/>
+              <Setting Index="#x8020" SubIndex="1" Name="Module sample rate" Unit="Hz"/>
             </DeviceSettings>
             <!-- The manual gives the module only DC sync with Buffered Input 0, and
                  SYNC1 at 1 s. SYNC0 follows the sample rate. 1 is the DC buffered mode

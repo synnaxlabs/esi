@@ -57,7 +57,7 @@
           <Synnax Version="1">
             <!-- ADTiming holds the sample rate in S/s, in SM and DC sync. -->
             <DeviceSettings>
-              <Setting Index="#x8020" SubIndex="1" Name="Sample rate"/>
+              <Setting Index="#x8020" SubIndex="1" Name="Module sample rate"/>
             </DeviceSettings>
             <!-- ECAT0 App sets the module up alone on bus 1 (0, DC only), or in dual
                  mode (1): bus 1 to DewesoftX, bus 2 to the master. The manual does not

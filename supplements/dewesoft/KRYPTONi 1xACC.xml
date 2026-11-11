@@ -75,7 +75,7 @@
             <!-- No channel settings: neither the manual nor the ESI gives the
                  object index of the input value. -->
             <DeviceSettings>
-              <Setting Index="#x8020" SubIndex="1" Name="Sample rate (DC sync)"/>
+              <Setting Index="#x8020" SubIndex="1" Name="Module sample rate (DC sync)"/>
             </DeviceSettings>
             <!-- Buffered Input sets the card up for any master (0, SM or DC sync)
                  or for DewesoftX alone (1, DC buffered). With PowerONdefault

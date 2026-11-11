@@ -210,7 +210,7 @@
             <!-- In SM sync, the card does not go to SAFE-OP with the
                  anti-aliasing filter on. -->
             <DeviceSettings>
-              <Setting Index="#x8020" SubIndex="1" Name="Sample rate (DC sync)"/>
+              <Setting Index="#x8020" SubIndex="1" Name="Module sample rate (DC sync)"/>
               <Setting Index="#x8020" SubIndex="8" Name="Anti-aliasing filter"/>
             </DeviceSettings>
             <!-- Buffered Input sets the card up for any master (0, SM or DC sync)
@@ -425,7 +425,7 @@
             <!-- In SM sync, the card does not go to SAFE-OP with the
                  anti-aliasing filter on. -->
             <DeviceSettings>
-              <Setting Index="#x8020" SubIndex="1" Name="Sample rate (DC sync)"/>
+              <Setting Index="#x8020" SubIndex="1" Name="Module sample rate (DC sync)"/>
               <Setting Index="#x8020" SubIndex="8" Name="Anti-aliasing filter"/>
             </DeviceSettings>
             <!-- Buffered Input sets the card up for any master (0, SM or DC sync)

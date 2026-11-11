@@ -72,7 +72,7 @@
             <!-- The module has one input type and one range, so there are no channel
                  settings. -->
             <DeviceSettings>
-              <Setting Index="#x8020" SubIndex="1" Name="Sample rate (DC sync)"/>
+              <Setting Index="#x8020" SubIndex="1" Name="Module sample rate (DC sync)"/>
             </DeviceSettings>
             <!-- Buffered Input 0 is unbuffered, in SM or DC sync. 1 is the DC buffered
                  mode of DewesoftX. With PowerONdefault (0x8020:02) at 0, the module

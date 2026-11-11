@@ -69,7 +69,7 @@
             <Mode Index="#x8020" SubIndex="7" Standalone="0">
               <Value Value="0" AssignActivate="#x0700"/>
               <Value Value="3" AssignActivate="#x0000"/>
-              <Value Value="1" Shared="true"/>
+              <Value Value="1" OnlyReadBy="DewesoftX"/>
             </Mode>
           </Synnax>
         </VendorSpecific>
@@ -106,7 +106,7 @@
             <Mode Index="#x8020" SubIndex="7" Standalone="0">
               <Value Value="0" AssignActivate="#x0700"/>
               <Value Value="3" AssignActivate="#x0000"/>
-              <Value Value="1" Shared="true"/>
+              <Value Value="1" OnlyReadBy="DewesoftX"/>
             </Mode>
           </Synnax>
         </VendorSpecific>
@@ -160,7 +160,7 @@
             <Mode Index="#x8020" SubIndex="7" Standalone="0">
               <Value Value="0" AssignActivate="#x0700"/>
               <Value Value="3" AssignActivate="#x0000"/>
-              <Value Value="1" Shared="true"/>
+              <Value Value="1" OnlyReadBy="DewesoftX"/>
             </Mode>
           </Synnax>
         </VendorSpecific>

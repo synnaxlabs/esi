@@ -82,10 +82,11 @@ func TestSupplement6xSTG(t *testing.T) {
 		SubIndex:   9,
 		DataType:   "uint16",
 		Standalone: 0,
+		SecondPort: 0x1000,
 		Values: []ModeValue{
 			{Value: 0, OpMode: &OpModeChoice{0x0300, 1000, 1000000000}},
 			{Value: 3, OpMode: &OpModeChoice{}},
-			{Value: 1, Shared: true},
+			{Value: 1, SharedWith: "DewesoftX"},
 		},
 		Save: &Save{0x8020, 2, "uint16", 2, []float64{1}},
 	}
@@ -116,8 +117,23 @@ func TestSupplementRejectsBadModes(t *testing.T) {
 		},
 		{
 			`<Mode Index="#x8000" SubIndex="1" Standalone="0">
-<Value Value="0" Shared="true"/></Mode>`,
-			"Mode: Standalone 0: the value is shared",
+<Value Value="0" SharedWith="X"/></Mode>`,
+			"Mode: Standalone 0: other software sets it up",
+		},
+		{
+			`<Mode Index="#x8000" SubIndex="1" Standalone="0">
+<Value Value="0" OnlyReadBy="X"/></Mode>`,
+			"Mode: Standalone 0: other software sets it up",
+		},
+		{
+			`<Mode Index="#x8000" SubIndex="1" Standalone="0"><Value Value="0"/>
+<Value Value="1" SharedWith="X" OnlyReadBy="X"/></Mode>`,
+			"Mode: Value 1: both SharedWith and OnlyReadBy",
+		},
+		{
+			`<Mode Index="#x8000" SubIndex="1" Standalone="0" SecondPort="0">
+<Value Value="0"/></Mode>`,
+			"Mode: SecondPort: no bits",
 		},
 		{
 			`<Mode Index="#x8000" SubIndex="1" Standalone="0">
@@ -304,4 +320,22 @@ func TestSupplementRejectsBadRevisions(t *testing.T) {
 			t.Fatalf("want %q, err = %v", c.want, err)
 		}
 	}
+}
+
+func TestSupplementSingleBusModeIsOnlyReadByDewesoftX(t *testing.T) {
+	all, err := parseSupplements("../supplements")
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, s := range all {
+		if s.VendorID != 0xDEBE50F7 || s.ProductCode != 0x9E {
+			continue
+		}
+		want := []ModeValue{{Value: 0}, {Value: 1, OnlyReadBy: "DewesoftX"}}
+		if s.Mode.SecondPort != 0 || !reflect.DeepEqual(s.Mode.Values, want) {
+			t.Fatalf("mode = %+v", *s.Mode)
+		}
+		return
+	}
+	t.Fatal("no settings for the IOLITEi 1xSTG")
 }

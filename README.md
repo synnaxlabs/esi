@@ -71,6 +71,21 @@ settings that Synnax shows, with three kinds of rules:
 - `OptionsFromCard` and `MaxFromCard` read option lists and limits from the device
   when the Driver scans it.
 
+`Mode` names the object that sets the device up for Synnax alone (`Standalone`) or
+for other software too. A `Value` with `SharedWith` is set up by that software, and
+Synnax still reads its data. A `Value` with `OnlyReadBy` sends data that only that
+software reads. `SecondPort` gives the revision bits of a device on its second EtherCAT
+port; in dual mode, the first port belongs to the other software. `Save` keeps a
+change through a power restart.
+
+```xml
+<Mode Index="#x8020" SubIndex="9" Standalone="0" SecondPort="#x00001000">
+  <Value Value="0" AssignActivate="#x0700" Sync0Cycle="1000" Sync1Cycle="1000000000"/>
+  <Value Value="1" SharedWith="DewesoftX"/>
+  <Save Index="#x8020" SubIndex="2" Value="2" When="1"/>
+</Mode>
+```
+
 A supplement applies to every revision of its product code, unless it lists revisions
 in `Revisions`. A device matches when its revision, after `Mask`, is in the list. When
 one product code names more than one module, each supplement of the code must list its

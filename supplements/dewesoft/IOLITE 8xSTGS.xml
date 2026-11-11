@@ -168,11 +168,12 @@
                  saves each change. At 1, writing 2 saves the settings. The module's
                  table allows SM on bus 1, but section 6.1 names only the 8xTH, 8xLV,
                  and 6xSTG for it. -->
-            <Mode Index="#x8020" SubIndex="9" Standalone="0">
+            <Mode Index="#x8020" SubIndex="9" Standalone="0"
+                  SecondPort="#x00001000">
               <Value Value="0" AssignActivate="#x0700" Sync0Cycle="1000"
                      Sync1Cycle="1000000000"/>
               <Value Value="3" AssignActivate="#x0000"/>
-              <Value Value="1" Shared="true"/>
+              <Value Value="1" SharedWith="DewesoftX"/>
               <Save Index="#x8020" SubIndex="2" Value="2" When="1"/>
             </Mode>
           </Synnax>

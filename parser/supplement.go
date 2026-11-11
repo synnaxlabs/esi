@@ -94,6 +94,7 @@ type synnaxMode struct {
 	Index      string            `xml:"Index,attr"`
 	SubIndex   string            `xml:"SubIndex,attr"`
 	Standalone string            `xml:"Standalone,attr"`
+	SecondPort string            `xml:"SecondPort,attr"`
 	Values     []synnaxModeValue `xml:"Value"`
 	Save       *struct {
 		Index    string `xml:"Index,attr"`
@@ -105,7 +106,8 @@ type synnaxMode struct {
 
 type synnaxModeValue struct {
 	Value          string `xml:"Value,attr"`
-	Shared         bool   `xml:"Shared,attr"`
+	SharedWith     string `xml:"SharedWith,attr"`
+	OnlyReadBy     string `xml:"OnlyReadBy,attr"`
 	AssignActivate string `xml:"AssignActivate,attr"`
 	Sync0Cycle     string `xml:"Sync0Cycle,attr"`
 	Sync1Cycle     string `xml:"Sync1Cycle,attr"`
@@ -191,7 +193,11 @@ type Mode struct {
 	SubIndex uint8  `json:"sub_index"`
 	DataType string `json:"data_type"`
 	// Standalone is the value that makes Synnax the only reader of the slave.
-	Standalone float64     `json:"standalone"`
+	Standalone float64 `json:"standalone"`
+	// SecondPort holds the revision bits of a slave on its second EtherCAT port, or 0
+	// when the slave has one port. In dual mode, the first port belongs to the other
+	// software.
+	SecondPort uint32      `json:"second_port,omitempty"`
 	Values     []ModeValue `json:"values"`
 	// Save is the write that keeps a change through a power restart, or nil when the
 	// slave keeps each change by itself.
@@ -201,8 +207,12 @@ type Mode struct {
 // ModeValue is one value of a Mode.
 type ModeValue struct {
 	Value float64 `json:"value"`
-	// Shared is true when other software sets up the slave's inputs.
-	Shared bool `json:"shared,omitempty"`
+	// SharedWith names the software that sets up the slave in this value. Synnax still
+	// reads its data.
+	SharedWith string `json:"shared_with,omitempty"`
+	// OnlyReadBy names the software that sets up the slave in this value and alone
+	// reads the data that it sends.
+	OnlyReadBy string `json:"only_read_by,omitempty"`
 	// OpMode is the sync mode that the value needs, or nil when the catalog does not
 	// say.
 	OpMode *OpModeChoice `json:"op_mode,omitempty"`
@@ -442,9 +452,20 @@ func resolveMode(dict dictionary, m synnaxMode) (Mode, error) {
 	if mode.Standalone, err = strconv.ParseFloat(m.Standalone, 64); err != nil {
 		return mode, fmt.Errorf("Standalone: %w", err)
 	}
+	if m.SecondPort != "" {
+		if mode.SecondPort, err = parseUint32(m.SecondPort); err != nil {
+			return mode, fmt.Errorf("SecondPort: %w", err)
+		}
+		if mode.SecondPort == 0 {
+			return mode, fmt.Errorf("SecondPort: no bits")
+		}
+	}
 	standalone := false
 	for _, v := range m.Values {
-		value := ModeValue{Shared: v.Shared}
+		value := ModeValue{SharedWith: v.SharedWith, OnlyReadBy: v.OnlyReadBy}
+		if value.SharedWith != "" && value.OnlyReadBy != "" {
+			return mode, fmt.Errorf("Value %v: both SharedWith and OnlyReadBy", v.Value)
+		}
 		if value.Value, err = strconv.ParseFloat(v.Value, 64); err != nil {
 			return mode, fmt.Errorf("Value: %w", err)
 		}
@@ -459,8 +480,8 @@ func resolveMode(dict dictionary, m synnaxMode) (Mode, error) {
 			}
 		}
 		if value.Value == mode.Standalone {
-			if value.Shared {
-				return mode, fmt.Errorf("Standalone %v: the value is shared", value.Value)
+			if value.SharedWith != "" || value.OnlyReadBy != "" {
+				return mode, fmt.Errorf("Standalone %v: other software sets it up", value.Value)
 			}
 			standalone = true
 		}

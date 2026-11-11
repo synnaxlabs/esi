@@ -72,7 +72,7 @@
                  mode of DewesoftX. -->
             <Mode Index="#x8020" SubIndex="7" Standalone="0">
               <Value Value="0"/>
-              <Value Value="1" Shared="true"/>
+              <Value Value="1" OnlyReadBy="DewesoftX"/>
             </Mode>
           </Synnax>
         </VendorSpecific>

@@ -69,6 +69,18 @@
                   <BitSize>16</BitSize>
                   <Flags><Access>rw</Access></Flags>
                 </SubItem>
+                <SubItem>
+                  <SubIdx>9</SubIdx>
+                  <Name>CalcOffset</Name>
+                  <Type>REAL</Type>
+                  <BitSize>32</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>10</SubIdx>
+                  <Name>CalcGain</Name>
+                  <Type>REAL</Type>
+                  <BitSize>32</BitSize>
+                </SubItem>
               </DataType>
             </DataTypes>
             <Objects>
@@ -96,7 +108,11 @@
               <!-- From firmware 0.38, input n is a float at 0x6030:n. Older firmware
                    gives a raw INT32 at 0x6020:n. -->
               <Entries Index="#x6030" SubIndex="1" SubIndexStep="1"/>
-              <Entries Index="#x6020" SubIndex="1" SubIndexStep="1"/>
+              <Entries Index="#x6020" SubIndex="1" SubIndexStep="1">
+                <!-- Section 6.1.7: (raw / 256 + CalcOffset) * CalcGain. -->
+                <Calibration DataType="DINT" Index="#x8040" GainSubIndex="10"
+                             OffsetSubIndex="9" Divisor="256" RawOffset="true"/>
+              </Entries>
               <Setting Index="#x8040" SubIndex="1" Name="Range"/>
             </Channels>
             <DeviceSettings>

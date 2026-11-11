@@ -410,6 +410,32 @@ func TestSupplementSIRIUS(t *testing.T) {
 	}
 }
 
+func TestSupplementDewesoftCalibrations(t *testing.T) {
+	lv := &Calibration{"int32", 0x8040, 0x0A, 0x09, 256, true}
+	stg := &Calibration{"int32", 0x8040, 0x1B, 0x1A, 256, true}
+	for _, c := range []struct {
+		name    string
+		product uint32
+		entries []Entries
+	}{
+		{"IOLITE 8xLV", 0xF9, []Entries{
+			{Index: 0x6030, SubIndex: 1, SubIndexStep: 1, Count: 1},
+			{Index: 0x6020, SubIndex: 1, SubIndexStep: 1, Count: 1, Calibration: lv},
+		}},
+		{"IOLITE 8xSTGS", 244, []Entries{
+			{Index: 0x6020, SubIndex: 1, SubIndexStep: 1, Count: 1, Calibration: stg},
+		}},
+		{"KRYPTON 3xSTG", 0x68, []Entries{
+			{Index: 0x6030, SubIndex: 1, SubIndexStep: 1, Count: 1, Calibration: stg},
+		}},
+	} {
+		ch := dewesoftSettings(t, c.product).Channels
+		if ch == nil || !reflect.DeepEqual(ch.Entries, c.entries) {
+			t.Fatalf("%s: channels = %+v", c.name, ch)
+		}
+	}
+}
+
 func TestSupplement16xAO(t *testing.T) {
 	s := dewesoftSettings(t, 247)
 	want := []Setting{{

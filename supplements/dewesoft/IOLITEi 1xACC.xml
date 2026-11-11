@@ -102,6 +102,18 @@
                   <Type>DT_ACC_HP_FILTER</Type>
                   <BitSize>16</BitSize>
                 </SubItem>
+                <SubItem>
+                  <SubIdx>26</SubIdx>
+                  <Name>CalcOffset</Name>
+                  <Type>REAL</Type>
+                  <BitSize>32</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>27</SubIdx>
+                  <Name>CalcGain</Name>
+                  <Type>REAL</Type>
+                  <BitSize>32</BitSize>
+                </SubItem>
               </DataType>
             </DataTypes>
             <Objects>
@@ -123,21 +135,25 @@
             <Revisions Mask="#xFFFF0000">#x00100000</Revisions>
             <Channels Count="1" IndexStep="1">
               <!-- The PDO 0x1A20 reads the input at 0x6020:01. -->
-              <Entries Index="#x6020" SubIndex="1"/>
+              <Entries Index="#x6020" SubIndex="1">
+                <!-- Section 7.1.1: (raw / 256 + CalcOffset) * CalcGain. -->
+                <Calibration DataType="DINT" Index="#x8040" GainSubIndex="27"
+                             OffsetSubIndex="26" Divisor="256" RawOffset="true"/>
+              </Entries>
               <Setting Index="#x8040" SubIndex="1" Name="Measurement"/>
               <Setting Index="#x8040" SubIndex="2" Name="Range"/>
               <Setting Index="#x8040" SubIndex="4" Name="High-pass filter"/>
             </Channels>
             <!-- In SM sync, the sample rate is fixed at 20.271 kS/s. -->
             <DeviceSettings>
-              <Setting Index="#x8020" SubIndex="1" Name="Sample rate (DC sync)"/>
+              <Setting Index="#x8020" SubIndex="1" Name="Module sample rate (DC sync)"/>
             </DeviceSettings>
             <!-- Buffered Input sets the card up for any master (0, SM or DC) or for
                  DewesoftX (1, DC buffered). With PowerONdefault (0x8020:02) at 0, the
                  card saves each change. At 1, writing 2 saves the settings. -->
             <Mode Index="#x8020" SubIndex="7" Standalone="0">
               <Value Value="0"/>
-              <Value Value="1" Shared="true"/>
+              <Value Value="1" OnlyReadBy="DewesoftX"/>
               <Save Index="#x8020" SubIndex="2" Value="2" When="1"/>
             </Mode>
           </Synnax>

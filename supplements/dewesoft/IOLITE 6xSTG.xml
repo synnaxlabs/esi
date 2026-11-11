@@ -5398,7 +5398,7 @@
             </Channels>
             <!-- The card takes these only in PRE-OP. -->
             <DeviceSettings>
-              <Setting Index="#x8020" SubIndex="1" Name="Sample rate (DC sync)"/>
+              <Setting Index="#x8020" SubIndex="1" Name="Module sample rate (DC sync)"/>
               <Setting Index="#x8020" SubIndex="13" Name="Digital filter"/>
             </DeviceSettings>
             <!-- ECAT0 App sets the card up alone on bus 1 (0 DC, 3 SM), or in dual
@@ -5406,11 +5406,12 @@
                  effect after a power restart. With PowerONdefault (0x8020:02) at 0,
                  the card saves each change. At 1, writing 2 saves the settings. The
                  cycles follow the manual's table for standalone DC. -->
-            <Mode Index="#x8020" SubIndex="9" Standalone="0">
+            <Mode Index="#x8020" SubIndex="9" Standalone="0"
+                  SecondBus="#x00001000">
               <Value Value="0" AssignActivate="#x0300" Sync0Cycle="1000"
                      Sync1Cycle="1000000000"/>
               <Value Value="3" AssignActivate="#x0000"/>
-              <Value Value="1" Shared="true"/>
+              <Value Value="1" SharedWith="DewesoftX"/>
               <Save Index="#x8020" SubIndex="2" Value="2" When="1"/>
             </Mode>
           </Synnax>

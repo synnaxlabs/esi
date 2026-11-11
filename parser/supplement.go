@@ -94,6 +94,7 @@ type synnaxMode struct {
 	Index      string            `xml:"Index,attr"`
 	SubIndex   string            `xml:"SubIndex,attr"`
 	Standalone string            `xml:"Standalone,attr"`
+	SecondBus  string            `xml:"SecondBus,attr"`
 	Values     []synnaxModeValue `xml:"Value"`
 	Save       *struct {
 		Index    string `xml:"Index,attr"`
@@ -105,7 +106,8 @@ type synnaxMode struct {
 
 type synnaxModeValue struct {
 	Value          string `xml:"Value,attr"`
-	Shared         bool   `xml:"Shared,attr"`
+	SharedWith     string `xml:"SharedWith,attr"`
+	OnlyReadBy     string `xml:"OnlyReadBy,attr"`
 	AssignActivate string `xml:"AssignActivate,attr"`
 	Sync0Cycle     string `xml:"Sync0Cycle,attr"`
 	Sync1Cycle     string `xml:"Sync1Cycle,attr"`
@@ -120,12 +122,22 @@ type synnaxChannels struct {
 }
 
 type synnaxEntries struct {
-	Index        string `xml:"Index,attr"`
-	IndexStep    string `xml:"IndexStep,attr"`
-	SubIndex     string `xml:"SubIndex,attr"`
-	SubIndexStep string `xml:"SubIndexStep,attr"`
-	Count        string `xml:"Count,attr"`
-	OnlyReadBy   string `xml:"OnlyReadBy,attr"`
+	Index        string             `xml:"Index,attr"`
+	IndexStep    string             `xml:"IndexStep,attr"`
+	SubIndex     string             `xml:"SubIndex,attr"`
+	SubIndexStep string             `xml:"SubIndexStep,attr"`
+	Count        string             `xml:"Count,attr"`
+	OnlyReadBy   string             `xml:"OnlyReadBy,attr"`
+	Calibration  *synnaxCalibration `xml:"Calibration"`
+}
+
+type synnaxCalibration struct {
+	DataType       string `xml:"DataType,attr"`
+	Index          string `xml:"Index,attr"`
+	GainSubIndex   string `xml:"GainSubIndex,attr"`
+	OffsetSubIndex string `xml:"OffsetSubIndex,attr"`
+	Divisor        string `xml:"Divisor,attr"`
+	RawOffset      bool   `xml:"RawOffset,attr"`
 }
 
 type synnaxSetting struct {
@@ -191,8 +203,12 @@ type Mode struct {
 	SubIndex uint8  `json:"sub_index"`
 	DataType string `json:"data_type"`
 	// Standalone is the value that makes Synnax the only reader of the slave.
-	Standalone float64     `json:"standalone"`
-	Values     []ModeValue `json:"values"`
+	Standalone float64 `json:"standalone"`
+	// SecondBus holds the revision bits of a slave on its second EtherCAT bus, or 0
+	// when the slave has one bus. In dual mode, the first bus belongs to the other
+	// software.
+	SecondBus uint32      `json:"second_bus,omitempty"`
+	Values    []ModeValue `json:"values"`
 	// Save is the write that keeps a change through a power restart, or nil when the
 	// slave keeps each change by itself.
 	Save *Save `json:"save,omitempty"`
@@ -201,8 +217,12 @@ type Mode struct {
 // ModeValue is one value of a Mode.
 type ModeValue struct {
 	Value float64 `json:"value"`
-	// Shared is true when other software sets up the slave's inputs.
-	Shared bool `json:"shared,omitempty"`
+	// SharedWith names the software that sets up the slave in this value. Synnax still
+	// reads its data.
+	SharedWith string `json:"shared_with,omitempty"`
+	// OnlyReadBy names the software that sets up the slave in this value and alone
+	// reads the data that it sends.
+	OnlyReadBy string `json:"only_read_by,omitempty"`
 	// OpMode is the sync mode that the value needs, or nil when the catalog does not
 	// say.
 	OpMode *OpModeChoice `json:"op_mode,omitempty"`
@@ -247,6 +267,23 @@ type Entries struct {
 	// OnlyReadBy names the software that alone reads the format of the entries, or is
 	// empty when any master reads them.
 	OnlyReadBy string `json:"only_read_by,omitempty"`
+	// Calibration turns integer samples of the entries into physical values, or is nil
+	// when the entries need none.
+	Calibration *Calibration `json:"calibration,omitempty"`
+}
+
+// Calibration gives the physical value of an integer sample from a gain and an offset
+// that the card holds for each channel: raw / Divisor * gain + offset, or (raw /
+// Divisor + offset) * gain when RawOffset. DataType is how the entries encode samples.
+// The gain and offset are float32 objects at Index, and channel n adds n * IndexStep of
+// its Channels to Index.
+type Calibration struct {
+	DataType       string  `json:"data_type"`
+	Index          uint16  `json:"index"`
+	GainSubIndex   uint8   `json:"gain_sub_index"`
+	OffsetSubIndex uint8   `json:"offset_sub_index"`
+	Divisor        float64 `json:"divisor"`
+	RawOffset      bool    `json:"raw_offset,omitempty"`
 }
 
 // Setting is one CoE object that Synnax shows as a field.
@@ -397,7 +434,7 @@ func resolveSupplement(dev supplementDevice) (DeviceSettings, error) {
 		return out, fmt.Errorf("Channels: no Entries")
 	}
 	for _, e := range ch.Entries {
-		entries, err := parseEntries(e)
+		entries, err := parseEntries(dict, e)
 		if err != nil {
 			return out, fmt.Errorf("Entries: %w", err)
 		}
@@ -442,9 +479,20 @@ func resolveMode(dict dictionary, m synnaxMode) (Mode, error) {
 	if mode.Standalone, err = strconv.ParseFloat(m.Standalone, 64); err != nil {
 		return mode, fmt.Errorf("Standalone: %w", err)
 	}
+	if m.SecondBus != "" {
+		if mode.SecondBus, err = parseUint32(m.SecondBus); err != nil {
+			return mode, fmt.Errorf("SecondBus: %w", err)
+		}
+		if mode.SecondBus == 0 {
+			return mode, fmt.Errorf("SecondBus: no bits")
+		}
+	}
 	standalone := false
 	for _, v := range m.Values {
-		value := ModeValue{Shared: v.Shared}
+		value := ModeValue{SharedWith: v.SharedWith, OnlyReadBy: v.OnlyReadBy}
+		if value.SharedWith != "" && value.OnlyReadBy != "" {
+			return mode, fmt.Errorf("Value %v: both SharedWith and OnlyReadBy", v.Value)
+		}
 		if value.Value, err = strconv.ParseFloat(v.Value, 64); err != nil {
 			return mode, fmt.Errorf("Value: %w", err)
 		}
@@ -459,8 +507,8 @@ func resolveMode(dict dictionary, m synnaxMode) (Mode, error) {
 			}
 		}
 		if value.Value == mode.Standalone {
-			if value.Shared {
-				return mode, fmt.Errorf("Standalone %v: the value is shared", value.Value)
+			if value.SharedWith != "" || value.OnlyReadBy != "" {
+				return mode, fmt.Errorf("Standalone %v: other software sets it up", value.Value)
 			}
 			standalone = true
 		}
@@ -551,7 +599,7 @@ func parseOpMode(v synnaxModeValue) (*OpModeChoice, error) {
 }
 
 // parseEntries reads e. A missing step is 0, and a missing Count is 1.
-func parseEntries(e synnaxEntries) (Entries, error) {
+func parseEntries(dict dictionary, e synnaxEntries) (Entries, error) {
 	out := Entries{Count: 1, OnlyReadBy: e.OnlyReadBy}
 	var err error
 	if out.Index, err = parseUint16(e.Index); err != nil {
@@ -577,6 +625,52 @@ func parseEntries(e synnaxEntries) (Entries, error) {
 	}
 	if out.Count == 0 {
 		return out, fmt.Errorf("Count: must be at least 1")
+	}
+	if c := e.Calibration; c != nil {
+		if out.Calibration, err = parseCalibration(dict, *c); err != nil {
+			return out, fmt.Errorf("Calibration: %w", err)
+		}
+	}
+	return out, nil
+}
+
+// integerDataTypes are the Synnax data types that a calibrated entry can encode.
+var integerDataTypes = []string{"int8", "uint8", "int16", "uint16", "int32", "uint32"}
+
+func parseCalibration(dict dictionary, c synnaxCalibration) (*Calibration, error) {
+	out := &Calibration{Divisor: 1, RawOffset: c.RawOffset}
+	dataType, ok := settingDataTypes[strings.ToUpper(c.DataType)]
+	if !ok || !slices.Contains(integerDataTypes, dataType) {
+		return nil, fmt.Errorf("DataType %q: not an integer type", c.DataType)
+	}
+	out.DataType = dataType
+	var err error
+	if out.Index, err = parseUint16(c.Index); err != nil {
+		return nil, fmt.Errorf("Index: %w", err)
+	}
+	for _, f := range []struct {
+		name string
+		sub  string
+		dst  *uint8
+	}{
+		{"GainSubIndex", c.GainSubIndex, &out.GainSubIndex},
+		{"OffsetSubIndex", c.OffsetSubIndex, &out.OffsetSubIndex},
+	} {
+		if *f.dst, err = parseUint8(f.sub); err != nil {
+			return nil, fmt.Errorf("%s: %w", f.name, err)
+		}
+		obj, err := resolveSetting(dict, synnaxSetting{Index: c.Index, SubIndex: f.sub})
+		if err != nil {
+			return nil, err
+		}
+		if obj.DataType != "float32" {
+			return nil, fmt.Errorf("%s: %s, not REAL", f.name, obj.DataType)
+		}
+	}
+	if c.Divisor != "" {
+		if out.Divisor, err = parseDivisor(c.Divisor); err != nil {
+			return nil, fmt.Errorf("Divisor: %w", err)
+		}
 	}
 	return out, nil
 }

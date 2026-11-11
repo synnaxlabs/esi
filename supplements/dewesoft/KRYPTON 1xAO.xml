@@ -66,13 +66,13 @@
             <Revisions Mask="#xFFFF0000">#x00000000</Revisions>
             <!-- The module is an output, so there are no channel settings. -->
             <DeviceSettings>
-              <Setting Index="#x8020" SubIndex="1" Name="Sample rate (DC sync)"/>
+              <Setting Index="#x8020" SubIndex="1" Name="Module sample rate (DC sync)"/>
             </DeviceSettings>
             <!-- Buffered Input 0 is unbuffered, in SM or DC sync. 1 is the DC buffered
                  mode of DewesoftX. -->
             <Mode Index="#x8020" SubIndex="7" Standalone="0">
               <Value Value="0"/>
-              <Value Value="1" Shared="true"/>
+              <Value Value="1" OnlyReadBy="DewesoftX"/>
             </Mode>
           </Synnax>
         </VendorSpecific>

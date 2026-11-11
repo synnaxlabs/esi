@@ -91,7 +91,7 @@
             <!-- The card takes CoE writes only outside OP. The range of the X axis
                  (0x8040:01) also sets the Y and Z axes, so it is a module setting. -->
             <DeviceSettings>
-              <Setting Index="#x8020" SubIndex="1" Name="Sample rate"/>
+              <Setting Index="#x8020" SubIndex="1" Name="Module sample rate"/>
               <Setting Index="#x8040" SubIndex="1" Name="Range"/>
             </DeviceSettings>
             <!-- Buffered Mode sets the card up for any master (0, SM or DC) or for
@@ -99,7 +99,7 @@
                  settings, and the object then goes back to 1. -->
             <Mode Index="#x8020" SubIndex="7" Standalone="0">
               <Value Value="0"/>
-              <Value Value="1" Shared="true"/>
+              <Value Value="1" OnlyReadBy="DewesoftX"/>
               <Save Index="#x8020" SubIndex="2" Value="2" When="1"/>
             </Mode>
           </Synnax>

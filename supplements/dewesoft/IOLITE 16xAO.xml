@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Supplements the Dewesoft ESI of the IOLITE 16xAO (IOLITE AO.xml). Written from the
+     Dewesoft third-party EtherCAT masters manual, V26-3, section 6.1.14, without a
+     module. The data type follows the startup commands of the ESI, which write 2 bytes.
+     Not tested on hardware. -->
+<EtherCATInfo Version="1.6">
+  <Vendor>
+    <Id>#xDEBE50F7</Id>
+    <Name>Dewesoft</Name>
+  </Vendor>
+  <Descriptions>
+    <Devices>
+      <Device>
+        <Type ProductCode="247">IOLITE 16xAO</Type>
+        <Name LcId="1033">IOLITE 16xAO</Name>
+        <Profile>
+          <Dictionary>
+            <DataTypes>
+              <DataType>
+                <Name>DT_AO_OUTPUT_CHANNEL</Name>
+                <BaseType>UINT</BaseType>
+                <BitSize>16</BitSize>
+                <EnumInfo><Text>Bus 1</Text><Enum>0</Enum></EnumInfo>
+                <EnumInfo><Text>Bus 2</Text><Enum>1</Enum></EnumInfo>
+              </DataType>
+              <DataType>
+                <Name>DT8020</Name>
+                <SubItem>
+                  <SubIdx>12</SubIdx>
+                  <Name>Output Channel</Name>
+                  <Type>DT_AO_OUTPUT_CHANNEL</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+              </DataType>
+            </DataTypes>
+            <Objects>
+              <Object>
+                <Index>#x8020</Index>
+                <Name>Device settings</Name>
+                <Type>DT8020</Type>
+              </Object>
+            </Objects>
+          </Dictionary>
+        </Profile>
+        <VendorSpecific>
+          <Synnax Version="1">
+            <!-- Output Channel gives the bus that controls the outputs. The module
+                 shows the output PDOs only on that bus, after a power restart and a new
+                 scan. The ESI writes 0 on bus 1 and 1 on bus 2 at each move to PRE-OP,
+                 but Synnax does not send ESI startup commands. -->
+            <DeviceSettings>
+              <Setting Index="#x8020" SubIndex="12"
+                       Name="Bus that controls the outputs (after a power restart)"/>
+            </DeviceSettings>
+            <!-- There is no Mode. The manual gives ECAT0 App (0x8020:09) as 0 for
+                 standalone, but the ESI writes 1 on bus 1 and says not to change it.
+            -->
+          </Synnax>
+        </VendorSpecific>
+      </Device>
+    </Devices>
+  </Descriptions>
+</EtherCATInfo>

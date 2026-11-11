@@ -97,7 +97,7 @@
                  index, so there is no Channels block. The module has one input, so its
                  range (0x8040:03) is a device setting. -->
             <DeviceSettings>
-              <Setting Index="#x8020" SubIndex="1" Name="Sample rate (DC sync)"/>
+              <Setting Index="#x8020" SubIndex="1" Name="Module sample rate (DC sync)"/>
               <Setting Index="#x8040" SubIndex="3" Name="Range"/>
             </DeviceSettings>
             <!-- Buffered Input 0 is unbuffered, in SM or DC sync. 1 is the DC buffered
@@ -105,7 +105,7 @@
                  saves each change. At 1, writing 2 saves the settings. -->
             <Mode Index="#x8020" SubIndex="7" Standalone="0">
               <Value Value="0"/>
-              <Value Value="1" Shared="true"/>
+              <Value Value="1" OnlyReadBy="DewesoftX"/>
               <Save Index="#x8020" SubIndex="2" Value="2" When="1"/>
             </Mode>
           </Synnax>

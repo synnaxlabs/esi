@@ -114,6 +114,18 @@
                   <BitSize>16</BitSize>
                 </SubItem>
                 <SubItem>
+                  <SubIdx>26</SubIdx>
+                  <Name>CalcOffset</Name>
+                  <Type>REAL</Type>
+                  <BitSize>32</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>27</SubIdx>
+                  <Name>CalcGain</Name>
+                  <Type>REAL</Type>
+                  <BitSize>32</BitSize>
+                </SubItem>
+                <SubItem>
                   <SubIdx>28</SubIdx>
                   <Name>CalcExcitation</Name>
                   <Type>REAL</Type>
@@ -146,7 +158,11 @@
             <Channels Count="8" IndexStep="1">
               <!-- The ESI maps input n at 0x6020:n as REAL. The manual calls the value
                    a raw INT32 that needs CalcOffset and CalcGain. -->
-              <Entries Index="#x6020" SubIndex="1" SubIndexStep="1"/>
+              <Entries Index="#x6020" SubIndex="1" SubIndexStep="1">
+                <!-- Section 6.1.12: (raw / 256 + CalcOffset) * CalcGain. -->
+                <Calibration DataType="DINT" Index="#x8040" GainSubIndex="27"
+                             OffsetSubIndex="26" Divisor="256" RawOffset="true"/>
+              </Entries>
               <Setting Index="#x8040" SubIndex="1" Name="Measurement"/>
               <Setting Index="#x8040" SubIndex="2" Name="Bridge">
                 <ShowWhen Index="#x8040" SubIndex="1" Values="6"/>
@@ -160,7 +176,7 @@
             </Channels>
             <!-- In SM sync, the sample rate is fixed at 20 kS/s. -->
             <DeviceSettings>
-              <Setting Index="#x8020" SubIndex="1" Name="Sample rate (DC sync)"/>
+              <Setting Index="#x8020" SubIndex="1" Name="Module sample rate (DC sync)"/>
             </DeviceSettings>
             <!-- ECAT0 App sets the card up alone on bus 1 (0 DC, 3 SM), or in dual mode
                  (1): bus 1 to DewesoftX, bus 2 to the master. A change takes effect
@@ -168,11 +184,12 @@
                  saves each change. At 1, writing 2 saves the settings. The module's
                  table allows SM on bus 1, but section 6.1 names only the 8xTH, 8xLV,
                  and 6xSTG for it. -->
-            <Mode Index="#x8020" SubIndex="9" Standalone="0">
+            <Mode Index="#x8020" SubIndex="9" Standalone="0"
+                  SecondBus="#x00001000">
               <Value Value="0" AssignActivate="#x0700" Sync0Cycle="1000"
                      Sync1Cycle="1000000000"/>
               <Value Value="3" AssignActivate="#x0000"/>
-              <Value Value="1" Shared="true"/>
+              <Value Value="1" SharedWith="DewesoftX"/>
               <Save Index="#x8020" SubIndex="2" Value="2" When="1"/>
             </Mode>
           </Synnax>

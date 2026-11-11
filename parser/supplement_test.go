@@ -14,6 +14,7 @@ import (
 	"os"
 	"path/filepath"
 	"reflect"
+	"slices"
 	"strings"
 	"testing"
 )
@@ -82,10 +83,11 @@ func TestSupplement6xSTG(t *testing.T) {
 		SubIndex:   9,
 		DataType:   "uint16",
 		Standalone: 0,
+		SecondBus:  0x1000,
 		Values: []ModeValue{
 			{Value: 0, OpMode: &OpModeChoice{0x0300, 1000, 1000000000}},
 			{Value: 3, OpMode: &OpModeChoice{}},
-			{Value: 1, Shared: true},
+			{Value: 1, SharedWith: "DewesoftX"},
 		},
 		Save: &Save{0x8020, 2, "uint16", 2, []float64{1}},
 	}
@@ -116,8 +118,23 @@ func TestSupplementRejectsBadModes(t *testing.T) {
 		},
 		{
 			`<Mode Index="#x8000" SubIndex="1" Standalone="0">
-<Value Value="0" Shared="true"/></Mode>`,
-			"Mode: Standalone 0: the value is shared",
+<Value Value="0" SharedWith="X"/></Mode>`,
+			"Mode: Standalone 0: other software sets it up",
+		},
+		{
+			`<Mode Index="#x8000" SubIndex="1" Standalone="0">
+<Value Value="0" OnlyReadBy="X"/></Mode>`,
+			"Mode: Standalone 0: other software sets it up",
+		},
+		{
+			`<Mode Index="#x8000" SubIndex="1" Standalone="0"><Value Value="0"/>
+<Value Value="1" SharedWith="X" OnlyReadBy="X"/></Mode>`,
+			"Mode: Value 1: both SharedWith and OnlyReadBy",
+		},
+		{
+			`<Mode Index="#x8000" SubIndex="1" Standalone="0" SecondBus="0">
+<Value Value="0"/></Mode>`,
+			"Mode: SecondBus: no bits",
 		},
 		{
 			`<Mode Index="#x8000" SubIndex="1" Standalone="0">
@@ -302,6 +319,230 @@ func TestSupplementRejectsBadRevisions(t *testing.T) {
 		_, err := parseSupplements(writeSupplements(t, c.files...))
 		if err == nil || !strings.Contains(err.Error(), c.want) {
 			t.Fatalf("want %q, err = %v", c.want, err)
+		}
+	}
+}
+
+func TestSupplementSingleBusModeIsOnlyReadByDewesoftX(t *testing.T) {
+	mode := dewesoftSettings(t, 0x9E, 0x00100000).Mode
+	want := []ModeValue{{Value: 0}, {Value: 1, OnlyReadBy: "DewesoftX"}}
+	if mode.SecondBus != 0 || !reflect.DeepEqual(mode.Values, want) {
+		t.Fatalf("IOLITEi 1xSTG: mode = %+v", *mode)
+	}
+}
+
+// dewesoftSettings returns the supplement settings that cover the revision of the
+// Dewesoft product. Modules can share a product code and differ by revision.
+func dewesoftSettings(t *testing.T, product, revision uint32) DeviceSettings {
+	t.Helper()
+	all, err := parseSupplements("../supplements")
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, s := range all {
+		covers := s.Revisions == nil ||
+			slices.Contains(s.Revisions, revision&s.RevisionMask)
+		if s.VendorID == 0xDEBE50F7 && s.ProductCode == product && covers {
+			return s
+		}
+	}
+	t.Fatalf("no settings for product 0x%X revision 0x%08X", product, revision)
+	return DeviceSettings{}
+}
+
+func TestSupplementSIRIUS(t *testing.T) {
+	dc := &OpModeChoice{AssignActivate: 0x0700, Sync1Cycle: 1000000000}
+	sm := &OpModeChoice{0x0700, 1000000, 1000000000}
+	dualDC := &OpModeChoice{AssignActivate: 0x0300}
+	dualSM := &OpModeChoice{}
+	want := &Mode{
+		Index:      0x8020,
+		SubIndex:   7,
+		DataType:   "uint16",
+		Standalone: 2,
+		Values: []ModeValue{
+			{Value: 2, OpMode: dc},
+			{Value: 18, OpMode: dc},
+			{Value: 5, OpMode: sm},
+			{Value: 21, OpMode: sm},
+			{Value: 3, SharedWith: "DewesoftX", OpMode: dualDC},
+			{Value: 19, SharedWith: "DewesoftX", OpMode: dualDC},
+			{Value: 6, SharedWith: "DewesoftX", OpMode: dualSM},
+			{Value: 22, SharedWith: "DewesoftX", OpMode: dualSM},
+			{Value: 4, SharedWith: "DewesoftX", OpMode: sm},
+			{Value: 20, SharedWith: "DewesoftX", OpMode: sm},
+			{Value: 1, OnlyReadBy: "DewesoftX"},
+		},
+	}
+	for _, c := range []struct {
+		product     uint32
+		count       int
+		calibration Calibration
+	}{
+		{0x66, 16, Calibration{"int32", 0x8040, 0x15, 0x14, 1, false}},
+		{0x6E, 8, Calibration{"int16", 0x8040, 0x07, 0x06, 1, false}},
+	} {
+		s := dewesoftSettings(t, c.product, 0)
+		if s.Revisions != nil || len(s.Device) != 0 {
+			t.Fatalf("product 0x%X: settings = %+v", c.product, s)
+		}
+		if !reflect.DeepEqual(s.Mode, want) {
+			t.Fatalf("product 0x%X: mode = %+v", c.product, *s.Mode)
+		}
+		ch := s.Channels
+		wantEntries := []Entries{{
+			Index:        0x6030,
+			SubIndex:     1,
+			SubIndexStep: 1,
+			Count:        1,
+			Calibration:  &c.calibration,
+		}}
+		if ch.Count != c.count || ch.IndexStep != 1 || len(ch.Settings) != 0 ||
+			!reflect.DeepEqual(ch.Entries, wantEntries) {
+			t.Fatalf("product 0x%X: channels = %+v", c.product, *ch)
+		}
+	}
+}
+
+func TestSupplementDewesoftCalibrations(t *testing.T) {
+	lv := &Calibration{"int32", 0x8040, 0x0A, 0x09, 256, true}
+	stg := &Calibration{"int32", 0x8040, 0x1B, 0x1A, 256, true}
+	lvEntries := []Entries{
+		{Index: 0x6030, SubIndex: 1, SubIndexStep: 1, Count: 1},
+		{Index: 0x6020, SubIndex: 1, SubIndexStep: 1, Count: 1, Calibration: lv},
+	}
+	stgEntries := []Entries{
+		{Index: 0x6030, SubIndex: 1, SubIndexStep: 1, Count: 1, Calibration: stg},
+	}
+	for _, c := range []struct {
+		name     string
+		product  uint32
+		revision uint32
+		entries  []Entries
+	}{
+		{"IOLITE 8xLV", 0xF9, 0x00010000, lvEntries},
+		{"IOLITE 8xLA", 0xF9, 0x00030000, lvEntries},
+		{"IOLITE 8xSTGS", 244, 0, []Entries{
+			{Index: 0x6020, SubIndex: 1, SubIndexStep: 1, Count: 1, Calibration: stg},
+		}},
+		{"IOLITEi 1xACC", 0x9D, 0x00100000, []Entries{
+			{Index: 0x6020, SubIndex: 1, Count: 1, Calibration: stg},
+		}},
+		{"KRYPTON 3xSTG", 0x68, 0x00000000, stgEntries},
+		{"KRYPTON 6xSTG", 0x68, 0x00010000, stgEntries},
+	} {
+		ch := dewesoftSettings(t, c.product, c.revision).Channels
+		if ch == nil || !reflect.DeepEqual(ch.Entries, c.entries) {
+			t.Fatalf("%s: channels = %+v", c.name, ch)
+		}
+	}
+}
+
+func TestSupplement16xAO(t *testing.T) {
+	s := dewesoftSettings(t, 247, 0)
+	want := []Setting{{
+		Index:    0x8020,
+		SubIndex: 12,
+		Name:     "Bus that controls the outputs (after a power restart)",
+		DataType: "uint16",
+		Options:  []Option{{0, "Bus 1"}, {1, "Bus 2"}},
+	}}
+	if s.Mode != nil || s.Revisions != nil || s.Channels != nil ||
+		!reflect.DeepEqual(s.Device, want) {
+		t.Fatalf("settings = %+v", s)
+	}
+}
+
+// calibrationSupplement returns a supplement of product 7 whose two channels read
+// 0x6000:n with the Calibration element calibration.
+func calibrationSupplement(calibration string) string {
+	return `<EtherCATInfo><Vendor><Id>#x2</Id></Vendor><Descriptions><Devices><Device>
+<Type ProductCode="7">X</Type>
+<Profile><Dictionary>
+<DataTypes><DataType><Name>DT8040</Name>
+<SubItem><SubIdx>1</SubIdx><Name>Range</Name><Type>UINT</Type></SubItem>
+<SubItem><SubIdx>20</SubIdx><Name>Offset</Name><Type>REAL</Type></SubItem>
+<SubItem><SubIdx>21</SubIdx><Name>Gain</Name><Type>REAL</Type></SubItem>
+</DataType></DataTypes>
+<Objects><Object><Index>#x8040</Index><Type>DT8040</Type></Object></Objects>
+</Dictionary></Profile>
+<VendorSpecific><Synnax><Channels Count="2" IndexStep="1">
+<Entries Index="#x6000" SubIndex="1" SubIndexStep="1">` + calibration + `</Entries>
+</Channels></Synnax></VendorSpecific>
+</Device></Devices></Descriptions></EtherCATInfo>`
+}
+
+func TestSupplementCalibration(t *testing.T) {
+	for _, c := range []struct {
+		xml  string
+		want Calibration
+	}{
+		{
+			`<Calibration DataType="DINT" Index="#x8040" GainSubIndex="21"
+OffsetSubIndex="20"/>`,
+			Calibration{
+				DataType:       "int32",
+				Index:          0x8040,
+				GainSubIndex:   21,
+				OffsetSubIndex: 20,
+				Divisor:        1,
+			},
+		},
+		{
+			`<Calibration DataType="INT" Index="#x8040" GainSubIndex="21"
+OffsetSubIndex="20" Divisor="256" RawOffset="1"/>`,
+			Calibration{
+				DataType:       "int16",
+				Index:          0x8040,
+				GainSubIndex:   21,
+				OffsetSubIndex: 20,
+				Divisor:        256,
+				RawOffset:      true,
+			},
+		},
+	} {
+		all, err := parseSupplements(writeSupplements(t, calibrationSupplement(c.xml)))
+		if err != nil {
+			t.Fatal(err)
+		}
+		got := all[0].Channels.Entries[0].Calibration
+		if got == nil || !reflect.DeepEqual(*got, c.want) {
+			t.Fatalf("calibration = %+v, want %+v", got, c.want)
+		}
+	}
+}
+
+func TestSupplementRejectsBadCalibrations(t *testing.T) {
+	for _, c := range []struct{ xml, want string }{
+		{
+			`<Calibration DataType="REAL" Index="#x8040" GainSubIndex="21"
+OffsetSubIndex="20"/>`,
+			`Calibration: DataType "REAL": not an integer type`,
+		},
+		{
+			`<Calibration DataType="DINT" Index="#x8040" GainSubIndex="1"
+OffsetSubIndex="20"/>`,
+			"Calibration: GainSubIndex: uint16, not REAL",
+		},
+		{
+			`<Calibration DataType="DINT" Index="#x8040" GainSubIndex="21"
+OffsetSubIndex="22"/>`,
+			"Calibration: 0x8040:16: no sub-index in DT8040",
+		},
+		{
+			`<Calibration DataType="DINT" Index="#x8050" GainSubIndex="21"
+OffsetSubIndex="20"/>`,
+			"Calibration: 0x8050:15: no object in the Dictionary",
+		},
+		{
+			`<Calibration DataType="DINT" Index="#x8040" GainSubIndex="21"
+OffsetSubIndex="20" Divisor="0"/>`,
+			"Calibration: Divisor: must be above 0",
+		},
+	} {
+		_, err := parseSupplements(writeSupplements(t, calibrationSupplement(c.xml)))
+		if err == nil || !strings.Contains(err.Error(), c.want) {
+			t.Fatalf("err = %v, want %q", err, c.want)
 		}
 	}
 }

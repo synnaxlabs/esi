@@ -71,6 +71,34 @@ settings that Synnax shows, with three kinds of rules:
 - `OptionsFromCard` and `MaxFromCard` read option lists and limits from the device
   when the Driver scans it.
 
+`Mode` names the object that sets the device up for Synnax alone (`Standalone`) or
+for other software too. A `Value` with `SharedWith` is set up by that software, and
+Synnax still reads its data. A `Value` with `OnlyReadBy` sends data that only that
+software reads. `SecondBus` gives the revision bits of a device on its second EtherCAT
+bus; in dual mode, the first bus belongs to the other software. `Save` keeps a change
+through a power restart.
+
+```xml
+<Mode Index="#x8020" SubIndex="9" Standalone="0" SecondBus="#x00001000">
+  <Value Value="0" AssignActivate="#x0700" Sync0Cycle="1000" Sync1Cycle="1000000000"/>
+  <Value Value="1" SharedWith="DewesoftX"/>
+  <Save Index="#x8020" SubIndex="2" Value="2" When="1"/>
+</Mode>
+```
+
+`Calibration` in `Entries` turns integer samples into physical values. The device
+holds a float32 gain and offset for each channel at `Index`, at `GainSubIndex` and
+`OffsetSubIndex`. Each channel adds the `IndexStep` of its `Channels` to `Index`. The
+physical value is `raw / Divisor * gain + offset`, or `(raw / Divisor + offset) * gain`
+when `RawOffset` is true. `DataType` is how the entries encode samples.
+
+```xml
+<Entries Index="#x6020" SubIndex="1" SubIndexStep="1">
+  <Calibration DataType="DINT" Index="#x8040" GainSubIndex="10" OffsetSubIndex="9"
+               Divisor="256" RawOffset="true"/>
+</Entries>
+```
+
 A supplement applies to every revision of its product code, unless it lists revisions
 in `Revisions`. A device matches when its revision, after `Mask`, is in the list. When
 one product code names more than one module, each supplement of the code must list its

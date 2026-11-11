@@ -339,3 +339,69 @@ func TestSupplementSingleBusModeIsOnlyReadByDewesoftX(t *testing.T) {
 	}
 	t.Fatal("no settings for the IOLITEi 1xSTG")
 }
+
+// dewesoftSettings returns the supplement settings of the Dewesoft product.
+func dewesoftSettings(t *testing.T, product uint32) DeviceSettings {
+	t.Helper()
+	all, err := parseSupplements("../supplements")
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, s := range all {
+		if s.VendorID == 0xDEBE50F7 && s.ProductCode == product {
+			return s
+		}
+	}
+	t.Fatalf("no settings for product 0x%X", product)
+	return DeviceSettings{}
+}
+
+func TestSupplementSIRIUS(t *testing.T) {
+	dc := &OpModeChoice{AssignActivate: 0x0700, Sync1Cycle: 1000000000}
+	sm := &OpModeChoice{0x0700, 1000000, 1000000000}
+	dualDC := &OpModeChoice{AssignActivate: 0x0300}
+	dualSM := &OpModeChoice{}
+	want := &Mode{
+		Index:      0x8020,
+		SubIndex:   7,
+		DataType:   "uint16",
+		Standalone: 2,
+		Values: []ModeValue{
+			{Value: 2, OpMode: dc},
+			{Value: 18, OpMode: dc},
+			{Value: 5, OpMode: sm},
+			{Value: 21, OpMode: sm},
+			{Value: 3, SharedWith: "DewesoftX", OpMode: dualDC},
+			{Value: 19, SharedWith: "DewesoftX", OpMode: dualDC},
+			{Value: 6, SharedWith: "DewesoftX", OpMode: dualSM},
+			{Value: 22, SharedWith: "DewesoftX", OpMode: dualSM},
+			{Value: 4, SharedWith: "DewesoftX", OpMode: sm},
+			{Value: 20, SharedWith: "DewesoftX", OpMode: sm},
+			{Value: 1, OnlyReadBy: "DewesoftX"},
+		},
+	}
+	for _, product := range []uint32{0x66, 0x6E} {
+		s := dewesoftSettings(t, product)
+		if s.Revisions != nil || len(s.Device) != 0 || s.Channels != nil {
+			t.Fatalf("product 0x%X: settings = %+v", product, s)
+		}
+		if !reflect.DeepEqual(s.Mode, want) {
+			t.Fatalf("product 0x%X: mode = %+v", product, *s.Mode)
+		}
+	}
+}
+
+func TestSupplement16xAO(t *testing.T) {
+	s := dewesoftSettings(t, 247)
+	want := []Setting{{
+		Index:    0x8020,
+		SubIndex: 12,
+		Name:     "Bus that controls the outputs (after a power restart)",
+		DataType: "uint16",
+		Options:  []Option{{0, "Bus 1"}, {1, "Bus 2"}},
+	}}
+	if s.Mode != nil || s.Revisions != nil || s.Channels != nil ||
+		!reflect.DeepEqual(s.Device, want) {
+		t.Fatalf("settings = %+v", s)
+	}
+}

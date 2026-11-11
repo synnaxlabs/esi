@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Supplements the Dewesoft ESIs of the SIRIUSe and SIRIUSre (SIRIUS.xml, SIRIUSr.xml,
+     SIRIUS HS.xml, and SIRIUSr HS.xml). Written from the Dewesoft third-party EtherCAT
+     masters manual, V26-3, sections 8, 8.1.1, and 8.1.2, without a module. The data
+     type follows the startup commands of the ESIs, which write 2 bytes. Not tested on
+     hardware. -->
+<EtherCATInfo Version="1.6">
+  <Vendor>
+    <Id>#xDEBE50F7</Id>
+    <Name>Dewesoft</Name>
+  </Vendor>
+  <Descriptions>
+    <Devices>
+      <Device>
+        <Type ProductCode="#x66">SIRIUSe and SIRIUSre</Type>
+        <Name LcId="1033">SIRIUSe and SIRIUSre</Name>
+        <Profile>
+          <Dictionary>
+            <DataTypes>
+              <DataType>
+                <Name>DT8020</Name>
+                <SubItem>
+                  <SubIdx>7</SubIdx>
+                  <Name>Buffered Input</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+              </DataType>
+            </DataTypes>
+            <Objects>
+              <Object>
+                <Index>#x8020</Index>
+                <Name>Device settings</Name>
+                <Type>DT8020</Type>
+              </Object>
+            </Objects>
+          </Dictionary>
+        </Profile>
+        <VendorSpecific>
+          <Synnax Version="1">
+            <!-- Each revision in the ESIs has the same startup command and sync modes,
+                 so the supplement covers all of them. The manual gives channel settings
+                 only for the HD 16xSTGS, but the ESIs name no revision for it, only HD
+                 16xAI ones. So there are none. -->
+            <!-- Buffered Input sets the module up for the master alone (2 DC, 5 SM
+                 sync), for DewesoftX on USB and the master on EtherCAT (3 DC, 6 SM, 4
+                 EtherCAT PPS SM), or for DewesoftX alone (1, DC buffered). 18 to 22
+                 (0x12 to 0x16) are the NI LabVIEW forms of 2 to 6, with the same sync.
+                 The ESI writes 6 at each move to PRE-OP. The manual does not say
+                 whether the module keeps a change through a power restart. -->
+            <!-- The cycles follow the manual's table, so 2 runs SYNC0 at the bus cycle.
+                 For 4, the manual gives SYNC0 as disabled, but the ESI mode runs it at
+                 1 ms, as this value does. The Driver takes the first SII mode with the
+                 AssignActivate of a value. For 4 and 5, that is the standalone DC mode,
+                 with a SYNC0 shift of -100 µs that their ESI modes do not have. -->
+            <Mode Index="#x8020" SubIndex="7" Standalone="2">
+              <Value Value="2" AssignActivate="#x0700" Sync1Cycle="1000000000"/>
+              <Value Value="18" AssignActivate="#x0700" Sync1Cycle="1000000000"/>
+              <Value Value="5" AssignActivate="#x0700" Sync0Cycle="1000000"
+                     Sync1Cycle="1000000000"/>
+              <Value Value="21" AssignActivate="#x0700" Sync0Cycle="1000000"
+                     Sync1Cycle="1000000000"/>
+              <Value Value="3" SharedWith="DewesoftX" AssignActivate="#x0300"/>
+              <Value Value="19" SharedWith="DewesoftX" AssignActivate="#x0300"/>
+              <Value Value="6" SharedWith="DewesoftX" AssignActivate="#x0000"/>
+              <Value Value="22" SharedWith="DewesoftX" AssignActivate="#x0000"/>
+              <Value Value="4" SharedWith="DewesoftX" AssignActivate="#x0700"
+                     Sync0Cycle="1000000" Sync1Cycle="1000000000"/>
+              <Value Value="20" SharedWith="DewesoftX" AssignActivate="#x0700"
+                     Sync0Cycle="1000000" Sync1Cycle="1000000000"/>
+              <Value Value="1" OnlyReadBy="DewesoftX"/>
+            </Mode>
+          </Synnax>
+        </VendorSpecific>
+      </Device>
+      <Device>
+        <Type ProductCode="#x6E">SIRIUSe and SIRIUSre HS</Type>
+        <Name LcId="1033">SIRIUSe and SIRIUSre HS</Name>
+        <Profile>
+          <Dictionary>
+            <DataTypes>
+              <DataType>
+                <Name>DT8020</Name>
+                <SubItem>
+                  <SubIdx>7</SubIdx>
+                  <Name>Buffered Input</Name>
+                  <Type>UINT</Type>
+                  <BitSize>16</BitSize>
+                </SubItem>
+              </DataType>
+            </DataTypes>
+            <Objects>
+              <Object>
+                <Index>#x8020</Index>
+                <Name>Device settings</Name>
+                <Type>DT8020</Type>
+              </Object>
+            </Objects>
+          </Dictionary>
+        </Profile>
+        <VendorSpecific>
+          <Synnax Version="1">
+            <!-- Each revision in the ESIs has the same startup command and sync modes
+                 as the CD and HD modules, and section 8.1.2 gives the same mode table.
+                 The manual gives no channel settings for the HS. -->
+            <!-- Buffered Input sets the module up for the master alone (2 DC, 5 SM
+                 sync), for DewesoftX on USB and the master on EtherCAT (3 DC, 6 SM, 4
+                 EtherCAT PPS SM), or for DewesoftX alone (1, DC buffered). 18 to 22
+                 (0x12 to 0x16) are the NI LabVIEW forms of 2 to 6, with the same sync.
+                 The ESI writes 6 at each move to PRE-OP. The manual does not say
+                 whether the module keeps a change through a power restart. -->
+            <!-- The cycles follow the manual's table, so 2 runs SYNC0 at the bus cycle.
+                 For 4, the manual gives SYNC0 as disabled, but the ESI mode runs it at
+                 1 ms, as this value does. The Driver takes the first SII mode with the
+                 AssignActivate of a value. For 4 and 5, that is the standalone DC mode,
+                 with a SYNC0 shift of -100 µs that their ESI modes do not have. -->
+            <Mode Index="#x8020" SubIndex="7" Standalone="2">
+              <Value Value="2" AssignActivate="#x0700" Sync1Cycle="1000000000"/>
+              <Value Value="18" AssignActivate="#x0700" Sync1Cycle="1000000000"/>
+              <Value Value="5" AssignActivate="#x0700" Sync0Cycle="1000000"
+                     Sync1Cycle="1000000000"/>
+              <Value Value="21" AssignActivate="#x0700" Sync0Cycle="1000000"
+                     Sync1Cycle="1000000000"/>
+              <Value Value="3" SharedWith="DewesoftX" AssignActivate="#x0300"/>
+              <Value Value="19" SharedWith="DewesoftX" AssignActivate="#x0300"/>
+              <Value Value="6" SharedWith="DewesoftX" AssignActivate="#x0000"/>
+              <Value Value="22" SharedWith="DewesoftX" AssignActivate="#x0000"/>
+              <Value Value="4" SharedWith="DewesoftX" AssignActivate="#x0700"
+                     Sync0Cycle="1000000" Sync1Cycle="1000000000"/>
+              <Value Value="20" SharedWith="DewesoftX" AssignActivate="#x0700"
+                     Sync0Cycle="1000000" Sync1Cycle="1000000000"/>
+              <Value Value="1" OnlyReadBy="DewesoftX"/>
+            </Mode>
+          </Synnax>
+        </VendorSpecific>
+      </Device>
+    </Devices>
+  </Descriptions>
+</EtherCATInfo>

@@ -86,6 +86,19 @@ through a power restart.
 </Mode>
 ```
 
+`Calibration` in `Entries` turns integer samples into physical values. The device
+holds a float32 gain and offset for each channel at `Index`, at `GainSubIndex` and
+`OffsetSubIndex`. Each channel adds the `IndexStep` of its `Channels` to `Index`. The
+physical value is `raw / Divisor * gain + offset`, or `(raw / Divisor + offset) * gain`
+when `RawOffset` is true. `DataType` is how the entries encode samples.
+
+```xml
+<Entries Index="#x6020" SubIndex="1" SubIndexStep="1">
+  <Calibration DataType="DINT" Index="#x8040" GainSubIndex="10" OffsetSubIndex="9"
+               Divisor="256" RawOffset="true"/>
+</Entries>
+```
+
 A supplement applies to every revision of its product code, unless it lists revisions
 in `Revisions`. A device matches when its revision, after `Mask`, is in the list. When
 one product code names more than one module, each supplement of the code must list its

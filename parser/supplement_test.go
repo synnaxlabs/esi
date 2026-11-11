@@ -14,6 +14,7 @@ import (
 	"os"
 	"path/filepath"
 	"reflect"
+	"slices"
 	"strings"
 	"testing"
 )
@@ -323,36 +324,29 @@ func TestSupplementRejectsBadRevisions(t *testing.T) {
 }
 
 func TestSupplementSingleBusModeIsOnlyReadByDewesoftX(t *testing.T) {
-	all, err := parseSupplements("../supplements")
-	if err != nil {
-		t.Fatal(err)
+	mode := dewesoftSettings(t, 0x9E, 0x00100000).Mode
+	want := []ModeValue{{Value: 0}, {Value: 1, OnlyReadBy: "DewesoftX"}}
+	if mode.SecondBus != 0 || !reflect.DeepEqual(mode.Values, want) {
+		t.Fatalf("IOLITEi 1xSTG: mode = %+v", *mode)
 	}
-	for _, s := range all {
-		if s.VendorID != 0xDEBE50F7 || s.ProductCode != 0x9E {
-			continue
-		}
-		want := []ModeValue{{Value: 0}, {Value: 1, OnlyReadBy: "DewesoftX"}}
-		if s.Mode.SecondBus != 0 || !reflect.DeepEqual(s.Mode.Values, want) {
-			t.Fatalf("mode = %+v", *s.Mode)
-		}
-		return
-	}
-	t.Fatal("no settings for the IOLITEi 1xSTG")
 }
 
-// dewesoftSettings returns the supplement settings of the Dewesoft product.
-func dewesoftSettings(t *testing.T, product uint32) DeviceSettings {
+// dewesoftSettings returns the supplement settings that cover the revision of the
+// Dewesoft product. Modules can share a product code and differ by revision.
+func dewesoftSettings(t *testing.T, product, revision uint32) DeviceSettings {
 	t.Helper()
 	all, err := parseSupplements("../supplements")
 	if err != nil {
 		t.Fatal(err)
 	}
 	for _, s := range all {
-		if s.VendorID == 0xDEBE50F7 && s.ProductCode == product {
+		covers := s.Revisions == nil ||
+			slices.Contains(s.Revisions, revision&s.RevisionMask)
+		if s.VendorID == 0xDEBE50F7 && s.ProductCode == product && covers {
 			return s
 		}
 	}
-	t.Fatalf("no settings for product 0x%X", product)
+	t.Fatalf("no settings for product 0x%X revision 0x%08X", product, revision)
 	return DeviceSettings{}
 }
 
@@ -388,7 +382,7 @@ func TestSupplementSIRIUS(t *testing.T) {
 		{0x66, 16, Calibration{"int32", 0x8040, 0x15, 0x14, 1, false}},
 		{0x6E, 8, Calibration{"int16", 0x8040, 0x07, 0x06, 1, false}},
 	} {
-		s := dewesoftSettings(t, c.product)
+		s := dewesoftSettings(t, c.product, 0)
 		if s.Revisions != nil || len(s.Device) != 0 {
 			t.Fatalf("product 0x%X: settings = %+v", c.product, s)
 		}
@@ -413,23 +407,31 @@ func TestSupplementSIRIUS(t *testing.T) {
 func TestSupplementDewesoftCalibrations(t *testing.T) {
 	lv := &Calibration{"int32", 0x8040, 0x0A, 0x09, 256, true}
 	stg := &Calibration{"int32", 0x8040, 0x1B, 0x1A, 256, true}
+	lvEntries := []Entries{
+		{Index: 0x6030, SubIndex: 1, SubIndexStep: 1, Count: 1},
+		{Index: 0x6020, SubIndex: 1, SubIndexStep: 1, Count: 1, Calibration: lv},
+	}
+	stgEntries := []Entries{
+		{Index: 0x6030, SubIndex: 1, SubIndexStep: 1, Count: 1, Calibration: stg},
+	}
 	for _, c := range []struct {
-		name    string
-		product uint32
-		entries []Entries
+		name     string
+		product  uint32
+		revision uint32
+		entries  []Entries
 	}{
-		{"IOLITE 8xLV", 0xF9, []Entries{
-			{Index: 0x6030, SubIndex: 1, SubIndexStep: 1, Count: 1},
-			{Index: 0x6020, SubIndex: 1, SubIndexStep: 1, Count: 1, Calibration: lv},
-		}},
-		{"IOLITE 8xSTGS", 244, []Entries{
+		{"IOLITE 8xLV", 0xF9, 0x00010000, lvEntries},
+		{"IOLITE 8xLA", 0xF9, 0x00030000, lvEntries},
+		{"IOLITE 8xSTGS", 244, 0, []Entries{
 			{Index: 0x6020, SubIndex: 1, SubIndexStep: 1, Count: 1, Calibration: stg},
 		}},
-		{"KRYPTON 3xSTG", 0x68, []Entries{
-			{Index: 0x6030, SubIndex: 1, SubIndexStep: 1, Count: 1, Calibration: stg},
+		{"IOLITEi 1xACC", 0x9D, 0x00100000, []Entries{
+			{Index: 0x6020, SubIndex: 1, Count: 1, Calibration: stg},
 		}},
+		{"KRYPTON 3xSTG", 0x68, 0x00000000, stgEntries},
+		{"KRYPTON 6xSTG", 0x68, 0x00010000, stgEntries},
 	} {
-		ch := dewesoftSettings(t, c.product).Channels
+		ch := dewesoftSettings(t, c.product, c.revision).Channels
 		if ch == nil || !reflect.DeepEqual(ch.Entries, c.entries) {
 			t.Fatalf("%s: channels = %+v", c.name, ch)
 		}
@@ -437,7 +439,7 @@ func TestSupplementDewesoftCalibrations(t *testing.T) {
 }
 
 func TestSupplement16xAO(t *testing.T) {
-	s := dewesoftSettings(t, 247)
+	s := dewesoftSettings(t, 247, 0)
 	want := []Setting{{
 		Index:    0x8020,
 		SubIndex: 12,

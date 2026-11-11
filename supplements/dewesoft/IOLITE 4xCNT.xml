@@ -63,7 +63,7 @@
                  mode (1): bus 1 to DewesoftX, bus 2 to the master. The manual does not
                  say how the module keeps a change through a power restart. -->
             <Mode Index="#x8020" SubIndex="9" Standalone="0"
-                  SecondPort="#x00001000">
+                  SecondBus="#x00001000">
               <Value Value="0" AssignActivate="#x0700" Sync0Cycle="1000000"
                      Sync1Cycle="1000000000"/>
               <Value Value="1" SharedWith="DewesoftX"/>

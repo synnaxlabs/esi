@@ -74,12 +74,12 @@ settings that Synnax shows, with three kinds of rules:
 `Mode` names the object that sets the device up for Synnax alone (`Standalone`) or
 for other software too. A `Value` with `SharedWith` is set up by that software, and
 Synnax still reads its data. A `Value` with `OnlyReadBy` sends data that only that
-software reads. `SecondPort` gives the revision bits of a device on its second EtherCAT
-port; in dual mode, the first port belongs to the other software. `Save` keeps a
-change through a power restart.
+software reads. `SecondBus` gives the revision bits of a device on its second EtherCAT
+bus; in dual mode, the first bus belongs to the other software. `Save` keeps a change
+through a power restart.
 
 ```xml
-<Mode Index="#x8020" SubIndex="9" Standalone="0" SecondPort="#x00001000">
+<Mode Index="#x8020" SubIndex="9" Standalone="0" SecondBus="#x00001000">
   <Value Value="0" AssignActivate="#x0700" Sync0Cycle="1000" Sync1Cycle="1000000000"/>
   <Value Value="1" SharedWith="DewesoftX"/>
   <Save Index="#x8020" SubIndex="2" Value="2" When="1"/>

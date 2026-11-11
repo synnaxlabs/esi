@@ -82,7 +82,7 @@ func TestSupplement6xSTG(t *testing.T) {
 		SubIndex:   9,
 		DataType:   "uint16",
 		Standalone: 0,
-		SecondPort: 0x1000,
+		SecondBus:  0x1000,
 		Values: []ModeValue{
 			{Value: 0, OpMode: &OpModeChoice{0x0300, 1000, 1000000000}},
 			{Value: 3, OpMode: &OpModeChoice{}},
@@ -131,9 +131,9 @@ func TestSupplementRejectsBadModes(t *testing.T) {
 			"Mode: Value 1: both SharedWith and OnlyReadBy",
 		},
 		{
-			`<Mode Index="#x8000" SubIndex="1" Standalone="0" SecondPort="0">
+			`<Mode Index="#x8000" SubIndex="1" Standalone="0" SecondBus="0">
 <Value Value="0"/></Mode>`,
-			"Mode: SecondPort: no bits",
+			"Mode: SecondBus: no bits",
 		},
 		{
 			`<Mode Index="#x8000" SubIndex="1" Standalone="0">
@@ -332,7 +332,7 @@ func TestSupplementSingleBusModeIsOnlyReadByDewesoftX(t *testing.T) {
 			continue
 		}
 		want := []ModeValue{{Value: 0}, {Value: 1, OnlyReadBy: "DewesoftX"}}
-		if s.Mode.SecondPort != 0 || !reflect.DeepEqual(s.Mode.Values, want) {
+		if s.Mode.SecondBus != 0 || !reflect.DeepEqual(s.Mode.Values, want) {
 			t.Fatalf("mode = %+v", *s.Mode)
 		}
 		return

@@ -110,7 +110,7 @@
                  saves the settings. The cycles follow the manual's table for
                  standalone DC. -->
             <Mode Index="#x8020" SubIndex="9" Standalone="0"
-                  SecondPort="#x00001000">
+                  SecondBus="#x00001000">
               <Value Value="0" AssignActivate="#x0700" Sync0Cycle="1000"
                      Sync1Cycle="1000000000"/>
               <Value Value="3" AssignActivate="#x0000"/>

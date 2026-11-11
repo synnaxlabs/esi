@@ -94,7 +94,7 @@ type synnaxMode struct {
 	Index      string            `xml:"Index,attr"`
 	SubIndex   string            `xml:"SubIndex,attr"`
 	Standalone string            `xml:"Standalone,attr"`
-	SecondPort string            `xml:"SecondPort,attr"`
+	SecondBus  string            `xml:"SecondBus,attr"`
 	Values     []synnaxModeValue `xml:"Value"`
 	Save       *struct {
 		Index    string `xml:"Index,attr"`
@@ -194,11 +194,11 @@ type Mode struct {
 	DataType string `json:"data_type"`
 	// Standalone is the value that makes Synnax the only reader of the slave.
 	Standalone float64 `json:"standalone"`
-	// SecondPort holds the revision bits of a slave on its second EtherCAT port, or 0
-	// when the slave has one port. In dual mode, the first port belongs to the other
+	// SecondBus holds the revision bits of a slave on its second EtherCAT bus, or 0
+	// when the slave has one bus. In dual mode, the first bus belongs to the other
 	// software.
-	SecondPort uint32      `json:"second_port,omitempty"`
-	Values     []ModeValue `json:"values"`
+	SecondBus uint32      `json:"second_bus,omitempty"`
+	Values    []ModeValue `json:"values"`
 	// Save is the write that keeps a change through a power restart, or nil when the
 	// slave keeps each change by itself.
 	Save *Save `json:"save,omitempty"`
@@ -452,12 +452,12 @@ func resolveMode(dict dictionary, m synnaxMode) (Mode, error) {
 	if mode.Standalone, err = strconv.ParseFloat(m.Standalone, 64); err != nil {
 		return mode, fmt.Errorf("Standalone: %w", err)
 	}
-	if m.SecondPort != "" {
-		if mode.SecondPort, err = parseUint32(m.SecondPort); err != nil {
-			return mode, fmt.Errorf("SecondPort: %w", err)
+	if m.SecondBus != "" {
+		if mode.SecondBus, err = parseUint32(m.SecondBus); err != nil {
+			return mode, fmt.Errorf("SecondBus: %w", err)
 		}
-		if mode.SecondPort == 0 {
-			return mode, fmt.Errorf("SecondPort: no bits")
+		if mode.SecondBus == 0 {
+			return mode, fmt.Errorf("SecondBus: no bits")
 		}
 	}
 	standalone := false

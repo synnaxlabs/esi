@@ -46,7 +46,7 @@
                  mode table gives 0x8020:09, as for the 8xTH. The cycles follow the
                  manual's table for standalone DC. -->
             <Mode Index="#x8020" SubIndex="10" Standalone="0"
-                  SecondPort="#x00001000">
+                  SecondBus="#x00001000">
               <Value Value="0" AssignActivate="#x0700" Sync0Cycle="1000"
                      Sync1Cycle="10000000"/>
               <Value Value="1" SharedWith="DewesoftX"/>

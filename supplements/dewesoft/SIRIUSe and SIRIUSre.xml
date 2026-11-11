@@ -2,8 +2,8 @@
 <!-- Supplements the Dewesoft ESIs of the SIRIUSe and SIRIUSre (SIRIUS.xml, SIRIUSr.xml,
      SIRIUS HS.xml, and SIRIUSr HS.xml). Written from the Dewesoft third-party EtherCAT
      masters manual, V26-3, sections 8, 8.1.1, and 8.1.2, without a module. The data
-     type follows the startup commands of the ESIs, which write 2 bytes. Not tested on
-     hardware. -->
+     type of the mode follows the startup commands of the ESIs, which write 2 bytes. Not
+     tested on hardware. -->
 <EtherCATInfo Version="1.6">
   <Vendor>
     <Id>#xDEBE50F7</Id>
@@ -26,12 +26,32 @@
                   <BitSize>16</BitSize>
                 </SubItem>
               </DataType>
+              <DataType>
+                <Name>DT8040</Name>
+                <SubItem>
+                  <SubIdx>20</SubIdx>
+                  <Name>Calc Offset</Name>
+                  <Type>REAL</Type>
+                  <BitSize>32</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>21</SubIdx>
+                  <Name>Calc Gain</Name>
+                  <Type>REAL</Type>
+                  <BitSize>32</BitSize>
+                </SubItem>
+              </DataType>
             </DataTypes>
             <Objects>
               <Object>
                 <Index>#x8020</Index>
                 <Name>Device settings</Name>
                 <Type>DT8020</Type>
+              </Object>
+              <Object>
+                <Index>#x8040</Index>
+                <Name>Channel 1 settings</Name>
+                <Type>DT8040</Type>
               </Object>
             </Objects>
           </Dictionary>
@@ -41,7 +61,19 @@
             <!-- Each revision in the ESIs has the same startup command and sync modes,
                  so the supplement covers all of them. The manual gives channel settings
                  only for the HD 16xSTGS, but the ESIs name no revision for it, only HD
-                 16xAI ones. So there are none. -->
+                 16xAI ones. So the inputs have no settings. -->
+            <!-- Section 8.1.1: input n sends a raw ADC value, a DINT, at 0x6030:n, and
+                 physical value = raw * DaqGain + DaqOffset, with DaqOffset at 804x:14
+                 and DaqGain at 804x:15. The table of the section names 14 and 15 Calc
+                 Offset and Calc Gain, the total of the amplifier, sensor, and user
+                 scaling. Older ESI revisions give the entries as UDINT. Up to 16
+                 inputs. -->
+            <Channels Count="16" IndexStep="1">
+              <Entries Index="#x6030" SubIndex="1" SubIndexStep="1">
+                <Calibration DataType="DINT" Index="#x8040" GainSubIndex="21"
+                             OffsetSubIndex="20"/>
+              </Entries>
+            </Channels>
             <!-- Buffered Input sets the module up for the master alone (2 DC, 5 SM
                  sync), for DewesoftX on USB and the master on EtherCAT (3 DC, 6 SM, 4
                  EtherCAT PPS SM), or for DewesoftX alone (1, DC buffered). 18 to 22
@@ -88,12 +120,32 @@
                   <BitSize>16</BitSize>
                 </SubItem>
               </DataType>
+              <DataType>
+                <Name>DT8040</Name>
+                <SubItem>
+                  <SubIdx>6</SubIdx>
+                  <Name>DaqOffset</Name>
+                  <Type>REAL</Type>
+                  <BitSize>32</BitSize>
+                </SubItem>
+                <SubItem>
+                  <SubIdx>7</SubIdx>
+                  <Name>DaqGain</Name>
+                  <Type>REAL</Type>
+                  <BitSize>32</BitSize>
+                </SubItem>
+              </DataType>
             </DataTypes>
             <Objects>
               <Object>
                 <Index>#x8020</Index>
                 <Name>Device settings</Name>
                 <Type>DT8020</Type>
+              </Object>
+              <Object>
+                <Index>#x8040</Index>
+                <Name>Channel 1 settings</Name>
+                <Type>DT8040</Type>
               </Object>
             </Objects>
           </Dictionary>
@@ -103,6 +155,15 @@
             <!-- Each revision in the ESIs has the same startup command and sync modes
                  as the CD and HD modules, and section 8.1.2 gives the same mode table.
                  The manual gives no channel settings for the HS. -->
+            <!-- Section 8.1.2: input n sends a raw ADC value, an INT, at 0x6030:n, and
+                 physical value = raw * DaqGain + DaqOffset, with DaqOffset at 804x:06
+                 and DaqGain at 804x:07. -->
+            <Channels Count="8" IndexStep="1">
+              <Entries Index="#x6030" SubIndex="1" SubIndexStep="1">
+                <Calibration DataType="INT" Index="#x8040" GainSubIndex="7"
+                             OffsetSubIndex="6"/>
+              </Entries>
+            </Channels>
             <!-- Buffered Input sets the module up for the master alone (2 DC, 5 SM
                  sync), for DewesoftX on USB and the master on EtherCAT (3 DC, 6 SM, 4
                  EtherCAT PPS SM), or for DewesoftX alone (1, DC buffered). 18 to 22

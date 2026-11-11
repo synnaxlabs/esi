@@ -380,13 +380,32 @@ func TestSupplementSIRIUS(t *testing.T) {
 			{Value: 1, OnlyReadBy: "DewesoftX"},
 		},
 	}
-	for _, product := range []uint32{0x66, 0x6E} {
-		s := dewesoftSettings(t, product)
-		if s.Revisions != nil || len(s.Device) != 0 || s.Channels != nil {
-			t.Fatalf("product 0x%X: settings = %+v", product, s)
+	for _, c := range []struct {
+		product     uint32
+		count       int
+		calibration Calibration
+	}{
+		{0x66, 16, Calibration{"int32", 0x8040, 0x15, 0x14, 1, false}},
+		{0x6E, 8, Calibration{"int16", 0x8040, 0x07, 0x06, 1, false}},
+	} {
+		s := dewesoftSettings(t, c.product)
+		if s.Revisions != nil || len(s.Device) != 0 {
+			t.Fatalf("product 0x%X: settings = %+v", c.product, s)
 		}
 		if !reflect.DeepEqual(s.Mode, want) {
-			t.Fatalf("product 0x%X: mode = %+v", product, *s.Mode)
+			t.Fatalf("product 0x%X: mode = %+v", c.product, *s.Mode)
+		}
+		ch := s.Channels
+		wantEntries := []Entries{{
+			Index:        0x6030,
+			SubIndex:     1,
+			SubIndexStep: 1,
+			Count:        1,
+			Calibration:  &c.calibration,
+		}}
+		if ch.Count != c.count || ch.IndexStep != 1 || len(ch.Settings) != 0 ||
+			!reflect.DeepEqual(ch.Entries, wantEntries) {
+			t.Fatalf("product 0x%X: channels = %+v", c.product, *ch)
 		}
 	}
 }
@@ -403,5 +422,99 @@ func TestSupplement16xAO(t *testing.T) {
 	if s.Mode != nil || s.Revisions != nil || s.Channels != nil ||
 		!reflect.DeepEqual(s.Device, want) {
 		t.Fatalf("settings = %+v", s)
+	}
+}
+
+// calibrationSupplement returns a supplement of product 7 whose two channels read
+// 0x6000:n with the Calibration element calibration.
+func calibrationSupplement(calibration string) string {
+	return `<EtherCATInfo><Vendor><Id>#x2</Id></Vendor><Descriptions><Devices><Device>
+<Type ProductCode="7">X</Type>
+<Profile><Dictionary>
+<DataTypes><DataType><Name>DT8040</Name>
+<SubItem><SubIdx>1</SubIdx><Name>Range</Name><Type>UINT</Type></SubItem>
+<SubItem><SubIdx>20</SubIdx><Name>Offset</Name><Type>REAL</Type></SubItem>
+<SubItem><SubIdx>21</SubIdx><Name>Gain</Name><Type>REAL</Type></SubItem>
+</DataType></DataTypes>
+<Objects><Object><Index>#x8040</Index><Type>DT8040</Type></Object></Objects>
+</Dictionary></Profile>
+<VendorSpecific><Synnax><Channels Count="2" IndexStep="1">
+<Entries Index="#x6000" SubIndex="1" SubIndexStep="1">` + calibration + `</Entries>
+</Channels></Synnax></VendorSpecific>
+</Device></Devices></Descriptions></EtherCATInfo>`
+}
+
+func TestSupplementCalibration(t *testing.T) {
+	for _, c := range []struct {
+		xml  string
+		want Calibration
+	}{
+		{
+			`<Calibration DataType="DINT" Index="#x8040" GainSubIndex="21"
+OffsetSubIndex="20"/>`,
+			Calibration{
+				DataType:       "int32",
+				Index:          0x8040,
+				GainSubIndex:   21,
+				OffsetSubIndex: 20,
+				Divisor:        1,
+			},
+		},
+		{
+			`<Calibration DataType="INT" Index="#x8040" GainSubIndex="21"
+OffsetSubIndex="20" Divisor="256" RawOffset="1"/>`,
+			Calibration{
+				DataType:       "int16",
+				Index:          0x8040,
+				GainSubIndex:   21,
+				OffsetSubIndex: 20,
+				Divisor:        256,
+				RawOffset:      true,
+			},
+		},
+	} {
+		all, err := parseSupplements(writeSupplements(t, calibrationSupplement(c.xml)))
+		if err != nil {
+			t.Fatal(err)
+		}
+		got := all[0].Channels.Entries[0].Calibration
+		if got == nil || !reflect.DeepEqual(*got, c.want) {
+			t.Fatalf("calibration = %+v, want %+v", got, c.want)
+		}
+	}
+}
+
+func TestSupplementRejectsBadCalibrations(t *testing.T) {
+	for _, c := range []struct{ xml, want string }{
+		{
+			`<Calibration DataType="REAL" Index="#x8040" GainSubIndex="21"
+OffsetSubIndex="20"/>`,
+			`Calibration: DataType "REAL": not an integer type`,
+		},
+		{
+			`<Calibration DataType="DINT" Index="#x8040" GainSubIndex="1"
+OffsetSubIndex="20"/>`,
+			"Calibration: GainSubIndex: uint16, not REAL",
+		},
+		{
+			`<Calibration DataType="DINT" Index="#x8040" GainSubIndex="21"
+OffsetSubIndex="22"/>`,
+			"Calibration: 0x8040:16: no sub-index in DT8040",
+		},
+		{
+			`<Calibration DataType="DINT" Index="#x8050" GainSubIndex="21"
+OffsetSubIndex="20"/>`,
+			"Calibration: 0x8050:15: no object in the Dictionary",
+		},
+		{
+			`<Calibration DataType="DINT" Index="#x8040" GainSubIndex="21"
+OffsetSubIndex="20" Divisor="0"/>`,
+			"Calibration: Divisor: must be above 0",
+		},
+	} {
+		_, err := parseSupplements(writeSupplements(t, calibrationSupplement(c.xml)))
+		if err == nil || !strings.Contains(err.Error(), c.want) {
+			t.Fatalf("err = %v, want %q", err, c.want)
+		}
 	}
 }

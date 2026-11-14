@@ -2,7 +2,8 @@
 <!-- Supplements the Dewesoft ESI of the IOLITEi-4xDO (IOLITE DIO.xml). Written from the
      Dewesoft third-party EtherCAT masters manual, V26-3, section 7.1.4, without a card.
      Data types that the manual does not give follow those of the IOLITE 6xSTG. Not
-     tested on hardware. -->
+     tested on hardware. Value 1 of 0x8020:07, in which only DewesoftX reads the data,
+     is left out, as no card was tested in it. -->
 <EtherCATInfo Version="1.6">
   <Vendor>
     <Id>#xDEBE50F7</Id>
@@ -75,7 +76,6 @@
                  DewesoftX (1, DC buffered). -->
             <Mode Index="#x8020" SubIndex="7" Standalone="0">
               <Value Value="0"/>
-              <Value Value="1" OnlyReadBy="DewesoftX"/>
             </Mode>
           </Synnax>
         </VendorSpecific>

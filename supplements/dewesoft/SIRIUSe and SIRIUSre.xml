@@ -3,7 +3,10 @@
      SIRIUS HS.xml, and SIRIUSr HS.xml). Written from the Dewesoft third-party EtherCAT
      masters manual, V26-3, sections 8, 8.1.1, and 8.1.2, without a module. The data
      type of the mode follows the startup commands of the ESIs, which write 2 bytes. Not
-     tested on hardware. -->
+     tested on hardware. Value 1 of 0x8020:07, in which only DewesoftX reads the data,
+     is left out, and values 3, 4, 6, 19, 20, and 22 no longer name DewesoftX, as no
+     card was tested in them. They keep their sync modes. The ESI writes 6 at
+     startup. -->
 <EtherCATInfo Version="1.6">
   <Vendor>
     <Id>#xDEBE50F7</Id>
@@ -92,15 +95,14 @@
                      Sync1Cycle="1000000000"/>
               <Value Value="21" AssignActivate="#x0700" Sync0Cycle="1000000"
                      Sync1Cycle="1000000000"/>
-              <Value Value="3" SharedWith="DewesoftX" AssignActivate="#x0300"/>
-              <Value Value="19" SharedWith="DewesoftX" AssignActivate="#x0300"/>
-              <Value Value="6" SharedWith="DewesoftX" AssignActivate="#x0000"/>
-              <Value Value="22" SharedWith="DewesoftX" AssignActivate="#x0000"/>
-              <Value Value="4" SharedWith="DewesoftX" AssignActivate="#x0700"
+              <Value Value="3" AssignActivate="#x0300"/>
+              <Value Value="19" AssignActivate="#x0300"/>
+              <Value Value="6" AssignActivate="#x0000"/>
+              <Value Value="22" AssignActivate="#x0000"/>
+              <Value Value="4" AssignActivate="#x0700"
                      Sync0Cycle="1000000" Sync1Cycle="1000000000"/>
-              <Value Value="20" SharedWith="DewesoftX" AssignActivate="#x0700"
+              <Value Value="20" AssignActivate="#x0700"
                      Sync0Cycle="1000000" Sync1Cycle="1000000000"/>
-              <Value Value="1" OnlyReadBy="DewesoftX"/>
             </Mode>
           </Synnax>
         </VendorSpecific>
@@ -182,15 +184,14 @@
                      Sync1Cycle="1000000000"/>
               <Value Value="21" AssignActivate="#x0700" Sync0Cycle="1000000"
                      Sync1Cycle="1000000000"/>
-              <Value Value="3" SharedWith="DewesoftX" AssignActivate="#x0300"/>
-              <Value Value="19" SharedWith="DewesoftX" AssignActivate="#x0300"/>
-              <Value Value="6" SharedWith="DewesoftX" AssignActivate="#x0000"/>
-              <Value Value="22" SharedWith="DewesoftX" AssignActivate="#x0000"/>
-              <Value Value="4" SharedWith="DewesoftX" AssignActivate="#x0700"
+              <Value Value="3" AssignActivate="#x0300"/>
+              <Value Value="19" AssignActivate="#x0300"/>
+              <Value Value="6" AssignActivate="#x0000"/>
+              <Value Value="22" AssignActivate="#x0000"/>
+              <Value Value="4" AssignActivate="#x0700"
                      Sync0Cycle="1000000" Sync1Cycle="1000000000"/>
-              <Value Value="20" SharedWith="DewesoftX" AssignActivate="#x0700"
+              <Value Value="20" AssignActivate="#x0700"
                      Sync0Cycle="1000000" Sync1Cycle="1000000000"/>
-              <Value Value="1" OnlyReadBy="DewesoftX"/>
             </Mode>
           </Synnax>
         </VendorSpecific>

@@ -2,9 +2,7 @@
 <!-- Supplements the Dewesoft ESI of the IOLITE 8xTH (IOLITE TH.xml). Written from the
      Dewesoft third-party EtherCAT masters manual, V26-3, section 6.1.2, without a card.
      Data types that the manual does not give follow those of the IOLITE 6xSTG. Not
-     tested on hardware. Value 1 of 0x8020:09, in which DewesoftX sets the module up, is
-     left out, as no card was tested in it. The ESI writes it at startup on revision
-     0x00010000. -->
+     tested on hardware. -->
 <EtherCATInfo Version="1.6">
   <Vendor>
     <Id>#xDEBE50F7</Id>
@@ -140,6 +138,7 @@
               <Value Value="0" AssignActivate="#x0700" Sync0Cycle="1000"
                      Sync1Cycle="10000000"/>
               <Value Value="3" AssignActivate="#x0000"/>
+              <Value Value="1" SharedWith="DewesoftX"/>
             </Mode>
           </Synnax>
         </VendorSpecific>

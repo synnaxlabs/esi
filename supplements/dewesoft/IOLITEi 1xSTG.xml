@@ -2,8 +2,7 @@
 <!-- Supplements the Dewesoft ESI of the IOLITEi-1xSTG (IOLITE STG.xml). Written from
      the Dewesoft third-party EtherCAT masters manual, V26-3, section 7.1.2, without a
      card. Data types that the manual does not give follow those of the IOLITE 6xSTG.
-     Not tested on hardware. Value 1 of 0x8020:07, in which only DewesoftX reads the
-     data, is left out, as no card was tested in it. -->
+     Not tested on hardware. -->
 <EtherCATInfo Version="1.6">
   <Vendor>
     <Id>#xDEBE50F7</Id>
@@ -192,6 +191,7 @@
                  card saves each change. At 1, writing 2 saves the settings. -->
             <Mode Index="#x8020" SubIndex="7" Standalone="0">
               <Value Value="0"/>
+              <Value Value="1" OnlyReadBy="DewesoftX"/>
               <Save Index="#x8020" SubIndex="2" Value="2" When="1"/>
             </Mode>
           </Synnax>

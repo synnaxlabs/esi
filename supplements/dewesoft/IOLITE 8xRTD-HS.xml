@@ -2,7 +2,8 @@
 <!-- Supplements the Dewesoft ESI of the IOLITE 8xRTD-HS (IOLITE RTD.xml). Written from
      the Dewesoft third-party EtherCAT masters manual, V26-3, section 6.1.3 (the second
      one, after 6.1.4), without a card. Data types that the manual does not give follow
-     those of the IOLITE 6xSTG. Not tested on hardware. -->
+     those of the IOLITE 6xSTG. Not tested on hardware. Value 1 of 0x8020:09, in which
+     DewesoftX sets the module up, is left out, as no card was tested in it. -->
 <EtherCATInfo Version="1.6">
   <Vendor>
     <Id>#xDEBE50F7</Id>
@@ -156,7 +157,6 @@
                   SecondBus="#x00001000">
               <Value Value="0" AssignActivate="#x0700" Sync0Cycle="1000"
                      Sync1Cycle="1000000000"/>
-              <Value Value="1" SharedWith="DewesoftX"/>
             </Mode>
           </Synnax>
         </VendorSpecific>

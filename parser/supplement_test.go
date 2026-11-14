@@ -323,9 +323,9 @@ func TestSupplementRejectsBadRevisions(t *testing.T) {
 	}
 }
 
-func TestSupplementSingleBusModeIsOnlyReadByDewesoftX(t *testing.T) {
+func TestSupplementSingleBusModeLeavesOutTheDewesoftXValue(t *testing.T) {
 	mode := dewesoftSettings(t, 0x9E, 0x00100000).Mode
-	want := []ModeValue{{Value: 0}, {Value: 1, OnlyReadBy: "DewesoftX"}}
+	want := []ModeValue{{Value: 0}}
 	if mode.SecondBus != 0 || !reflect.DeepEqual(mode.Values, want) {
 		t.Fatalf("IOLITEi 1xSTG: mode = %+v", *mode)
 	}
@@ -365,13 +365,12 @@ func TestSupplementSIRIUS(t *testing.T) {
 			{Value: 18, OpMode: dc},
 			{Value: 5, OpMode: sm},
 			{Value: 21, OpMode: sm},
-			{Value: 3, SharedWith: "DewesoftX", OpMode: dualDC},
-			{Value: 19, SharedWith: "DewesoftX", OpMode: dualDC},
-			{Value: 6, SharedWith: "DewesoftX", OpMode: dualSM},
-			{Value: 22, SharedWith: "DewesoftX", OpMode: dualSM},
-			{Value: 4, SharedWith: "DewesoftX", OpMode: sm},
-			{Value: 20, SharedWith: "DewesoftX", OpMode: sm},
-			{Value: 1, OnlyReadBy: "DewesoftX"},
+			{Value: 3, OpMode: dualDC},
+			{Value: 19, OpMode: dualDC},
+			{Value: 6, OpMode: dualSM},
+			{Value: 22, OpMode: dualSM},
+			{Value: 4, OpMode: sm},
+			{Value: 20, OpMode: sm},
 		},
 	}
 	for _, c := range []struct {

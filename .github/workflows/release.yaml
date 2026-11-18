@@ -18,12 +18,13 @@ jobs:
       contents: write
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: Set up Go
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7
         with:
-          go-version: "1.23"
+          go-version-file: parser/go.mod
+          cache-dependency-path: parser/go.sum
 
       - name: Generate Registry Blob
         working-directory: parser
@@ -50,7 +51,7 @@ jobs:
           echo "size=$SIZE" >> $GITHUB_OUTPUT
 
       - name: Create Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@8a0cd651e5b2365bd640854a3fa5dfc70e4875f3 # v3.0.4
         with:
           tag_name: ${{ steps.tag.outputs.tag }}
           name: ESI Registry Blob ${{ steps.tag.outputs.tag }}
